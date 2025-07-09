@@ -18,42 +18,136 @@ h1 {
     color: rgb(0, 0, 0);
     font-size: 6rem;
 }
+
+
+
+.navbar {
+  background: transparent;
+  width: 100%;
+  height: 120px;
+display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
+}
+
+.navbar-container {
+    background: transparent;
+    width: 90vw;
+    height: 120px;
+    z-index: 999;
+    max-width: 1620px;
+    
+}
+
+
+.navbar__left,
+  .navbar__right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+.logo1 {
+    margin-top: 1rem;
+}
+
+
+
 .landing-section {
   width: 100vw;
   height: 100vh;
+  position: relative;
+  background-color: #37493E;
 }
 
 .landing-text-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  justify-content: left;
   height: 100%;
+  width: 90%;
+  max-width: 1600px; /* ✅ set your desired maximum */
+  margin: 0 auto;     /* ✅ center it horizontally */
+  padding: 0 2rem;    /* ✅ optional: some side padding for smaller screens */
+  position: relative;
+  
 }
 
 .landing-text-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 80vw;
-  max-width: 1400px;
-  height: auto;
-  gap: 2rem;
+  text-align: left;
+  position: relative;
+  
 }
 
-.landing-text {
-  display: block;
-}
-
-.landing-text h1 {
+.landing-text-container h1 {
+  font-size: clamp(3rem, 6vw, 7rem);
   text-transform: uppercase;
   font-weight: 800;
   line-height: 1;
-  font-size: clamp(3rem, 6vw, 7rem);
+  color: rgb(255, 255, 255);
 }
 
-.landing-desc p {
-  font-size: clamp(rem, 1.5vw, 1.5rem);
-  max-width: 60ch;
+.landing-subtext {
+  position: absolute;
+  top: 100%; /* 👈 puts it right under the h1 block */
+  left: 0;
+  margin-top: 2rem;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  max-width: 50ch;
   line-height: 1.5;
+  color: rgb(255, 255, 255);
+}
+
+.image-container {
+  display: flex;
+  justify-content: flex-end; /* aligns content inside to the right */
+  margin-left: auto;         /* pushes the whole container to the right if in flex parent */
+  padding: 1rem;
+  
+}
+.image-container h1{
+    font-size: clamp(2rem, 6vw, 6rem);
+}
+
+
+
+.image-scroller {
+  position: relative;
+  height: 50vh; /* makes room to scroll */
+  background: #111;
+}
+
+.image-stack {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  margin: 2rem auto;
+}
+
+.scroller-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+}
+
+
+.img-3 {
+  z-index: 3;
+  opacity: 1; /* Top image shown first */
+}
+
+.img-2 {
+  z-index: 2;
+}
+
+.img-1 {
+  z-index: 1;
 }
