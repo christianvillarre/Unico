@@ -40,10 +40,28 @@ h1 {
   z-index: 998;
 }
 .navbar-container {
-  height: 120px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
+
+.navbar_right {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-btn {
+  margin-left: 2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+
 .navbar__left {
   flex: 1;
 }
@@ -100,17 +118,18 @@ h1 {
   transform: none;
   top: auto;
   right: auto;
-  width: clamp(250px, 28vw, 480px);
+  width: clamp(250px, 38vw, 680px);
   margin-left: auto; /* Align to right inside flex */
 }
 .image-scroller {
   position: relative;
   height: auto;
+  cursor: pointer;
 }
 
 .image-stack {
   position: relative;
-  width: clamp(250px, 28vw, 480px); /* ⬅ match container */
+  width: clamp(250px, 38vw, 680px); /* ⬅ match container */
   height: clamp(160px, 38vw, 660px); /* ⬅ proportional height */
   margin: 0 auto;
   overflow: visible;
@@ -123,28 +142,33 @@ h1 {
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(1.2rem, 3vw, 2rem);
-  font-weight: bold;
-  color: white;
-  opacity: 1;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  border-radius: 1rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background-color: #ccc; /* fallback color */
 }
 
+.scroller-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* or "contain" if you want full image visible */
+  border-radius: 1rem;
+}
+.scroller-controls {
+  margin-top: 1rem;
+  text-align: center;
+  visibility: hidden;
+}
+.scroller-controls button {
+  background: #fff;
+  color: #333;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
 /* Layered stack: shifted to the left and slightly smaller */
-.img-1 {
-  z-index: 1;
-  transform: translateX(-60px) scale(0.92);
-}
-.img-2 {
-  z-index: 2;
-  transform: translateX(-30px) scale(0.96);
-}
-.img-3 {
-  z-index: 3;
-  transform: translateX(0) scale(1);
-}
