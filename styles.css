@@ -1,153 +1,122 @@
+/* 🔹 GLOBAL PAGE CONTAINER */
+.page-container {
+  width: 90%;
+  max-width: 1850px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* 🔹 RESET & GLOBALS */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat'
+  font-family: 'Montserrat';
 }
 body {
   background: rgb(255, 255, 255);
   overflow-x: hidden;
-  overflow-y: auto;
-  
 }
 a {
   color: white;
   text-decoration: none;
 }
 h1 {
-    color: rgb(0, 0, 0);
-    font-size: 6rem;
+  font-size: 6rem;
 }
 
-
-
+/* 🔹 NAVBAR */
 .navbar {
   background: transparent;
   width: 100%;
   height: 120px;
-display: flex;
-  justify-content: center;
+  display: flex;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 998;
 }
-
 .navbar-container {
-    background: transparent;
-    width: 90vw;
-    height: 120px;
-    z-index: 999;
-    max-width: 1620px;
-    
+  height: 120px;
+  display: flex;
+  align-items: center;
 }
-
-
-.navbar__left,
-  .navbar__right {
-    flex: 1;
-    display: flex;
-    align-items: center;
-  }
+.navbar__left {
+  flex: 1;
+}
 .logo1 {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
-
-
+/* 🔹 LANDING SECTION */
 .landing-section {
   width: 100vw;
   height: 100vh;
-  position: relative;
   background-color: #37493E;
-}
-
-.landing-text-wrapper {
   display: flex;
   align-items: center;
-  justify-content: left;
-  height: 100%;
-  width: 90%;
-  max-width: 1600px; /* ✅ set your desired maximum */
-  margin: 0 auto;     /* ✅ center it horizontally */
-  padding: 0 2rem;    /* ✅ optional: some side padding for smaller screens */
-  position: relative;
-  
 }
-
+.landing-text-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+}
 .landing-text-container {
-  text-align: left;
   position: relative;
-  
 }
-
 .landing-text-container h1 {
   font-size: clamp(3rem, 6vw, 7rem);
   text-transform: uppercase;
   font-weight: 800;
   line-height: 1;
-  color: rgb(255, 255, 255);
+  color: white;
 }
-
 .landing-subtext {
   position: absolute;
-  top: 100%; /* 👈 puts it right under the h1 block */
+  top: 100%;
   left: 0;
   margin-top: 2rem;
   font-size: clamp(1rem, 1.5vw, 1.5rem);
   max-width: 50ch;
   line-height: 1.5;
-  color: rgb(255, 255, 255);
+  color: white;
 }
 
+/* 🔹 IMAGE SCROLLER */
 .image-container {
   display: flex;
-  justify-content: flex-end; /* aligns content inside to the right */
-  margin-left: auto;         /* pushes the whole container to the right if in flex parent */
+  justify-content: flex-end;
   padding: 1rem;
-  
 }
-.image-container h1{
-    font-size: clamp(2rem, 6vw, 6rem);
-}
-
-
-
 .image-scroller {
   position: relative;
-  height: 50vh; /* makes room to scroll */
-  background: #111;
+  height: 500px;
 }
-
 .image-stack {
   position: relative;
-  width: 600px;
-  height: 400px;
-  margin: 2rem auto;
+  width: clamp(300px, 40vw, 650px);
+  height: clamp(200px, 28vw, 450px);
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 1rem;
 }
-
 .scroller-image {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: bold;
+  color: white;
   opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-radius: 1rem;
 }
-
-
-.img-3 {
-  z-index: 3;
-  opacity: 1; /* Top image shown first */
-}
-
-.img-2 {
-  z-index: 2;
-}
-
-.img-1 {
-  z-index: 1;
-}
+.img-1 { z-index: 1; }
+.img-2 { z-index: 2; }
+.img-3 { z-index: 3; opacity: 1; } /* default top */
