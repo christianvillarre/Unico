@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Visible Carousels</title>
+  <style>
+   :root {
+  --carousel-height: 28vh; /* change this to grow/shrink everything */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: #fff;
+  overflow-x: hidden;
+}
+
+.main-section {
+  height: 150vh;
+  background: #a55858;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-wrapper {
+  height: calc(var(--carousel-height) + 7rem); /* item height + header space */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-bottom: 2px solid white;
+  padding: 1rem 0;
+}
+
+.carousel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem 0.5rem;
+  color: white;
+}
+
+.carousel-header h2 {
+  font-size: 1.5rem;
+}
+
+.carousel-header button {
+  background: white;
+  color: #a55858;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.carousel-header button:hover {
+  background: #f0f0f0;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  will-change: transform;
+}
+
+.carousel-item {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  border-radius: 1rem;
+  overflow: hidden; /* 🔹 Crop overflowing image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--carousel-height);
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 🔹 Crop + fill the box */
+  display: block;
+}
+
+.carousel-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 🔹 Crop + fill the box */
+  display: block;
+}
+
+.short-box {
+  width: 300px;
+  background: #f0d9ff;
+}
+
+.long-box {
+  width: 500px;
+  background: #d0f0ff;
+}
+
+    
+  </style>
+</head>
+<body>
+  <main class="main-section">
+    <div class="carousel-wrapper carousel-1">
+      <div class="carousel-header">
+        <h2>Clients</h2>
+        <button>See More</button>
+      </div>
+      <div class="carousel-track track-1">
+        <div class="carousel-item long-box">
+            <img src="images/10 HACR Blanket.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">2</div>
+        <div class="carousel-item long-box">
+            <img src="images/10 HACR Panel.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">4</div>
+        <div class="carousel-item long-box">
+            <img src="images/2 SAHCC FOH Pic.jpeg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">6</div>
+        <div class="carousel-item short-box">7</div>
+        <div class="carousel-item long-box">
+            <img src="images/4 USSP-11.1.19.JPG" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">9</div>
+        <div class="carousel-item long-box">10</div>
+      </div>
+    </div>
+
+    <div class="carousel-wrapper carousel-2">
+      <div class="carousel-header">
+        <h2>Case Studies</h2>
+        <button>See More</button>
+      </div>
+      <div class="carousel-track track-2">
+        <div class="carousel-item long-box">
+            <img src="images/Photo 1 Luis Fonsi.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/AVANCE 50 Logo.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <img src="images/Photo 3 Kansas City.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/CHCI Logo.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <img src="images/Photo 4 SA300.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/City of San Antonio.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <img src="images/Photo 5 Leg Summit.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <video autoplay muted loop playsinline>
+            <source src="images/1 USHCC Orlando Ballroom and Skyline Compressed.mp4" type="video/mp4" />
+            </video>
+        </div>
+        <div class="carousel-item long-box">
+            <img src="images/Photo 6 Kamala.jpeg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">J</div>
+      </div>
+    </div>
+
+    <div class="carousel-wrapper carousel-3">
+      <div class="carousel-header">
+        <h2>Services</h2>
+        <button>See More</button>
+      </div>
+      <div class="carousel-track track-3">
+        <div class="carousel-item short-box">a</div>
+        <div class="carousel-item long-box">
+            <img src="images/Photo 7 HACR.jpg" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">c</div>
+        <div class="carousel-item long-box">
+            <img src="images/Photo 2 Missions.JPG" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">e</div>
+        <div class="carousel-item long-box">
+            <img src="images/4 USSP-11.1.19.JPG" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">g</div>
+        <div class="carousel-item long-box">
+            <img src="images/2 SAHCC FOH Pic.jpeg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">i</div>
+        <div class="carousel-item long-box">j</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- GSAP for auto-scroll -->
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script>
+  const carouselAnimations = {};
+
+  function autoScrollCarousel(selector, baseSpeed = 20, reverse = false) {
+    const track = document.querySelector(selector);
+    const items = Array.from(track.children);
+
+    // Clone items
+    if (items.length < 20) {
+        items.forEach(item => {
+            const clone = item.cloneNode(true);
+            track.appendChild(clone);
+        });
+    }
+
+    const totalWidth = track.scrollWidth / 2;
+
+    if (reverse) {
+      gsap.set(track, { x: -totalWidth });
+    }
+
+    // Create animation
+    const tween = gsap.to(track, {
+      x: `${reverse ? '+=' : '-='}${totalWidth}`,
+      duration: baseSpeed,
+      ease: "none",
+      repeat: -1,
+      modifiers: {
+        x: gsap.utils.unitize(x => parseFloat(x) % totalWidth)
+      }
+    });
+
+    carouselAnimations[selector] = tween;
+
+    // Adjust speed on hover
+    const visibleItems = track.querySelectorAll('.carousel-item');
+    visibleItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        // speed up by making the duration shorter
+        tween.timeScale(0.5); // 2x speed
+      });
+
+      item.addEventListener('mouseleave', () => {
+        // restore normal speed
+        tween.timeScale(1); // original speed
+      });
+    });
+  }
+
+  autoScrollCarousel('.track-1', 30);        // forward
+  autoScrollCarousel('.track-2', 50, true);  // reverse
+  autoScrollCarousel('.track-3', 40);        // forward
+</script>
+</body>
+</html>

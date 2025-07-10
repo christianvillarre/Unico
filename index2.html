@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px dotted red;
+}
+   /* 🔹 Global container settings */
+.page-container {
+  width: 90%;
+  max-width: 2000px;
+  margin: 0 auto;  /* centers it */
+  padding: 0 0; /* optional horizontal breathing room */
+}
+
+/* 🔹 Navbar */
+.navbar {
+  width: 100%;
+  background: #fff;       /* or your color */
+  padding: 20px 0;
+  position: fixed;        /* optional if sticky */
+  top: 0;
+  left: 0;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 🔹 Navbar content alignment */
+.navbar-content {
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+/* 🔹 Main Section */
+.main-section {
+  height: 100vh;
+  padding-top: 240px; /* space for navbar if fixed */
+  padding-bottom: 80px;
+  background: #f9f9f9;
+}
+
+/* 🔹 Main content layout */
+.main-content {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+</style>
+<body>
+  <header class="navbar">
+    <div class="page-container">
+      <div class="navbar-content">
+        <!-- Logo + Nav Links -->
+      </div>
+    </div>
+  </header>
+
+  <main class="main-section">
+    <div class="page-container">
+      <div class="main-content">
+        <!-- Your main section content -->
+      </div>
+    </div>
+  </main>
+</body>
+</html>
