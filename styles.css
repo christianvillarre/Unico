@@ -37,7 +37,7 @@ h1 {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 998;
+  z-index: 999;
 }
 .navbar-container {
   display: flex;
@@ -77,6 +77,10 @@ h1 {
   background-color: #37493E;
   display: flex;
   align-items: center;
+  z-index: 0; /* Make sure this is below navbar */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .landing-content {
   display: flex;

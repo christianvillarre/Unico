@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Impact Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      font-family: 'Montserrat', sans-serif;
+      color: #000;
+    }
+
+    .section {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .tracker-container {
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      grid-template-rows: auto auto;
+      gap: 2rem 5rem;
+      text-align: center;
+    }
+
+    .header {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .value {
+      font-size: 2.5rem;
+      color: #37493E;
+      font-family: 'Montserrat', sans-serif;
+      min-width: 8ch;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Section 1 -->
+  <section class="section">
+    <div class="tracker-container">
+      <div class="header">Years in Business</div>
+      <div class="header">Clients</div>
+      <div class="header">Miles Traveled</div>
+      <div class="header">Social Impact Events</div>
+
+      <div class="value" id="years">0</div>
+      <div class="value" id="clients">0</div>
+      <div class="value" id="miles">200,000</div>
+      <div class="value" id="impact">0%</div>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="section">
+    <div class="tracker-container">
+      <div class="header">Events Produced</div>
+      <div class="header">Attendees</div>
+      <div class="header">Cities</div>
+      <div class="header">Countries</div>
+
+      <div class="value" id="events">0</div>
+      <div class="value" id="attendees">0</div>
+      <div class="value" id="cities">0</div>
+      <div class="value" id="countries">0</div>
+    </div>
+  </section>
+
+<script>
+  // Animate static counters
+  function animateCount(id, target, duration = 2000, suffix = '') {
+    const el = document.getElementById(id);
+    const startTime = performance.now();
+
+    function update(time) {
+      const elapsed = time - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const value = Math.floor(progress * target);
+      el.textContent = suffix === '%' ? `${value}%` : value.toLocaleString();
+
+      if (progress < 1) requestAnimationFrame(update);
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  // First section with custom durations
+  animateCount('years', 21, 2000);          // 2 seconds
+  animateCount('clients', 203, 3000);       // 3 seconds
+  animateCount('impact', 100, 2500, '%');   // 2.5 seconds
+
+  // Second section with custom durations
+  animateCount('events', 257, 2000);
+  animateCount('attendees', 50000, 5000);   // slower climb
+  animateCount('cities', 17, 1800);
+  animateCount('countries', 5, 1200);
+
+  // Miles ticker (continuous)
+  const milesEl = document.getElementById('miles');
+  let miles = 200000;
+  function updateMiles() {
+    miles += Math.floor(Math.random() * 10) + 1;
+    if (miles > 500000) miles = 200000;
+    milesEl.textContent = miles.toLocaleString();
+    requestAnimationFrame(() => setTimeout(updateMiles, 40));
+  }
+  updateMiles();
+</script>
+</body>
+</html>
