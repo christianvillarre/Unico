@@ -251,6 +251,7 @@
       text-transform: uppercase;
       font-weight: 800;
       margin-bottom: 1rem;
+      line-height: 1;
     }
 
     p {
@@ -323,22 +324,22 @@
   --carousel-height: 28vh; /* change this to grow/shrink everything */
 }
   .main-section {
-  height: 140vh;
+  height: 125vh;
  background-color: #fff;
   display: flex;
   flex-direction: column;
 }
 
 .carousel-wrapper {
-  height: calc(var(--carousel-height) + 8rem); /* item height + header space */
+  height: calc(var(--carousel-height) + 4rem); /* item height + header space */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 1rem 0;
+  padding: 0rem;
 }
 .carousel-wrapper2 {
   position: relative;
-  height: calc(var(--carousel-height) + 8rem);
+  height: calc(var(--carousel-height) + 5.5rem);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -358,7 +359,7 @@
 }
 .carousel-wrapper3 {
   position: relative;
-  height: calc(var(--carousel-height) + 8rem);
+  height: calc(var(--carousel-height) + 5.5rem);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -377,39 +378,45 @@
   z-index: -1; /* Push behind content */
 }
 
+
 .carousel-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 4rem 0.5rem;
+  padding: 0 4rem 0.2rem; /* reduce bottom padding */
+  margin-bottom: -1rem;       /* just in case */
+  margin-top: -1rem;
   color: #53709F;
-  
 }
 
 .carousel-header h2 {
   font-size: 1.5rem;
 }
 
-.carousel-header button {
-  background: #53709F;
-  color: #ffffff;
+.carousel-header button  {
+  background: transparent;
+  color: #53709F;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 0.8rem;
   border-radius: 4px;
-  font-weight: bold;
   cursor: pointer;
   transition: background 0.3s;
 }
-
-.carousel-header button:hover {
-  background: #f0f0f0;
+.carousel-header button p {
+  display: inline;
+  font-weight: 800;
+  font-size: 1rem;
+  margin: 0; /* just in case */
+  font-family: "Montserrat";
 }
+
 
 .carousel-track {
   display: flex;
   gap: 1rem;
   padding: 1rem 2rem;
   will-change: transform;
+  margin-bottom: 0rem;
 }
 
 .carousel-item {
