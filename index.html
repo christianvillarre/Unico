@@ -1,142 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unico</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unico Communications</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
 </head>
 <body>
-  <nav class="navbar">
-  <div class="page-container navbar-container">
-    <div class="navbar_left">
-      <a href="/" id="navbar__logo" class="logo">
-        <img class="logo1" src="images/logo1.png" alt="Logo" />
+
+<!-- 🔹 NAVBAR -->
+<header class="navbar">
+  <div class="logo">
+    <img class="logo1" src="images/logo1.png" alt="Logo" />
+  </div>
+  <nav>
+    <div class="nav-item">
+      <a href="#about">About</a>
+      <div class="dropdown">
+        <div class="dropdown-content">
+          <div class="dropdown-text">
+            <h4>About</h4>
+            <p>Unico blends strategy and heart as a full-service events firm grounded in purpose. Our story, culture, and team come together to create meaningful experiences that leave a lasting impact.</p>
+            <button class="dropbtn">See More
+              <img src="images/arrow-btn.png" alt="See more" />
+            </button>
+          </div>
+        </div>
+        <div class="dropdown-images">
+          <div class="image-box">
+            <img src="images/Photo 3 Kansas City.jpg" alt="Image 1" />
+            <div class="overlay"></div>
+            <button class="image-btn">Our Story</button>
+            
+          </div>
+          <div class="image-box">
+            <img src="images/10 HACR Blanket.jpg" alt="Image 2" />
+            <div class="overlay"></div>
+            <button class="image-btn">Culture</button>
+            
+          </div>
+          <div class="image-box">
+            <img src="images/img1.png" alt="Image 3" />
+            <div class="overlay"></div>
+            <button class="image-btn">Team</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="#services">Services</a>
+      <div class="dropdown">
+       <div class="dropdown-text">
+          <h4>Services</h4>
+          <p>We deliver strategy-led event solutions that connect, inspire, and create measurable impact — from large-scale productions to intimate gatherings.</p>
+          <button class="dropbtn">Our Services
+            <img src="images/arrow-btn.png" alt="See more" />
+          </button>
+        </div>
+        <div class="dropdown-images">
+          <div class="image-box">
+          <img src="images/2 SAHCC FOH Pic.jpeg" alt="Image 1" />
+          <div class="overlay"></div>
+          <button class="image-btn">Clients</button>
+        </div>
+          <div class="image-box">
+            <img src="images/4 USSP-11.1.19.JPG" alt="Image 2" />
+            <div class="overlay"></div>
+            <button class="image-btn">Featured Projects</button>
+          </div>
+          <div class="image-box">
+            <img src="images/10 HACR Panel.jpg" alt="Image 3" />
+            <div class="overlay"></div>
+            <button class="image-btn">Services</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="#friends">Let's Be Friends</a>
+      <div class="dropdown">
+        <div class="dropdown-content">
+          <div class="dropdown-text">
+            <h4>Let's Be Friends</h4>
+            <p>Want to collaborate or learn more? Let’s connect and start a conversation — we’d love to hear from you.</p>
+            <button class="dropbtn">Our Details
+              <img src="images/arrow-btn.png" alt="See more" />
+            </button>
+          </div>
+        </div>
+        <div class="dropdown-connect">
+          <div class="connect-column">
+            <div class="connect-text">
+              <h4>Tell Us More!</h4>
+              <p>Let's get in touch.</p>
+              <form class="email-form">
+                <!--<label for="email">Email Address</label>-->
+                <div class="email-input-group">
+                  <input type="email" id="email" placeholder="Enter your email" required />
+                </div>
+                <button class="dropbtn-submit">
+                Submit
+                <img src="images/arrow-btn.png" alt="See more" />
+              </button>
+              </form>
+            </div>
+          </div>
+          <div class="connect-column">
+            <div class="connect-text">
+              <h4>Get Social</h4>
+              <p>Connect with us on.</p>
+              <button class="dropbtn">
+                Instagram
+                <img src="images/arrow-btn.png" alt="See more" />
+              </button>
+              <button class="dropbtn">
+                Facebook
+                <img src="images/arrow-btn.png" alt="See more" />
+              </button>
+              <button class="dropbtn">
+                LinkedIn
+                <img src="images/arrow-btn.png" alt="See more" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--
+        <div class="dropdown-images">
+          <div class="image-box2">
+            <img src="images/9 IDRA Dolores Huerta.jpg" alt="Image 2" />
+            <div class="overlay"></div>
+            <button class="image-btn">Tell Us More</button>
+          </div>
+          <div class="image-box2">
+            <img src="images/10 HACR Panel.jpg" alt="Image 3" />
+            <div class="overlay"></div>
+            <button class="image-btn">Get Social</button>
+          </div>
+        </div>-->
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- 🔹 HERO SECTION -->
+<section class="hero-section">
+  <div class="bg-layer" id="bg1"></div>
+  <div class="bg-layer" id="bg2"></div>
+
+  <div class="page-container">
+    <h1>Creating Impactful Experiences</h1>
+    <p>
+      Unico is a leading full-service events firm providing public relations,
+      communications, and special events services to our non-profit and corporate clients
+      across the United States.
+    </p>
+  </div>
+
+  <div class="nav-controls">
+    <button id="prevBtn" class="prevBtn">
+      <img src="images/left-arrow-tiny.png" loading="lazy" alt="Case Study" />
+    </button>
+    <button id="nextBtn" class="nextBtn">
+      <img src="images/right-arrow-tiny.png" loading="lazy" alt="Case Study" />
+    </button>
+  </div>
+
+  <div class="dots" id="dotContainer"></div>
+</section>
+
+
+  <main class="main-section">
+    <div class="carousel-wrapper2 carousel-1">
+      <div class="carousel-header">
+        <h2>Clients</h2>
+        <button class="dropbtn"><p>See More</p>
+        <img src="images/arrow-btn.png" alt="See more" />
+        </button>
+      </div>
+      <div class="carousel-track track-1">
+        <div class="carousel-item long-box">
+            <img src="images/10 HACR Blanket.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+          <img src="images/Latino Community Foundation of Colorado.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <img src="images/10 HACR Panel.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+          <img src="images/9 IDRA Dolores Huerta.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <img src="images/2 SAHCC FOH Pic.jpeg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+          <img src="images/Photo 2 Missions.JPG" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">7</div>
+        <div class="carousel-item long-box">
+            <img src="images/4 USSP-11.1.19.JPG" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">9</div>
+        <div class="carousel-item long-box">10</div>
+      </div>
+    </div>
+
+    <div class="carousel-wrapper carousel-2">
+      <div class="carousel-header">
+        <h2>Case Studies</h2>
+        <button class="dropbtn"><p>See More</p>
+        <img src="images/arrow-btn.png" alt="See more" />
+        </button>
+      </div>
+      <div class="carousel-track track-2">
+        <div class="carousel-item long-box">
+            <img src="images/Photo 1 Luis Fonsi.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/AVANCE 50 Logo.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <img src="images/Photo 3 Kansas City.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/CHCI Logo.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <img src="images/Photo 4 SA300.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/City of San Antonio.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <img src="images/Photo 5 Leg Summit.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <video autoplay muted loop playsinline>
+            <source src="images/1 USHCC Orlando Ballroom and Skyline Compressed.mp4" type="video/mp4" />
+            </video>
+        </div>
+        <div class="carousel-item long-box">
+            <img src="images/Photo 6 Kamala.jpeg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">J</div>
+      </div>
+    </div>
+
+    <div class="carousel-wrapper3 carousel-3">
+      <div class="carousel-header">
+        <h2>Services</h2>
+        <button class="dropbtn"><p>See More</p>
+        <img src="images/arrow-btn.png" alt="See more" />
+        </button>
+      </div>
+      <div class="carousel-track track-3">
+        <div class="carousel-item short-box">a</div>
+        <div class="carousel-item long-box">
+            <img src="images/Photo 7 HACR.jpg" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">c</div>
+        <div class="carousel-item long-box">
+            <img src="images/Photo 2 Missions.JPG" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">e</div>
+        <div class="carousel-item long-box">
+            <img src="images/4 USSP-11.1.19.JPG" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">g</div>
+        <div class="carousel-item long-box">
+            <img src="images/2 SAHCC FOH Pic.jpeg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">i</div>
+        <div class="carousel-item long-box">j</div>
+      </div>
+    </div>
+
+    <div class="hero-social-icons">
+      <a href="#" class="social-icon" aria-label="Instagram">
+        <img src="images/icon-instagram.png" alt="Instagram" />
+      </a>
+      <a href="#" class="social-icon" aria-label="Facebook">
+        <img src="images/icon-facebook.png" alt="Facebook" />
+      </a>
+      <a href="#" class="social-icon" aria-label="LinkedIn">
+        <img src="images/icon-linkedin.png" alt="LinkedIn" />
       </a>
     </div>
-    <div class="navbar_right">
-      <button class="nav-btn">About</button>
-      <button class="nav-btn">Impact</button>
-      <button class="nav-btn">Let's Be Friends</button>
-    </div>
-  </div>
-</nav>
+  </main>
+  <style>
+    .hero-social-icons {
+  position: absolute;
+  bottom: 4rem;
+  right: 4rem;
+  display: flex;
+  gap: 1rem;
+  z-index: 3;
+}
 
-<section class="landing-section">
-  <div class="page-container landing-content">
-    <div class="landing-text-container">
-      <h1>Creating<br>Impactful<br>Experiences</h1>
-      <p class="landing-subtext">
-        Unico is a leading full-service events firm providing public relations,
-        communications, and special events services to our non-profit and corporate clients
-        across the United States.
-      </p>
-    </div>
-    <div class="image-container">
-  <div class="image-scroller">
-    <div class="image-stack">
-      <div class="scroller-image">
-        <img src="images/Photo 1 Luis Fonsi.jpg" alt="Box Image" />
+.hero-social-icons .social-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+  
+}
+
+.hero-social-icons .social-icon img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.hero-social-icons .social-icon:hover {
+  background-color: #6E9D72;
+  transform: scale(1.05);
+}
+
+.hero-social-icons .social-icon:hover img {
+  filter: brightness(0) invert(1); /* makes dark icons white on hover */
+}
+  </style>
+
+
+<section class="tracker-wrapper">
+  <!-- Section 1 -->
+  <div class="tracker-section">
+    <div class="tracker-container">
+      <!-- Column 1 -->
+      <div class="tracker-col">
+        <div class="value" id="years">0</div>
+        <div class="header">Years in Business</div>
       </div>
-      <div class="scroller-image">
-        <img src="images/Photo 2 Missions.JPG" alt="Box Image" />
+      <!-- Column 2 -->
+      <div class="tracker-col">
+        <div class="value" id="clients">0</div>
+        <div class="header">Clients</div>
       </div>
-      <div class="scroller-image">
-        <img src="images/Photo 3 Kansas City.jpg" alt="Box Image" />
+      <!-- Column 3 -->
+      <div class="tracker-col">
+        <div class="value" id="miles">200,000</div>
+        <div class="header">Miles Traveled</div>
       </div>
-      <div class="scroller-image">
-        <img src="images/Photo 4 SA300.jpg" alt="Box Image" />
+      <!-- Column 4 -->
+      <div class="tracker-col">
+        <div class="value" id="impact">0%</div>
+        <div class="header">Social Impact Events</div>
       </div>
-      <div class="scroller-image">
-        <img src="images/Photo 5 Leg Summit.png" alt="Box Image" />
-      </div>
-      <div class="scroller-image">
-        <img src="images/Photo 6 Kamala.jpeg" alt="Box Image" />
-      </div>
-      <div class="scroller-image">
-        <img src="images/Photo 7 HACR.jpg" alt="Box Image" />
-      </div>
-    </div>
-    <div class="scroller-controls">
-      <button id="prevBtn">←</button>
-      <button id="nextBtn">→</button>
     </div>
   </div>
-</div>
+
+  <!-- Section 2 -->
+   <div class="tracker-title">Event Reach</div>
+  <div class="tracker-section">
+    
+    <div class="tracker-container">
+      
+      <!-- Column 1 -->
+      <div class="tracker-col">
+        <div class="value" id="events">0</div>
+        <div class="header">Events Produced</div>
+      </div>
+      <!-- Column 2 -->
+      <div class="tracker-col">
+        <div class="value" id="attendees">0</div>
+        <div class="header">Attendees</div>
+      </div>
+      <!-- Column 3 -->
+      <div class="tracker-col">
+        <div class="value" id="cities">0</div>
+        <div class="header">Cities</div>
+      </div>
+      <!-- Column 4 -->
+      <div class="tracker-col">
+        <div class="value" id="countries">0</div>
+        <div class="header">Countries</div>
+      </div>
+    </div>
   </div>
 </section>
+
 <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="navbar.js"></script>
+<script src="carousel.js"></script>
+<script src="heroscroll.js"></script>
+<script src="tracker.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 <script>
-  const images = document.querySelectorAll(".scroller-image");
-  const total = images.length;
-  let currentIndex = 0;
+  document.addEventListener("DOMContentLoaded", () => {
+    const dropBtns = document.querySelectorAll('.dropbtn, .dropbtn-submit');
 
-  const xStep = 80;            // Horizontal spacing
-  const minOpacity = 0.2;      // Opacity for farthest visible
-  const maxRange = 2;          // Show 2 cards before and after current
+    dropBtns.forEach(btn => {
+      const arrowImg = btn.querySelector('img');
 
-  function renderStack(index) {
-    images.forEach((img, i) => {
-      let relIndex = i - index;
-
-      // Wrap around logic
-      if (relIndex > total / 2) relIndex -= total;
-      if (relIndex < -total / 2) relIndex += total;
-
-      const absIndex = Math.abs(relIndex);
-
-      if (absIndex <= maxRange) {
-        const x = -relIndex * xStep;
-        const opacity = 1 - (absIndex / (maxRange + 1)) * (1 - minOpacity);
-        const scale = 1 - absIndex * 0.05;
-
-        gsap.to(img, {
-          duration: 0.4,
-          x,
-          scale,
-          opacity,
-          zIndex: total - absIndex,
-          ease: "power2.out"
+      btn.addEventListener('mouseenter', () => {
+        gsap.to(arrowImg, {
+          x: 6,
+          duration: 0.25,
+          ease: "power1.out"
         });
-      } else {
-        // Hide far cards
-        gsap.to(img, {
-          duration: 0.3,
-          opacity: 0,
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        gsap.to(arrowImg, {
           x: 0,
-          scale: 0.85,
-          zIndex: 0,
-          ease: "power2.out"
+          duration: 0.25,
+          ease: "power1.inOut"
         });
-      }
-    });
-  }
-
-  function goNext() {
-    currentIndex = (currentIndex + 1) % total;
-    renderStack(currentIndex);
-  }
-
-  function goPrev() {
-    currentIndex = (currentIndex - 1 + total) % total;
-    renderStack(currentIndex);
-  }
-
-  document.getElementById("nextBtn").addEventListener("click", goNext);
-  document.getElementById("prevBtn").addEventListener("click", goPrev);
-
-  images.forEach((img, i) => {
-    img.addEventListener("click", () => {
-      currentIndex = i;
-      renderStack(currentIndex);
+      });
     });
   });
-
-  // Initial render
-  renderStack(currentIndex);
 </script>
 </body>
 </html>

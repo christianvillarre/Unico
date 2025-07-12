@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unico</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+  <div class="page-container navbar-container">
+    <div class="navbar_left">
+      <a href="/" id="navbar__logo" class="logo">
+        <img class="logo1" src="images/logo1.png" alt="Logo" />
+      </a>
+    </div>
+    <div class="navbar_right">
+      <button class="nav-btn">About</button>
+      <button class="nav-btn">Impact</button>
+      <button class="nav-btn">Let's Be Friends</button>
+    </div>
+  </div>
+</nav>
+
+<section class="landing-section">
+  <div class="page-container landing-content">
+    <div class="landing-text-container">
+      <h1>Creating<br>Impactful<br>Experiences</h1>
+      <p class="landing-subtext">
+        Unico is a leading full-service events firm providing public relations,
+        communications, and special events services to our non-profit and corporate clients
+        across the United States.
+      </p>
+    </div>
+    <div class="image-container">
+  <div class="image-scroller">
+    <div class="image-stack">
+      <div class="scroller-image">
+        <img src="images/Photo 1 Luis Fonsi.jpg" alt="Box Image" />
+      </div>
+      <div class="scroller-image">
+        <img src="images/Photo 2 Missions.JPG" alt="Box Image" />
+      </div>
+      <div class="scroller-image">
+        <img src="images/Photo 3 Kansas City.jpg" alt="Box Image" />
+      </div>
+      <div class="scroller-image">
+        <img src="images/Photo 4 SA300.jpg" alt="Box Image" />
+      </div>
+      <div class="scroller-image">
+        <img src="images/Photo 5 Leg Summit.png" alt="Box Image" />
+      </div>
+      <div class="scroller-image">
+        <img src="images/Photo 6 Kamala.jpeg" alt="Box Image" />
+      </div>
+      <div class="scroller-image">
+        <img src="images/Photo 7 HACR.jpg" alt="Box Image" />
+      </div>
+    </div>
+    <div class="scroller-controls">
+      <button id="prevBtn">←</button>
+      <button id="nextBtn">→</button>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script>
+  const images = document.querySelectorAll(".scroller-image");
+  const total = images.length;
+  let currentIndex = 0;
+
+  const xStep = 80;            // Horizontal spacing
+  const minOpacity = 0.2;      // Opacity for farthest visible
+  const maxRange = 2;          // Show 2 cards before and after current
+
+  function renderStack(index) {
+    images.forEach((img, i) => {
+      let relIndex = i - index;
+
+      // Wrap around logic
+      if (relIndex > total / 2) relIndex -= total;
+      if (relIndex < -total / 2) relIndex += total;
+
+      const absIndex = Math.abs(relIndex);
+
+      if (absIndex <= maxRange) {
+        const x = -relIndex * xStep;
+        const opacity = 1 - (absIndex / (maxRange + 1)) * (1 - minOpacity);
+        const scale = 1 - absIndex * 0.05;
+
+        gsap.to(img, {
+          duration: 0.4,
+          x,
+          scale,
+          opacity,
+          zIndex: total - absIndex,
+          ease: "power2.out"
+        });
+      } else {
+        // Hide far cards
+        gsap.to(img, {
+          duration: 0.3,
+          opacity: 0,
+          x: 0,
+          scale: 0.85,
+          zIndex: 0,
+          ease: "power2.out"
+        });
+      }
+    });
+  }
+
+  function goNext() {
+    currentIndex = (currentIndex + 1) % total;
+    renderStack(currentIndex);
+  }
+
+  function goPrev() {
+    currentIndex = (currentIndex - 1 + total) % total;
+    renderStack(currentIndex);
+  }
+
+  document.getElementById("nextBtn").addEventListener("click", goNext);
+  document.getElementById("prevBtn").addEventListener("click", goPrev);
+
+  images.forEach((img, i) => {
+    img.addEventListener("click", () => {
+      currentIndex = i;
+      renderStack(currentIndex);
+    });
+  });
+
+  // Initial render
+  renderStack(currentIndex);
+</script>
+</body>
+</html>
