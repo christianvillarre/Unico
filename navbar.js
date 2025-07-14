@@ -50,6 +50,29 @@ function animateDropdown(item) {
   }
 }
 
+/*
+
+function animateDropdown(item) {
+  const dropdown = item.querySelector('.dropdown');
+  const text = dropdown.querySelector('.dropdown-text');
+  const images = dropdown.querySelectorAll('.image-box, .image-box2');
+
+  const targets = [text, ...images].filter(Boolean);
+
+  if (targets.length > 0) {
+    gsap.killTweensOf(targets);
+    gsap.set(targets, { opacity: 0, y: -10 }); // Start slightly above
+
+    gsap.to(targets, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: 'power2.out'
+    });
+  }
+}  
+*/
+
 // 🔹 Navbar mouse events
 nav.addEventListener('mouseenter', () => {
   nav.classList.add('hovered');
