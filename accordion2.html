@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Layered Scroll Panels</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+    }
+
+    .section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      background: #222;
+    }
+
+    .accordion-wrapper {
+      position: relative;
+      height: 200vh; /* 4 panels * 100vh */
+    }
+
+    .panel {
+      position: sticky;
+      top: 0;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      z-index: 1;
+    }
+
+    .panel:nth-child(1) { background: #1abc9c; z-index: 1; }
+    .panel:nth-child(2) { background: #3498db; z-index: 2; }
+    .panel:nth-child(3) { background: #9b59b6; z-index: 3; }
+    .panel:nth-child(4) { background: #e67e22; z-index: 4; }
+    
+    .footer {
+      height: 100vh;
+      background: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="section">Top Section</section>
+
+  <div class="accordion-wrapper">
+    <div class="panel">Panel 1</div>
+    <div class="panel">Panel 2</div>
+    <div class="panel">Panel 3</div>
+    <div class="panel">Panel 4</div>
+  </div>
+
+  <section class="footer">Bottom Section</section>
+
+</body>
+</html>

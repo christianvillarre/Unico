@@ -11,7 +11,7 @@
 <!-- 🔹 NAVBAR -->
 <header class="navbar" data-scroll-section>
   <div class="logo">
-    <img class="logo1" src="images/logo1.png" alt="Logo" />
+    <a href="/index.html"><img class="logo1" src="images/logo1.png" alt="Logo" /></a>
   </div>
   <nav>
     <div class="nav-item">
@@ -155,7 +155,14 @@
     <div class="section-content">
       <h1>Our Story</h1>
       <p>Unico blends strategy and heart as a full-service events firm grounded in purpose. Our story, culture, and team come together to create meaningful experiences that leave a lasting impact.</p>
+    <button class="about-btn">
+                Let's Talk
+                <img src="images/arrow-btn-white.png" alt="See more" />
+              </button>
+    
     </div>
+
+
 
     <div class="image-container">
       <div class="image-scroller">
@@ -182,9 +189,306 @@
   </div>
 </section>
 
-<section class="section2" data-scroll-section>
+<div class="accordion-wrapper" data-scroll-section>
+  <div class="accordion">
+    <div class="panel">
+      <div class="panel-content">
+        <div class="panel-text">
+        <h3>Strategy</h3>
+        <P>Unico blends strategy and heart as a full-service events firm grounded in purpose. Our story, culture, and team come together to create meaningful experiences that leave a lasting impact.</P>
+        </div>
+        <div class="panel-img">
+          <img src="images/10 HACR Panel.jpg" alt="Media Image" />
+        </div>
 
-</section>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-content">
+        <div class="panel-text">
+        <h3>Creative</h3>
+        <P>Unico blends strategy and heart as a full-service events firm grounded in purpose. Our story, culture, and team come together to create meaningful experiences that leave a lasting impact.</P>
+        </div>
+        <div class="panel-img">
+          <img src="images/Photo 3 Kansas City.jpg" alt="Media Image" />
+        </div>
+
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-content">
+        <div class="panel-text">
+        <h3>Media</h3>
+        <P>Unico blends strategy and heart as a full-service events firm grounded in purpose. Our story, culture, and team come together to create meaningful experiences that leave a lasting impact.</P>
+        </div>
+        <div class="panel-img">
+          <img src="images/5 UNIDOSUS Panel.jpg" alt="Media Image" />
+        </div>
+
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-content">
+        <div class="panel-text">
+        <h3>Measurement</h3>
+        <P>Unico blends strategy and heart as a full-service events firm grounded in purpose. Our story, culture, and team come together to create meaningful experiences that leave a lasting impact.</P>
+        </div>
+        <div class="panel-img">
+          <img src="images/Photo 3 Kansas City.jpg" alt="Media Image" />
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+ <style>
+     .section2 {
+    height: 250vh;
+    width: 100%;
+    background-color: white;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 4rem;
+  }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 3.5rem;
+      justify-items: center;
+      padding-top: 2rem;
+    }
+
+    .image-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section2 .image-box {
+      width: 25rem;
+      height: 35rem;
+      background-color: #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .section2 .image-box img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      transition: opacity 0.3s ease;
+      opacity: 1;
+    }
+
+    .section2 .image-box img.hover-img {
+      opacity: 0;
+    }
+
+    .section2 .image-box:hover img.hover-img {
+      opacity: 1;
+    }
+
+    .section2 .image-box:hover img.default-img {
+      opacity: 0;
+    }
+
+    .image-title {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      text-align: left;
+      width: 100%;
+    }
+    .team-title {
+      font-size: 5rem;
+      max-width: 600px;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+  <section class="section2" data-scroll-section>
+ <h3 class="team-title">Our Team</h3>
+  <div class="grid-container">
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/LBombin.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/LBombin - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Lisa Bombín</div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/MVela.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/MVela - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Michael Vela</div>
+    </div>
+   
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/CPalacios.jpg" alt="Carolyn Palacios" />
+        <img class="hover-img" src="images/team/CPalacios - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Carolyn Palacios-Mancha</div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/JNavarro.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/JNavarro - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Julia Navarro</div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/CPulido.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/CPulido - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Christopher Pulido</div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/EMalave.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/EMalave - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Emily Malave</div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/JTenace.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/JTenace - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Jordan Tenace</div>
+    </div>
+
+     <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/VDeJesus.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/VDeJesus - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Victor De Jesus</div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/MBarreiro.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/MBarreiro - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Monique Barreiro</div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/MVillarreal.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/MVillarreal - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Margil Villarreal</div>
+    </div>
+
+     <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/NdelosSantos.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/NdelosSantos - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Nelly De Los Santos</div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/VBarreiro.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/VBarreiro - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Victor Barreiro</div>
+    </div>
+
+  
+  </div>
+  </section>
+
+  <style>
+
+    .accordion-wrapper {
+      height: 98vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .accordion {
+      height: 150vh;
+      width: 100%;
+    }
+.panel {
+  position: relative;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: white;
+  overflow: hidden;
+  background: #37493E;
+  border-top: 2px solid #6E9D72;
+}
+.panel-content {
+  position: relative; /* changed from absolute */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 4rem;
+  gap: 2rem;
+  padding-top: 1.2rem;
+}
+.panel-img {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  
+  padding-top: 6rem;
+   max-width: 1000px;
+  max-height: 300px;
+}
+
+.panel-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+.panel-text {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+
+.panel-text h3 {
+  font-size: 3rem;
+  margin: 0 0 3rem 0;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.panel-text p {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+
+  </style>
 
 <style>
  
@@ -299,6 +603,7 @@ html, body {
   padding: 0;
   height: 100%;
   overflow: hidden;
+  background-color: #37493E;
 }
 
 [data-scroll-container] {
@@ -306,11 +611,47 @@ html, body {
   margin: 0;
   padding: 0;
 }
-  .section2 {
-    height: 2000px;
-    width: 100%;
-    background-color: white;
-  }
+
+  .scroller-image::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent black */
+  border-radius: 1rem;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  opacity: 1; /* visible by default */
+}
+
+.scroller-image.selected::after {
+  opacity: 0; /* hide overlay on selected */
+}
+.about-btn {
+  
+  height: 3.5rem;             /* Match input height */
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #6E9D72;
+  color: #ffffff;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+  margin-top: 0; /* remove margin that offsets it */
+}
+
+
+.about-btn:hover {
+  background: #CCE5CC;
+  color: #ffffff;
+}
 </style>
 
 
@@ -319,34 +660,79 @@ html, body {
 <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 <script>
+  const panels = document.querySelectorAll(".panel");
+  const accordionWrapper = document.querySelector(".accordion-wrapper");
+  let currentIndex2 = 0;
+  let inAccordion = false;
+  let isScrolling = false;
+
+  function showPanel(index) {
+    isScrolling = true;
+
+    panels.forEach((panel, i) => {
+      gsap.to(panel, {
+        height: i === index ? "600px" : "100px",
+        duration: 0.6,
+        ease: "power2.inOut"
+      });
+    });
+
+    // Prevent rapid scrolls during animation
+    setTimeout(() => {
+      isScrolling = false;
+    }, 500); // match gsap duration
+  }
+
+  showPanel(currentIndex2); // Show first panel on load
+
+  // More consistent ScrollTrigger range
+  ScrollTrigger.create({
+    trigger: accordionWrapper,
+    start: "top center+=10%", // Begin slightly later
+    end: "bottom center-=10%", // End a bit early
+    onEnter: () => { inAccordion = true; },
+    onLeave: () => { inAccordion = false; },
+    onEnterBack: () => { inAccordion = true; },
+    onLeaveBack: () => { inAccordion = false; },
+    scroller: "[data-scroll-container]"
+  });
+
+  // Smooth panel switching based on wheel scroll
+  window.addEventListener("wheel", (e) => {
+    if (!inAccordion || isScrolling) return;
+
+    e.preventDefault();
+
+    if (e.deltaY > 0 && currentIndex2 < panels.length - 1) {
+      currentIndex2++;
+      showPanel(currentIndex2);
+    } else if (e.deltaY < 0 && currentIndex2 > 0) {
+      currentIndex2--;
+      showPanel(currentIndex2);
+    }
+  }, { passive: false });
+</script>
+<script>
   const images = document.querySelectorAll(".scroller-image");
   const total = images.length;
-  let currentIndex = total - 1; // Start on last image
+  let currentIndex = 0; // ✅ Start with first image
 
-function renderStack(index) {
-  images.forEach((img, i) => {
-    const depth = i - index;
+  function renderStack(index) {
+    images.forEach((img, i) => {
+      const offset = (i - total + 1) * 80;
+      const distance = Math.abs(i - index);
+      const z = total - distance;
 
-    // Each image gets a static left offset to fan out
-    const offset = (i - total + 1) * 80; // fan to the left
-    const scale = 0.98;
-    const z = i === index ? 100 : i;
+      img.classList.toggle("selected", i === index);
 
-    gsap.set(img, {
-      x: offset,
-      scale: scale,
-      opacity: 0.9,
-      zIndex: z
+      gsap.set(img, {
+        x: offset,
+        scale: i === index ? 1 : 0.98,
+        opacity: 1,
+        zIndex: z
+      });
     });
-  });
-
-  // Bring the clicked image to front (z-index only)
-  gsap.set(images[index], {
-    zIndex: 999,
-    opacity: 1,
-    scale: 1
-  });
-}
+  }
 
   images.forEach((img, i) => {
     img.addEventListener("click", () => {
@@ -355,7 +741,13 @@ function renderStack(index) {
     });
   });
 
-  renderStack(currentIndex);
+  renderStack(currentIndex); // ✅ Initial render
+
+  // ✅ Auto-advance every 5 seconds
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % total;
+    renderStack(currentIndex);
+  }, 3000);
 </script>
 
 <script>

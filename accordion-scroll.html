@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scroll-Locked Accordion</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+    .accordion-wrapper {
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .accordion {
+      height: 100vh;
+      width: 100%;
+    }
+    .panel {
+      height: 800px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      color: white;
+      transition: height 0.5s ease;
+      overflow: hidden;
+    }
+    .panel:nth-child(1) { background: #1abc9c; }
+    .panel:nth-child(2) { background: #3498db; }
+    .panel:nth-child(3) { background: #9b59b6; }
+    .panel:nth-child(4) { background: #e67e22; }
+    .panel:nth-child(5) { background: #e74c3c; }
+    .panel:nth-child(6) { background: #34495e; }
+  </style>
+</head>
+<body>
+  <div class="accordion-wrapper">
+    <div class="accordion">
+      <div class="panel">Section 1</div>
+      <div class="panel">Section 2</div>
+      <div class="panel">Section 3</div>
+      <div class="panel">Section 4</div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const panels = document.querySelectorAll(".panel");
+    const accordionWrapper = document.querySelector(".accordion-wrapper");
+    let currentIndex = 0;
+
+    function showPanel(index) {
+      panels.forEach((panel, i) => {
+        if (i === index) {
+          gsap.to(panel, {
+            height: "400px",
+            duration: 0.5,
+            ease: "power2.out"
+          });
+        } else {
+          gsap.to(panel, {
+            height: "100px",
+            duration: 0.5,
+            ease: "power2.inOut"
+          });
+        }
+      });
+    }
+
+    showPanel(currentIndex); // show first one
+
+    window.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      if (gsap.isTweening(panels)) return;
+
+      if (e.deltaY > 0 && currentIndex < panels.length - 1) {
+        currentIndex++;
+        showPanel(currentIndex);
+      } else if (e.deltaY < 0 && currentIndex > 0) {
+        currentIndex--;
+        showPanel(currentIndex);
+      }
+    }, { passive: false });
+  </script>
+</body>
+</html>

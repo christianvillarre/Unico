@@ -19,10 +19,10 @@
     milesStarted = true;
 
     const milesEl = document.getElementById('miles');
-    let miles = 200000;
+    let miles = 0;
     function updateMiles() {
       miles += Math.floor(Math.random() * 10) + 1;
-      if (miles > 500000) miles = 200000;
+      if (miles > 500000) miles = 0;
       milesEl.textContent = miles.toLocaleString();
       requestAnimationFrame(() => setTimeout(updateMiles, 40));
     }
