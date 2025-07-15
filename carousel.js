@@ -46,6 +46,6 @@
     });
   }
 
-  autoScrollCarousel('.track-1', 30);        // forward
+  autoScrollCarousel('.track-1', 80);        // forward
   autoScrollCarousel('.track-2', 50, true);  // reverse
   autoScrollCarousel('.track-3', 40);        // forward
