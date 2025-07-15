@@ -681,10 +681,19 @@ html, body {
   }
   .nav-controls {
     scale: 0.6;
+    padding-left: 0;
   }
-  .hero-social-icons .social-icon img {
-  width: 40%;
-  height: 40%;
-  object-fit: contain;
+  .navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  padding-left: 0rem;
+}
+.page-container {
+  left: 2rem;
+}
+.nav-controls {
+  left: 0.5rem;
 }
 }
