@@ -364,7 +364,7 @@ html, body {
 }
 
     h1 {
-      font-size: clamp(3rem, 6vw, 5rem);
+      font-size: clamp(2rem, 6vw, 5rem);
       text-transform: uppercase;
       font-weight: 800;
       margin-bottom: 1rem;
@@ -372,7 +372,7 @@ html, body {
     }
 
     p {
-      font-size: clamp(0.5rem, 8vw, 1.5rem);
+      font-size: clamp(0.5rem, 3vw, 1.5rem);
       max-width: 800px;
       line-height: 1.6;
     }
@@ -638,3 +638,53 @@ html, body {
     font-size: 2rem;
 }
 
+
+    .hero-social-icons {
+  position: absolute;
+  bottom: 4rem;
+  right: 4rem;
+  display: flex;
+  gap: 1rem;
+  z-index: 3;
+}
+
+.hero-social-icons .social-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+  
+}
+
+.hero-social-icons .social-icon img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.hero-social-icons .social-icon:hover {
+  background-color: #6E9D72;
+  transform: scale(1.05);
+}
+
+.hero-social-icons .social-icon:hover img {
+  filter: brightness(0) invert(1); /* makes dark icons white on hover */
+}
+@media (max-width: 768px) {
+  .nav-item {
+    display: none !important;
+  }
+  .nav-controls {
+    scale: 0.6;
+  }
+  .hero-social-icons .social-icon img {
+  width: 40%;
+  height: 40%;
+  object-fit: contain;
+}
+}
