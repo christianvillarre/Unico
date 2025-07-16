@@ -448,7 +448,7 @@ html, body {
   --carousel-height: 28vh; /* change this to grow/shrink everything */
 }
   .main-section {
-  height: 125vh;
+  height: 110vh;
  background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -470,15 +470,21 @@ html, body {
   padding: 1rem 0;
   z-index: 0; /* Ensure the overlay goes under content */
 }
-
-.carousel-wrapper2::before {
+.main-section::before {
   content: '';
   position: absolute;
   inset: 0;
   background-image: url('images/bg3.png');
   background-repeat: repeat;
   background-size: 140px;
-  opacity: 0.3; /* Adjust opacity here */
+  opacity: 0.6; /* Adjust opacity here */
+  z-index: -1; /* Push behind content */
+}
+.carousel-wrapper2::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+ 
   z-index: -1; /* Push behind content */
 }
 .carousel-wrapper3 {
@@ -496,10 +502,7 @@ html, body {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('images/bg3.png');
-  background-repeat: repeat;
-  background-size: 140px;
-  opacity: 0.3; /* Adjust opacity here */
+  
   z-index: -1; /* Push behind content */
 }
 
@@ -591,6 +594,7 @@ html, body {
   padding: 0rem 0; /* Controls space above/below the whole section */
   margin: 0;
   border: none;
+   margin-top: 9rem;
 }
 
 .tracker-section {
@@ -599,7 +603,7 @@ html, body {
   justify-content: center;
   align-items: flex-start;
   border: none;
-  margin: 0;
+ 
 }
 .tracker-container {
   display: grid;
