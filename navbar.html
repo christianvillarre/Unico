@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unico Communications</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<!-- 🔹 NAVBAR -->
+<header class="navbar" data-scroll-section>
+  <div class="logo">
+    <a href="/index.html"><img class="logo1" src="images/logo1.png" alt="Logo" /></a>
+  </div>
+  <nav>
+    <div class="nav-item">
+      <a href="/about.html">About</a>
+      <div class="dropdown">
+        <div class="dropdown-content">
+          <div class="dropdown-text">
+            <h4>Our Story<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4>Culture<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4>Team<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="#services">Impact</a>
+      <div class="dropdown">
+       <div class="dropdown-text">
+          <h4>Clients<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4>Featured Projects<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4>Services<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+        </div>
+     
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="#friends">Let's Be Friends</a>
+      <div class="dropdown">
+        <div class="dropdown-content">
+          <div class="dropdown-text">
+            <h4>Tell Us More<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4>Get Social<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+       /* 🔹 NAVBAR */
+.navbar {
+  width: 100%;
+  height: 90px;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+   transition: transform 0.4s ease, background 0.3s ease;
+}
+.navbar:hover,
+.navbar.open {
+  background:#53709f; /* adjust opacity as needed */
+}
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+.navbar.scrolled-up {
+  transform: translateY(0);
+}
+
+.navbar.at-top {
+  background: rgba(10, 80, 21, 0); /* fully transparent */
+}
+
+.navbar.at-top.hovered {
+  background: rgba(83, 112, 159, 1); /* visible on hover */
+}
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  padding-left: 2rem;
+  
+}
+.navbar.navbar-bg {
+  background: rgba(83, 112, 159, 1); /* Your faded background */
+}
+.navbar nav {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 00;
+  transition: opacity 0.3s;
+  padding-right: 2rem;
+}
+
+.navbar nav a:hover {
+  opacity: 0.7;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: -2rem;
+  background: #53709f;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9;
+  width: max-content; /* keeps it just wide enough for the text */
+  min-width: 100px;   /* prevents it from being too narrow */
+  height: auto;
+  padding-left: 2rem;
+  padding-right: 1rem; /* or however much you want */
+}
+.dropdown-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  /* ✅ correct alignment */
+  justify-content: flex-start;
+  gap: 0.5rem;
+  padding: 0;               /* ✅ remove default padding */
+  margin: 0;                /* optional, for safety */
+  padding-top: 2.5rem;
+  padding-bottom: 0.80rem;
+}
+
+
+.nav-item.active .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-text h4,
+.dropdown-text p,
+.dropdown-text a,
+.dropdown-text button {
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.dropdown-text h4 {
+  padding-right: 1.5rem; /* ✅ add buffer space for the arrow */
+}
+
+.dropdown-text a:hover,
+.dropdown-text button:hover {
+  color: #e2e2e2;
+}
+
+
+.dropbtn {
+  font-size: 1rem;
+  line-height: 0.8;
+ color: white;
+  margin: 0;
+  background: none;
+  border: none; 
+  
+  font-family: "Montserrat";
+  padding: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+/* 🔹 Animated underline setup */
+.navbar nav a,
+.dropdown-text h4 {
+  position: relative;
+  overflow: hidden;
+}
+.white-arrow {
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* Animate arrow on hover of the whole h4 */
+.dropdown-text h4:hover .white-arrow {
+  opacity: 1;
+  transform: translateX(6px);
+}
+</style>
+
+<div data-scroll-container>
+
+<!-- 🔹 HERO SECTION -->
+<section class="hero-section" data-scroll-section>
+  <div class="bg-layer" id="bg1"></div>
+  <div class="bg-layer" id="bg2"></div>
+
+  <div class="page-container">
+    <h1>Creating Impactful Experiences - Not Simply Events</h1>
+ 
+  </div>
+
+  <div class="nav-controls">
+    <button id="prevBtn" class="prevBtn">
+      <img src="images/left-arrow-tiny.png" loading="lazy" alt="Case Study" />
+    </button>
+    <button id="nextBtn" class="nextBtn">
+      <img src="images/right-arrow-tiny.png" loading="lazy" alt="Case Study" />
+    </button>
+  </div>
+
+  <div class="dots" id="dotContainer"></div>
+
+  <div class="hero-social-icons">
+      <a href="#" class="social-icon" aria-label="Instagram">
+        <img src="images/icon-instagram.png" alt="Instagram" />
+      </a>
+      <a href="#" class="social-icon" aria-label="Facebook">
+        <img src="images/icon-facebook.png" alt="Facebook" />
+      </a>
+      <a href="#" class="social-icon" aria-label="LinkedIn">
+        <img src="images/icon-linkedin.png" alt="LinkedIn" />
+      </a>
+    </div>
+</section>
+<style>
+
+  </style>
+
+  <main class="main-section" data-scroll-section>
+    <div class="carousel-wrapper2 carousel-1">
+      <div class="carousel-header">
+        <h2>Clients</h2>
+        <button class="dropbtn"><p>See More</p>
+        <img src="images/arrow-btn.png" alt="See more" />
+        </button>
+      </div>
+      <div class="carousel-track track-1">
+       <div class="carousel-item short-box">
+          <img src="images/cleint30.png" loading="lazy" alt="Case Study" />
+        </div>
+        
+        <div class="carousel-item long-box">
+          <video autoplay muted loop playsinline>
+            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/1b%20USHCC%20Orlando%20Ballroom%20and%20Skyline%20(1).mp4" type="video/mp4" />
+            </video>
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client15.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <img src="images/CAROUSEL 500X260_4.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+          <img src="images/client19.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+          <img src="images/CAROUSEL 500X260_10.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client26.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <img src="images/CAROUSEL 500X260_9.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client25.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+          <img src="images/CAROUSEL 500X260_8.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+          <video autoplay muted loop playsinline>
+            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/5b%20Unidos%20Las%20Vegas.mp4" type="video/mp4" />
+            </video>
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client16.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client20.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+          <img src="images/CAROUSEL 500X260_6.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client13.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client22.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+          <video autoplay muted loop playsinline>
+            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/9b%20SAHCC%20Gala%20Clip.mp4" type="video/mp4" />
+            </video>
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client14.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client17.png" loading="lazy" alt="Case Study" />
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-wrapper carousel-2">
+      <div class="carousel-header">
+        <h2>Case Studies</h2>
+        <button class="dropbtn"><p>See More</p>
+        <img src="images/arrow-btn.png" alt="See more" />
+        </button>
+      </div>
+      <div class="carousel-track track-2">
+        <div class="carousel-item long-box">
+            <img src="images/Photo 1 Luis Fonsi.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client21.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <img src="images/Photo 3 Kansas City.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client5.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <img src="images/Photo 4 SA300.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client6.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <img src="images/Photo 5 Leg Summit.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client8.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <video autoplay muted loop playsinline>
+            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/9b%20SAHCC%20Gala%20Clip.mp4" type="video/mp4" />
+            </video>
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client9.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <img src="images/Photo 6 Kamala.jpeg" loading="lazy" alt="Case Study" />
+        </div>
+        
+        <div class="carousel-item long-box">
+          <img src="images/CAROUSEL 500X260_3.jpg" loading="lazy" alt="Case Study" />
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-wrapper3 carousel-3">
+      <div class="carousel-header">
+        <h2>Services</h2>
+        <button class="dropbtn"><p>See More</p>
+        <img src="images/arrow-btn.png" alt="See more" />
+        </button>
+      </div>
+      <div class="carousel-track track-3">
+        <div class="carousel-item short-box">
+            <img src="images/client12.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+          <img src="images/CAROUSEL 500X260_4.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client13.png" loading="lazy" alt="Case Study" />
+        </div>
+      
+        <div class="carousel-item long-box">
+          <img src="images/CAROUSEL 500X260_5.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client14.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+          <img src="images/CAROUSEL 500X260_7.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client15.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+          <img src="images/CAROUSEL 500X260_6.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client16.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+          <img src="images/CAROUSEL 500X260_8.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+          <img src="images/CAROUSEL 500X260_9.jpg" loading="lazy" alt="Case Study" />
+        </div>
+       <div class="carousel-item long-box">
+          <img src="images/CAROUSEL 500X260_10.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+          <img src="images/CAROUSEL 500X260_11.jpg" loading="lazy" alt="Case Study" />
+        </div>
+      </div>
+    </div>
+  </main>
+  
+
+
+
+
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+<script>
+  // ✅ LOCOMOTIVE + SCROLLTRIGGER SETUP
+  gsap.registerPlugin(ScrollTrigger);
+
+  const scrollContainer = document.querySelector("[data-scroll-container]");
+
+  // Only initialize once and attach to window so navbar.js can use it
+  window.locoScroll = new LocomotiveScroll({
+    el: scrollContainer,
+    smooth: true
+  });
+
+  ScrollTrigger.scrollerProxy(scrollContainer, {
+    scrollTop(value) {
+      return arguments.length
+        ? window.locoScroll.scrollTo(value, 0, 0)
+        : window.locoScroll.scroll.instance.scroll.y;
+    },
+    getBoundingClientRect() {
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight
+      };
+    },
+    pinType: scrollContainer.style.transform ? "transform" : "fixed"
+  });
+
+  window.locoScroll.on("scroll", ScrollTrigger.update);
+  ScrollTrigger.addEventListener("refresh", () => window.locoScroll.update());
+  ScrollTrigger.refresh();
+</script>
+
+<!-- ✅ Custom Scripts (after Locomotive setup) -->
+<script>
+//NAVBAR SCRIPT
+const nav = document.querySelector('.navbar');
+const navItems = document.querySelectorAll('.nav-item');
+const logoImg = document.querySelector('.logo1');
+
+let hideTimer;
+let lastScrollY = 0;
+let logoState = 'logo1';
+let hasScrolledPastTop = false;
+
+// 🔹 Check if mouse is inside nav or dropdown
+function isMouseInsideNavOrDropdown(e) {
+  const related = e.relatedTarget;
+  return related && (nav.contains(related) || document.querySelector('.dropdown:hover'));
+}
+
+// 🔹 Remove navbar hover state if at top and not active
+function maybeRemoveHovered() {
+  const isDropdownActive = document.querySelector('.nav-item.active');
+  const isNavHovered = nav.matches(':hover');
+
+  if (window.locoScroll.scroll.instance.scroll.y <= 0 && !isDropdownActive && !isNavHovered) {
+    nav.classList.remove('hovered', 'navbar-bg');
+  }
+}
+
+// 🔹 Animate dropdown items with GSAP
+function animateDropdown(item) {
+  const dropdown = item.querySelector('.dropdown');
+  const text = dropdown.querySelector('.dropdown-text');
+  const images = dropdown.querySelectorAll('.image-box, .image-box2');
+
+  if (text || images.length > 0) {
+    gsap.killTweensOf([text, ...images]);
+    gsap.set([text, ...images], { opacity: 0.5, y: 20 });
+
+    gsap.to(text, {
+      opacity: 1,
+      y: 0,
+      duration: 0.5,
+      ease: "power2.out"
+    });
+
+    gsap.to(images, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: "power2.out"
+    });
+  }
+}
+
+/*
+
+function animateDropdown(item) {
+  const dropdown = item.querySelector('.dropdown');
+  const text = dropdown.querySelector('.dropdown-text');
+  const images = dropdown.querySelectorAll('.image-box, .image-box2');
+
+  const targets = [text, ...images].filter(Boolean);
+
+  if (targets.length > 0) {
+    gsap.killTweensOf(targets);
+    gsap.set(targets, { opacity: 0, y: -10 }); // Start slightly above
+
+    gsap.to(targets, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: 'power2.out'
+    });
+  }
+}  
+*/
+
+// 🔹 Navbar mouse events
+nav.addEventListener('mouseenter', () => {
+  nav.classList.add('hovered');
+  clearTimeout(hideTimer);
+});
+
+nav.addEventListener('mouseleave', (e) => {
+  if (isMouseInsideNavOrDropdown(e)) return;
+  hideTimer = setTimeout(() => {
+    navItems.forEach(i => i.classList.remove('active'));
+    maybeRemoveHovered();
+  }, 200);
+});
+
+// 🔹 Dropdown triggers
+navItems.forEach(item => {
+  const dropdown = item.querySelector('.dropdown');
+  const trigger = item.querySelector('a');
+
+  trigger.addEventListener('mouseenter', () => {
+    clearTimeout(hideTimer);
+    navItems.forEach(i => i.classList.remove('active'));
+    item.classList.add('active');
+
+    nav.classList.add('hovered', 'navbar-bg');
+    nav.classList.remove('hidden');
+    nav.classList.add('scrolled-up');
+
+    animateDropdown(item);
+  });
+
+  item.addEventListener('mouseleave', (e) => {
+    if (isMouseInsideNavOrDropdown(e)) return;
+    hideTimer = setTimeout(() => {
+      item.classList.remove('active');
+      maybeRemoveHovered();
+    }, 200);
+  });
+
+  dropdown.addEventListener('mouseleave', (e) => {
+    if (isMouseInsideNavOrDropdown(e)) return;
+    hideTimer = setTimeout(() => {
+      item.classList.remove('active');
+      maybeRemoveHovered();
+    }, 100);
+  });
+});
+
+// 🔹 Scroll behavior logic
+function handleScroll(currentScroll) {
+  const scrollingDown = currentScroll > lastScrollY;
+  const scrollingUp = currentScroll < lastScrollY;
+
+  navItems.forEach(i => i.classList.remove('active'));
+
+  if (currentScroll <= 0) {
+    // Top of page
+    nav.classList.remove('hidden', 'scrolled-up', 'navbar-bg');
+    nav.classList.add('at-top');
+
+    if (logoState !== 'logo1') {
+      logoImg.src = 'images/logo1.png';
+      logoState = 'logo1';
+    }
+
+    hasScrolledPastTop = false;
+    maybeRemoveHovered();
+    lastScrollY = currentScroll;
+    return;
+  }
+
+  if (!hasScrolledPastTop) {
+    hasScrolledPastTop = true;
+  }
+
+  if (scrollingDown) {
+    // Scrolling down → hide navbar
+    nav.classList.add('hidden');
+    nav.classList.remove('scrolled-up', 'at-top', 'navbar-bg');
+  } else if (scrollingUp) {
+    // Scrolling up → show navbar
+    nav.classList.remove('hidden');
+    nav.classList.add('scrolled-up', 'hovered', 'navbar-bg');
+    nav.classList.remove('at-top');
+
+    if (logoState !== 'logo2') {
+      logoImg.src = 'images/logo2.png';
+      logoState = 'logo2';
+    }
+
+    // 🔹 If mouse is already over a nav-item, show its dropdown immediately
+    const hoveredItem = document.querySelector('.nav-item:hover');
+    if (hoveredItem) {
+      hoveredItem.classList.add('active');
+      animateDropdown(hoveredItem);
+    }
+  }
+
+  lastScrollY = currentScroll;
+}
+
+// 🔹 Use Locomotive's scroll event
+if (window.locoScroll) {
+  window.locoScroll.on('scroll', (args) => {
+    const scrollY = args.scroll.y;
+    handleScroll(scrollY);
+  });
+} else {
+  window.addEventListener('scroll', () => handleScroll(window.scrollY));
+}
+
+// 🔹 Button arrow GSAP nudge on hover
+document.querySelectorAll('.dropbtn, .dropbtn-submit').forEach(btn => {
+  const arrow = btn.querySelector('img');
+
+  btn.addEventListener('mouseenter', () => {
+    gsap.to(arrow, {
+      x: 8,
+      duration: 0.3,
+      ease: 'power2.out'
+    });
+  });
+
+  btn.addEventListener('mouseleave', () => {
+    gsap.to(arrow, {
+      x: 0,
+      duration: 0.3,
+      ease: 'power2.inOut'
+    });
+  });
+});
+
+
+</script>
+<script src="carousel.js"></script>
+<script src="heroscroll.js"></script>
+<script src="tracker.js"></script>
+
+</div>
+</body>
+</html>

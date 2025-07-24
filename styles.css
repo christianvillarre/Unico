@@ -359,7 +359,7 @@ html, body {
   bottom: 8rem; /* same as nav-controls */
   left: 4rem;
   z-index: 2;
-  max-width: 1000px;
+  max-width: 1600px;
   text-align: left;
 }
 

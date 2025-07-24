@@ -58,7 +58,40 @@
   });
 
   const dots = document.querySelectorAll(".dot");
+  
+  function updateBackground(manual = false) {
+  const nextBg = activeBg === 1 ? bg2 : bg1;
+  const currentBg = activeBg === 1 ? bg1 : bg2;
 
+  // Change background image
+  nextBg.style.backgroundImage = `url('${images[currentIndex]}')`;
+  nextBg.classList.add("visible");
+  currentBg.classList.remove("visible");
+
+  // Do NOT change text or animate it again
+  activeBg = activeBg === 1 ? 2 : 1;
+
+  dots.forEach(dot => dot.classList.remove("active"));
+  dots[currentIndex].classList.add("active");
+
+  if (manual) resetAutoScroll();
+}
+document.querySelector("h1").innerHTML = "Creating Impactful Experiences - Not Simply Events";
+
+
+// Animate text only once
+gsap.set("h1", { y: 20, opacity: 0 });
+
+gsap.to("h1", {
+  y: 0,
+  opacity: 1,
+  duration: 1,
+  delay: 0.3,
+  ease: "power2.out"
+});
+
+
+/*
   function updateBackground(manual = false) {
     const nextBg = activeBg === 1 ? bg2 : bg1;
     const currentBg = activeBg === 1 ? bg1 : bg2;
@@ -109,7 +142,7 @@
     // Reset autoplay
     if (manual) resetAutoScroll();
   }
-
+*/
   function goNext() {
     currentIndex = (currentIndex + 1) % images.length;
     updateBackground(true);
