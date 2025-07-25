@@ -368,32 +368,71 @@
       </div>
       <div class="carousel-track track-2">
         <div class="carousel-item long-box">
-        <div class="image-overlay-wrapper">
-          <div class="overlay"></div>
-          <img src="images/Photo 1 Luis Fonsi.jpg" class="fonsiphoto" loading="lazy" alt="Case Study" />
+          <div class="image-overlay-wrapper">
+            <!-- BACKGROUND -->
+            <img src="images/carouselcs1.jpg" class="bg-image" loading="lazy" alt="Case Study" />
+
+            <!-- COLOR OVERLAY (fades on hover) -->
+            <div class="overlay"></div>
+
+            <!-- TRANSPARENT PNG on top -->
+            <img src="images/carouselcase1.png" class="overlay-image" loading="lazy" alt="Overlay" />
+          </div>
         </div>
-      </div>
+
+       <div class="carousel-item long-box">
+          <div class="image-overlay-wrapper">
+            <!-- BACKGROUND -->
+            <img src="images/carouselcs2.jpg" class="bg-image" loading="lazy" alt="Case Study" />
+
+            <!-- COLOR OVERLAY (fades on hover) -->
+            <div class="overlay"></div>
+
+            <!-- TRANSPARENT PNG on top -->
+            <img src="images/carouselcase2.png" class="overlay-image" loading="lazy" alt="Overlay" />
+          </div>
+        </div>
+
+       <div class="carousel-item long-box">
+          <div class="image-overlay-wrapper">
+            <!-- BACKGROUND -->
+            <img src="images/carouselcs3.jpg" class="bg-image" loading="lazy" alt="Case Study" />
+
+            <!-- COLOR OVERLAY (fades on hover) -->
+            <div class="overlay"></div>
+
+            <!-- TRANSPARENT PNG on top -->
+            <img src="images/carouselcase3.png" class="overlay-image" loading="lazy" alt="Overlay" />
+          </div>
+        </div>
 
       <div class="carousel-item long-box">
-        <div class="image-overlay-wrapper">
-          <div class="overlay"></div>
-          <img src="images/2b USSF Group Pic.JPG" class="fonsiphoto" loading="lazy" alt="Case Study" />
-        </div>
-      </div>
+          <div class="image-overlay-wrapper">
+            <!-- BACKGROUND -->
+            <img src="images/carouselcs4.jpg" class="bg-image" loading="lazy" alt="Case Study" />
 
-      <div class="carousel-item long-box">
-        <div class="image-overlay-wrapper">
-          <div class="overlay"></div>
-          <img src="images/3b SA300 Pic.jpg" class="fonsiphoto" loading="lazy" alt="Case Study" />
-        </div>
-      </div>
+            <!-- COLOR OVERLAY (fades on hover) -->
+            <div class="overlay"></div>
 
-      <div class="carousel-item long-box">
-        <div class="image-overlay-wrapper">
-          <div class="overlay"></div>
-          <img src="images/5b Kansas City.jpg" class="fonsiphoto" loading="lazy" alt="Case Study" />
+            <!-- TRANSPARENT PNG on top -->
+            <img src="images/carouselcase4.png" class="overlay-image" loading="lazy" alt="Overlay" />
+          </div>
         </div>
-      </div>
+
+
+        <div class="carousel-item long-box">
+          <div class="image-overlay-wrapper">
+            <!-- BACKGROUND -->
+            <img src="images/CAROUSEL 500X260_8.jpg" class="bg-image" loading="lazy" alt="Case Study" />
+
+            <!-- COLOR OVERLAY (fades on hover) -->
+            <div class="overlay"></div>
+
+            <!-- TRANSPARENT PNG on top -->
+            <img src="images/carouselcase5.png" class="overlay-image" loading="lazy" alt="Overlay" />
+          </div>
+        </div>
+
 
       </div>
     </div>
@@ -407,29 +446,46 @@
 }
 
 .image-overlay-wrapper img {
-  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: relative; /* ✅ Ensure it's behind the overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Background image (z-index 1) */
+.bg-image {
   z-index: 1;
 }
 
-/* Color overlay */
-.image-overlay-wrapper .overlay {
+/* Color overlay (z-index 2, fades out on hover) */
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: #53709fb3;
-  opacity:1;
-  z-index: 999; /* ✅ Above image */
-  pointer-events: none; /* Optional: let mouse events pass through */
+  opacity: 1;
+  z-index: 2;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 
-/* Remove overlay on hover */
 .image-overlay-wrapper:hover .overlay {
+  opacity: 0;
+}
+
+/* Transparent PNG overlay image (z-index 3 — on top of all) */
+.overlay-image {
+  z-index: 3;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.image-overlay-wrapper:hover .overlay-image {
   opacity: 0;
 }
     </style>

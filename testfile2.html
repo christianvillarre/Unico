@@ -11,7 +11,7 @@
 <!-- 🔹 NAVBAR -->
 <header class="navbar" data-scroll-section>
   <div class="logo">
-    <a href="/index.html"><img class="logo1" src="images/logo1.png" alt="Logo" /></a>
+    <img class="logo1" src="images/logo1.png" alt="Logo" />
   </div>
   <nav>
     <div class="nav-item">
@@ -59,7 +59,7 @@
         </div>
         <div class="dropdown-images">
           <div class="image-box">
-          <img src="images/" alt="Image 1" />
+          <img src="images/2 SAHCC FOH Pic.jpeg" alt="Image 1" />
           <div class="overlay"></div>
           <button class="image-btn">Clients</button>
         </div>
@@ -154,7 +154,7 @@
   <div class="section-inner">
     <div class="section-content">
       <h1>Our Story</h1>
-      <p>Unico Communications is a national special events focused agency headquartered in San Antonio, Texas.Founded in 2004. Unico has grown into a leading full-service events firm providing, public relations, communications, and special events services to their non-profit and corporate clients across the United States.</p>
+      <p>Unico blends strategy and heart as a full-service events firm grounded in purpose. Our story, culture, and team come together to create meaningful experiences that leave a lasting impact.</p>
     <button class="about-btn">
                 Let's Talk
                 <img src="images/arrow-btn-white.png" alt="See more" />
@@ -162,20 +162,22 @@
     
     </div>
 
+
+
     <div class="image-container">
       <div class="image-scroller">
         <div class="image-stack">
           <div class="scroller-image">
-            <img src="images/img1.png" alt="Box Image" />
+            <img src="images/2 SAHCC FOH Pic.jpeg" alt="Box Image" />
           </div>
           <div class="scroller-image">
-            <img src="images/img2.png" alt="Box Image" />
+            <img src="images/10 HACR Blanket.jpg" alt="Box Image" />
           </div>
           <div class="scroller-image">
-            <img src="images/img3.png" alt="Box Image" />
+            <img src="images/10 HACR Panel.jpg" alt="Box Image" />
           </div>
           <div class="scroller-image">
-            <img src="images/img1.png" alt="Box Image" />
+            <img src="images/4 USSP-11.1.19.JPG" alt="Box Image" />
           </div>
         </div>
         <div class="scroller-controls">
@@ -185,234 +187,117 @@
       </div>
     </div>
   </div>
-  
 </section>
 
+<style>
+  .accordion-wrapper {
+      position: relative;
+      height: 200vh; /* 4 panels * 100vh */
+    }
 
+    .panel {
+      position: sticky;
+      top: 0;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      z-index: 1;
+    }
 
-
-<div class="accordion-wrapper" data-scroll-section>
-  <div class="accordion">
-    <div class="panel">
-      <div class="panel-content">
-        <div class="panel-text">
-        <h3>Strategy</h3>
-        <P>Unico blends strategy and heart as a full-service events firm grounded in purpose. Our story, culture, and team come together to create meaningful experiences that leave a lasting impact.</P>
-        </div>
-        <div class="panel-img">
-          <img src="images/10 HACR Panel.jpg" alt="Media Image" />
-        </div>
-
-      </div>
-    </div>
-    <div class="panel">
-      <div class="panel-content">
-        <div class="panel-text">
-        <h3>Creative</h3>
-        <P>Unico blends strategy and heart as a full-service events firm grounded in purpose. Our story, culture, and team come together to create meaningful experiences that leave a lasting impact.</P>
-        </div>
-        <div class="panel-img">
-          <img src="images/Photo 3 Kansas City.jpg" alt="Media Image" />
-        </div>
-
-      </div>
-    </div>
-    <div class="panel">
-      <div class="panel-content">
-        <div class="panel-text">
-        <h3>Media</h3>
-        <P>Unico blends strategy and heart as a full-service events firm grounded in purpose. Our story, culture, and team come together to create meaningful experiences that leave a lasting impact.</P>
-        </div>
-        <div class="panel-img">
-          <img src="images/5 UNIDOSUS Panel.jpg" alt="Media Image" />
-        </div>
-
-      </div>
-    </div>
-    <div class="panel">
-      <div class="panel-content">
-        <div class="panel-text">
-        <h3>Measurement</h3>
-        <P>Unico blends strategy and heart as a full-service events firm grounded in purpose. Our story, culture, and team come together to create meaningful experiences that leave a lasting impact.</P>
-        </div>
-        <div class="panel-img">
-          <img src="images/Photo 3 Kansas City.jpg" alt="Media Image" />
-        </div>
-
-      </div>
-    </div>
+    .panel:nth-child(1) { background: #1abc9c; z-index: 1; }
+    .panel:nth-child(2) { background: #3498db; z-index: 2; }
+    .panel:nth-child(3) { background: #9b59b6; z-index: 3; }
+    .panel:nth-child(4) { background: #e67e22; z-index: 4; }
+</style>
+  <div class="accordion-wrapper" data-scroll-section>
+    <div class="panel">Panel 1</div>
+    <div class="panel">Panel 2</div>
+    <div class="panel">Panel 3</div>
+    <div class="panel">Panel 4</div>
   </div>
-</div>
+
+
  <style>
      .section2 {
-    height: 100vh;
+    height: 250vh;
     width: 100%;
     background-color: white;
     padding-left: 4rem;
     padding-right: 4rem;
-    padding-top: 2rem;
+    padding-top: 4rem;
   }
 
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 3.5rem;
+      justify-items: center;
+      padding-top: 2rem;
+    }
 
-.carousel-btn {
-  position: absolute;
-  top: 50%; /* ✅ Adjust to center vertically over image boxes */
-  transform: translateY(-50%);
-  z-index: 3;
-  background: #53709F;
-  color: white;
-  border: none;
-  padding: 1rem 1.2rem;
-  font-size: 2rem;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-.carousel-btn:hover {
-  background: #335580;
-}
-.carousel-btn.prev {
-  left: 0;
-}
-.carousel-btn.next {
-  right: 0;
-}
+    .image-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-.carousel-track-container {
-  overflow: visible; /* instead of hidden */
-  width: 100%;
-  
-}
+    .image-box {
+      width: 25rem;
+      height: 35rem;
+      background-color: #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      position: relative;
+    }
 
-.carousel-wrapper {
-  position: relative; /* ✅ So buttons can be positioned over content */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.carousel-track {
-  display: flex;
-  width: max-content;
-  animation: none;
-   will-change: transform;
-}
+    .image-box img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      transition: opacity 0.3s ease;
+    }
 
-.grid-container {
-  display: flex;
-  gap: 3.5rem;
-  padding-top: 2rem;
-}
+    .image-box img.hover-img {
+      opacity: 0;
+    }
 
-.image-wrapper {
-  flex: 0 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  width: 25rem;
-}
+    .image-box:hover img.hover-img {
+      opacity: 1;
+    }
 
-.section2 .image-box {
-  width: 25rem;
-  height: 35rem;
-  background-color: #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  position: relative;
-}
+    .image-box:hover img.default-img {
+      opacity: 0;
+    }
 
-.section2 .image-box img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  top: 0;
-  left: 0;
-  transition: opacity 0.3s ease;
-  opacity: 1;
-}
-
-.section2 .image-box img.hover-img {
-  opacity: 0;
-}
-
-.section2 .image-box:hover img.hover-img {
-  opacity: 1;
-}
-
-.section2 .image-box:hover img.default-img {
-  opacity: 0;
-}
     .image-title {
-      margin-top: 1.2rem;
+      margin-top: 1rem;
       font-size: 1.5rem;
       text-align: left;
       width: 100%;
-      margin-bottom: 0;
-        line-height: 0.9; /* Optional: tighter vertical spacing */
-        font-weight: 800;
-        color:#335580;
-    }
-    .image-title-text {
-      margin-top: 1rem;
-      font-size: 1.2rem;
-      text-align: left;
-      width: 100%;
-       margin-bottom: 0;
-  line-height: 1.2; /* Optional: tighter vertical spacing */
     }
     .team-title {
       font-size: 5rem;
       max-width: 600px;
       padding: 0;
       margin: 0;
-      margin-bottom: 12rem;
     }
   </style>
   <section class="section2" data-scroll-section>
  <h3 class="team-title">Our Team</h3>
- <div class="carousel-wrapper">
-   <button class="carousel-btn prev">←</button>
-  <div class="carousel-track-container">
-  <div class="carousel-track">
   <div class="grid-container">
-
-    <div class="image-wrapper">
-      <div class="image-box">
-        <img class="default-img" src="images/team/LBombin.jpg" alt="Image 1" />
-        <img class="hover-img" src="images/team/LBombin - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
-      </div>
-      <div class="image-title">Lisa Bombín</div>
-      <div class="image-title-text">President & CEO</div>
-    </div>
-
-    <div class="image-wrapper">
-      <div class="image-box">
-        <img class="default-img" src="images/team/MVela.jpg" alt="Image 1" />
-        <img class="hover-img" id="carolyn" src="images/team/MVela - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
-      </div>
-      <div class="image-title">Michael Vela</div>
-      <div class="image-title-text">Senior Director, Creative & Communications</div>
-    </div>
    
-    <div class="image-wrapper" id="carolyn">
+    <div class="image-wrapper">
       <div class="image-box">
         <img class="default-img" src="images/team/CPalacios.jpg" alt="Carolyn Palacios" />
         <img class="hover-img" src="images/team/CPalacios - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
-      <div class="image-title">Carolyn Palacios-Mancha</div>
-      <div class="image-title-text">Director of Account Management</div>
-    </div>
-
-    <div class="image-wrapper">
-      <div class="image-box">
-        <img class="default-img" src="images/team/JNavarro.jpg" alt="Image 1" />
-        <img class="hover-img" src="images/team/JNavarro - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
-      </div>
-      <div class="image-title">Julia Navarro</div>
-      <div class="image-title-text">Administrative Manager</div>
+      <div class="image-title">Carolyn Palacios</div>
     </div>
 
     <div class="image-wrapper">
@@ -420,8 +305,7 @@
         <img class="default-img" src="images/team/CPulido.jpg" alt="Image 1" />
         <img class="hover-img" src="images/team/CPulido - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
-      <div class="image-title">Christopher Pulido</div>
-      <div class="image-title-text">Senior Meeting Plannet & Registration Manager</div>
+      <div class="image-title">C. Pulido</div>
     </div>
 
     <div class="image-wrapper">
@@ -429,8 +313,15 @@
         <img class="default-img" src="images/team/EMalave.jpg" alt="Image 1" />
         <img class="hover-img" src="images/team/EMalave - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
-      <div class="image-title">Emily Malave</div>
-      <div class="image-title-text">Senior Meeting Planner & Expo Manager</div>
+      <div class="image-title">E. Malave</div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/JNavarro.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/JNavarro - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">J. Navarro</div>
     </div>
 
     <div class="image-wrapper">
@@ -438,17 +329,15 @@
         <img class="default-img" src="images/team/JTenace.jpg" alt="Image 1" />
         <img class="hover-img" src="images/team/JTenace - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
-      <div class="image-title">Jordan Tenace</div>
-      <div class="image-title-text">Senior Technical Producer & Show Caller</div>
+      <div class="image-title">J. Tenace</div>
     </div>
 
-     <div class="image-wrapper">
+    <div class="image-wrapper">
       <div class="image-box">
-        <img class="default-img" src="images/team/VDeJesus.jpg" alt="Image 1" />
-        <img class="hover-img" src="images/team/VDeJesus - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+        <img class="default-img" src="images/team/LBombin.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/LBombin - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
-      <div class="image-title">Victor De Jesus</div>
-      <div class="image-title-text">Production Specialist</div>
+      <div class="image-title">L. Bombin</div>
     </div>
 
     <div class="image-wrapper">
@@ -456,8 +345,15 @@
         <img class="default-img" src="images/team/MBarreiro.jpg" alt="Image 1" />
         <img class="hover-img" src="images/team/MBarreiro - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
-      <div class="image-title">Monique Barreiro</div>
-      <div class="image-title-text">Production Specialist</div>
+      <div class="image-title">M. Barreiro</div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/MVela.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/MVela - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Michael Vela</div>
     </div>
 
     <div class="image-wrapper">
@@ -466,7 +362,6 @@
         <img class="hover-img" src="images/team/MVillarreal - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
       <div class="image-title">Margil Villarreal</div>
-      <div class="image-title-text">Senior Graphic Designer</div>
     </div>
 
      <div class="image-wrapper">
@@ -474,8 +369,7 @@
         <img class="default-img" src="images/team/NdelosSantos.jpg" alt="Image 1" />
         <img class="hover-img" src="images/team/NdelosSantos - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
-      <div class="image-title">Nelly De Los Santos</div>
-      <div class="image-title-text">Scriptwriter, Copywriter</div>
+      <div class="image-title">N. De Los Santos</div>
     </div>
 
     <div class="image-wrapper">
@@ -483,106 +377,30 @@
         <img class="default-img" src="images/team/VBarreiro.jpg" alt="Image 1" />
         <img class="hover-img" src="images/team/VBarreiro - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
-      <div class="image-title">Victor Barreiro</div>
-      <div class="image-title-text">Production Specialist and Audio Talent</div>
+      <div class="image-title">V. Barreiro</div>
     </div>
 
-  
+     <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/VDeJesus.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/VDeJesus - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">V. De Jesus</div>
+    </div>
   </div>
-   </div>
-</div>
- <button class="carousel-btn next">→</button>
-</div>
   </section>
 
-  <style>
-
-    .accordion-wrapper {
-      height: 98vh;
-      overflow: hidden;
-      position: relative;
-    }
-    .accordion {
-      height: 150vh;
-      width: 100%;
-    }
-.panel {
-  position: relative;
-  height: 800px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem;
-  color: white;
-  overflow: hidden;
-  background: #6E9D72;
-  border-top: 2px solid #CCE5CC;
-}
-.panel-content {
-  position: relative; /* changed from absolute */
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 0 4rem;
-  gap: 2rem;
-  padding-top: 1.2rem;
-}
-.panel-img {
-  flex: 1;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  
-  padding-top: 6rem;
-   max-width: 1000px;
-  max-height: 300px;
-}
-
-.panel-img img {
-  width: 100%;
-  height: 100%;
-  border-radius: 1rem;
-  object-fit: cover;
-}
-.panel-text {
-  flex: 1;
-  max-width: 600px;
-  text-align: left;
-}
-
-
-.panel-text h3 {
-  font-size: 3rem;
-  margin: 0 0 3rem 0;
-  font-weight: 800;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.panel-text p {
-  font-size: 1.5rem;
-  line-height: 1.4;
-  font-weight: 400;
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-}
-#carolyn .hover-img {
-  transform: scale(1.1);
-  margin-top: 2rem;
-}
-  </style>
 
 <style>
  
 .section1 {
-   background-color: #6E9D72;
+   background-color: #37493E;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   transition: background-image 0.6s ease;
   width: 100%;
-  height: 100vh;
+  height: 800px;
   color: white;
   display: flex;
   align-items: flex-start; /* ⬅️ changed from flex-end */
@@ -590,7 +408,6 @@
   padding: 0 4rem;
   position: relative;
   gap: 1rem; /* spacing between text and cards */
-  
 }
 .section-inner {
   display: flex;
@@ -599,14 +416,14 @@
   width: 100%;
   gap: 2rem;
   height: 100%; /* ✅ Add this to stretch children vertically */
-  margin-top: 20vh;
 }
+
 
 .image-container {
   flex: 1;
   display: flex;
   flex-direction: column;
- justify-content: flex-start;
+ justify-content: flex-end;
  align-items: flex-end;
   height: 100%;               /* ✅ Ensure it fills vertical space */
   margin-left: auto;
@@ -619,14 +436,12 @@
 
 .image-stack {
   position: relative;
-  width: clamp(10vw, 20vw, 20vw);
-  height: clamp(20vh, 80vh, 80vh);
+  width: 680px;
+  height: 660px;
   overflow: visible;
-  margin: 0;
+  margin: 0;       /* ✅ Remove auto centering */
   padding: 0;
 }
-
-
 
 .scroller-image {
   position: absolute;
@@ -662,7 +477,7 @@
 
   .section-content {
     flex: 1;
-    max-width: 800px;
+    max-width: 700px;
     background: transparent;
     padding: 0rem;
     border-radius: 12px;
@@ -670,12 +485,12 @@
     z-index: 1;
   }
 
- .section-content h1 {
-  font-size: clamp(0.5rem, 8vw, 8rem);
-  margin: 0 0 1rem 0; /* Reset top margin */
-  font-weight: 800;
-  font-family: 'Montserrat', sans-serif;
-}
+  .section-content h1 {
+    font-size: clamp(0.5rem, 8vw, 8rem);
+    margin-bottom: 1rem;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+  }
 
   .section-content p {
     font-size: 1.2rem;
@@ -721,7 +536,7 @@ html, body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: #53709F;
+  background: #6E9D72;
   color: #ffffff;
   border: none;
   font-weight: bold;
@@ -738,7 +553,6 @@ html, body {
   background: #CCE5CC;
   color: #ffffff;
 }
-
 </style>
 
 
@@ -746,67 +560,24 @@ html, body {
 <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
 <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-<script>
-  const panels = document.querySelectorAll(".panel");
-  const wrapper = document.querySelector(".accordion-wrapper");
-  let currentIndex2 = 0;
 
-  function showPanel(index) {
-    panels.forEach((panel, i) => {
-      gsap.to(panel, {
-        height: i === index ? "600px" : "100px",
-        duration: 0.5,
-        ease: "power2.inOut"
-      });
-    });
-
-    gsap.to(wrapper, {
-      height: "98vh", // expanded height
-      duration: 0.5,
-      ease: "power2.inOut"
-    });
-
-    currentIndex2 = index;
-  }
-
-  // Open first panel by default
-  showPanel(currentIndex2);
-
-  panels.forEach((panel, index) => {
-    panel.addEventListener("click", () => {
-      if (currentIndex2 === index) {
-        // Close panel
-        gsap.to(panel, {
-          height: "100px",
-          duration: 0.4,
-          ease: "power2.inOut"
-        });
-
-        // Shrink the wrapper
-        gsap.to(wrapper, {
-          height: "400px", // collapsed state
-          duration: 0.5,
-          ease: "power2.inOut"
-        });
-
-        currentIndex2 = -1;
-      } else {
-        showPanel(index);
-      }
-    });
-  });
-</script>
 <script>
   const images = document.querySelectorAll(".scroller-image");
   const total = images.length;
-  let currentIndex = 0; // ✅ Start with first image
+  let currentIndex = 1; // Start with last image selected
 
   function renderStack(index) {
     images.forEach((img, i) => {
-      const offset = (i - total + 1) * 150;
+      // keep left-offset layout
+      const offset = (i - total + 1) * 80;
+
+      // calculate visual priority (lower distance = higher zIndex)
       const distance = Math.abs(i - index);
+
+      // max zIndex = total, then count down
       const z = total - distance;
 
+      // base styling for all cards
       img.classList.toggle("selected", i === index);
 
       gsap.set(img, {
@@ -821,17 +592,11 @@ html, body {
   images.forEach((img, i) => {
     img.addEventListener("click", () => {
       currentIndex = i;
-      renderStack(currentIndex);
+      renderStack(currentIndex); // update z-index only
     });
   });
 
-  renderStack(currentIndex); // ✅ Initial render
-
-  // ✅ Auto-advance every 5 seconds
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % total;
-    renderStack(currentIndex);
-  }, 3000);
+  renderStack(currentIndex); // initial render
 </script>
 
 <script>
@@ -866,28 +631,6 @@ html, body {
   window.locoScroll.on("scroll", ScrollTrigger.update);
   ScrollTrigger.addEventListener("refresh", () => window.locoScroll.update());
   ScrollTrigger.refresh();
-</script>
-<script>
-  const track = document.querySelector(".carousel-track");
-  const nextBtn = document.querySelector(".carousel-btn.next");
-  const prevBtn = document.querySelector(".carousel-btn.prev");
-  const cardWidth = 25 * 16 + 56; // 25rem + gap (converted to px)
-  let currentPosition = 0;
-
-  nextBtn.addEventListener("click", () => {
-    const maxScroll = track.scrollWidth - track.parentElement.offsetWidth;
-    if (Math.abs(currentPosition) < maxScroll) {
-      currentPosition -= cardWidth;
-      gsap.to(track, { x: currentPosition, duration: 0.5, ease: "power2.out" });
-    }
-  });
-
-  prevBtn.addEventListener("click", () => {
-    if (currentPosition < 0) {
-      currentPosition += cardWidth;
-      gsap.to(track, { x: currentPosition, duration: 0.5, ease: "power2.out" });
-    }
-  });
 </script>
 <!-- ✅ Custom Scripts (after Locomotive setup) -->
 <script src="navbar.js"></script>
