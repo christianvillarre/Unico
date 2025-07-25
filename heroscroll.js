@@ -76,7 +76,7 @@
 
   if (manual) resetAutoScroll();
 }
-document.querySelector("h1").innerHTML = "Creating Impactful Experiences - Not Simply Events";
+document.querySelector("h1").innerHTML = "Creating Impactful Experiences, Not Simply Events";
 
 
 // Animate text only once

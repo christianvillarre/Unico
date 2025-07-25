@@ -248,13 +248,12 @@
     background-color: white;
     padding-left: 4rem;
     padding-right: 4rem;
-    padding-top: 2rem;
+    padding-top: 4rem;
   }
-
 
 .carousel-btn {
   position: absolute;
-  top: 50%; /* ✅ Adjust to center vertically over image boxes */
+  top: 100%; /* ✅ Adjust to center vertically over image boxes */
   transform: translateY(-50%);
   z-index: 3;
   background: #53709F;
@@ -279,6 +278,7 @@
 
 .carousel-track-container {
   overflow: visible; /* instead of hidden */
+padding-top: 25rem; /* ✅ Add space between heading and track */
   width: 100%;
   
 }
@@ -293,7 +293,7 @@
   display: flex;
   width: max-content;
   animation: none;
-   will-change: transform;
+  
 }
 
 .grid-container {
@@ -344,29 +344,16 @@
   opacity: 0;
 }
     .image-title {
-      margin-top: 1.2rem;
+      margin-top: 1rem;
       font-size: 1.5rem;
       text-align: left;
       width: 100%;
-      margin-bottom: 0;
-        line-height: 0.9; /* Optional: tighter vertical spacing */
-        font-weight: 800;
-        color:#335580;
-    }
-    .image-title-text {
-      margin-top: 1rem;
-      font-size: 1.2rem;
-      text-align: left;
-      width: 100%;
-       margin-bottom: 0;
-  line-height: 1.2; /* Optional: tighter vertical spacing */
     }
     .team-title {
       font-size: 5rem;
       max-width: 600px;
       padding: 0;
       margin: 0;
-      margin-bottom: 12rem;
     }
   </style>
   <section class="section2" data-scroll-section>
@@ -383,7 +370,6 @@
         <img class="hover-img" src="images/team/LBombin - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
       <div class="image-title">Lisa Bombín</div>
-      <div class="image-title-text">President & CEO</div>
     </div>
 
     <div class="image-wrapper">
@@ -392,7 +378,6 @@
         <img class="hover-img" id="carolyn" src="images/team/MVela - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
       <div class="image-title">Michael Vela</div>
-      <div class="image-title-text">Senior Director, Creative & Communications</div>
     </div>
    
     <div class="image-wrapper" id="carolyn">
@@ -401,7 +386,6 @@
         <img class="hover-img" src="images/team/CPalacios - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
       <div class="image-title">Carolyn Palacios-Mancha</div>
-      <div class="image-title-text">Director of Account Management</div>
     </div>
 
     <div class="image-wrapper">
@@ -410,7 +394,6 @@
         <img class="hover-img" src="images/team/JNavarro - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
       <div class="image-title">Julia Navarro</div>
-      <div class="image-title-text">Administrative Manager</div>
     </div>
 
     <div class="image-wrapper">
@@ -419,7 +402,6 @@
         <img class="hover-img" src="images/team/CPulido - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
       <div class="image-title">Christopher Pulido</div>
-      <div class="image-title-text">Senior Meeting Plannet & Registration Manager</div>
     </div>
 
     <div class="image-wrapper">
@@ -428,7 +410,6 @@
         <img class="hover-img" src="images/team/EMalave - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
       <div class="image-title">Emily Malave</div>
-      <div class="image-title-text">Senior Meeting Planner & Expo Manager</div>
     </div>
 
     <div class="image-wrapper">
@@ -437,7 +418,6 @@
         <img class="hover-img" src="images/team/JTenace - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
       <div class="image-title">Jordan Tenace</div>
-      <div class="image-title-text">Senior Technical Producer & Show Caller</div>
     </div>
 
      <div class="image-wrapper">
@@ -446,7 +426,6 @@
         <img class="hover-img" src="images/team/VDeJesus - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
       <div class="image-title">Victor De Jesus</div>
-      <div class="image-title-text">Production Specialist</div>
     </div>
 
     <div class="image-wrapper">
@@ -455,7 +434,6 @@
         <img class="hover-img" src="images/team/MBarreiro - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
       <div class="image-title">Monique Barreiro</div>
-      <div class="image-title-text">Production Specialist</div>
     </div>
 
     <div class="image-wrapper">
@@ -464,7 +442,6 @@
         <img class="hover-img" src="images/team/MVillarreal - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
       <div class="image-title">Margil Villarreal</div>
-      <div class="image-title-text">Senior Graphic Designer</div>
     </div>
 
      <div class="image-wrapper">
@@ -473,7 +450,6 @@
         <img class="hover-img" src="images/team/NdelosSantos - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
       <div class="image-title">Nelly De Los Santos</div>
-      <div class="image-title-text">Scriptwriter, Copywriter</div>
     </div>
 
     <div class="image-wrapper">
@@ -482,7 +458,6 @@
         <img class="hover-img" src="images/team/VBarreiro - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
       </div>
       <div class="image-title">Victor Barreiro</div>
-      <div class="image-title-text">Production Specialist and Audio Talent</div>
     </div>
 
   
@@ -603,10 +578,9 @@
 .image-container {
   flex: 1;
   display: flex;
-  flex-direction: column;
- justify-content: flex-start;
- align-items: flex-end;
-  height: 100%;               /* ✅ Ensure it fills vertical space */
+  justify-content: flex-end;
+  align-items: flex-start;
+  height: auto; /* allow natural height */
   margin-left: auto;
 }
 .image-scroller {
@@ -686,12 +660,12 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden; /* Only hide horizontal scroll */
   background-color: #37493E;
 }
 
 [data-scroll-container] {
-  overflow: hidden;
+  overflow-x: hidden; /* only prevent horizontal overflow */
   margin: 0;
   padding: 0;
 }
@@ -771,28 +745,27 @@ html, body {
   showPanel(currentIndex2);
 
   panels.forEach((panel, index) => {
-    panel.addEventListener("click", () => {
-      if (currentIndex2 === index) {
-        // Close panel
-        gsap.to(panel, {
-          height: "100px",
-          duration: 0.4,
-          ease: "power2.inOut"
-        });
+  panel.addEventListener("click", () => {
+    if (currentIndex2 === index) {
+      // If clicked panel is already open → close it
+      gsap.to(panel, {
+        height: "100px",
+        duration: 0.4,
+        ease: "power2.inOut"
+      });
 
-        // Shrink the wrapper
-        gsap.to(wrapper, {
-          height: "400px", // collapsed state
-          duration: 0.5,
-          ease: "power2.inOut"
-        });
+      gsap.to(wrapper, {
+        height: "400px",
+        duration: 0.5,
+        ease: "power2.inOut"
+      });
 
-        currentIndex2 = -1;
-      } else {
-        showPanel(index);
-      }
-    });
+      currentIndex2 = -1;
+    } else {
+      showPanel(index); // ✅ Always open the clicked panel
+    }
   });
+});
 </script>
 <script>
   const images = document.querySelectorAll(".scroller-image");

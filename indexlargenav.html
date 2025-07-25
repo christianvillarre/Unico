@@ -19,9 +19,30 @@
       <div class="dropdown">
         <div class="dropdown-content">
           <div class="dropdown-text">
-            <h4>Our Story<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Culture<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Team<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4>About</h4>
+            <p>Unico blends strategy and heart as a full-service events firm grounded in purpose. Our story, culture, and team come together to create meaningful experiences that leave a lasting impact.</p>
+            <button class="dropbtn">See More
+              <img src="images/arrow-btn.png" alt="See more" />
+            </button>
+          </div>
+        </div>
+        <div class="dropdown-images">
+          <div class="image-box">
+            <img src="images/Photo 3 Kansas City.jpg" alt="Image 1" />
+            <div class="overlay"></div>
+            <button class="image-btn">Our Story</button>
+            
+          </div>
+          <div class="image-box">
+            <img src="images/10 HACR Blanket.jpg" alt="Image 2" />
+            <div class="overlay"></div>
+            <button class="image-btn">Culture</button>
+            
+          </div>
+          <div class="image-box">
+            <img src="images/img1.png" alt="Image 3" />
+            <div class="overlay"></div>
+            <button class="image-btn">Team</button>
           </div>
         </div>
       </div>
@@ -30,11 +51,29 @@
       <a href="#services">Impact</a>
       <div class="dropdown">
        <div class="dropdown-text">
-          <h4>Clients<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Featured Projects<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Services<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+          <h4>Services</h4>
+          <p>We deliver strategy-led event solutions that connect, inspire, and create measurable impact — from large-scale productions to intimate gatherings.</p>
+          <button class="dropbtn">Our Services
+            <img src="images/arrow-btn.png" alt="See more" />
+          </button>
         </div>
-     
+        <div class="dropdown-images">
+          <div class="image-box">
+          <img src="images/2 SAHCC FOH Pic.jpeg" alt="Image 1" />
+          <div class="overlay"></div>
+          <button class="image-btn">Clients</button>
+        </div>
+          <div class="image-box">
+            <img src="images/4 USSP-11.1.19.JPG" alt="Image 2" />
+            <div class="overlay"></div>
+            <button class="image-btn">Featured Projects</button>
+          </div>
+          <div class="image-box">
+            <img src="images/10 HACR Panel.jpg" alt="Image 3" />
+            <div class="overlay"></div>
+            <button class="image-btn">Services</button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="nav-item">
@@ -42,180 +81,66 @@
       <div class="dropdown">
         <div class="dropdown-content">
           <div class="dropdown-text">
-            <h4>Tell Us More<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Get Social<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4>Let's Be Friends</h4>
+            <p>Want to collaborate or learn more? Let’s connect and start a conversation — we’d love to hear from you.</p>
+            <button class="dropbtn">Our Details
+              <img src="images/arrow-btn.png" alt="See more" />
+            </button>
           </div>
         </div>
+        <div class="dropdown-connect">
+          <div class="connect-column">
+            <div class="connect-text">
+              <h4>Tell Us More!</h4>
+              <p>Let's get in touch.</p>
+              <form class="email-form">
+                <!--<label for="email">Email Address</label>-->
+                <div class="email-input-group">
+                  <input type="email" id="email" placeholder="Enter your email" required />
+                </div>
+                <button class="dropbtn-submit">
+                Submit
+                <img src="images/arrow-btn.png" alt="See more" />
+              </button>
+              </form>
+            </div>
+          </div>
+          <div class="connect-column">
+            <div class="connect-text">
+              <h4>Get Social</h4>
+              <p>Connect with us on.</p>
+              <button class="dropbtn">
+                Instagram
+                <img src="images/arrow-btn.png" alt="See more" />
+              </button>
+              <button class="dropbtn">
+                Facebook
+                <img src="images/arrow-btn.png" alt="See more" />
+              </button>
+              <button class="dropbtn">
+                LinkedIn
+                <img src="images/arrow-btn.png" alt="See more" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--
+        <div class="dropdown-images">
+          <div class="image-box2">
+            <img src="images/9 IDRA Dolores Huerta.jpg" alt="Image 2" />
+            <div class="overlay"></div>
+            <button class="image-btn">Tell Us More</button>
+          </div>
+          <div class="image-box2">
+            <img src="images/10 HACR Panel.jpg" alt="Image 3" />
+            <div class="overlay"></div>
+            <button class="image-btn">Get Social</button>
+          </div>
+        </div>-->
       </div>
     </div>
   </nav>
 </header>
-<style>
-       /* 🔹 NAVBAR */
-.navbar {
-  width: 100%;
-  height: 90px;
-  background: transparent;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2rem;
-   transition: transform 0.4s ease, background 0.3s ease;
-}
-.navbar:hover,
-.navbar.open {
-  background:#53709f; /* adjust opacity as needed */
-}
-.navbar.hidden {
-  transform: translateY(-100%);
-}
-
-.navbar.scrolled-up {
-  transform: translateY(0);
-}
-
-.navbar.at-top {
-  background: rgba(10, 80, 21, 0); /* fully transparent */
-}
-
-.navbar.at-top.hovered {
-  background: rgba(83, 112, 159, 1); /* visible on hover */
-}
-.navbar .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  text-transform: uppercase;
-  padding-left: 2rem;
-  
-}
-.navbar.navbar-bg {
-  background: rgba(83, 112, 159, 1); /* Your faded background */
-}
-.navbar nav {
-  display: flex;
-  gap: 2rem;
-  position: relative;
-}
-
-.navbar nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 00;
-  transition: opacity 0.3s;
-  padding-right: 2rem;
-}
-
-.navbar nav a:hover {
-  opacity: 0.7;
-}
-
-.nav-item {
-  position: relative;
-}
-
-.dropdown {
-  position: absolute;
-  top: 100%;
-  left: -2rem;
-  background: #53709f;
-  border-radius: 4px;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 9;
-  width: max-content; /* keeps it just wide enough for the text */
-  min-width: 100px;   /* prevents it from being too narrow */
-  height: auto;
-  padding-left: 2rem;
-  padding-right: 1rem; /* or however much you want */
-}
-.dropdown-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;  /* ✅ correct alignment */
-  justify-content: flex-start;
-  gap: 0.5rem;
-  padding: 0;               /* ✅ remove default padding */
-  margin: 0;                /* optional, for safety */
-  padding-top: 2.5rem;
-  padding-bottom: 0.80rem;
-}
-
-
-.nav-item.active .dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.dropdown-text h4,
-.dropdown-text p,
-.dropdown-text a,
-.dropdown-text button {
-  color: white;
-  font-size: 1rem;
-  font-weight: 500;
-  text-align: left;
-
-  text-decoration: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-.dropdown-text h4 {
-  padding-right: 1.5rem; /* ✅ add buffer space for the arrow */
-}
-
-.dropdown-text a:hover,
-.dropdown-text button:hover {
-  color: #e2e2e2;
-}
-
-
-.dropbtn {
-  font-size: 1rem;
-  line-height: 0.8;
- color: white;
-  margin: 0;
-  background: none;
-  border: none; 
-  
-  font-family: "Montserrat";
-  padding: 0;
-  margin-top: 1rem;
-  cursor: pointer;
-}
-/* 🔹 Animated underline setup */
-.navbar nav a,
-.dropdown-text h4 {
-  position: relative;
-  overflow: hidden;
-}
-.white-arrow {
-  opacity: 0;
-  transform: translateX(0);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  margin-left: 8px;
-  vertical-align: middle;
-}
-
-/* Animate arrow on hover of the whole h4 */
-.dropdown-text h4:hover .white-arrow {
-  opacity: 1;
-  transform: translateX(6px);
-}
-</style>
-
 
 
 
@@ -227,7 +152,7 @@
   <div class="bg-layer" id="bg2"></div>
 
   <div class="page-container">
-    <h1>Creating Impactful Experiences, Not Simply Events</h1>
+    <h1>Creating Impactful Experiences - Not Simply Events</h1>
   </div>
 
   <div class="nav-controls">
@@ -275,23 +200,12 @@
             <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/1b%20USHCC%20Orlando%20Ballroom%20and%20Skyline%20(1).mp4" type="video/mp4" />
             </video>
         </div>
-
-         <div class="carousel-item long-box">
-          <img src="images/1c USHCC.jpg" loading="lazy" alt="Case Study" />
-        </div>
-
         <div class="carousel-item short-box">
             <img src="images/client15.png" loading="lazy" alt="Case Study" />
         </div>
-
         <div class="carousel-item long-box">
             <img src="images/CAROUSEL 500X260_4.jpg" loading="lazy" alt="Case Study" />
         </div>
-
-        <div class="carousel-item short-box">
-          <img src="images/client12.png" loading="lazy" alt="Case Study" />
-        </div>
-
         <div class="carousel-item short-box">
           <img src="images/client19.png" loading="lazy" alt="Case Study" />
         </div>
@@ -307,7 +221,9 @@
         <div class="carousel-item short-box">
             <img src="images/client25.png" loading="lazy" alt="Case Study" />
         </div>
-        
+        <div class="carousel-item long-box">
+          <img src="images/CAROUSEL 500X260_8.jpg" loading="lazy" alt="Case Study" />
+        </div>
         <div class="carousel-item long-box">
           <video autoplay muted loop playsinline>
             <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/5b%20Unidos%20Las%20Vegas.mp4" type="video/mp4" />
@@ -316,32 +232,15 @@
         <div class="carousel-item short-box">
             <img src="images/client16.png" loading="lazy" alt="Case Study" />
         </div>
-
-        <div class="carousel-item long-box">
-          <img src="images/6b Aspen Inst LAS Media.JPG" loading="lazy" alt="Case Study" />
-        </div>
-
-        <div class="carousel-item long-box">
-          <img src="images/6c Aspen Inst LAS  Sketch.JPG" loading="lazy" alt="Case Study" />
-        </div>
-
         <div class="carousel-item short-box">
             <img src="images/client20.png" loading="lazy" alt="Case Study" />
         </div>
         <div class="carousel-item long-box">
-          <img src="images/7b In the Ring.jpg" loading="lazy" alt="Case Study" />
+          <img src="images/CAROUSEL 500X260_6.jpg" loading="lazy" alt="Case Study" />
         </div>
-
-        <div class="carousel-item long-box">
-          <img src="images/7c Mariachi.jpg" loading="lazy" alt="Case Study" />
-        </div>
-
         <div class="carousel-item short-box">
             <img src="images/client13.png" loading="lazy" alt="Case Study" />
         </div>
-
-
-        
         <div class="carousel-item short-box">
             <img src="images/client22.png" loading="lazy" alt="Case Study" />
         </div>
@@ -368,71 +267,46 @@
       </div>
       <div class="carousel-track track-2">
         <div class="carousel-item long-box">
-        <div class="image-overlay-wrapper">
-          <div class="overlay"></div>
-          <img src="images/Photo 1 Luis Fonsi.jpg" class="fonsiphoto" loading="lazy" alt="Case Study" />
+            <img src="images/Photo 1 Luis Fonsi.jpg" loading="lazy" alt="Case Study" />
         </div>
-      </div>
-
-      <div class="carousel-item long-box">
-        <div class="image-overlay-wrapper">
-          <div class="overlay"></div>
-          <img src="images/2b USSF Group Pic.JPG" class="fonsiphoto" loading="lazy" alt="Case Study" />
+        <div class="carousel-item short-box">
+            <img src="images/client21.png" loading="lazy" alt="Case Study" />
         </div>
-      </div>
-
-      <div class="carousel-item long-box">
-        <div class="image-overlay-wrapper">
-          <div class="overlay"></div>
-          <img src="images/3b SA300 Pic.jpg" class="fonsiphoto" loading="lazy" alt="Case Study" />
+        <div class="carousel-item long-box">
+            <img src="images/Photo 3 Kansas City.jpg" loading="lazy" alt="Case Study" />
         </div>
-      </div>
-
-      <div class="carousel-item long-box">
-        <div class="image-overlay-wrapper">
-          <div class="overlay"></div>
-          <img src="images/5b Kansas City.jpg" class="fonsiphoto" loading="lazy" alt="Case Study" />
+        <div class="carousel-item short-box">
+            <img src="images/client5.png" loading="lazy" alt="Case Study" />
         </div>
-      </div>
-
+        <div class="carousel-item long-box">
+            <img src="images/Photo 4 SA300.jpg" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client6.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <img src="images/Photo 5 Leg Summit.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client8.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <video autoplay muted loop playsinline>
+            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/9b%20SAHCC%20Gala%20Clip.mp4" type="video/mp4" />
+            </video>
+        </div>
+        <div class="carousel-item short-box">
+            <img src="images/client9.png" loading="lazy" alt="Case Study" />
+        </div>
+        <div class="carousel-item long-box">
+            <img src="images/Photo 6 Kamala.jpeg" loading="lazy" alt="Case Study" />
+        </div>
+        
+        <div class="carousel-item long-box">
+          <img src="images/CAROUSEL 500X260_3.jpg" loading="lazy" alt="Case Study" />
+        </div>
       </div>
     </div>
-
-    <style>
-.image-overlay-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.image-overlay-wrapper img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: relative; /* ✅ Ensure it's behind the overlay */
-  z-index: 1;
-}
-
-/* Color overlay */
-.image-overlay-wrapper .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #53709fb3;
-  opacity:1;
-  z-index: 999; /* ✅ Above image */
-  pointer-events: none; /* Optional: let mouse events pass through */
-}
-
-/* Remove overlay on hover */
-.image-overlay-wrapper:hover .overlay {
-  opacity: 0;
-}
-    </style>
 
     <div class="carousel-wrapper3 carousel-3">
       <div class="carousel-header">
@@ -544,39 +418,6 @@
     </div>
   </div>
 </section>
-
-
-<section class="instagram-section" data-scroll-section>
-  <div><h2>Follow Us On Instagram</h2></div>
-  <div class="instagram-feed-wrapper">
-   <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/8156591a127953d2b22a53201bf3a597.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
-  </div>
-</section>
-
-<style>
-.instagram-section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 4rem;
-  gap: 1rem;
-  height: 90vh;
-}
-.instagram-feed-wrapper {
-  width: 100%;
-  height: auto;            /* Let it grow naturally */
-  overflow: hidden;
-}
-
-.instagram-feed-wrapper iframe {
-  display: block;
-  width: 100%;
-  height: 1000px;           /* ✅ Set your desired height */
-  border: none;
-}
-</style>
 
 
 <footer class="footer" data-scroll-section>
