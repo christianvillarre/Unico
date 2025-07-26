@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Impact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+  html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #ffffff;
+  scroll-behavior: auto !important;
+  overscroll-behavior: none;
+}
+
+
+  .section-clients {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 4rem;
+  background-color: #ffffff;
+
+  }
+
+  .section-container {
+    height: 100vh;
+      display: flex;
+  flex-direction: column;
+  justify-content: center;
+  }
+.second-container {
+
+  margin-top: 10vh;
+}
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start; /* 🔁 CHANGED from center */
+  height: 100%;
+  gap: 3rem;
+  margin-top: 8rem;
+}
+
+.left-column {
+  flex: 1;
+  color: #4D4D4D;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.left-column h2 {
+  font-size: clamp(4rem, 8vw, 8rem);
+  margin: 0 0 3rem 0; /* ✅ remove top margin */
+  line-height: 0.9;
+}
+
+.left-column p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.cta-button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background-color: #ffffff;
+  color: #6E9D72;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #CCE5CC;
+}
+
+.right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.right-column img {
+  width: 100%;
+  max-width: 50vw;
+  height: 75vh;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+.about-btn {
+  
+  height: 3.5rem;             /* Match input height */
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #53709F;
+  color: #ffffff;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+  margin-top: 0; /* remove margin that offsets it */
+}
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .right-column {
+    align-items: center;
+  }
+
+  .right-column img {
+    max-width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<!-- 🔹 NAVBAR -->
+<header class="navbar" data-scroll-section>
+  <div class="logo">
+    <a href="/index.html"><img class="logo1" src="images/logo1.png" alt="Logo" /></a>
+  </div>
+  <nav>
+    <div class="nav-item">
+      <a href="/about copy.html">About</a>
+      <div class="dropdown">
+        <div class="dropdown-content">
+          <div class="dropdown-text">
+            <h4>Our Story<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4>Culture<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4>Team<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="impact.html">Impact</a>
+      <div class="dropdown">
+       <div class="dropdown-text">
+          <h4>Clients<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4>Featured Projects<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4>Services<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+        </div>
+     
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="#friends">Let's Be Friends</a>
+      <div class="dropdown">
+        <div class="dropdown-content">
+          <div class="dropdown-text">
+            <h4>Tell Us More<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4>Get Social<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+       /* 🔹 NAVBAR */
+.navbar {
+  width: 100%;
+  height: 90px;
+  background:#53709f; /* adjust opacity as needed */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+   transition: transform 0.4s ease, background 0.3s ease;
+   
+}
+.navbar:hover,
+.navbar.open {
+  background:#53709f; /* adjust opacity as needed */
+}
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+.navbar.scrolled-up {
+  transform: translateY(0);
+}
+
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  padding-left: 2rem;
+  
+}
+.navbar.navbar-bg {
+  background: rgba(83, 112, 159, 1); /* Your faded background */
+}
+.navbar nav {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 00;
+  transition: opacity 0.3s;
+  padding-right: 2rem;
+}
+
+.navbar nav a:hover {
+  opacity: 0.7;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: -2rem;
+  background: #53709f;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9;
+  width: max-content; /* keeps it just wide enough for the text */
+  min-width: 100px;   /* prevents it from being too narrow */
+  height: auto;
+  padding-left: 2rem;
+  padding-right: 1rem; /* or however much you want */
+}
+.dropdown-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  /* ✅ correct alignment */
+  justify-content: flex-start;
+  gap: 0.5rem;
+  padding: 0;               /* ✅ remove default padding */
+  margin: 0;                /* optional, for safety */
+  padding-top: 2.5rem;
+  padding-bottom: 0.80rem;
+}
+
+
+.nav-item.active .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-text h4,
+.dropdown-text p,
+.dropdown-text a,
+.dropdown-text button {
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.dropdown-text h4 {
+  padding-right: 1.5rem; /* ✅ add buffer space for the arrow */
+}
+
+.dropdown-text a:hover,
+.dropdown-text button:hover {
+  color: #e2e2e2;
+}
+
+
+.dropbtn {
+  font-size: 1rem;
+  line-height: 0.8;
+ color: white;
+  margin: 0;
+  background: none;
+  border: none; 
+  
+  font-family: "Montserrat";
+  padding: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+/* 🔹 Animated underline setup */
+.navbar nav a,
+.dropdown-text h4 {
+  position: relative;
+  overflow: hidden;
+}
+.white-arrow {
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* Animate arrow on hover of the whole h4 */
+.dropdown-text h4:hover .white-arrow {
+  opacity: 1;
+  transform: translateX(6px);
+}
+</style>
+<div data-scroll-container>
+
+<section class="section-clients" data-scroll-section>
+  <div class="section-container">
+    <div class="second-container">
+  <div class="content-wrapper">
+    <!-- Left Side: Text -->
+    <div class="left-column">
+      <h2>OUR CLIENTS</h2>
+
+
+    <!-- Right Side: Images -->
+    
+  </div>
+</div>
+  </div>
+</section>
+<style>
+        .client-scroll-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12vh;
+      padding: 10vh 4rem 10vh; /* starts in center of page */
+    }
+
+    .client-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      opacity: 0.3;
+      transform: scale(0.95);
+    }
+
+    .client-row img {
+      width: 350px;
+      height: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+       
+    }
+
+    @media (max-width: 768px) {
+      .client-row {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .client-row img {
+        width: 40%;
+      }
+    }
+</style>
+<section class="client-scroll-section" data-scroll-section>
+  <!-- Generate 6 rows of 5 clients (client1.png to client30.png) -->
+  <!-- You can replace these with actual image URLs or local paths -->
+ <div class="client-row">
+  <img src="images/1_LOGO_WT.png" />
+  <img src="images/2_LOGO_WT.png" />
+  <img src="images/3_LOGO_WT.png" />
+  <img src="images/4_LOGO_WT.png" />
+  <img src="images/5_LOGO_WT.png" />
+</div>
+<div class="client-row">
+  <img src="images/6_LOGO_WT.png" />
+  <img src="images/7_LOGO_WT.png" />
+  <img src="images/8_LOGO_WT.png" />
+  <img src="images/9_LOGO_WT.png" />
+  <img src="images/10_LOGO_WT.png" />
+</div>
+<div class="client-row">
+  <img src="images/11_LOGO_WT.png" />
+  <img src="images/12_LOGO_WT.png" />
+  <img src="images/13_LOGO_WT.png" />
+  <img src="images/14_LOGO_WT.png" />
+  <img src="images/15_LOGO_WT.png" />
+</div>
+<div class="client-row">
+  <img src="images/16_LOGO_WT.png" />
+  <img src="images/17_LOGO_WT.png" />
+  <img src="images/18_LOGO_WT.png" />
+  <img src="images/19_LOGO_WT.png" />
+  <img src="images/20_LOGO_WT.png" />
+</div>
+<div class="client-row">
+  <img src="images/21_LOGO_WT.png" />
+  <img src="images/22_LOGO_WT.png" />
+  <img src="images/23_LOGO_WT.png" />
+  <img src="images/24_LOGO_WT.png" />
+  <img src="images/25_LOGO_WT.png" />
+</div>
+<div class="client-row">
+  <img src="images/26_LOGO_WT.png" />
+  <img src="images/27_LOGO_WT.png" />
+  <img src="images/28_LOGO_WT.png" />
+  <img src="images/29_LOGO_WT.png" />
+  <img src="images/30_LOGO_WT.png" />
+</div>
+<div class="client-row">
+  <img src="images/31_LOGO_WT.png" />
+  <img src="images/32_LOGO_WT.png" />
+  <img src="images/33_LOGO_WT.png" />
+  <img src="images/34_LOGO_WT.png" />
+  <img src="images/35_LOGO_WT.png" />
+</div>
+</section>
+
+
+
+
+<section class="section-featured" data-scroll-section>
+  <div class="featured-inner">
+    <h2 class="featured-title">FEATURED PROJECTS</h2>
+
+    <div class="featured-image-container">
+  <img src="images/Photo 1 Luis Fonsi.jpg" alt="Featured Project" />
+  <div class="featured-overlay">
+    <h3 class="featured-title-text">Luis Fonsi Concert</h3>
+    <div class="featured-tags">
+      <span class="tag">Hospitality</span>
+      <span class="tag">Events</span>
+    </div>
+  </div>
+</div>
+
+    <div class="featured-card-row">
+      <div class="card">
+  <img src="images/4 USSP-11.1.19.JPG" alt="Featured Project" />
+  <div class="featured-overlay">
+    <h3 class="featured-title-text">U.S. Spain Council</h3>
+    <div class="featured-tags">
+      <span class="tag">Hospitality</span>
+      <span class="tag">Events</span>
+    </div>
+  </div>
+</div>
+      <div class="card">
+  <img src="images//3b SA300 Pic.jpg" alt="Featured Project" />
+  <div class="featured-overlay">
+    <h3 class="featured-title-text">SA300</h3>
+    <div class="featured-tags">
+      <span class="tag">Hospitality</span>
+      <span class="tag">Events</span>
+    </div>
+  </div>
+</div>
+      <div class="card">
+  <img src="images/5 UNIDOSUS Panel.jpg" alt="Featured Project" />
+  <div class="featured-overlay">
+    <h3 class="featured-title-text">Unidos US</h3>
+    <div class="featured-tags">
+      <span class="tag">Hospitality</span>
+      <span class="tag">Events</span>
+    </div>
+  </div>
+</div>
+      <div class="card">
+  <img src="images/1c USHCC.jpg" alt="Featured Project" />
+  <div class="featured-overlay">
+    <h3 class="featured-title-text">USHCC</h3>
+    <div class="featured-tags">
+      <span class="tag">Hospitality</span>
+      <span class="tag">Events</span>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-featured {
+    height: 250vh;
+    background: #71C7D4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  .featured-inner {
+    width: 100%;
+    height: 90%;
+    margin: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .featured-title {
+     font-size: clamp(4rem, 8vw, 8rem);
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+
+  .featured-image-container {
+    width: 100%;
+    height: 80vh;
+    background-color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .featured-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .featured-card-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    
+  }
+
+  .card {
+    flex: 1;
+    background-color: white;
+    height: 80vh;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #333;
+  }
+    .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 1rem;
+  }
+.card, .featured-image-container {
+  position: relative;
+}
+
+.featured-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 80%);
+  color: white;
+  z-index: 1;
+  border-radius: 1rem;
+}
+
+.featured-title-text {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0.5rem;
+}
+
+.featured-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0 0 1rem 0.5rem;
+}
+
+.tag {
+  background-color: white;
+  color: #333;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+  @media (max-width: 768px) {
+    .featured-card-row {
+      flex-direction: column;
+    }
+
+    .card {
+      height: 150px;
+    }
+  }
+</style>
+
+
+
+
+<!-- GSAP + ScrollTrigger CDN -->
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+ 
+
+<script>
+/*
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.querySelectorAll(".client-row").forEach((row) => {
+    gsap.set(row, { opacity: 0.3, scale: 0.85 });
+
+    ScrollTrigger.create({
+      trigger: row,
+      start: "top 90%",
+      end: "bottom 10%",
+      scrub: true,
+      onUpdate: (self) => {
+        const progress = self.progress; // goes 0 → 1
+        const centeredness = 1 - Math.abs(progress - 0.5) * 2; // peak at 0.5
+        const scale = 0.85 + centeredness * 0.15;
+        const opacity = 0.3 + centeredness * 0.7;
+
+        gsap.to(row, {
+          scale: scale,
+          opacity: opacity,
+          duration: 0.1,
+          overwrite: true,
+        });
+      },
+    });
+  });*/
+</script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  function initScrollAnimations() {
+    const scrollContainer = document.querySelector("[data-scroll-container]");
+
+    const locoScroll = new LocomotiveScroll({
+      el: scrollContainer,
+      smooth: true
+    });
+
+    ScrollTrigger.scrollerProxy(scrollContainer, {
+      scrollTop(value) {
+        return arguments.length
+          ? locoScroll.scrollTo(value, 0, 0)
+          : locoScroll.scroll.instance.scroll.y;
+      },
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight
+        };
+      },
+      pinType: scrollContainer.style.transform ? "transform" : "fixed"
+    });
+
+    locoScroll.on("scroll", ScrollTrigger.update);
+    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+    document.querySelectorAll(".client-row").forEach((row) => {
+      gsap.set(row, {
+        opacity: 0.2,
+        scale: 0.7,
+        filter: "blur(10px)"
+      });
+
+      ScrollTrigger.create({
+        trigger: row,
+        start: "top 90%",
+        end: "bottom 10%",
+        scrub: true,
+        scroller: scrollContainer,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          const centeredness = 1 - Math.abs(progress - 0.5) * 2;
+          const scale = 0.7 + centeredness * 0.3;
+          const opacity = 0.2 + centeredness * 0.8;
+          const blur = 8 - centeredness * 10;
+
+          gsap.to(row, {
+            scale,
+            opacity,
+            filter: `blur(${blur}px)`,
+            duration: 0.1,
+            overwrite: true
+          });
+        }
+      });
+    });
+
+    // Force refresh after all triggers are set
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+  }
+
+  // Wait for all images (or fallback after 2 seconds)
+  window.addEventListener("load", () => {
+    const images = document.querySelectorAll("img");
+    let loaded = 0;
+
+    const checkLoaded = () => {
+      loaded++;
+      if (loaded === images.length) {
+        initScrollAnimations();
+        clearTimeout(fallbackTimer);
+      }
+    };
+
+    // Attach listeners
+    images.forEach((img) => {
+      if (img.complete) {
+        checkLoaded();
+      } else {
+        img.addEventListener("load", checkLoaded);
+        img.addEventListener("error", checkLoaded);
+      }
+    });
+
+    // Fallback init after 2 seconds no matter what
+    const fallbackTimer = setTimeout(() => {
+      initScrollAnimations();
+    }, 2000);
+  });
+</script>
+
+
+
+
+<script>
+  // ✅ LOCOMOTIVE + SCROLLTRIGGER SETUP
+  gsap.registerPlugin(ScrollTrigger);
+
+  const scrollContainer = document.querySelector("[data-scroll-container]");
+
+  // Only initialize once and attach to window so navbar.js can use it
+  window.locoScroll = new LocomotiveScroll({
+    el: scrollContainer,
+    smooth: true
+  });
+
+  ScrollTrigger.scrollerProxy(scrollContainer, {
+    scrollTop(value) {
+      return arguments.length
+        ? window.locoScroll.scrollTo(value, 0, 0)
+        : window.locoScroll.scroll.instance.scroll.y;
+    },
+    getBoundingClientRect() {
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight
+      };
+    },
+    pinType: scrollContainer.style.transform ? "transform" : "fixed"
+  });
+
+  window.locoScroll.on("scroll", ScrollTrigger.update);
+  ScrollTrigger.addEventListener("refresh", () => window.locoScroll.update());
+  ScrollTrigger.refresh();
+
+  
+</script>
+
+
+<!-- ✅ Custom Scripts (after Locomotive setup) -->
+<script>
+  // Ensure DOM and Locomotive are ready
+  window.addEventListener("load", () => {
+    // Delay animation init to prevent scroll jump
+    setTimeout(() => {
+      requestAnimationFrame(() => {
+        // 🔹 Set base styles for all rows
+        document.querySelectorAll(".client-row").forEach((row) => {
+          gsap.set(row, {
+            opacity: 0.2,
+            scale: 0.7,
+            filter: "blur(10px)"
+          });
+
+          ScrollTrigger.create({
+            trigger: row,
+            start: "top 90%",
+            end: "bottom 10%",
+            scrub: true,
+            scroller: "[data-scroll-container]",
+            onUpdate: (self) => {
+              const progress = self.progress;
+              const centeredness = 1 - Math.abs(progress - 0.5) * 2;
+              const scale = 0.7 + centeredness * 0.3;
+              const opacity = 0.2 + centeredness * 0.8;
+              const blur = 8 - centeredness * 10;
+
+              gsap.to(row, {
+                scale,
+                opacity,
+                filter: `blur(${blur}px)`,
+                duration: 0.1,
+                overwrite: true
+              });
+            }
+          });
+        });
+
+        ScrollTrigger.refresh(); // sync triggers after delay
+      });
+    }, 100); // slight delay avoids jitter
+  });
+</script>
+<script>
+  const nav = document.querySelector('.navbar');
+const navItems = document.querySelectorAll('.nav-item');
+const logoImg = document.querySelector('.logo1');
+
+let hideTimer;
+let lastScrollY = 0;
+let logoState = 'logo1';
+let hasScrolledPastTop = false;
+
+// 🔹 Check if mouse is inside nav or dropdown
+function isMouseInsideNavOrDropdown(e) {
+  const related = e.relatedTarget;
+  return related && (nav.contains(related) || document.querySelector('.dropdown:hover'));
+}
+
+// 🔹 Remove navbar hover state if at top and not active
+function maybeRemoveHovered() {
+  const isDropdownActive = document.querySelector('.nav-item.active');
+  const isNavHovered = nav.matches(':hover');
+
+  if (window.locoScroll.scroll.instance.scroll.y <= 0 && !isDropdownActive && !isNavHovered) {
+    nav.classList.remove('hovered');
+  }
+}
+
+// 🔹 Animate dropdown items with GSAP
+function animateDropdown(item) {
+  const dropdown = item.querySelector('.dropdown');
+  const text = dropdown.querySelector('.dropdown-text');
+  const images = dropdown.querySelectorAll('.image-box, .image-box2');
+
+  if (text || images.length > 0) {
+    gsap.killTweensOf([text, ...images]);
+    gsap.set([text, ...images], { opacity: 0, y: 20 });
+
+    gsap.to(text, {
+      opacity: 1,
+      y: 0,
+      duration: 1.2,
+      ease: "power2.out"
+    });
+
+    gsap.to(images, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: "power2.out"
+    });
+  }
+}
+
+/*
+
+function animateDropdown(item) {
+  const dropdown = item.querySelector('.dropdown');
+  const text = dropdown.querySelector('.dropdown-text');
+  const images = dropdown.querySelectorAll('.image-box, .image-box2');
+
+  const targets = [text, ...images].filter(Boolean);
+
+  if (targets.length > 0) {
+    gsap.killTweensOf(targets);
+    gsap.set(targets, { opacity: 0, y: -10 }); // Start slightly above
+
+    gsap.to(targets, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: 'power2.out'
+    });
+  }
+}  
+*/
+
+// 🔹 Navbar mouse events
+nav.addEventListener('mouseenter', () => {
+  nav.classList.add('hovered');
+  clearTimeout(hideTimer);
+});
+
+nav.addEventListener('mouseleave', (e) => {
+  if (isMouseInsideNavOrDropdown(e)) return;
+  hideTimer = setTimeout(() => {
+    navItems.forEach(i => i.classList.remove('active'));
+    maybeRemoveHovered();
+  }, 200);
+});
+
+// 🔹 Dropdown triggers
+navItems.forEach(item => {
+  const dropdown = item.querySelector('.dropdown');
+  const trigger = item.querySelector('a');
+
+  trigger.addEventListener('mouseenter', () => {
+    clearTimeout(hideTimer);
+    navItems.forEach(i => i.classList.remove('active'));
+    item.classList.add('active');
+
+    nav.classList.add('hovered', 'navbar-bg');
+    nav.classList.remove('hidden');
+    nav.classList.add('scrolled-up');
+
+    animateDropdown(item);
+  });
+
+  item.addEventListener('mouseleave', (e) => {
+    if (isMouseInsideNavOrDropdown(e)) return;
+    hideTimer = setTimeout(() => {
+      item.classList.remove('active');
+      maybeRemoveHovered();
+    }, 200);
+  });
+
+  dropdown.addEventListener('mouseleave', (e) => {
+    if (isMouseInsideNavOrDropdown(e)) return;
+    hideTimer = setTimeout(() => {
+      item.classList.remove('active');
+      maybeRemoveHovered();
+    }, 100);
+  });
+});
+
+// 🔹 Scroll behavior logic
+function handleScroll(currentScroll) {
+  const scrollingDown = currentScroll > lastScrollY;
+  const scrollingUp = currentScroll < lastScrollY;
+
+  navItems.forEach(i => i.classList.remove('active'));
+
+  if (currentScroll <= 0) {
+    // Top of page
+    nav.classList.remove('hidden', 'scrolled-up');
+    nav.classList.add('at-top', 'navbar-bg');
+
+    if (logoState !== 'logo1') {
+      logoImg.src = 'images/logo1.png';
+      logoState = 'logo1';
+    }
+
+    hasScrolledPastTop = false;
+    maybeRemoveHovered();
+    lastScrollY = currentScroll;
+    return;
+  }
+
+  if (!hasScrolledPastTop) {
+    hasScrolledPastTop = true;
+  }
+
+  if (scrollingDown) {
+    // Scrolling down → hide navbar
+    nav.classList.add('hidden');
+    nav.classList.remove('scrolled-up', 'at-top');
+  } else if (scrollingUp) {
+    // Scrolling up → show navbar
+    nav.classList.remove('hidden');
+    nav.classList.add('scrolled-up', 'hovered', 'navbar-bg');
+    nav.classList.remove('at-top');
+
+    if (logoState !== 'logo2') {
+      logoImg.src = 'images/logo2.png';
+      logoState = 'logo2';
+    }
+
+    // 🔹 If mouse is already over a nav-item, show its dropdown immediately
+    const hoveredItem = document.querySelector('.nav-item:hover');
+    if (hoveredItem) {
+      hoveredItem.classList.add('active');
+      animateDropdown(hoveredItem);
+    }
+  }
+
+  lastScrollY = currentScroll;
+}
+
+// 🔹 Use Locomotive's scroll event
+if (window.locoScroll) {
+  window.locoScroll.on('scroll', (args) => {
+    const scrollY = args.scroll.y;
+    handleScroll(scrollY);
+  });
+} else {
+  window.addEventListener('scroll', () => handleScroll(window.scrollY));
+}
+
+// 🔹 Button arrow GSAP nudge on hover
+document.querySelectorAll('.dropbtn, .dropbtn-submit').forEach(btn => {
+  const arrow = btn.querySelector('img');
+
+  btn.addEventListener('mouseenter', () => {
+    gsap.to(arrow, {
+      x: 8,
+      duration: 0.3,
+      ease: 'power2.out'
+    });
+  });
+
+  btn.addEventListener('mouseleave', () => {
+    gsap.to(arrow, {
+      x: 0,
+      duration: 0.3,
+      ease: 'power2.inOut'
+    });
+  });
+});
+</script>
+</div>
+</div>
+</body>
+</html>

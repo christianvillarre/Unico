@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Client Scroll</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .client-scroll-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12vh;
+      padding: 50vh 4rem 50vh; /* starts in center of page */
+    }
+
+    .client-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      opacity: 0.3;
+      transform: scale(0.95);
+    }
+
+    .client-row img {
+      width: 350px;
+      height: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .client-row {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .client-row img {
+        width: 40%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="client-scroll-section">
+  <!-- Generate 6 rows of 5 clients (client1.png to client30.png) -->
+  <!-- You can replace these with actual image URLs or local paths -->
+  <div class="client-row">
+    <img src="images/client1.png" />
+    <img src="images/client2.png" />
+    <img src="images/client3.png" />
+    <img src="images/client4.png" />
+    <img src="images/client5.png" />
+  </div>
+  <div class="client-row">
+    <img src="images/client6.png" />
+    <img src="images/client7.png" />
+    <img src="images/client8.png" />
+    <img src="images/client9.png" />
+    <img src="images/client10.png" />
+  </div>
+  <div class="client-row">
+    <img src="images/client11.png" />
+    <img src="images/client12.png" />
+    <img src="images/client13.png" />
+    <img src="images/client14.png" />
+    <img src="images/client15.png" />
+  </div>
+  <div class="client-row">
+    <img src="images/client16.png" />
+    <img src="images/client17.png" />
+    <img src="images/client18.png" />
+    <img src="images/client19.png" />
+    <img src="images/client20.png" />
+  </div>
+  <div class="client-row">
+    <img src="images/client21.png" />
+    <img src="images/client22.png" />
+    <img src="images/client23.png" />
+    <img src="images/client24.png" />
+    <img src="images/client25.png" />
+  </div>
+  <div class="client-row">
+    <img src="images/client26.png" />
+    <img src="images/client27.png" />
+    <img src="images/client28.png" />
+    <img src="images/client29.png" />
+    <img src="images/client30.png.png" />
+  </div>
+</section>
+
+<!-- GSAP + ScrollTrigger CDN -->
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+
+
+<script>
+/*
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.querySelectorAll(".client-row").forEach((row) => {
+    gsap.set(row, { opacity: 0.3, scale: 0.85 });
+
+    ScrollTrigger.create({
+      trigger: row,
+      start: "top 90%",
+      end: "bottom 10%",
+      scrub: true,
+      onUpdate: (self) => {
+        const progress = self.progress; // goes 0 → 1
+        const centeredness = 1 - Math.abs(progress - 0.5) * 2; // peak at 0.5
+        const scale = 0.85 + centeredness * 0.15;
+        const opacity = 0.3 + centeredness * 0.7;
+
+        gsap.to(row, {
+          scale: scale,
+          opacity: opacity,
+          duration: 0.1,
+          overwrite: true,
+        });
+      },
+    });
+  });*/
+</script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.querySelectorAll(".client-row").forEach((row) => {
+    // Set base styles
+    gsap.set(row, {
+      opacity: 0.2,
+      scale: 0.7,
+      filter: "blur(10px)"
+    });
+
+    ScrollTrigger.create({
+      trigger: row,
+      start: "top 90%",
+      end: "bottom 10%",
+      scrub: true,
+      onUpdate: (self) => {
+        const progress = self.progress;
+        const centeredness = 1 - Math.abs(progress - 0.5) * 2; // peak = 1 at center
+
+        // Enhanced effects
+        const scale = 0.7 + centeredness * 0.3;           // 0.7 → 1
+        const opacity = 0.2 + centeredness * 0.8;         // 0.2 → 1
+        const blur = 8 - centeredness * 10;              // 10px → 0px
+
+        gsap.to(row, {
+          scale,
+          opacity,
+          filter: `blur(${blur}px)`,
+          duration: 0.1,
+          overwrite: true
+        });
+      },
+    });
+  });
+</script>
+
+</body>
+</html>
