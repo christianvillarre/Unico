@@ -373,13 +373,12 @@
   max-width: 100%; /* ✅ prevents overflow */
 }
 
-    .client-row img {
-      width: 350px;
-      height: auto;
-      object-fit: contain;
-      transition: transform 0.3s ease;
-       
-    }
+.client-row img {
+  width: clamp(6rem, 14vw, 25rem);
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
 
     @media (max-width: 768px) {
       .client-row {
@@ -453,8 +452,9 @@
   <div class="featured-inner">
     <h2 class="featured-title">FEATURED PROJECTS</h2>
 
-    <div class="featured-image-container">
+<div class="featured-image-container">
   <img src="images/Photo 1 Luis Fonsi.jpg" alt="Featured Project" />
+
   <div class="featured-overlay">
     <h3 class="featured-title-text">Say A Little Prayer</h3>
     <div class="featured-tags">
@@ -462,11 +462,16 @@
       <span class="tag">Events</span>
     </div>
   </div>
+
+  <div class="card-popup">
+    <p>View Project</p>
+  </div>
 </div>
 
     <div class="featured-card-row">
       <div class="card">
   <img src="images/4 USSP-11.1.19.JPG" alt="Featured Project" />
+  
   <div class="featured-overlay">
     <h3 class="featured-title-text">U.S. Spain Council</h3>
     <div class="featured-tags">
@@ -474,9 +479,15 @@
       <span class="tag">Events</span>
     </div>
   </div>
+  
+  <div class="card-popup">
+    <p>View Project</p>
+  </div>
 </div>
-      <div class="card">
-  <img src="images//3b SA300 Pic.jpg" alt="Featured Project" />
+
+<div class="card">
+  <img src="images/3b SA300 Pic.jpg" alt="Featured Project" />
+  
   <div class="featured-overlay">
     <h3 class="featured-title-text">SA300</h3>
     <div class="featured-tags">
@@ -484,9 +495,15 @@
       <span class="tag">Events</span>
     </div>
   </div>
+  
+  <div class="card-popup">
+    <p>View Project</p>
+  </div>
 </div>
-      <div class="card">
+
+<div class="card">
   <img src="images/5 UNIDOSUS Panel.jpg" alt="Featured Project" />
+  
   <div class="featured-overlay">
     <h3 class="featured-title-text">Unidos US</h3>
     <div class="featured-tags">
@@ -494,9 +511,15 @@
       <span class="tag">Events</span>
     </div>
   </div>
+  
+  <div class="card-popup">
+    <p>View Project</p>
+  </div>
 </div>
-      <div class="card">
+
+<div class="card">
   <img src="images/1c USHCC.jpg" alt="Featured Project" />
+  
   <div class="featured-overlay">
     <h3 class="featured-title-text">USHCC</h3>
     <div class="featured-tags">
@@ -504,96 +527,188 @@
       <span class="tag">Events</span>
     </div>
   </div>
+  
+  <div class="card-popup">
+    <p>View Project</p>
+  </div>
 </div>
     </div>
   </div>
 </section>
 
 <style>
-  .section-featured {
-    height: 250vh;
-    background: #71C7D4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-  }
-
-  .featured-inner {
-    width: 100%;
-    height: 90%;
-    margin: 4rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 1rem;
-  }
-
-  .featured-title {
-     font-size: clamp(4rem, 8vw, 8rem);
-    font-weight: 800;
-    text-align: center;
-    margin: 0;
-    margin-bottom: 2rem;
-  }
-
-  .featured-image-container {
-    width: 100%;
-    height: 80vh;
-    background-color: white;
-    border-radius: 1rem;
-    overflow: hidden;
-  }
-
-  .featured-image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .featured-card-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    
-  }
-
-  .card {
-    flex: 1;
-    background-color: white;
-    height: 80vh;
-    border-radius: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: #333;
-  }
-    .card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 1rem;
-  }
-.card, .featured-image-container {
-  position: relative;
+ .section-featured {
+  height: 250vh;
+  background: #71C7D4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
+.featured-inner {
+  width: 100%;
+  height: 90%;
+  margin: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.featured-title {
+  font-size: clamp(4rem, 7vw, 8rem);
+  font-weight: 800;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
+/* Make featured-image-container behave like card */
+.featured-image-container {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.featured-image-container:hover img {
+  transform: scale(1.05);
+}
+
+.featured-image-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.featured-image-container:hover::after {
+  opacity: 1;
+}
+
+.featured-image-container .card-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+
+.featured-image-container:hover .card-popup {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.featured-image-container img {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease; /* ✅ match .card img */
+}
+
+.featured-card-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.card {
+  flex: 1;
+  background-color: white;
+  height: 80vh;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 1rem;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* Dark overlay on hover */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+/* Center popup */
+.card-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+
+.card:hover .card-popup {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Featured overlay (bottom gradient text) */
 .featured-overlay {
   position: absolute;
   bottom: 0;
   width: 100%;
   padding: 1rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 80%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 80%);
   color: white;
-  z-index: 1;
+  z-index: 2;
   border-radius: 1rem;
 }
 
 .featured-title-text {
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 4vw, 2.2rem); /* scales between 1.5rem and 2.2rem */
   font-weight: bold;
   margin: 0 0 0.5rem 0.5rem;
 }
@@ -605,24 +720,28 @@
 }
 
 .tag {
+  font-size: clamp(0.65rem, 1.2vw, 1rem); /* scales tag text responsively */
   background-color: white;
   color: #333;
   padding: 0.3rem 0.75rem;
   border-radius: 999px;
-  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
 }
-
-  @media (max-width: 768px) {
-    .featured-card-row {
-      flex-direction: column;
-    }
-
-    .card {
-      height: 150px;
-    }
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .featured-card-row {
+    flex-direction: column;
   }
+
+  .card {
+    height: 150px;
+  }
+
+  .card-popup {
+    display: none;
+  }
+}
 </style>
 
 
