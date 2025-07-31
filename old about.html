@@ -6,136 +6,6 @@
   <title>About Unico</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-
-  <style>
-  html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background-color: #6E9D72;
-}
-
-
-  .section-ourstory {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: auto;
-  padding: 0 4rem;
-  background-color: #6E9D72;
-  border-bottom: 2px solid #CCE5CC;
-  }
-    .section-culture {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: auto;
-  padding: 0 4rem;
-  background-color: #6E9D72;
-  }
-  .section-container {
-    height: 100vh;
-      display: flex;
-  flex-direction: column;
-  justify-content: center;
-  }
-.second-container {
-  height: 90vh;
-  margin-top: 10vh;
-}
-.content-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start; /* 🔁 CHANGED from center */
-  height: 100%;
-  gap: 3rem;
-  margin-top: 8rem;
-}
-
-.left-column {
-  flex: 1;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.left-column h2 {
-  font-size: clamp(4rem, 8vw, 8rem);
-  margin: 0 0 3rem 0; /* ✅ remove top margin */
-  line-height: 0.9;
-}
-
-.left-column p {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  max-width: 500px;
-}
-
-.cta-button {
-  margin-top: 1.5rem;
-  padding: 0.75rem 2rem;
-  background-color: #ffffff;
-  color: #6E9D72;
-  border: none;
-  font-weight: bold;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #CCE5CC;
-}
-
-.right-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.right-column img {
-  width: 100%;
-  max-width: 50vw;
-  height: 75vh;
-  border-radius: 1rem;
-  object-fit: cover;
-}
-.about-btn {
-  
-  height: 3.5rem;             /* Match input height */
-  padding: 0 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: #53709F;
-  color: #ffffff;
-  border: none;
-  font-weight: bold;
-  font-size: 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  white-space: nowrap;
-  margin-top: 0; /* remove margin that offsets it */
-}
-@media (max-width: 768px) {
-  .content-wrapper {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .right-column {
-    align-items: center;
-  }
-
-  .right-column img {
-    max-width: 100%;
-  }
-}
-</style>
 </head>
 <body>
 <!-- 🔹 NAVBAR -->
@@ -145,26 +15,65 @@
   </div>
   <nav>
     <div class="nav-item">
-      <a href="/about copy.html">About</a>
+      <a href="#about">About</a>
       <div class="dropdown">
         <div class="dropdown-content">
           <div class="dropdown-text">
-            <h4>Our Story<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Culture<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Team<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4>About</h4>
+            <p>Unico blends strategy and heart as a full-service events firm grounded in purpose. Our story, culture, and team come together to create meaningful experiences that leave a lasting impact.</p>
+            <button class="dropbtn">See More
+              <img src="images/arrow-btn.png" alt="See more" />
+            </button>
+          </div>
+        </div>
+        <div class="dropdown-images">
+          <div class="image-box">
+            <img src="images/Photo 3 Kansas City.jpg" alt="Image 1" />
+            <div class="overlay"></div>
+            <button class="image-btn">Our Story</button>
+            
+          </div>
+          <div class="image-box">
+            <img src="images/10 HACR Blanket.jpg" alt="Image 2" />
+            <div class="overlay"></div>
+            <button class="image-btn">Culture</button>
+            
+          </div>
+          <div class="image-box">
+            <img src="images/img1.png" alt="Image 3" />
+            <div class="overlay"></div>
+            <button class="image-btn">Team</button>
           </div>
         </div>
       </div>
     </div>
     <div class="nav-item">
-      <a href="/impact.html">Impact</a>
+      <a href="#services">Impact</a>
       <div class="dropdown">
        <div class="dropdown-text">
-          <h4>Clients<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Featured Projects<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Services<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+          <h4>Services</h4>
+          <p>We deliver strategy-led event solutions that connect, inspire, and create measurable impact — from large-scale productions to intimate gatherings.</p>
+          <button class="dropbtn">Our Services
+            <img src="images/arrow-btn.png" alt="See more" />
+          </button>
         </div>
-     
+        <div class="dropdown-images">
+          <div class="image-box">
+          <img src="images/" alt="Image 1" />
+          <div class="overlay"></div>
+          <button class="image-btn">Clients</button>
+        </div>
+          <div class="image-box">
+            <img src="images/4 USSP-11.1.19.JPG" alt="Image 2" />
+            <div class="overlay"></div>
+            <button class="image-btn">Featured Projects</button>
+          </div>
+          <div class="image-box">
+            <img src="images/10 HACR Panel.jpg" alt="Image 3" />
+            <div class="overlay"></div>
+            <button class="image-btn">Services</button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="nav-item">
@@ -172,364 +81,169 @@
       <div class="dropdown">
         <div class="dropdown-content">
           <div class="dropdown-text">
-            <h4>Tell Us More<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Get Social<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4>Let's Be Friends</h4>
+            <p>Want to collaborate or learn more? Let’s connect and start a conversation — we’d love to hear from you.</p>
+            <button class="dropbtn">Our Details
+              <img src="images/arrow-btn.png" alt="See more" />
+            </button>
           </div>
         </div>
+        <div class="dropdown-connect">
+          <div class="connect-column">
+            <div class="connect-text">
+              <h4>Tell Us More!</h4>
+              <p>Let's get in touch.</p>
+              <form class="email-form">
+                <!--<label for="email">Email Address</label>-->
+                <div class="email-input-group">
+                  <input type="email" id="email" placeholder="Enter your email" required />
+                </div>
+                <button class="dropbtn-submit">
+                Submit
+                <img src="images/arrow-btn.png" alt="See more" />
+              </button>
+              </form>
+            </div>
+          </div>
+          <div class="connect-column">
+            <div class="connect-text">
+              <h4>Get Social</h4>
+              <p>Connect with us on.</p>
+              <button class="dropbtn">
+                Instagram
+                <img src="images/arrow-btn.png" alt="See more" />
+              </button>
+              <button class="dropbtn">
+                Facebook
+                <img src="images/arrow-btn.png" alt="See more" />
+              </button>
+              <button class="dropbtn">
+                LinkedIn
+                <img src="images/arrow-btn.png" alt="See more" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--
+        <div class="dropdown-images">
+          <div class="image-box2">
+            <img src="images/9 IDRA Dolores Huerta.jpg" alt="Image 2" />
+            <div class="overlay"></div>
+            <button class="image-btn">Tell Us More</button>
+          </div>
+          <div class="image-box2">
+            <img src="images/10 HACR Panel.jpg" alt="Image 3" />
+            <div class="overlay"></div>
+            <button class="image-btn">Get Social</button>
+          </div>
+        </div>-->
       </div>
     </div>
   </nav>
 </header>
 
-<style>
-       /* 🔹 NAVBAR */
-.navbar {
-  width: 100%;
-  height: 90px;
-  background: transparent;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2rem;
-   transition: transform 0.4s ease, background 0.3s ease;
-}
-.navbar:hover,
-.navbar.open {
-  background:#53709f; /* adjust opacity as needed */
-}
-.navbar.hidden {
-  transform: translateY(-100%);
-}
-
-.navbar.scrolled-up {
-  transform: translateY(0);
-}
-
-.navbar.at-top {
-  background: rgba(10, 80, 21, 0); /* fully transparent */
-}
-
-.navbar.at-top.hovered {
-  background: rgba(83, 112, 159, 1); /* visible on hover */
-}
-.navbar .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  text-transform: uppercase;
-  padding-left: 2rem;
-  
-}
-.navbar.navbar-bg {
-  background: rgba(83, 112, 159, 1); /* Your faded background */
-}
-.navbar nav {
-  display: flex;
-  gap: 2rem;
-  position: relative;
-}
-
-.navbar nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 00;
-  transition: opacity 0.3s;
-  padding-right: 2rem;
-}
-
-.navbar nav a:hover {
-  opacity: 0.7;
-}
-
-.nav-item {
-  position: relative;
-}
-
-.dropdown {
-  position: absolute;
-  top: 100%;
-  left: -2rem;
-  background: #53709f;
-  border-radius: 4px;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 9;
-  width: max-content; /* keeps it just wide enough for the text */
-  min-width: 100px;   /* prevents it from being too narrow */
-  height: auto;
-  padding-left: 2rem;
-  padding-right: 1rem; /* or however much you want */
-}
-.dropdown-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;  /* ✅ correct alignment */
-  justify-content: flex-start;
-  gap: 0.5rem;
-  padding: 0;               /* ✅ remove default padding */
-  margin: 0;                /* optional, for safety */
-  padding-top: 2.5rem;
-  padding-bottom: 0.80rem;
-}
 
 
-.nav-item.active .dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.dropdown-text h4,
-.dropdown-text p,
-.dropdown-text a,
-.dropdown-text button {
-  color: white;
-  font-size: 1rem;
-  font-weight: 500;
-  text-align: left;
-
-  text-decoration: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-.dropdown-text h4 {
-  padding-right: 1.5rem; /* ✅ add buffer space for the arrow */
-}
-
-.dropdown-text a:hover,
-.dropdown-text button:hover {
-  color: #e2e2e2;
-}
 
 
-.dropbtn {
-  font-size: 1rem;
-  line-height: 0.8;
- color: white;
-  margin: 0;
-  background: none;
-  border: none; 
-  
-  font-family: "Montserrat";
-  padding: 0;
-  margin-top: 1rem;
-  cursor: pointer;
-}
-/* 🔹 Animated underline setup */
-.navbar nav a,
-.dropdown-text h4 {
-  position: relative;
-  overflow: hidden;
-}
-.white-arrow {
-  opacity: 0;
-  transform: translateX(0);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  margin-left: 8px;
-  vertical-align: middle;
-}
-
-/* Animate arrow on hover of the whole h4 */
-.dropdown-text h4:hover .white-arrow {
-  opacity: 1;
-  transform: translateX(6px);
-}
-</style>
 <div data-scroll-container>
 
-<section class="section-ourstory" data-scroll-section>
-  <div class="section-container">
-    <div class="second-container">
-  <div class="content-wrapper">
-    <!-- Left Side: Text -->
-    <div class="left-column">
-      <h2>OUR STORY</h2>
-      <p>
-        At Unico Communications, creativity isn’t just our craft — it’s our culture. We’re a tight-knit team of
-innovators, problem-solvers, and big-picture thinkers who believe great work starts with genuine
-connections. From brainstorming bold ideas to executing flawless event productions, we collaborate,
-challenge one another, and bring unique perspectives that spark fresh ideas. Our drive for excellence
-shapes remarkable results. Here, we don’t just work for our clients; we partner with them to bring visions
-to life — with passion, precision, and a touch of Unico magic
-      </p>
-      <button class="about-btn">Let's Talk<img src="images/arrow-btn-white.png" alt="See more" /></button>
+
+
+<section class="section1" data-scroll-section>
+  <div class="section-inner">
+    <div class="section-content">
+      <h1>Our Story</h1>
+      <p>Unico Communications is a national special events focused agency headquartered in San Antonio, Texas.Founded in 2004. Unico has grown into a leading full-service events firm providing, public relations, communications, and special events services to their non-profit and corporate clients across the United States.</p>
+    <button class="about-btn">
+                Let's Talk
+                <img src="images/arrow-btn-white.png" alt="See more" />
+              </button>
+    
     </div>
 
-    <!-- Right Side: Images -->
-    <div class="right-column">
-      <img src="images/unico_building.jpg" alt="Event photo" />
-     
-    </div>
-  </div>
-</div>
-  </div>
-</section>
-
-
-<section class="section-culture" data-scroll-section>
-  <div class="section-container">
-    <div class="second-container">
-      <div class="content-wrapper">
-        <!-- Left Side: Text -->
-        <div class="left-column">
-          <h2>CULTURE</h2>
-          <p>
-           At Unico Communications, creativity isn’t just our craft — it’s our culture. We’re a tight-knit team of
-innovators, problem-solvers, and big-picture thinkers who believe great work starts with genuine
-connections. From brainstorming bold ideas to executing flawless event productions, we collaborate,
-challenge one another, and bring unique perspectives that spark fresh ideas. Our drive for excellence
-shapes remarkable results. Here, we don’t just work for our clients; we partner with them to bring visions
-to life — with passion, precision, and a touch of Unico magic
-          </p>
-          <button class="about-btn">Meet the Team<img src="images/arrow-btn-white.png" alt="See more" /></button>
+    <div class="image-container">
+      <div class="image-scroller">
+        <div class="image-stack">
+          <div class="scroller-image">
+            <img src="images/img1.png" alt="Box Image" />
+          </div>
+          <div class="scroller-image">
+            <img src="images/img2.png" alt="Box Image" />
+          </div>
+          <div class="scroller-image">
+            <img src="images/img3.png" alt="Box Image" />
+          </div>
+          <div class="scroller-image">
+            <img src="images/img1.png" alt="Box Image" />
+          </div>
         </div>
-
-        <!-- Right Side: Images -->
-        <div class="right-column">
-          <img src="images/unico_desks.jpg" alt="Team culture photo" />
+        <div class="scroller-controls">
+          <button id="prevBtn">←</button>
+          <button id="nextBtn">→</button>
         </div>
       </div>
     </div>
   </div>
-</section>
-
-
-<section class="section2" data-scroll-section>
- <h3 class="team-title">Team</h3>
- <div class="carousel-wrapper">
-   <button class="carousel-btn prev">←</button>
-  <div class="carousel-track-container">
-  <div class="carousel-track">
-  <div class="grid-container">
-
-    <div class="image-wrapper">
-      <div class="image-box">
-        <img class="default-img" src="images/team/LBombin.jpg" alt="Image 1" />
-        <img class="hover-img" src="images/team/LBombin - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
-      </div>
-      <div class="image-title">Lisa Bombín</div>
-      <div class="image-title-text">President & CEO</div>
-    </div>
-
-    <div class="image-wrapper">
-      <div class="image-box">
-        <img class="default-img" src="images/team/MVela.jpg" alt="Image 1" />
-        <img class="hover-img" id="carolyn" src="images/team/MVela - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
-      </div>
-      <div class="image-title">Michael Vela</div>
-      <div class="image-title-text">Senior Director, Creative & Communications</div>
-    </div>
-   
-    <div class="image-wrapper" id="carolyn">
-      <div class="image-box">
-        <img class="default-img" src="images/team/CPalacios.jpg" alt="Carolyn Palacios" />
-        <img class="hover-img" src="images/team/CPalacios - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
-      </div>
-      <div class="image-title">Carolyn Palacios-Mancha</div>
-      <div class="image-title-text">Director of Account Management</div>
-    </div>
-
-    <div class="image-wrapper">
-      <div class="image-box">
-        <img class="default-img" src="images/team/JNavarro.jpg" alt="Image 1" />
-        <img class="hover-img" src="images/team/JNavarro - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
-      </div>
-      <div class="image-title">Julia Navarro</div>
-      <div class="image-title-text">Administrative Manager</div>
-    </div>
-
-    <div class="image-wrapper">
-      <div class="image-box">
-        <img class="default-img" src="images/team/CPulido.jpg" alt="Image 1" />
-        <img class="hover-img" src="images/team/CPulido - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
-      </div>
-      <div class="image-title">Christopher Pulido</div>
-      <div class="image-title-text">Senior Meeting Plannet & Registration Manager</div>
-    </div>
-
-    <div class="image-wrapper">
-      <div class="image-box">
-        <img class="default-img" src="images/team/EMalave.jpg" alt="Image 1" />
-        <img class="hover-img" src="images/team/EMalave - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
-      </div>
-      <div class="image-title">Emily Malave</div>
-      <div class="image-title-text">Senior Meeting Planner & Expo Manager</div>
-    </div>
-
-    <div class="image-wrapper">
-      <div class="image-box">
-        <img class="default-img" src="images/team/JTenace.jpg" alt="Image 1" />
-        <img class="hover-img" src="images/team/JTenace - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
-      </div>
-      <div class="image-title">Jordan Tenace</div>
-      <div class="image-title-text">Senior Technical Producer & Show Caller</div>
-    </div>
-
-     <div class="image-wrapper">
-      <div class="image-box">
-        <img class="default-img" src="images/team/VDeJesus.jpg" alt="Image 1" />
-        <img class="hover-img" src="images/team/VDeJesus - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
-      </div>
-      <div class="image-title">Victor De Jesus</div>
-      <div class="image-title-text">Production Specialist</div>
-    </div>
-
-    <div class="image-wrapper">
-      <div class="image-box">
-        <img class="default-img" src="images/team/MBarreiro.jpg" alt="Image 1" />
-        <img class="hover-img" src="images/team/MBarreiro - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
-      </div>
-      <div class="image-title">Monique Barreiro</div>
-      <div class="image-title-text">Production Specialist</div>
-    </div>
-
-    <div class="image-wrapper">
-      <div class="image-box">
-        <img class="default-img" src="images/team/MVillarreal.jpg" alt="Image 1" />
-        <img class="hover-img" src="images/team/MVillarreal - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
-      </div>
-      <div class="image-title">Margil Villarreal</div>
-      <div class="image-title-text">Senior Graphic Designer</div>
-    </div>
-
-     <div class="image-wrapper">
-      <div class="image-box">
-        <img class="default-img" src="images/team/NdelosSantos.jpg" alt="Image 1" />
-        <img class="hover-img" src="images/team/NdelosSantos - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
-      </div>
-      <div class="image-title">Nelly De Los Santos</div>
-      <div class="image-title-text">Scriptwriter, Copywriter</div>
-    </div>
-
-    <div class="image-wrapper">
-      <div class="image-box">
-        <img class="default-img" src="images/team/VBarreiro.jpg" alt="Image 1" />
-        <img class="hover-img" src="images/team/VBarreiro - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
-      </div>
-      <div class="image-title">Victor Barreiro</div>
-      <div class="image-title-text">Production Specialist and Audio Talent</div>
-    </div>
-
   
-  </div>
-   </div>
-</div>
- <button class="carousel-btn next">→</button>
-</div>
-  </section>
+</section>
 
-   <style>
+
+
+
+<div class="accordion-wrapper" data-scroll-section>
+  <div class="accordion">
+    <div class="panel">
+      <div class="panel-content">
+        <div class="panel-text">
+        <h3>Strategy</h3>
+        <P>Unico blends strategy and heart as a full-service events firm grounded in purpose. Our story, culture, and team come together to create meaningful experiences that leave a lasting impact.</P>
+        </div>
+        <div class="panel-img">
+          <img src="images/10 HACR Panel.jpg" alt="Media Image" />
+        </div>
+
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-content">
+        <div class="panel-text">
+        <h3>Creative</h3>
+        <P>Unico blends strategy and heart as a full-service events firm grounded in purpose. Our story, culture, and team come together to create meaningful experiences that leave a lasting impact.</P>
+        </div>
+        <div class="panel-img">
+          <img src="images/Photo 3 Kansas City.jpg" alt="Media Image" />
+        </div>
+
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-content">
+        <div class="panel-text">
+        <h3>Media</h3>
+        <P>Unico blends strategy and heart as a full-service events firm grounded in purpose. Our story, culture, and team come together to create meaningful experiences that leave a lasting impact.</P>
+        </div>
+        <div class="panel-img">
+          <img src="images/5 UNIDOSUS Panel.jpg" alt="Media Image" />
+        </div>
+
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-content">
+        <div class="panel-text">
+        <h3>Measurement</h3>
+        <P>Unico blends strategy and heart as a full-service events firm grounded in purpose. Our story, culture, and team come together to create meaningful experiences that leave a lasting impact.</P>
+        </div>
+        <div class="panel-img">
+          <img src="images/Photo 3 Kansas City.jpg" alt="Media Image" />
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+ <style>
      .section2 {
     height: 100vh;
     width: 100%;
@@ -657,6 +371,375 @@ to life — with passion, precision, and a touch of Unico magic
       margin-bottom: 12rem;
     }
   </style>
+  <section class="section2" data-scroll-section>
+ <h3 class="team-title">Our Team</h3>
+ <div class="carousel-wrapper">
+   <button class="carousel-btn prev">←</button>
+  <div class="carousel-track-container">
+  <div class="carousel-track">
+  <div class="grid-container">
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/LBombin.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/LBombin - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Lisa Bombín</div>
+      <div class="image-title-text">President & CEO</div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/MVela.jpg" alt="Image 1" />
+        <img class="hover-img" id="carolyn" src="images/team/MVela - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Michael Vela</div>
+      <div class="image-title-text">Senior Director, Creative & Communications</div>
+    </div>
+   
+    <div class="image-wrapper" id="carolyn">
+      <div class="image-box">
+        <img class="default-img" src="images/team/CPalacios.jpg" alt="Carolyn Palacios" />
+        <img class="hover-img" src="images/team/CPalacios - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Carolyn Palacios-Mancha</div>
+      <div class="image-title-text">Director of Account Management</div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/JNavarro.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/JNavarro - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Julia Navarro</div>
+      <div class="image-title-text">Administrative Manager</div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/CPulido.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/CPulido - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Christopher Pulido</div>
+      <div class="image-title-text">Senior Meeting Plannet & Registration Manager</div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/EMalave.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/EMalave - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Emily Malave</div>
+      <div class="image-title-text">Senior Meeting Planner & Expo Manager</div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/JTenace.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/JTenace - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Jordan Tenace</div>
+      <div class="image-title-text">Senior Technical Producer & Show Caller</div>
+    </div>
+
+     <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/VDeJesus.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/VDeJesus - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Victor De Jesus</div>
+      <div class="image-title-text">Production Specialist</div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/MBarreiro.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/MBarreiro - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Monique Barreiro</div>
+      <div class="image-title-text">Production Specialist</div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/MVillarreal.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/MVillarreal - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Margil Villarreal</div>
+      <div class="image-title-text">Senior Graphic Designer</div>
+    </div>
+
+     <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/NdelosSantos.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/NdelosSantos - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Nelly De Los Santos</div>
+      <div class="image-title-text">Scriptwriter, Copywriter</div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="default-img" src="images/team/VBarreiro.jpg" alt="Image 1" />
+        <img class="hover-img" src="images/team/VBarreiro - Lightbulb.jpg" alt="Carolyn Palacios Hover" />
+      </div>
+      <div class="image-title">Victor Barreiro</div>
+      <div class="image-title-text">Production Specialist and Audio Talent</div>
+    </div>
+
+  
+  </div>
+   </div>
+</div>
+ <button class="carousel-btn next">→</button>
+</div>
+  </section>
+
+  <style>
+
+    .accordion-wrapper {
+      height: 98vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .accordion {
+      height: 150vh;
+      width: 100%;
+    }
+.panel {
+  position: relative;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: white;
+  overflow: hidden;
+  background: #6E9D72;
+  border-top: 2px solid #CCE5CC;
+}
+.panel-content {
+  position: relative; /* changed from absolute */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 4rem;
+  gap: 2rem;
+  padding-top: 1.2rem;
+}
+.panel-img {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  
+  padding-top: 6rem;
+   max-width: 1000px;
+  max-height: 300px;
+}
+
+.panel-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+.panel-text {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+
+.panel-text h3 {
+  font-size: 3rem;
+  margin: 0 0 3rem 0;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.panel-text p {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+#carolyn .hover-img {
+  transform: scale(1.1);
+  margin-top: 2rem;
+}
+  </style>
+
+<style>
+ 
+.section1 {
+   background-color: #6E9D72;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.6s ease;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  display: flex;
+  align-items: flex-start; /* ⬅️ changed from flex-end */
+  justify-content: space-between;
+  padding: 0 4rem;
+  position: relative;
+  gap: 1rem; /* spacing between text and cards */
+  
+}
+.section-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  gap: 2rem;
+  height: 100%; /* ✅ Add this to stretch children vertically */
+  margin-top: 20vh;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+ justify-content: flex-start;
+ align-items: flex-end;
+  height: 100%;               /* ✅ Ensure it fills vertical space */
+  margin-left: auto;
+}
+.image-scroller {
+  position: relative;
+  height: auto;
+  cursor: pointer;
+}
+
+.image-stack {
+  position: relative;
+  width: clamp(10vw, 20vw, 20vw);
+  height: clamp(20vh, 80vh, 80vh);
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.scroller-image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.scroller-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* or "contain" if you want full image visible */
+  border-radius: 1rem;
+}
+.scroller-controls {
+  margin-top: 1rem;
+  text-align: center;
+  visibility: hidden;
+}
+.scroller-controls button {
+  background: #fff;
+  color: #333;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+  .section-content {
+    flex: 1;
+    max-width: 800px;
+    background: transparent;
+    padding: 0rem;
+    border-radius: 12px;
+    padding-bottom: 0rem;
+    z-index: 1;
+  }
+
+ .section-content h1 {
+  font-size: clamp(0.5rem, 8vw, 8rem);
+  margin: 0 0 1rem 0; /* Reset top margin */
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+}
+
+  .section-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+  }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: #37493E;
+}
+
+[data-scroll-container] {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+  .scroller-image::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent black */
+  border-radius: 1rem;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  opacity: 1; /* visible by default */
+}
+
+.scroller-image.selected::after {
+  opacity: 0; /* hide overlay on selected */
+}
+.about-btn {
+  
+  height: 3.5rem;             /* Match input height */
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #53709F;
+  color: #ffffff;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+  margin-top: 0; /* remove margin that offsets it */
+}
+
+
+.about-btn:hover {
+  background: #CCE5CC;
+  color: #ffffff;
+}
+
+</style>
 
 
 
@@ -1157,10 +1240,10 @@ align-self: flex-start; /* ✅ aligns to top of grid cell */
 </style>
 
 
+
 <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
 <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-
 <script>
   const panels = document.querySelectorAll(".panel");
   const wrapper = document.querySelector(".accordion-wrapper");
@@ -1281,10 +1364,7 @@ align-self: flex-start; /* ✅ aligns to top of grid cell */
   window.locoScroll.on("scroll", ScrollTrigger.update);
   ScrollTrigger.addEventListener("refresh", () => window.locoScroll.update());
   ScrollTrigger.refresh();
-
-  
 </script>
-
 <script>
   const track = document.querySelector(".carousel-track");
   const nextBtn = document.querySelector(".carousel-btn.next");
@@ -1307,13 +1387,11 @@ align-self: flex-start; /* ✅ aligns to top of grid cell */
     }
   });
 </script>
-
 <!-- ✅ Custom Scripts (after Locomotive setup) -->
 <script src="navbar.js"></script>
 <script src="carousel.js"></script>
 <script src="heroscroll.js"></script>
 <script src="tracker.js"></script>
-</div>
 </div>
 </body>
 </html>

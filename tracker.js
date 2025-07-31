@@ -42,15 +42,15 @@
         if (!section1Animated.done && container.querySelector('#years')) {
           section1Animated.done = true;
           animateCount('years', 21, 2000);
-          animateCount('clients', 57, 3000);
+          animateCount('clients', 57, 8000);
           animateCount('impact', 100, 2500, '%');
           startMiles();
         }
 
         if (!section2Animated.done && container.querySelector('#events')) {
           section2Animated.done = true;
-          animateCount('events', 329, 2000);
-          animateCount('attendees', 296750, 5000);
+          animateCount('events', 329, 6000);
+          animateCount('attendees', 296750, 20000);
           animateCount('cities', 36, 1800);
           animateCount('countries', 5, 1200);
         }

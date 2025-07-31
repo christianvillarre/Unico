@@ -3,9 +3,140 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Unico Communications</title>
+  <title>Let's Be Friends</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+  html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #85ADC1;
+  font-family: 'Montserrat', sans-serif;
+}
+
+  .section-ourstory {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  padding: 0 4rem;
+  background-color: #85ADC1;
+  }
+    .section-culture {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  padding: 0 4rem;
+  background-color: #85ADC1;
+  }
+  .section-container {
+    height: 100vh;
+      display: flex;
+  flex-direction: column;
+  justify-content: center;
+  }
+.second-container {
+  height: 90vh;
+  margin-top: 10vh;
+}
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start; /* 🔁 CHANGED from center */
+  height: 100%;
+  gap: 0.5rem;
+  margin-top: 8rem;
+}
+
+.left-column {
+  flex: 0.9;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+
+.left-column h2 {
+  font-size: clamp(4rem, 8vw, 8rem);
+  margin: 0 0 3rem 0; /* ✅ remove top margin */
+  line-height: 0.9;
+}
+
+.left-column p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+.cta-button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background-color: #ffffff;
+  color: #6E9D72;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #CCE5CC;
+}
+
+.right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.right-column img {
+  width: 100%;
+  max-width: 50vw;
+  height: 75vh;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+.about-btn {
+  
+  height: 3.5rem;             /* Match input height */
+  width: 10rem;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #6E9D72;
+  color: #ffffff;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+  margin-top: 0; /* remove margin that offsets it */
+}
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .right-column {
+    align-items: center;
+  }
+
+  .right-column img {
+    max-width: 100%;
+  }
+}
+</style>
 </head>
 <body>
 <!-- 🔹 NAVBAR -->
@@ -50,6 +181,7 @@
     </div>
   </nav>
 </header>
+
 <style>
        /* 🔹 NAVBAR */
 .navbar {
@@ -83,7 +215,7 @@
 }
 
 .navbar.at-top.hovered {
-  background: rgba(83, 112, 159, 1); /* visible on hover */
+  background: #6E9D72; /* visible on hover */
 }
 .navbar .logo {
   font-size: 1.5rem;
@@ -94,7 +226,7 @@
   
 }
 .navbar.navbar-bg {
-  background: rgba(83, 112, 159, 1); /* Your faded background */
+  background: #6E9D72; /* Your faded background */
 }
 .navbar nav {
   display: flex;
@@ -123,7 +255,7 @@
   position: absolute;
   top: 100%;
   left: -2rem;
-  background: #53709f;
+  background: #6E9D72;
   border-radius: 4px;
   opacity: 0;
   visibility: hidden;
@@ -215,33 +347,21 @@
   transform: translateX(6px);
 }
 </style>
-
-
-
-
 <div data-scroll-container>
 
-<!-- 🔹 HERO SECTION -->
-<section class="hero-section" data-scroll-section>
-  <div class="bg-layer" id="bg1"></div>
-  <div class="bg-layer" id="bg2"></div>
-
-  <div class="page-container">
-    <h1>Creating Impactful Experiences, Not Simply Events</h1>
-  </div>
-
-  <div class="nav-controls">
-    <button id="prevBtn" class="prevBtn">
-      <img src="images/left-arrow-tiny.png" loading="lazy" alt="Case Study" />
-    </button>
-    <button id="nextBtn" class="nextBtn">
-      <img src="images/right-arrow-tiny.png" loading="lazy" alt="Case Study" />
-    </button>
-  </div>
-
-  <div class="dots" id="dotContainer"></div>
-
-  <div class="hero-social-icons">
+<section class="section-ourstory" data-scroll-section>
+  <div class="section-container">
+    <div class="second-container">
+  <div class="content-wrapper">
+    <!-- Left Side: Text -->
+    <div class="left-column">
+      <h2>TELL US MORE!</h2>
+      <p>
+        We love big ideas, bold visions, and making things happen. Drop us a few details about your project or event. We’re all ears and all in. Let’s create something unforgettable!<br>
+         <p class="social-text">Let's Get Social!</p>
+       
+      </p>
+       <div class="hero-social-icons">
       <a href="#" class="social-icon" aria-label="Instagram">
         <img src="images/icon-instagram.png" alt="Instagram" />
       </a>
@@ -252,373 +372,208 @@
         <img src="images/icon-linkedin.png" alt="LinkedIn" />
       </a>
     </div>
-</section>
+    </div>
 <style>
-
-  </style>
-
-  <main class="main-section" data-scroll-section>
-    <div class="carousel-wrapper2 carousel-1">
-      <div class="carousel-header">
-        <h2>Clients</h2>
-        <button class="dropbtn"><p>See More</p>
-        <img src="images/arrow-btn.png" alt="See more" />
-        </button>
-      </div>
-      <div class="carousel-track track-1">
-       <div class="carousel-item short-box">
-          <img src="images/cleint30.png" loading="lazy" alt="Case Study" />
-        </div>
-        
-        <div class="carousel-item long-box">
-          <video autoplay muted loop playsinline>
-            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/1b%20USHCC%20Orlando%20Ballroom%20and%20Skyline%20(1).mp4" type="video/mp4" />
-            </video>
-        </div>
-
-         <div class="carousel-item long-box">
-          <img src="images/1c USHCC.jpg" loading="lazy" alt="Case Study" />
-        </div>
-
-        <div class="carousel-item short-box">
-            <img src="images/client15.png" loading="lazy" alt="Case Study" />
-        </div>
-
-        <div class="carousel-item long-box">
-            <img src="images/CAROUSEL 500X260_4.jpg" loading="lazy" alt="Case Study" />
-        </div>
-
-        <div class="carousel-item short-box">
-          <img src="images/client12.png" loading="lazy" alt="Case Study" />
-        </div>
-
-        <div class="carousel-item short-box">
-          <img src="images/client19.png" loading="lazy" alt="Case Study" />
-        </div>
-        <div class="carousel-item long-box">
-          <img src="images/CAROUSEL 500X260_10.jpg" loading="lazy" alt="Case Study" />
-        </div>
-        <div class="carousel-item short-box">
-            <img src="images/client26.png" loading="lazy" alt="Case Study" />
-        </div>
-        <div class="carousel-item long-box">
-            <img src="images/CAROUSEL 500X260_9.jpg" loading="lazy" alt="Case Study" />
-        </div>
-        <div class="carousel-item short-box">
-            <img src="images/client25.png" loading="lazy" alt="Case Study" />
-        </div>
-        
-        <div class="carousel-item long-box">
-          <video autoplay muted loop playsinline>
-            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/5b%20Unidos%20Las%20Vegas.mp4" type="video/mp4" />
-            </video>
-        </div>
-        <div class="carousel-item short-box">
-            <img src="images/client16.png" loading="lazy" alt="Case Study" />
-        </div>
-
-        <div class="carousel-item long-box">
-          <img src="images/6b Aspen Inst LAS Media.JPG" loading="lazy" alt="Case Study" />
-        </div>
-
-        <div class="carousel-item long-box">
-          <img src="images/6c Aspen Inst LAS  Sketch.JPG" loading="lazy" alt="Case Study" />
-        </div>
-
-        <div class="carousel-item short-box">
-            <img src="images/client20.png" loading="lazy" alt="Case Study" />
-        </div>
-        <div class="carousel-item long-box">
-          <img src="images/7b In the Ring.jpg" loading="lazy" alt="Case Study" />
-        </div>
-
-        <div class="carousel-item long-box">
-          <img src="images/7c Mariachi.jpg" loading="lazy" alt="Case Study" />
-        </div>
-
-        <div class="carousel-item short-box">
-            <img src="images/client13.png" loading="lazy" alt="Case Study" />
-        </div>
-
-
-        
-        <div class="carousel-item short-box">
-            <img src="images/client22.png" loading="lazy" alt="Case Study" />
-        </div>
-        <div class="carousel-item long-box">
-          <video autoplay muted loop playsinline>
-            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/9b%20SAHCC%20Gala%20Clip.mp4" type="video/mp4" />
-            </video>
-        </div>
-        <div class="carousel-item short-box">
-            <img src="images/client14.png" loading="lazy" alt="Case Study" />
-        </div>
-        <div class="carousel-item short-box">
-            <img src="images/client17.png" loading="lazy" alt="Case Study" />
-        </div>
-      </div>
-    </div>
-
-    <div class="carousel-wrapper carousel-2">
-      <div class="carousel-header">
-        <h2>Case Studies</h2>
-        <button class="dropbtn"><p>See More</p>
-        <img src="images/arrow-btn.png" alt="See more" />
-        </button>
-      </div>
-      <div class="carousel-track track-2">
-        <div class="carousel-item long-box">
-          <div class="image-overlay-wrapper">
-            <!-- BACKGROUND -->
-            <img src="images/carouselcs1.jpg" class="bg-image" loading="lazy" alt="Case Study" />
-
-            <!-- COLOR OVERLAY (fades on hover) -->
-            <div class="overlay"></div>
-
-            <!-- TRANSPARENT PNG on top -->
-            <img src="images/carouselcase1.png" class="overlay-image" loading="lazy" alt="Overlay" />
-          </div>
-        </div>
-
-       <div class="carousel-item long-box">
-          <div class="image-overlay-wrapper">
-            <!-- BACKGROUND -->
-            <img src="images/carouselcs2.jpg" class="bg-image" loading="lazy" alt="Case Study" />
-
-            <!-- COLOR OVERLAY (fades on hover) -->
-            <div class="overlay"></div>
-
-            <!-- TRANSPARENT PNG on top -->
-            <img src="images/carouselcase2.png" class="overlay-image" loading="lazy" alt="Overlay" />
-          </div>
-        </div>
-
-       <div class="carousel-item long-box">
-          <div class="image-overlay-wrapper">
-            <!-- BACKGROUND -->
-            <img src="images/carouselcs3.jpg" class="bg-image" loading="lazy" alt="Case Study" />
-
-            <!-- COLOR OVERLAY (fades on hover) -->
-            <div class="overlay"></div>
-
-            <!-- TRANSPARENT PNG on top -->
-            <img src="images/carouselcase3.png" class="overlay-image" loading="lazy" alt="Overlay" />
-          </div>
-        </div>
-
-      <div class="carousel-item long-box">
-          <div class="image-overlay-wrapper">
-            <!-- BACKGROUND -->
-            <img src="images/carouselcs4.jpg" class="bg-image" loading="lazy" alt="Case Study" />
-
-            <!-- COLOR OVERLAY (fades on hover) -->
-            <div class="overlay"></div>
-
-            <!-- TRANSPARENT PNG on top -->
-            <img src="images/carouselcase4.png" class="overlay-image" loading="lazy" alt="Overlay" />
-          </div>
-        </div>
-
-
-        <div class="carousel-item long-box">
-          <div class="image-overlay-wrapper">
-            <!-- BACKGROUND -->
-            <img src="images/CAROUSEL 500X260_8.jpg" class="bg-image" loading="lazy" alt="Case Study" />
-
-            <!-- COLOR OVERLAY (fades on hover) -->
-            <div class="overlay"></div>
-
-            <!-- TRANSPARENT PNG on top -->
-            <img src="images/carouselcase5.png" class="overlay-image" loading="lazy" alt="Overlay" />
-          </div>
-        </div>
-
-
-      </div>
-    </div>
-
-    <style>
-.image-overlay-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.image-overlay-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/* Background image (z-index 1) */
-.bg-image {
-  z-index: 1;
-}
-
-/* Color overlay (z-index 2, fades out on hover) */
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #53709fb3;
-  opacity: 1;
-  z-index: 2;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-}
-
-.image-overlay-wrapper:hover .overlay {
-  opacity: 0;
-}
-
-/* Transparent PNG overlay image (z-index 3 — on top of all) */
-.overlay-image {
-  z-index: 3;
-  pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.4s ease;
-}
-
-.image-overlay-wrapper:hover .overlay-image {
-  opacity: 0;
-}
-    </style>
-
-    <div class="carousel-wrapper3 carousel-3">
-      <div class="carousel-header">
-        <h2>Services</h2>
-        <button class="dropbtn"><p>See More</p>
-        <img src="images/arrow-btn.png" alt="See more" />
-        </button>
-      </div>
-      <div class="carousel-track track-3">
-        <div class="carousel-item long-box">
-            <video autoplay muted loop playsinline>
-            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/Event%20Production.mp4" type="video/mp4" />
-            </video>
-        </div>
-        <div class="carousel-item long-box">
-            <video autoplay muted loop playsinline>
-            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/Food%20and%20Beverage.mp4" type="video/mp4" />
-            </video>
-        </div>
-        <div class="carousel-item long-box">
-            <video autoplay muted loop playsinline>
-            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/Lodging.mp4" type="video/mp4" />
-            </video>
-        </div>
-        <div class="carousel-item long-box">
-            <video autoplay muted loop playsinline>
-            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/Media%20Relations.mp4" type="video/mp4" />
-            </video>
-        </div>
-        <div class="carousel-item long-box">
-            <video autoplay muted loop playsinline>
-            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/Program%20Development.mp4" type="video/mp4" />
-            </video>
-        </div>
-        
-      </div>
-    </div>
-  </main>
-  
-
-
-<section class="tracker-wrapper" data-scroll-section>
-  <!-- Section 1 -->
-  <div class="tracker-section">
-    <div class="tracker-container">
-      <!-- Column 1 -->
-      <div class="tracker-col">
-        <div class="value" id="years">0</div>
-        <div class="header">Years in Business</div>
-      </div>
-      <!-- Column 2 -->
-      <div class="tracker-col">
-        <div class="value" id="clients">0</div>
-        <div class="header">Clients</div>
-      </div>
-      <!-- Column 3 -->
-      <div class="tracker-col">
-        <div class="value" id="miles">0</div>
-        <div class="header">Miles Traveled</div>
-      </div>
-      <!-- Column 4 -->
-      <div class="tracker-col">
-        <div class="value" id="impact">0%</div>
-        <div class="header">Social Impact Events</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Section 2 -->
-   <div class="tracker-title">Event Reach</div>
-  <div class="tracker-section">
-    
-    <div class="tracker-container">
-      
-      <!-- Column 1 -->
-      <div class="tracker-col">
-        <div class="value" id="events">0</div>
-        <div class="header">Events Produced</div>
-      </div>
-      <!-- Column 2 -->
-      <div class="tracker-col">
-        <div class="value" id="attendees">0</div>
-        <div class="header">Attendees</div>
-      </div>
-      <!-- Column 3 -->
-      <div class="tracker-col">
-        <div class="value" id="cities">0</div>
-        <div class="header">Cities</div>
-      </div>
-      <!-- Column 4 -->
-      <div class="tracker-col">
-        <div class="value" id="countries">0</div>
-        <div class="header">Countries</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="instagram-section" data-scroll-section>
-  <div><h2>Follow Us On Instagram</h2></div>
-  <div class="instagram-feed-wrapper">
-   <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/8156591a127953d2b22a53201bf3a597.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
-  </div>
-</section>
-
-<style>
-.instagram-section {
-  width: 100%;
+        .hero-social-icons {
+            position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 4rem;
   gap: 1rem;
-  height: 90vh;
+  z-index: 3;
+  margin-left: 4rem;
+  margin-top: 5rem;
 }
-.instagram-feed-wrapper {
-  width: 100%;
-  height: auto;            /* Let it grow naturally */
-  overflow: hidden;
+.social-text {
+    font-weight: 800;
 }
 
-.instagram-feed-wrapper iframe {
-  display: block;
-  width: 100%;
-  height: 1000px;           /* ✅ Set your desired height */
+.hero-social-icons .social-icon {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background-color: #ffffff;
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+  
+}
+
+.hero-social-icons .social-icon img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.hero-social-icons .social-icon:hover {
+  background-color: #6E9D72;
+  transform: scale(1.05);
+}
+
+.hero-social-icons .social-icon:hover img {
+  filter: brightness(0) invert(1); /* makes dark icons white on hover */
 }
 </style>
+    <!-- Right Side: Images -->
+    <div class="right-column">
+          <form action="#" method="post" autocomplete="off">
+    <div class="name-fields">
+      <input type="text" name="first_name" placeholder="First Name" required>
+      <input type="text" name="last_name" placeholder="Last Name" required>
+    </div>
+
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Your message..." rows="5" required></textarea>
+
+    <button class="about-btn">Submit<img src="images/Arrow 3.png" alt="See more" /></button>
+  </form>
+     <style>
+.about-btn img {
+  width: 2rem;
+  height: auto;
+  max-height: 1rem;
+  margin-left: 0.5 rem;
+}
+  form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .name-fields {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .name-fields input {
+      flex: 1;
+    }
+
+    input, textarea {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  padding: 0.7rem;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #ffffff34;
+  color: white;
+  transition: background-color 0.2s ease;
+  outline: none;
+  height: 4rem;
+  padding-left: 2rem;
+}
+textarea[name="message"] {
+  height: 14rem; /* or any value you prefer */
+  margin-bottom: 2rem;
+  padding-top: 1.5rem;
+}
+input:focus, textarea:focus {
+  background-color: #6E9D72; /* darker blue on focus */
+}
+    input::placeholder,
+    textarea::placeholder {
+      color: white;
+      opacity: 0.7;
+    }
+
+
+
+    /* Prevent autofill background override */
+    input:-webkit-autofill,
+    textarea:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px #add8e6 inset !important;
+      -webkit-text-fill-color: white !important;
+      transition: background-color 5000s ease-in-out 0s;
+        font-family: 'Montserrat', sans-serif;
+    }
+     </style>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+
+<section class="section-culture" data-scroll-section>
+
+      <div class="content-wrapper2">
+        <!-- Left Side: Text -->
+        <div class="location-text">
+          <h2>LOCATION</h2>
+        </div>
+        <div class="san-antonio">
+            <img src="images/san-antonio.png">
+            <img class="corner-badge" src="images/Rectangle 17.png" alt="Badge">
+        </div>
+        <div class="san-antonio">
+            <img src="images/image 5.png">
+        </div>
+      </div>
+      
+  
+</section>
+<style>
+    .location-text h2 {
+  font-size: clamp(4rem, 8vw, 8rem);
+  margin: 0 0 3rem 0; /* ✅ remove top margin */
+  line-height: 0.9;
+  color:white;
+}
+  .section-container2 {
+    height: 100vh;
+      display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  
+  }
+.second-container2 {
+  height: 90vh;
+  margin-top: 10vh;
+}
+.location-text p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  max-width: 800px;
+  color:white;
+}
+.content-wrapper2 {
+  display: flex;
+  flex-direction: column; /* ✅ switch from row to column */
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+  gap: 0.5rem;
+  margin-top: 0;
+}
+.san-antonio {
+    width: 100%;
+    height: 75vh;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 4rem;
+    position: relative; /* Required for absolute positioning inside */
+}
+.san-antonio > img:first-child {
+  width: 100%;
+  transform: translateY(-120px); /* adjust value as needed */
+}
+.corner-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+  z-index: 2;
+  margin-left: 2rem;
+  margin-bottom: -2rem;
+}
+</style>
+
 
 
 <footer class="footer" data-scroll-section>
@@ -1118,9 +1073,99 @@ align-self: flex-start; /* ✅ aligns to top of grid cell */
 
 
 
+
+
 <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
 <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+<script>
+  const panels = document.querySelectorAll(".panel");
+  const wrapper = document.querySelector(".accordion-wrapper");
+  let currentIndex2 = 0;
+
+  function showPanel(index) {
+    panels.forEach((panel, i) => {
+      gsap.to(panel, {
+        height: i === index ? "600px" : "100px",
+        duration: 0.5,
+        ease: "power2.inOut"
+      });
+    });
+
+    gsap.to(wrapper, {
+      height: "98vh", // expanded height
+      duration: 0.5,
+      ease: "power2.inOut"
+    });
+
+    currentIndex2 = index;
+  }
+
+  // Open first panel by default
+  showPanel(currentIndex2);
+
+  panels.forEach((panel, index) => {
+    panel.addEventListener("click", () => {
+      if (currentIndex2 === index) {
+        // Close panel
+        gsap.to(panel, {
+          height: "100px",
+          duration: 0.4,
+          ease: "power2.inOut"
+        });
+
+        // Shrink the wrapper
+        gsap.to(wrapper, {
+          height: "400px", // collapsed state
+          duration: 0.5,
+          ease: "power2.inOut"
+        });
+
+        currentIndex2 = -1;
+      } else {
+        showPanel(index);
+      }
+    });
+  });
+</script>
+<script>
+  const images = document.querySelectorAll(".scroller-image");
+  const total = images.length;
+  let currentIndex = 0; // ✅ Start with first image
+
+  function renderStack(index) {
+    images.forEach((img, i) => {
+      const offset = (i - total + 1) * 150;
+      const distance = Math.abs(i - index);
+      const z = total - distance;
+
+      img.classList.toggle("selected", i === index);
+
+      gsap.set(img, {
+        x: offset,
+        scale: i === index ? 1 : 0.98,
+        opacity: 1,
+        zIndex: z
+      });
+    });
+  }
+
+  images.forEach((img, i) => {
+    img.addEventListener("click", () => {
+      currentIndex = i;
+      renderStack(currentIndex);
+    });
+  });
+
+  renderStack(currentIndex); // ✅ Initial render
+
+  // ✅ Auto-advance every 5 seconds
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % total;
+    renderStack(currentIndex);
+  }, 3000);
+</script>
 
 <script>
   // ✅ LOCOMOTIVE + SCROLLTRIGGER SETUP
@@ -1154,13 +1199,183 @@ align-self: flex-start; /* ✅ aligns to top of grid cell */
   window.locoScroll.on("scroll", ScrollTrigger.update);
   ScrollTrigger.addEventListener("refresh", () => window.locoScroll.update());
   ScrollTrigger.refresh();
+
+  
+</script>
+
+<script>
+  const track = document.querySelector(".carousel-track");
+  const nextBtn = document.querySelector(".carousel-btn.next");
+  const prevBtn = document.querySelector(".carousel-btn.prev");
+  const cardWidth = 25 * 16 + 56; // 25rem + gap (converted to px)
+  let currentPosition = 0;
+
+  nextBtn.addEventListener("click", () => {
+    const maxScroll = track.scrollWidth - track.parentElement.offsetWidth;
+    if (Math.abs(currentPosition) < maxScroll) {
+      currentPosition -= cardWidth;
+      gsap.to(track, { x: currentPosition, duration: 0.5, ease: "power2.out" });
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (currentPosition < 0) {
+      currentPosition += cardWidth;
+      gsap.to(track, { x: currentPosition, duration: 0.5, ease: "power2.out" });
+    }
+  });
 </script>
 
 <!-- ✅ Custom Scripts (after Locomotive setup) -->
-<script src="navbar.js"></script>
+<script>
+  const nav = document.querySelector('.navbar');
+  const navItems = document.querySelectorAll('.nav-item');
+  const logoImg = document.querySelector('.logo1');
+
+  let hideTimer;
+  let lastScrollY = 0;
+  let logoState = 'logo1';
+  let hasScrolledPastTop = false;
+
+  function isMouseInsideNavOrDropdown(e) {
+    const related = e.relatedTarget;
+    return related && (nav.contains(related) || document.querySelector('.dropdown:hover'));
+  }
+
+  function maybeRemoveHovered() {
+    const isDropdownActive = document.querySelector('.nav-item.active');
+    const isNavHovered = nav.matches(':hover');
+    if (window.locoScroll.scroll.instance.scroll.y <= 0 && !isDropdownActive && !isNavHovered) {
+      nav.classList.remove('hovered');
+    }
+  }
+
+  function animateDropdown(item) {
+    const dropdown = item.querySelector('.dropdown');
+    const text = dropdown.querySelector('.dropdown-text');
+    const images = dropdown.querySelectorAll('.image-box, .image-box2');
+    const targets = [text, ...images].filter(Boolean);
+
+    if (targets.length > 0) {
+      gsap.killTweensOf(targets);
+      gsap.set(targets, { opacity: 0, y: -10 });
+
+      gsap.to(targets, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power2.out'
+      });
+    }
+  }
+
+  nav.addEventListener('mouseenter', () => {
+    nav.classList.add('hovered');
+    clearTimeout(hideTimer);
+  });
+
+  nav.addEventListener('mouseleave', (e) => {
+    if (isMouseInsideNavOrDropdown(e)) return;
+    hideTimer = setTimeout(() => {
+      navItems.forEach(i => i.classList.remove('active'));
+      maybeRemoveHovered();
+    }, 200);
+  });
+
+  navItems.forEach(item => {
+    const dropdown = item.querySelector('.dropdown');
+    const trigger = item.querySelector('a');
+
+    trigger.addEventListener('mouseenter', () => {
+      clearTimeout(hideTimer);
+      navItems.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+
+      nav.classList.add('hovered', 'navbar-bg');
+      nav.classList.remove('hidden');
+      nav.classList.add('scrolled-up');
+
+      animateDropdown(item);
+    });
+
+    item.addEventListener('mouseleave', (e) => {
+      if (isMouseInsideNavOrDropdown(e)) return;
+      hideTimer = setTimeout(() => {
+        item.classList.remove('active');
+        maybeRemoveHovered();
+      }, 200);
+    });
+
+    dropdown.addEventListener('mouseleave', (e) => {
+      if (isMouseInsideNavOrDropdown(e)) return;
+      hideTimer = setTimeout(() => {
+        item.classList.remove('active');
+        maybeRemoveHovered();
+      }, 100);
+    });
+  });
+
+  function handleScroll(currentScroll) {
+    const scrollingDown = currentScroll > lastScrollY;
+    const scrollingUp = currentScroll < lastScrollY;
+
+    navItems.forEach(i => i.classList.remove('active'));
+
+    if (currentScroll <= 0) {
+      nav.classList.remove('hidden', 'scrolled-up');
+      nav.classList.add('at-top', 'navbar-bg');
+
+      if (logoState !== 'logo1') {
+        logoImg.src = 'images/logo1.png';
+        logoState = 'logo1';
+      }
+
+      hasScrolledPastTop = false;
+      maybeRemoveHovered();
+      lastScrollY = currentScroll;
+      return;
+    }
+
+    if (!hasScrolledPastTop) {
+      hasScrolledPastTop = true;
+    }
+
+    if (scrollingDown) {
+      nav.classList.add('hidden');
+      nav.classList.remove('scrolled-up', 'at-top');
+    } else if (scrollingUp) {
+      nav.classList.remove('hidden');
+      nav.classList.add('scrolled-up', 'hovered', 'navbar-bg');
+      nav.classList.remove('at-top');
+
+      if (logoState !== 'logo2') {
+        logoImg.src = 'images/logo2.png';
+        logoState = 'logo2';
+      }
+
+      const hoveredItem = document.querySelector('.nav-item:hover');
+      if (hoveredItem) {
+        hoveredItem.classList.add('active');
+        animateDropdown(hoveredItem);
+      }
+    }
+
+    lastScrollY = currentScroll;
+  }
+
+  if (window.locoScroll) {
+    window.locoScroll.on('scroll', (args) => {
+      const scrollY = args.scroll.y;
+      handleScroll(scrollY);
+    });
+  } else {
+    window.addEventListener('scroll', () => handleScroll(window.scrollY));
+  }
+</script>
 <script src="carousel.js"></script>
 <script src="heroscroll.js"></script>
 <script src="tracker.js"></script>
+</div>
 </div>
 </body>
 </html>
