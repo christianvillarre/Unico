@@ -157,7 +157,7 @@
       </div>
     </div>
     <div class="nav-item">
-      <a href="/impact.html">Impact</a>
+      <a href="impact.html">Impact</a>
       <div class="dropdown">
        <div class="dropdown-text">
           <h4>Clients<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
@@ -186,7 +186,7 @@
 .navbar {
   width: 100%;
   height: 90px;
-  background: transparent;
+  background:#53709f; /* adjust opacity as needed */
   position: fixed;
   top: 0;
   left: 0;
@@ -196,6 +196,7 @@
   justify-content: space-between;
   padding: 0 2rem;
    transition: transform 0.4s ease, background 0.3s ease;
+   
 }
 .navbar:hover,
 .navbar.open {
@@ -209,13 +210,7 @@
   transform: translateY(0);
 }
 
-.navbar.at-top {
-  background: rgba(10, 80, 21, 0); /* fully transparent */
-}
 
-.navbar.at-top.hovered {
-  background: rgba(83, 112, 159, 1); /* visible on hover */
-}
 .navbar .logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -363,7 +358,7 @@ challenge one another, and bring unique perspectives that spark fresh ideas. Our
 shapes remarkable results. Here, we don’t just work for our clients; we partner with them to bring visions
 to life — with passion, precision, and a touch of Unico magic
       </p>
-      <button class="about-btn">Let's Talk<img src="images/arrow-btn-white.png" alt="See more" /></button>
+      <button class="about-btn">More<img src="images/arrow-btn-white.png" alt="See more" /></button>
     </div>
 
     <!-- Right Side: Images -->
@@ -1307,9 +1302,154 @@ align-self: flex-start; /* ✅ aligns to top of grid cell */
     }
   });
 </script>
+<!-- ✅ Navbar Dropdown Behavior -->
+<script>
+  const nav = document.querySelector('.navbar');
+  const navItems = document.querySelectorAll('.nav-item');
+  const logoImg = document.querySelector('.logo1');
 
+  let hideTimer;
+  let lastScrollY = 0;
+  let logoState = 'logo1';
+  let hasScrolledPastTop = false;
+
+  function isMouseInsideNavOrDropdown(e) {
+    const related = e.relatedTarget;
+    return related && (nav.contains(related) || document.querySelector('.dropdown:hover'));
+  }
+
+  function maybeRemoveHovered() {
+    const isDropdownActive = document.querySelector('.nav-item.active');
+    const isNavHovered = nav.matches(':hover');
+    if (window.locoScroll.scroll.instance.scroll.y <= 0 && !isDropdownActive && !isNavHovered) {
+      nav.classList.remove('hovered');
+    }
+  }
+
+  function animateDropdown(item) {
+    const dropdown = item.querySelector('.dropdown');
+    const text = dropdown.querySelector('.dropdown-text');
+    const images = dropdown.querySelectorAll('.image-box, .image-box2');
+    const targets = [text, ...images].filter(Boolean);
+
+    if (targets.length > 0) {
+      gsap.killTweensOf(targets);
+      gsap.set(targets, { opacity: 0, y: -10 });
+
+      gsap.to(targets, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power2.out'
+      });
+    }
+  }
+
+  nav.addEventListener('mouseenter', () => {
+    nav.classList.add('hovered');
+    clearTimeout(hideTimer);
+  });
+
+  nav.addEventListener('mouseleave', (e) => {
+    if (isMouseInsideNavOrDropdown(e)) return;
+    hideTimer = setTimeout(() => {
+      navItems.forEach(i => i.classList.remove('active'));
+      maybeRemoveHovered();
+    }, 200);
+  });
+
+  navItems.forEach(item => {
+    const dropdown = item.querySelector('.dropdown');
+    const trigger = item.querySelector('a');
+
+    trigger.addEventListener('mouseenter', () => {
+      clearTimeout(hideTimer);
+      navItems.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+
+      nav.classList.add('hovered', 'navbar-bg');
+      nav.classList.remove('hidden');
+      nav.classList.add('scrolled-up');
+
+      animateDropdown(item);
+    });
+
+    item.addEventListener('mouseleave', (e) => {
+      if (isMouseInsideNavOrDropdown(e)) return;
+      hideTimer = setTimeout(() => {
+        item.classList.remove('active');
+        maybeRemoveHovered();
+      }, 200);
+    });
+
+    dropdown.addEventListener('mouseleave', (e) => {
+      if (isMouseInsideNavOrDropdown(e)) return;
+      hideTimer = setTimeout(() => {
+        item.classList.remove('active');
+        maybeRemoveHovered();
+      }, 100);
+    });
+  });
+
+  function handleScroll(currentScroll) {
+    const scrollingDown = currentScroll > lastScrollY;
+    const scrollingUp = currentScroll < lastScrollY;
+
+    navItems.forEach(i => i.classList.remove('active'));
+
+    if (currentScroll <= 0) {
+      nav.classList.remove('hidden', 'scrolled-up');
+      nav.classList.add('at-top', 'navbar-bg');
+
+      if (logoState !== 'logo1') {
+        logoImg.src = 'images/logo1.png';
+        logoState = 'logo1';
+      }
+
+      hasScrolledPastTop = false;
+      maybeRemoveHovered();
+      lastScrollY = currentScroll;
+      return;
+    }
+
+    if (!hasScrolledPastTop) {
+      hasScrolledPastTop = true;
+    }
+
+    if (scrollingDown) {
+      nav.classList.add('hidden');
+      nav.classList.remove('scrolled-up', 'at-top');
+    } else if (scrollingUp) {
+      nav.classList.remove('hidden');
+      nav.classList.add('scrolled-up', 'hovered', 'navbar-bg');
+      nav.classList.remove('at-top');
+
+      if (logoState !== 'logo2') {
+        logoImg.src = 'images/logo2.png';
+        logoState = 'logo2';
+      }
+
+      const hoveredItem = document.querySelector('.nav-item:hover');
+      if (hoveredItem) {
+        hoveredItem.classList.add('active');
+        animateDropdown(hoveredItem);
+      }
+    }
+
+    lastScrollY = currentScroll;
+  }
+
+  if (window.locoScroll) {
+    window.locoScroll.on('scroll', (args) => {
+      const scrollY = args.scroll.y;
+      handleScroll(scrollY);
+    });
+  } else {
+    window.addEventListener('scroll', () => handleScroll(window.scrollY));
+  }
+</script>
 <!-- ✅ Custom Scripts (after Locomotive setup) -->
-<script src="navbar.js"></script>
+
 <script src="carousel.js"></script>
 <script src="heroscroll.js"></script>
 <script src="tracker.js"></script>

@@ -27,7 +27,9 @@
       </div>
     </div>
     <div class="nav-item">
-      <a href="/impact.html">Impact</a>
+      <a href="/impact.html" class="impact-link">
+        Impact
+      </a>
       <div class="dropdown">
        <div class="dropdown-text">
           <h4>Clients<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
@@ -51,6 +53,22 @@
   </nav>
 </header>
 <style>
+  .impact-arrow {
+  opacity: 0;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin-left: 6px;
+  height: 15px; /* adjust as needed */
+  vertical-align: middle;
+  z-index: 99;
+}
+
+/* 🔹 Hover state: arrow fades in and moves down slightly */
+.impact-link:hover .impact-arrow {
+  opacity: 1;
+  transform: translateY(4px);
+}
+
        /* 🔹 NAVBAR */
 .navbar {
   width: 100%;
@@ -59,7 +77,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -130,7 +148,7 @@
   pointer-events: none;
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 9;
+  z-index: 0;
   width: max-content; /* keeps it just wide enough for the text */
   min-width: 100px;   /* prevents it from being too narrow */
   height: auto;
@@ -260,7 +278,7 @@
   <main class="main-section" data-scroll-section>
     <div class="carousel-wrapper2 carousel-1">
       <div class="carousel-header">
-        <h2>Clients</h2>
+        <h2>CLIENTS</h2>
         <button class="dropbtn"><p>See More</p>
         <img src="images/arrow-btn.png" alt="See more" />
         </button>
@@ -361,7 +379,7 @@
 
     <div class="carousel-wrapper carousel-2">
       <div class="carousel-header">
-        <h2>Case Studies</h2>
+        <h2>CASE STUDIES</h2>
         <button class="dropbtn"><p>See More</p>
         <img src="images/arrow-btn.png" alt="See more" />
         </button>
@@ -492,7 +510,7 @@
 
     <div class="carousel-wrapper3 carousel-3">
       <div class="carousel-header">
-        <h2>Services</h2>
+        <h2>SERVICES</h2>
         <button class="dropbtn"><p>See More</p>
         <img src="images/arrow-btn.png" alt="See more" />
         </button>
@@ -526,12 +544,10 @@
         
       </div>
     </div>
-  </main>
-  
 
-
-<section class="tracker-wrapper" data-scroll-section>
+    <div class="tracker-wrapper">
   <!-- Section 1 -->
+    <div class="tracker-title">THE ROAD SO FAR</div>
   <div class="tracker-section">
     <div class="tracker-container">
       <!-- Column 1 -->
@@ -558,7 +574,7 @@
   </div>
 
   <!-- Section 2 -->
-   <div class="tracker-title">Event Reach</div>
+   <div class="tracker-title">EVENT REACH</div>
   <div class="tracker-section">
     
     <div class="tracker-container">
@@ -586,13 +602,15 @@
     </div>
   </div>
 </section>
+  </main>
+  
+
+
 
 
 <section class="instagram-section" data-scroll-section>
-  <div><h2>Follow Us On Instagram</h2></div>
-  <div class="instagram-feed-wrapper">
-   <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/8156591a127953d2b22a53201bf3a597.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
-  </div>
+  <div><h2>GET SOCIAL. FOLLOW THE FUN!</h2></div>
+  <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/722d891e63585367a00805d6f9a914f8.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
 </section>
 
 <style>
@@ -600,7 +618,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   padding: 4rem;
   gap: 1rem;
@@ -617,6 +635,10 @@
   width: 100%;
   height: 1000px;           /* ✅ Set your desired height */
   border: none;
+}
+.instagram-section h2 {
+  font-size: 4rem;
+  color:#6E9D72;
 }
 </style>
 
@@ -636,6 +658,27 @@
   <!-- Right Side -->
   <div class="footer-section second-section">
     <div class="top-row">
+      <div class="col">
+        <div class="bottom-col"><p>Unico Hq</p>
+        <button class="footer-dropbtn">
+                2222 San Pedro Ave., Ste 2<br>San Antonio, TX 78212<br>(210) 670-9077
+              </button></div>
+      </div>
+      <div class="col">
+        <div class="bottom-col"><p>Get Social</p>
+        <button class="footer-dropbtn">
+                Instagram
+              
+              </button>
+            <button class="footer-dropbtn">
+                Facebook
+               
+              </button>
+            <button class="footer-dropbtn">
+                LinkedIn
+              
+              </button></div>
+      </div>
       <div class="col"><div class="bottom-col">
         <p>Sitemap</p>
         <button class="footer-dropbtn">
@@ -650,27 +693,7 @@
                 Let's Be Friends
               
               </button></div></div>
-      <div class="col">
-        <div class="bottom-col"><p>Socials</p>
-        <button class="footer-dropbtn">
-                Instagram
-              
-              </button>
-            <button class="footer-dropbtn">
-                Facebook
-               
-              </button>
-            <button class="footer-dropbtn">
-                LinkedIn
-              
-              </button></div>
-      </div>
-      <div class="col">
-        <div class="bottom-col"><p>Get in Touch</p>
-        <button class="footer-dropbtn">
-                2222 San Pedro Ave., Ste 2<br>San Antonio, TX 78212<br>(210) 670-9077
-              </button></div>
-      </div>
+      
     </div>
     <div class="bottom-row">
   <div class="bottom-left">

@@ -448,7 +448,7 @@ html, body {
   --carousel-height: 28vh; /* change this to grow/shrink everything */
 }
   .main-section {
-  height: 110vh;
+  height: auto;
  background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -533,7 +533,7 @@ html, body {
 .carousel-header button p {
   display: inline;
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 1.3rem;
   margin: 0; /* just in case */
   font-family: "Montserrat";
 }
@@ -589,8 +589,8 @@ html, body {
 
 .tracker-wrapper {
   width: 100%;
-  height: 33rem;
-  background-color: rgb(255, 255, 255);
+  height: 38rem;
+  background-color:transparent;
   padding: 0rem 0; /* Controls space above/below the whole section */
   margin: 0;
   border: none;
@@ -603,7 +603,7 @@ html, body {
   justify-content: center;
   align-items: flex-start;
   border: none;
- 
+   margin-bottom: 1rem;
 }
 .tracker-container {
   display: grid;
@@ -611,6 +611,9 @@ html, body {
   gap: 2rem;
    align-items: flex-start;
    margin-top: 0rem;
+   background-color: rgba(255, 255, 255, 0);
+   padding: 2rem;
+   border-radius: 1rem;
 }
 
 .tracker-col {
@@ -638,8 +641,10 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
-    font-size: 2rem;
+    margin-bottom: 0rem;
+    font-size: 4rem;
+    color:#6E9D72;
+    font-weight: 800;
 }
 
 
