@@ -149,24 +149,29 @@
   </div>
   <nav>
     <div class="nav-item">
-      <a href="/about copy.html">About</a>
+      <a href="/about.html">About</a>
       <div class="dropdown">
         <div class="dropdown-content">
           <div class="dropdown-text">
-            <h4>Our Story<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Culture<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Team<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4><a href="/about.html">Our Story<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
+            
+              <h4><a href="/about.html#culture">Culture <img class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
+            
+            
+              <h4><a href="/about.html#team">Team<img class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
+            
           </div>
         </div>
       </div>
     </div>
     <div class="nav-item">
-     <a href="impact.html" class="link-with-arrow">Impact</a>
+     <a class="link-with-arrow">Impact</a>
       <div class="dropdown">
        <div class="dropdown-text">
-          <h4>Clients<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Featured Projects<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Services<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+          <h4><a href="/impact.html">Clients<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
+            
+           <h4> <a href="/impact.html#services">Services<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
+            <h4><a href="/featured.html">Featured Projects<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
         </div>
      
       </div>
@@ -176,8 +181,10 @@
       <div class="dropdown">
         <div class="dropdown-content">
           <div class="dropdown-text">
-            <h4>Tell Us More<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Get Social<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4><a href="/contact.html">Tell Us More<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
+            
+              <h4><a href="/index.html#social">Get Social<img class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
+            
           </div>
         </div>
       </div>
@@ -186,6 +193,35 @@
 </header>
 
 <style>
+    /* Base link style */
+.link-with-arrow {
+  position: relative;
+  display: inline-block;
+  cursor:default;
+}
+
+/* Add arrow on hover using ::after */
+.link-with-arrow::after {
+  content: '';
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%) translateX(-8px);
+  right: -28px; /* Push it outside the text */
+  width: 50px;
+  height: 16px; /* Adjust as needed */
+  background-image: url('images/arrow_down.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+/* Show arrow on hover */
+.link-with-arrow:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
 /* Base link style */
 .link-with-arrow {
   position: relative;
@@ -759,9 +795,9 @@
           <div class="col small-col">
             <div class="bottom-col">
               <h6>Socials</h6>
-              <button class="footer-dropbtn">Instagram</button>
-              <button class="footer-dropbtn">Facebook</button>
-              <button class="footer-dropbtn">LinkedIn</button>
+              <button class="footer-dropbtn"><a href="https://www.instagram.com/unicocommunications/">Instagram</a></button>
+              <button class="footer-dropbtn"><a href="https://www.facebook.com/unicocomm/">Facebook</a></button>
+              <button class="footer-dropbtn"><a href="https://www.linkedin.com/company/unicocommunications-inc">LinkedIn</a></button>
             </div>
           </div>
 
@@ -775,11 +811,11 @@
             </div>
           </div>
 
-           <div class="col small-col">
+           <div class="col small-col tell-us-more-col">
             <div class="bottom-col">
               <h6>TELL US MORE</h6>
               <button class="footer-dropbtn">
-                <img class="mail-icon" src="images/Mail Icon.png">
+                <a href="/contact.html"><img class="mail-icon" src="images/Mail Icon.png"></a>
               </button>
             </div>
           </div>
@@ -791,10 +827,10 @@
           <div class="col small-col">
             <div class="bottom-col">
               <h6>Sitemap</h6>
-              <button class="footer-dropbtn">About</button>
-              <button class="footer-dropbtn">Clients</button>
-              <button class="footer-dropbtn">Services</button>
-              <button class="footer-dropbtn">Featured Projects</button>
+              <button class="footer-dropbtn"><a href="/about.html">About</a></button>
+              <button class="footer-dropbtn"><a href="/impact.html">Clients</a></button>
+              <button class="footer-dropbtn"><a href="/impact.html#services">Services</a></button>
+              <button class="footer-dropbtn"><a href="/featured.html">Featured Projects</a></button>
             </div>
           </div>
 
@@ -812,8 +848,11 @@
 
 
   <style>
+    .tell-us-more-col {
+  transform: translateX(2rem); /* ✅ Moves only this column to the right */
+}
     .mail-icon {
-      width: 50px;
+      width: 100px;
     }
     .unico-copyright {
       font-size: clamp(0.5rem, 1vw, 1.5rem);
@@ -1041,7 +1080,9 @@
   display: inline-block;           /* ✅ Treat text as a clean box */
   vertical-align: top;            /* ✅ Prevent baseline alignment */
 }
-
+a {
+  all: unset;
+}
 
 @keyframes scrollText {
   0% {

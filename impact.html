@@ -140,35 +140,42 @@
   </div>
   <nav>
     <div class="nav-item">
-      <a href="/about copy.html">About</a>
+      <a href="/about.html">About</a>
       <div class="dropdown">
         <div class="dropdown-content">
           <div class="dropdown-text">
-            <h4>Our Story<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Culture<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Team<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4><a href="/about.html">Our Story<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
+            
+              <h4><a href="/about.html#culture">Culture <img class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
+            
+            
+              <h4><a href="/about.html#team">Team<img class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
+            
           </div>
         </div>
       </div>
     </div>
     <div class="nav-item">
-      <a href="impact.html">Impact</a>
+     <a class="link-with-arrow">Impact</a>
       <div class="dropdown">
        <div class="dropdown-text">
-          <h4>Clients<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Featured Projects<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Services<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+          <h4><a href="/impact.html">Clients<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
+            
+           <h4> <a href="/impact.html#services">Services<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
+            <h4><a href="/featured.html">Featured Projects<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
         </div>
      
       </div>
     </div>
     <div class="nav-item">
-      <a href="#friends">Let's Be Friends</a>
+      <a href="#friends" class="link-with-arrow">Let's Be Friends</a>
       <div class="dropdown">
         <div class="dropdown-content">
           <div class="dropdown-text">
-            <h4>Tell Us More<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Get Social<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4><a href="/contact.html">Tell Us More<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
+            
+              <h4><a href="/index.html#social">Get Social<img class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
+            
           </div>
         </div>
       </div>
@@ -177,34 +184,62 @@
 </header>
 
 <style>
-       /* 🔹 NAVBAR */
+/* Base link style */
+.link-with-arrow {
+  position: relative;
+  display: inline-block;
+  cursor: default;
+}
+
+.link-with-arrow::after {
+  content: '';
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%) translateX(-8px);
+  right: -28px;
+  width: 50px;
+  height: 16px;
+  background-image: url('images/arrow_down.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.link-with-arrow:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* 🔹 NAVBAR */
 .navbar {
   width: 100%;
   height: 90px;
-  background:#53709f; /* adjust opacity as needed */
+  background: #53709f !important; /* ✅ always solid background */
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-   transition: transform 0.4s ease, background 0.3s ease;
-   
+  transition: transform 0.4s ease, background 0.3s ease;
 }
+
 .navbar:hover,
-.navbar.open {
-  background:#53709f; /* adjust opacity as needed */
+.navbar.open,
+.navbar.scrolled-up,
+.navbar.at-top,
+.navbar.at-top.hovered,
+.navbar.navbar-bg {
+  background: #53709f !important; /* ✅ ensure no transparency gets applied */
 }
+
 .navbar.hidden {
   transform: translateY(-100%);
 }
-
-.navbar.scrolled-up {
-  transform: translateY(0);
-}
-
 
 .navbar .logo {
   font-size: 1.5rem;
@@ -212,11 +247,9 @@
   color: white;
   text-transform: uppercase;
   padding-left: 2rem;
-  
+  cursor: pointer;
 }
-.navbar.navbar-bg {
-  background: rgba(83, 112, 159, 1); /* Your faded background */
-}
+
 .navbar nav {
   display: flex;
   gap: 2rem;
@@ -227,7 +260,7 @@
   color: white;
   text-decoration: none;
   font-size: 1rem;
-  font-weight: 00;
+  font-weight: 400;
   transition: opacity 0.3s;
   padding-right: 2rem;
 }
@@ -251,25 +284,25 @@
   pointer-events: none;
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 9;
-  width: max-content; /* keeps it just wide enough for the text */
-  min-width: 100px;   /* prevents it from being too narrow */
+  z-index: 0;
+  width: max-content;
+  min-width: 100px;
   height: auto;
-  padding-left: 2rem;
-  padding-right: 1rem; /* or however much you want */
+  padding-left: 0rem;
+  padding-right: 0rem;
 }
+
 .dropdown-text {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;  /* ✅ correct alignment */
+  align-items: flex-start;
   justify-content: flex-start;
   gap: 0.5rem;
-  padding: 0;               /* ✅ remove default padding */
-  margin: 0;                /* optional, for safety */
+  padding: 0;
+  margin: 0;
   padding-top: 2.5rem;
   padding-bottom: 0.80rem;
 }
-
 
 .nav-item.active .dropdown {
   opacity: 1;
@@ -286,15 +319,18 @@
   font-size: 1rem;
   font-weight: 500;
   text-align: left;
-
+  padding: 0;
   text-decoration: none;
   background: none;
   border: none;
   cursor: pointer;
   transition: color 0.3s;
+  overflow: visible;
 }
+
 .dropdown-text h4 {
-  padding-right: 1.5rem; /* ✅ add buffer space for the arrow */
+  padding-right: 1.5rem;
+  padding-left: 2rem;
 }
 
 .dropdown-text a:hover,
@@ -302,35 +338,41 @@
   color: #e2e2e2;
 }
 
-
 .dropbtn {
   font-size: 1rem;
   line-height: 0.8;
- color: white;
+  color: white;
   margin: 0;
   background: none;
-  border: none; 
-  
+  border: none;
   font-family: "Montserrat";
   padding: 0;
   margin-top: 1rem;
   cursor: pointer;
 }
+
 /* 🔹 Animated underline setup */
-.navbar nav a,
-.dropdown-text h4 {
-  position: relative;
-  overflow: hidden;
+.dropdown-text h4 a {
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
 }
+
 .white-arrow {
   opacity: 0;
   transform: translateX(0);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  margin-left: 8px;
+  margin-left: -4px;
   vertical-align: middle;
 }
 
-/* Animate arrow on hover of the whole h4 */
 .dropdown-text h4:hover .white-arrow {
   opacity: 1;
   transform: translateX(6px);
@@ -866,6 +908,7 @@ Video Production</P>
 
 
 
+
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-divider">
@@ -888,9 +931,9 @@ Video Production</P>
           <div class="col small-col">
             <div class="bottom-col">
               <h6>Socials</h6>
-              <button class="footer-dropbtn">Instagram</button>
-              <button class="footer-dropbtn">Facebook</button>
-              <button class="footer-dropbtn">LinkedIn</button>
+              <button class="footer-dropbtn"><a href="https://www.instagram.com/unicocommunications/">Instagram</a></button>
+              <button class="footer-dropbtn"><a href="https://www.facebook.com/unicocomm/">Facebook</a></button>
+              <button class="footer-dropbtn"><a href="https://www.linkedin.com/company/unicocommunications-inc">LinkedIn</a></button>
             </div>
           </div>
 
@@ -904,11 +947,11 @@ Video Production</P>
             </div>
           </div>
 
-           <div class="col small-col">
+           <div class="col small-col tell-us-more-col">
             <div class="bottom-col">
               <h6>TELL US MORE</h6>
               <button class="footer-dropbtn">
-                <img class="mail-icon" src="images/Mail Icon.png">
+                <a href="/contact.html"><img class="mail-icon" src="images/Mail Icon.png"></a>
               </button>
             </div>
           </div>
@@ -920,8 +963,10 @@ Video Production</P>
           <div class="col small-col">
             <div class="bottom-col">
               <h6>Sitemap</h6>
-              <button class="footer-dropbtn">About</button>
-              <button class="footer-dropbtn">Services</button>
+              <button class="footer-dropbtn"><a href="/about.html">About</a></button>
+              <button class="footer-dropbtn"><a href="/impact.html">Clients</a></button>
+              <button class="footer-dropbtn"><a href="/impact.html#services">Services</a></button>
+              <button class="footer-dropbtn"><a href="/featured.html">Featured Projects</a></button>
             </div>
           </div>
 
@@ -937,20 +982,13 @@ Video Production</P>
     </div>
   </div>
 
-  <div class="footer-logo-carousel">
-    <div class="logo-track-text">
-      <span>Strategic.</span>
-      <span>Bold.</span>
-      <span>Unforgettable.</span>
-      <span>Strategic.</span>
-      <span>Bold.</span>
-      <span>Unforgettable.</span>
-    </div>
-  </div>
 
   <style>
+    .tell-us-more-col {
+  transform: translateX(2rem); /* ✅ Moves only this column to the right */
+}
     .mail-icon {
-      width: 50px;
+      width: 100px;
     }
     .unico-copyright {
       font-size: clamp(0.5rem, 1vw, 1.5rem);
@@ -1178,7 +1216,9 @@ Video Production</P>
   display: inline-block;           /* ✅ Treat text as a clean box */
   vertical-align: top;            /* ✅ Prevent baseline alignment */
 }
-
+a {
+  all: unset;
+}
 
 @keyframes scrollText {
   0% {
