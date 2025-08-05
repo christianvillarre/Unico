@@ -10,14 +10,13 @@
     }
 html, body {
   height: 100%;
-  overflow: hidden; /* 🚫 disables native scroll */
+
   margin: 0;
+  background-color: white;
 }
 
 
-[data-scroll-container] {
-  will-change: transform;
-}
+
     /* 🔹 NAVBAR */
 .navbar {
   width: 100%;
@@ -448,8 +447,9 @@ html, body {
   --carousel-height: 28vh; /* change this to grow/shrink everything */
 }
   .main-section {
+      position: relative; /* ✅ REQUIRED */
   height: auto;
- background-color: #fff;
+ background-color: transparent;
   display: flex;
   flex-direction: column;
 }
@@ -589,12 +589,23 @@ html, body {
 
 .tracker-wrapper {
   width: 100%;
-  height: 38rem;
+  height: 42rem;
   background-color:transparent;
   padding: 0rem 0; /* Controls space above/below the whole section */
   margin: 0;
   border: none;
    margin-top: 9rem;
+}
+.tracker-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px; /* Adjust height of fade */
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #ffffff 100%);
+  pointer-events: none; /* Allow clicks to pass through */
+  z-index: 2; /* Make sure it sits above tracker content */
 }
 
 .tracker-section {

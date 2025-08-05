@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Impact</title>
+  <title>Featured Projects</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 
@@ -12,24 +12,30 @@
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #ffffff;
-  scroll-behavior: auto !important;
-  overscroll-behavior: none;
+  background-color: #6E9D72;
+  font-family: 'Montserrat';
 }
 
 
-  .section-clients {
-  height: 40vh;
+  .section-ourstory {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-
+  height: auto;
   padding: 0 4rem;
-  background-color: #ffffff;
-
+  background-color: #6E9D72;
+  border-bottom: 2px solid #CCE5CC;
   }
-
+    .section-culture {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  padding: 0 4rem;
+  background-color: #6E9D72;
+  }
   .section-container {
     height: 100vh;
       display: flex;
@@ -37,7 +43,7 @@
   justify-content: center;
   }
 .second-container {
-
+  height: 90vh;
   margin-top: 10vh;
 }
 .content-wrapper {
@@ -52,7 +58,7 @@
 
 .left-column {
   flex: 1;
-  color: #4D4D4D;
+  color: white;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -131,6 +137,9 @@
   }
 }
 </style>
+
+
+
 </head>
 <body>
 <!-- 🔹 NAVBAR -->
@@ -152,7 +161,7 @@
       </div>
     </div>
     <div class="nav-item">
-      <a href="impact.html">Impact</a>
+     <a href="impact.html" class="link-with-arrow">Impact</a>
       <div class="dropdown">
        <div class="dropdown-text">
           <h4>Clients<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
@@ -163,7 +172,7 @@
       </div>
     </div>
     <div class="nav-item">
-      <a href="#friends">Let's Be Friends</a>
+      <a href="#friends" class="link-with-arrow">Let's Be Friends</a>
       <div class="dropdown">
         <div class="dropdown-content">
           <div class="dropdown-text">
@@ -177,6 +186,35 @@
 </header>
 
 <style>
+/* Base link style */
+.link-with-arrow {
+  position: relative;
+  display: inline-block;
+  cursor:default;
+}
+
+/* Add arrow on hover using ::after */
+.link-with-arrow::after {
+  content: '';
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%) translateX(-8px);
+  right: -28px; /* Push it outside the text */
+  width: 50px;
+  height: 16px; /* Adjust as needed */
+  background-image: url('images/arrow_down.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+/* Show arrow on hover */
+.link-with-arrow:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
        /* 🔹 NAVBAR */
 .navbar {
   width: 100%;
@@ -338,532 +376,365 @@
 </style>
 
 
-<section class="section-clients" >
-  <div class="section-container">
-    <div class="second-container">
-  <div class="content-wrapper">
-    <!-- Left Side: Text -->
-    <div class="left-column">
-      <h2>OUR CLIENTS</h2>
+
+<section class="section-featured">
+  <div class="featured-inner">
+    <h2 class="featured-title">FEATURED PROJECTS</h2>
+<!--
+<div class="featured-image-container">
+  <div class="hover-overlay"></div>
+  <div class="card-center-text">See More</div>
+  <img src="images/Photo 1 Luis Fonsi.jpg" alt="Featured Project" />
+
+  <div class="featured-overlay">
+    <h3 class="featured-title-text">Say A Little Prayer</h3>
+    <div class="featured-p">An intimate evening of music and celebration featuring a private dinner and live performance. This project brought together elegant design, hospitality excellence, and emotional storytelling in a memorable cultural setting.
 
 
-    <!-- Right Side: Images -->
+    </div>
+  </div>
+
+  <div class="card-popup">
+    <img src="images/UNICO_LOGO_MARK_bg.png" alt="Featured Project" />
+  </div>
+</div>
+-->
+    <div class="featured-card-row">
+<a href="casestudy2.html" class="card-link">
+            <div class="card">
+        <div class="hover-overlay"></div>
+        <div class="card-center-text">See More</div>
+  <img src="images/Photo 1 Luis Fonsi.jpg" alt="Featured Project" />
+  
+  <div class="featured-overlay">
+    <h3 class="featured-title-text">Say A Little Prayer</h3>
+
+    <div class="featured-p">Produced a red-carpet screening event that honored Latino talent and elevated community pride.
+    </div>
+  </div>
+  
+  <div class="card-popup">
+  
+    <img src="images/UNICO_LOGO_MARK_bg.png" alt="Featured Project" />
+  </div>
+</div></a>
+
+<a href="casestudy.html" class="card-link">
+      <div class="card">
+        <div class="hover-overlay"></div>
+        <div class="card-center-text">See More</div>
+  <img src="images/4 USSP-11.1.19.JPG" alt="Featured Project" />
+  
+  <div class="featured-overlay">
+    <h3 class="featured-title-text">U.S. Spain Council</h3>
+  
+    <div class="featured-p">Led logistics on a high-level international forum that blended cultural storytelling with seamless production for global leaders and dignitaries.
+    </div>
+  </div>
+  
+  <div class="card-popup">
+  
+    <img src="images/UNICO_LOGO_MARK_bg.png" alt="Featured Project" />
+  </div>
+</div></a>
+
+<div class="card">
+  <div class="hover-overlay"></div>
+  <div class="card-center-text">See More</div>
+  <img src="images/FP_PIC_3.jpg" alt="Featured Project" />
+  
+  <div class="featured-overlay">
+    <h3 class="featured-title-text">SA300</h3>
+   
+    <div class="featured-p">Delivered the city’s largest-ever New Year’s Eve celebration and signature gala during San Antonio’s historic 300th anniversary year.
+
+
+    </div>
+  </div>
+  
+  <div class="card-popup">
     
+    <img src="images/UNICO_LOGO_MARK_bg.png" alt="Featured Project" />
   </div>
 </div>
+
+<div class="card">
+  <div class="hover-overlay"></div>
+  <div class="card-center-text">See More</div>
+  <img src="images/5 UNIDOSUS Panel.jpg" alt="Featured Project" />
+  
+  <div class="featured-overlay">
+    <h3 class="featured-title-text">UnidosUS</h3>
+  
+    <div class="featured-p">Supported this flagship annual conference as production partners for over two decades with expert stage management and execution of its high-profile general and plenary sessions at one of the nation’s premier advocacy events.
+    </div>
+  </div>
+  
+  <div class="card-popup">
+    
+    <img src="images/UNICO_LOGO_MARK_bg.png" alt="Featured Project" />
+  </div>
+</div>
+
+<div class="card">
+  <div class="hover-overlay"></div>
+  <div class="card-center-text">See More</div>
+  <img src="images/1c USHCC.jpg" alt="Featured Project" />
+  
+  <div class="featured-overlay">
+    <h3 class="featured-title-text">USHCC</h3>
+  
+    <div class="featured-p">Managed one of the country’s most influential Hispanic business events with full-scale production, strategic coordination, and creative support from concept to showtime.
+    </div>
+  </div>
+  
+  <div class="card-popup">
+    
+    <img src="images/UNICO_LOGO_MARK_bg.png" alt="Featured Project" />
+  </div>
+</div>
+    </div>
   </div>
 </section>
+
 <style>
-.client-scroll-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* ✅ center rows inside the section */
-  gap: 4vh;
-  padding: 10vh 1rem 1vh;
-}
-
-.client-row {
-  display: flex;
-  justify-content: center; /* ✅ center the logos within the row */
-  align-items: center;
-  gap: 2rem;
-  opacity: 0.3;
-  transform: scale(0.95);
-  flex-wrap: wrap; /* ✅ ensures responsiveness */
-  max-width: 100%; /* ✅ prevents overflow */
-}
-
-.client-row img {
-  width: clamp(6rem, 14vw, 25rem);
-  height: auto;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-    @media (max-width: 768px) {
-      .client-row {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .client-row img {
-        width: 40%;
-      }
-    }
-</style>
-<section class="client-scroll-section">
-  <!-- Generate 6 rows of 5 clients (client1.png to client30.png) -->
-  <!-- You can replace these with actual image URLs or local paths -->
- <div class="client-row">
-  <img src="images/1_LOGO_WT.png" />
-  <img src="images/2_LOGO_WT.png" />
-  <img src="images/3_LOGO_WT.png" />
-  <img src="images/4_LOGO_WT.png" />
-  <img src="images/5_LOGO_WT.png" />
-</div>
-<div class="client-row">
-  <img src="images/6_LOGO_WT.png" />
-  <img src="images/7_LOGO_WT.png" />
-  <img src="images/8_LOGO_WT.png" />
-  <img src="images/9_LOGO_WT.png" />
-  <img src="images/10_LOGO_WT.png" />
-</div>
-<div class="client-row">
-  <img src="images/11_LOGO_WT.png" />
-  <img src="images/12_LOGO_WT.png" />
-  <img src="images/13_LOGO_WT.png" />
-  <img src="images/14_LOGO_WT.png" />
-  <img src="images/15_LOGO_WT.png" />
-</div>
-<div class="client-row">
-  <img src="images/16_LOGO_WT.png" />
-  <img src="images/17_LOGO_WT.png" />
-  <img src="images/18_LOGO_WT.png" />
-  <img src="images/19_LOGO_WT.png" />
-  <img src="images/20_LOGO_WT.png" />
-</div>
-<div class="client-row">
-  <img src="images/21_LOGO_WT.png" />
-  <img src="images/22_LOGO_WT.png" />
-  <img src="images/23_LOGO_WT.png" />
-  <img src="images/24_LOGO_WT.png" />
-  <img src="images/25_LOGO_WT.png" />
-</div>
-<div class="client-row">
-  <img src="images/26_LOGO_WT.png" />
-  <img src="images/27_LOGO_WT.png" />
-  <img src="images/28_LOGO_WT.png" />
-  <img src="images/29_LOGO_WT.png" />
-  <img src="images/30_LOGO_WT.png" />
-</div>
-<div class="client-row">
-  <img src="images/31_LOGO_WT.png" />
-  <img src="images/32_LOGO_WT.png" />
-  <img src="images/33_LOGO_WT.png" />
-  <img src="images/34_LOGO_WT.png" />
-  <img src="images/35_LOGO_WT.png" />
-</div>
-</section>
-
-
-<section class="testimonials-section">
-  <h2>TESTIMONIALS</h2>
-  <h3>Our hard work keeps paying off.</h3>
-  <div class="testimonials-grid">
-
-    <!-- Top Left -->
-    <div class="testimonial-box image-left">
-      <img class="testimonial-image" src="images/2b USSF Group Pic.JPG" alt="Client Image">
-      <div class="testimonial-content">
-        <p class="testimonial-text">
-          “Our luncheon event was an important announcement of Arboretum San Antonio to the community and Unico Communications exceeded our expectations.  Lisa Bombin and team were focused on deeply understanding the event objectives and remained focused and true to that as the metric of success.  From the beginning, UNICO set a very high bar of impact, style and professionalism and they delivered.”
-        </p>
-        <h1>Thomas A. Corser | CEO</h1>
-        <h2>Arboetum San Antonio</h2>
-        <img class="testimonial-logo" src="images/12_LOGO_WT.png" alt="Client Logo">
-      </div>
-    </div>
-
-    <!-- Top Right -->
-    <div class="testimonial-box image-left">
-      <img class="testimonial-image" src="images/7c Mariachi.jpg" alt="Client Image">
-      <div class="testimonial-content">
-        <p class="testimonial-text">
-         “The United States Hispanic Chamber of Commerce is proud to work with Unico Communications to produce many premier events, including several of our USHCC National Conference events both in person and virtual, as well as many USHCC Legislative Summits. The Unico team always guarantee a seamless production and the highest level of professionalism.”
-        </p>
-        <h1>Ramiro A. Cavazos | President & CEO</h1>
-        <h2>Arboetum San Antonio</h2>
-        <img class="testimonial-logo" src="images/16_LOGO_WT.png" alt="Client Logo">
-      </div>
-    </div>
-
-    <!-- Bottom Left -->
-    <div class="testimonial-box image-left">
-      <img class="testimonial-image" src="images/7b In the Ring.jpg" alt="Client Image">
-      <div class="testimonial-content">
-        <p class="testimonial-text">
-          “Their creativity and communication made the process easy. We loved working with Unico.”
-        </p>
-        <img class="testimonial-logo" src="images/17_LOGO_WT.png" alt="Client Logo">
-      </div>
-    </div>
-
-    <!-- Bottom Right -->
-    <div class="testimonial-box image-left">
-      <img class="testimonial-image" src="images/CAROUSEL 500X260_1.jpg" alt="Client Image">
-      <div class="testimonial-content">
-        <p class="testimonial-text">
-          “Unico made our event memorable and impactful. Would recommend to anyone needing excellence.”
-        </p>
-        <img class="testimonial-logo" src="images/18_LOGO_WT.png" alt="Client Logo">
-      </div>
-    </div>
-
-  </div>
-</section>
-
-  <style>
-.testimonials-section {
-  padding: 8rem 2rem;
-  background-color: #ffffff;
-}
-.testimonials-section h2 {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  font-size: 8rem;
-  color:#53709F;
-  margin-bottom:0;
-  padding:0;
-}
-.testimonials-section h3 {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  font-size: 4rem;
-  color:#53709F;
-  margin:0;
-  padding: 0;
-  margin-bottom: 8rem;
-}
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 12rem;  /* ✅ ONLY gap between columns */
-  row-gap: 8rem;        /* ✅ No gap between rows */
-  max-width: 1600px;
-  margin: 2rem auto;
-  transform: translateX(4rem); /* ✅ shifts entire section right */
-}
-
-/* Shared box layout */
-.testimonial-box {
-  position: relative;
-  background: white;
-  border-radius: 1.5rem;
-  border: 2px solid rgb(192, 192, 192);
-  padding: 0.5rem 1rem 0.5rem 0.5rem; /* Extra left padding for image overlap */
-  overflow: visible;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  min-height: 260px;
-}
-
-/* LEFT image setup */
-.image-left {
-  flex-direction: row;
-}
-
-/* RIGHT image setup */
-.image-right {
-  flex-direction: row-reverse;
-}
-
-/* Circle image */
-/* Default shared image styles */
-.testimonial-image {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  object-fit: cover;
+  .card-center-text {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%); /* Centers vertically */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 0.4s ease;
+}
+  .hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1; /* Must sit behind text but above image */
+  transition: opacity 0.4s ease;
+}
+ .section-featured {
+  height: auto;
+  background: #71C7D4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
-/* Position left center (overflow outside the card) */
-.image-left .testimonial-image {
-  left: -100px; /* Half image width = overlaps left side */
+.featured-inner {
+  width: 100%;
+  margin: 0rem 4rem 0rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-/* Position right center if needed */
-.image-right .testimonial-image {
-  right: -100px;
+.featured-title {
+  font-size: clamp(4rem, 7vw, 8rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 2rem;
 }
-/* Text content */
-.testimonial-content {
+
+/* Image container like card */
+.featured-image-container {
   position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  cursor: pointer;
+  max-height: 80vh; /* ✅ reduce just this one */
   flex: 1;
-  padding-bottom: 0rem; /* ensures space for the logo */
-  height: 100%;     /* ensures content has enough height to show the logo */
-  
-}
-.testimonial-text {
-  font-size: 0.8rem;
-  color: #333;
-  line-height: 1.6;
-  margin-bottom: 3rem; /* Space for logo */
-  margin-left: 14rem;
+  transition: transform 0.4s ease;
+  transform: scale(1);
 }
 
-
-.testimonial-content h1 {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.2;
-margin: 0;
-  margin-left: 14rem;
-   text-transform: none; /* ✅ override uppercase */
-
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  cursor: pointer;
+  height: 60vh;
+  flex: 1;
+  transition: transform 0.4s ease;
+  transform: scale(1);
 }
-.testimonial-content h2 {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.6;
-  margin: 0;
-  margin-left: 14rem;
-   text-transform: none; /* ✅ override uppercase */
-   font-weight: 100;
-
+.featured-image-container img {
+  width: 100%;
+  height: auto; /* 🔁 don't stretch the image */
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  transition: transform 0.4s ease;
+  display: block;
 }
-/* Logo in bottom right */
-.testimonial-logo {
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  transition: transform 0.4s ease;
+  display: block;
+}
+.card:hover img,
+.featured-image-container:hover img {
+  transform: scale(1.05);
+}
+.card:hover{
+   transition: transform 0.4s ease;
+  transform: scale(0.97);
+}
+.featured-image-container:hover {
+ transition: transform 0.4s ease;
+  transform: scale(0.97);
+}
+
+/* Shared popup style */
+.card-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.2);
+  opacity: 0;
+  clip-path: circle(0% at 50% 50%);
+  pointer-events: none;
+  z-index: 2;
+  transition: none;
+}
+
+.card-popup img {
+  max-height: 80vh;
+  display: block;
+}
+
+/* Overlay */
+.featured-overlay {
   position: absolute;
   bottom: 0;
-  right: 0;
-  width: 120px;
-  height: auto;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 80%);
+  color: white;
+  z-index: 2;
+  border-radius: 1rem;
+  
+  /* 🔹 Start hidden */
+  transform: none;
+  opacity: 1;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  pointer-events: none;
+}
+.featured-p {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+  font-size: 0.9rem;
+}
+
+.card:hover .featured-overlay,
+.featured-image-container:hover .featured-overlay {
+  transform: translateY(-1rem); /* pushes it up */
+}
+
+.card:hover .featured-p,
+.featured-image-container:hover .featured-p {
+  opacity: 1;
+  max-height: 150px; /* or something tall enough for content */
+}
+
+.card:hover .featured-overlay,
+.featured-image-container:hover .featured-overlay {
+  transform: translateY(0%);
+  opacity: 1;
+  pointer-events: auto;
+}
+.featured-title-text {
+  font-size: clamp(1.5rem, 3vw, 1.2rem);
+  font-weight: bold;
+  margin: 0 0 0.5rem 0rem;
+}
+
+.featured-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0 0 1rem 0.5rem;
+}
+
+.tag {
+  font-size: clamp(0.65rem, 1.2vw, 0.9rem);
+  background-color: white;
+  color: #333;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.featured-image-container .featured-title-text {
+  font-size: clamp(1.5rem, 4vw, 4rem);
+  font-weight: bold;
+  margin: 0 0 0.5rem 1rem;
+}
+
+.featured-image-container .featured-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0 0 1.5rem 1rem;
+}
+
+.featured-image-container .tag {
+  font-size: clamp(0.65rem, 4vw, 1.2rem);
+  background-color: white;
+  color: #333;
+  padding: 0.3rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.featured-image-container .featured-p {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+  font-size: 1.4rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+/* Row */
+.featured-card-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 cards in one row */
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: 6rem;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .testimonial-box {
+  .featured-card-row {
     flex-direction: column;
-    text-align: center;
-    padding-bottom: 5rem;
   }
-
-  .testimonial-logo {
-    position: static;
-    margin: 1rem auto 0 auto;
+  .card {
+    height: 150px;
   }
-
-  .testimonial-image {
-    margin: 0 auto;
+  .card-popup {
+    display: none;
   }
-}
-  </style>
-
-
-
-
-<section id="services" class="section-services">
-  <div class="section-heading">
-    <h2>SERVICES</h2>
-  </div>
-</section>
-
-<style>
-  .section-services {
-    height: 35vh;
-    width: 100%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  .section-heading {
-  width: 100%;
-  text-align: center;
-  font-size: 5rem;
-  color: #4D4D4D;
 }
 </style>
-
-
-
-<section id="services" class="accordion-wrapper">
-  <div class="accordion">
-    <div class="panel">
-      <div class="panel-content">
-        <div class="panel-text">
-        <h3>Event Management & Logistics</h3>
-        <P>Project Management<br>
-Event Operations<br>
-Food & Beverage <br>
-Housing<br>
-Event Design<br>
-Volunteer Coordination<br>
-Registration Management<br>
-Virtual Event Production</P>
-        </div>
-        <div class="panel-img">
-          <img src="images/Services_2.jpg" alt="Media Image" />
-        </div>
-
-      </div>
-    </div>
-    <div class="panel">
-      <div class="panel-content">
-        <div class="panel-text">
-        <h3>Program Development</h3>
-        <P>Speaker & Talent Acquisition<br>
-Speaker Management<br>
-Messaging<br>
-Scriptwriting<br>
-Voice Talent (bilingual)</P>
-        </div>
-        <div class="panel-img">
-          <img src="images/Services_3.jpg" alt="Media Image" />
-        </div>
-
-      </div>
-    </div>
-    <div class="panel">
-      <div class="panel-content">
-        <div class="panel-text">
-        <h3>Event Production</h3>
-        <P>Producer<br>
-Technical Director<br>
-Show Caller<br>
-Script Director<br>
-Stage Managers</P>
-        </div>
-        <div class="panel-img">
-          <img src="images/Services_4.jpg" alt="Media Image" />
-        </div>
-
-      </div>
-    </div>
-    <div class="panel">
-      <div class="panel-content">
-        <div class="panel-text">
-        <h3>Sponsor Relations</h3>
-        <P>Sponsorship Strategy<br>
-Sponsorship Manager</P>
-        </div>
-        <div class="panel-img">
-          <img src="images/Services_5.jpg" alt="Media Image" />
-        </div>
-
-      </div>
-    </div>
-    <div class="panel">
-      <div class="panel-content">
-        <div class="panel-text">
-        <h3>Public Relations</h3>
-        <P>PR Strategy and/or Implementation<br>
-Media Relations<br>
-Copywriting<br>
-Press Kits<br>
-Press Releases<br>
-Earned Media<br>
-Paid Media</P>
-        </div>
-        <div class="panel-img">
-          <img src="images/Services_6.jpg" alt="Media Image" />
-        </div>
-
-      </div>
-    </div>
-    <div class="panel">
-      <div class="panel-content">
-        <div class="panel-text">
-        <h3>Marketing</h3>
-        <P>Graphic Design<br>
-Motion Animation<br>
-Social Media Engagement Applications<br>
-Digital Strategy & Content Development<br>
-Microsite Development & Management<br>
-Video Production</P>
-        </div>
-        <div class="panel-img">
-          <img src="images/Services_4.jpg" alt="Media Image" />
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-
-.accordion-wrapper {
-  height: auto; /* ✅ was 95vh */
-  overflow: visible;
-  position: relative;
-  margin-bottom: 0rem;
-}
-
-.accordion {
-  height: auto; /* ✅ was 150vh or fixed before */
-  width: 100%;
-}
-.panel {
-  position: relative;
-  height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem;
-  color: rgb(0, 0, 0);
-  overflow: hidden;
-  background: #ffffff;
-  border-top: 2px solid #71C7D4;
-}
-.panel-content {
-  position: relative; /* changed from absolute */
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 0 4rem;
-  gap: 2rem;
-  padding-top: 1.2rem;
-}
-.panel-img {
-  flex: 1;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  
-  padding-top: 6rem;
-   max-width: 1000px;
-  max-height: 300px;
-}
-
-.panel-img img {
-  width: 100%;
-  height: 100%;
-  border-radius: 1rem;
-  object-fit: cover;
-}
-.panel-text {
-  flex: 1;
-  max-width: 800px;
-  text-align: left;
-}
-
-
-.panel-text h3 {
-  font-size: 3rem;
-  margin: 0 0 3rem 0;
-  font-weight: 800;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.panel-text p {
-  font-size: 2rem;
-  line-height: 1.4;
-  font-weight: 400;
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  max-width: 700px;
-}
-#carolyn .hover-img {
-  transform: scale(1.1);
-  margin-top: 2rem;
-}
-  </style>
-
-
 
 
 <footer class="footer">
@@ -921,7 +792,9 @@ Video Production</P>
             <div class="bottom-col">
               <h6>Sitemap</h6>
               <button class="footer-dropbtn">About</button>
+              <button class="footer-dropbtn">Clients</button>
               <button class="footer-dropbtn">Services</button>
+              <button class="footer-dropbtn">Featured Projects</button>
             </div>
           </div>
 
@@ -937,16 +810,6 @@ Video Production</P>
     </div>
   </div>
 
-  <div class="footer-logo-carousel">
-    <div class="logo-track-text">
-      <span>Strategic.</span>
-      <span>Bold.</span>
-      <span>Unforgettable.</span>
-      <span>Strategic.</span>
-      <span>Bold.</span>
-      <span>Unforgettable.</span>
-    </div>
-  </div>
 
   <style>
     .mail-icon {
@@ -1193,109 +1056,74 @@ Video Production</P>
 
 
 
-
-<!-- ✅ GSAP + ScrollTrigger + Locomotive -->
 <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
 <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-<script>
-  const panels = document.querySelectorAll(".panel");
-  let currentIndex2 = 0; // Start with first panel open
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 
-  function showPanel(index) {
-    panels.forEach((panel, i) => {
-      gsap.to(panel, {
-        height: i === index ? 600 : 100,
-        duration: 0.5,
-        ease: "power2.inOut"
-      });
-    });
-
-    currentIndex2 = index;
-  }
-
-  // Open the first panel on load
-  showPanel(currentIndex2);
-
-  panels.forEach((panel, index) => {
-    panel.addEventListener("click", () => {
-      if (currentIndex2 === index) {
-        gsap.to(panel, {
-          height: 100,
-          duration: 0.4,
-          ease: "power2.inOut"
-        });
-        currentIndex2 = -1;
-      } else {
-        showPanel(index);
-      }
-    });
-  });
-</script>
 
 <script>
-  gsap.registerPlugin(ScrollTrigger);
+  const images = document.querySelectorAll(".scroller-image");
+  const total = images.length;
+  let currentIndex = 0; // ✅ Start with first image
 
-  function initScrollAnimations() {
-    document.querySelectorAll(".client-row").forEach((row) => {
-      gsap.set(row, {
-        opacity: 0.2,
-        scale: 0.7,
-        filter: "blur(10px)"
-      });
+  function renderStack(index) {
+    images.forEach((img, i) => {
+      const offset = (i - total + 1) * 150;
+      const distance = Math.abs(i - index);
+      const z = total - distance;
 
-      ScrollTrigger.create({
-        trigger: row,
-        start: "top 90%",
-        end: "bottom 10%",
-        scrub: true,
-        onUpdate: (self) => {
-          const progress = self.progress;
-          const centeredness = 1 - Math.abs(progress - 0.5) * 2;
-          const scale = 0.7 + centeredness * 0.3;
-          const opacity = 0.2 + centeredness * 0.8;
-          const blur = 8 - centeredness * 10;
+      img.classList.toggle("selected", i === index);
 
-          gsap.to(row, {
-            scale,
-            opacity,
-            filter: `blur(${blur}px)`,
-            duration: 0.1,
-            overwrite: true
-          });
-        }
+      gsap.set(img, {
+        x: offset,
+        scale: i === index ? 1 : 0.98,
+        opacity: 1,
+        zIndex: z
       });
     });
-
-    ScrollTrigger.refresh();
   }
 
-  window.addEventListener("load", () => {
-    const images = document.querySelectorAll("img");
-    let loaded = 0;
-
-    const checkLoaded = () => {
-      loaded++;
-      if (loaded === images.length) {
-        initScrollAnimations();
-        clearTimeout(fallbackTimer);
-      }
-    };
-
-    images.forEach((img) => {
-      if (img.complete) {
-        checkLoaded();
-      } else {
-        img.addEventListener("load", checkLoaded);
-        img.addEventListener("error", checkLoaded);
-      }
+  images.forEach((img, i) => {
+    img.addEventListener("click", () => {
+      currentIndex = i;
+      renderStack(currentIndex);
     });
-
-    const fallbackTimer = setTimeout(() => {
-      initScrollAnimations();
-    }, 2000);
   });
+
+  renderStack(currentIndex); // ✅ Initial render
+
+  // ✅ Auto-advance every 5 seconds
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % total;
+    renderStack(currentIndex);
+  }, 3000);
 </script>
 
+
+
+<script>
+  const track = document.querySelector(".carousel-track");
+  const nextBtn = document.querySelector(".carousel-btn.next");
+  const prevBtn = document.querySelector(".carousel-btn.prev");
+  const cardWidth = 25 * 16 + 56; // 25rem + gap (converted to px)
+  let currentPosition = 0;
+
+  nextBtn.addEventListener("click", () => {
+    const maxScroll = track.scrollWidth - track.parentElement.offsetWidth;
+    if (Math.abs(currentPosition) < maxScroll) {
+      currentPosition -= cardWidth;
+      gsap.to(track, { x: currentPosition, duration: 0.5, ease: "power2.out" });
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (currentPosition < 0) {
+      currentPosition += cardWidth;
+      gsap.to(track, { x: currentPosition, duration: 0.5, ease: "power2.out" });
+    }
+  });
+</script>
+<!-- ✅ Navbar Dropdown Behavior -->
 <script>
   const nav = document.querySelector('.navbar');
   const navItems = document.querySelectorAll('.nav-item');
@@ -1314,7 +1142,7 @@ Video Production</P>
   function maybeRemoveHovered() {
     const isDropdownActive = document.querySelector('.nav-item.active');
     const isNavHovered = nav.matches(':hover');
-    if (window.scrollY <= 0 && !isDropdownActive && !isNavHovered) {
+    if (window.locoScroll.scroll.instance.scroll.y <= 0 && !isDropdownActive && !isNavHovered) {
       nav.classList.remove('hovered');
     }
   }
@@ -1432,7 +1260,102 @@ Video Production</P>
     lastScrollY = currentScroll;
   }
 
-  window.addEventListener('scroll', () => handleScroll(window.scrollY));
+  if (window.locoScroll) {
+    window.locoScroll.on('scroll', (args) => {
+      const scrollY = args.scroll.y;
+      handleScroll(scrollY);
+    });
+  } else {
+    window.addEventListener('scroll', () => handleScroll(window.scrollY));
+  }
 </script>
+<!-- ✅ Custom Scripts (after Locomotive setup) -->
+ <script>
+document.querySelectorAll('.card, .featured-image-container').forEach((el) => {
+  const popup = el.querySelector('.card-popup');
+  const popupImg = popup?.querySelector('img'); // ✅ Target popup image only
+  const hoverOverlay = el.querySelector('.hover-overlay');
+  const centerText = el.querySelector('.card-center-text');
+
+  // 🔹 Handle popup animation
+  if (popup) {
+    el.addEventListener('mouseenter', () => {
+      gsap.killTweensOf(popup); // ✅ Prevent stacking
+      gsap.to(popup, {
+        opacity: 1,
+        scale: 1,
+        clipPath: 'circle(75% at 50% 50%)',
+        duration: 0.7,
+        ease: 'power3.out',
+        pointerEvents: 'auto'
+      });
+    });
+
+    el.addEventListener('mouseleave', () => {
+      gsap.killTweensOf(popup); // ✅ Kill previous animations
+      gsap.to(popup, {
+        opacity: 0,
+        scale: 0.2,
+        clipPath: 'circle(0% at 50% 50%)',
+        duration: 0.6,
+        ease: 'power3.in',
+        pointerEvents: 'none'
+      });
+
+      // Hide centerText immediately when leaving the card
+      if (centerText) {
+        gsap.to(centerText, {
+          opacity: 0,
+          duration: 0.2,
+          ease: 'power2.in'
+        });
+      }
+    });
+  }
+
+  // 🔹 Handle hover overlay
+  if (hoverOverlay) {
+    el.addEventListener('mouseenter', () => {
+      gsap.to(hoverOverlay, {
+        opacity: 0.6,
+        duration: 0.2,
+        ease: 'power2.out'
+      });
+    });
+
+    el.addEventListener('mouseleave', () => {
+      gsap.to(hoverOverlay, {
+        opacity: 0,
+        duration: 0.4,
+        ease: 'power2.in'
+      });
+    });
+  }
+
+  // 🔹 Show centerText ONLY when popup image is hovered
+  if (centerText && popupImg) {
+    popupImg.addEventListener('mouseenter', () => {
+      gsap.to(centerText, {
+        opacity: 1,
+        duration: 0.4,
+        ease: 'power2.out'
+      });
+    });
+
+    popupImg.addEventListener('mouseleave', () => {
+      gsap.to(centerText, {
+        opacity: 0,
+        duration: 0.4,
+        ease: 'power2.in'
+      });
+    });
+  }
+});
+</script>
+
+<script src="carousel.js"></script>
+<script src="heroscroll.js"></script>
+<script src="tracker.js"></script>
+
 </body>
 </html>

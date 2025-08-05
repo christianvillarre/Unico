@@ -9,43 +9,48 @@
 </head>
 <body>
 <!-- 🔹 NAVBAR -->
-<header class="navbar" data-scroll-section>
+<header class="navbar">
   <div class="logo">
     <a href="/index.html"><img class="logo1" src="images/logo1.png" alt="Logo" /></a>
   </div>
   <nav>
     <div class="nav-item">
-      <a href="/about copy.html">About</a>
+      <a href="/about.html">About</a>
       <div class="dropdown">
         <div class="dropdown-content">
           <div class="dropdown-text">
-            <h4>Our Story<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Culture<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Team<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4><a href="/about.html">Our Story<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
+            
+              <h4><a href="/about.html#culture">Culture <img class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
+            
+            
+              <h4><a href="/about.html#team">Team<img class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
+            
           </div>
         </div>
       </div>
     </div>
     <div class="nav-item">
-      <a href="/impact.html" class="impact-link">
-        Impact
-      </a>
+     <a class="link-with-arrow">Impact</a>
       <div class="dropdown">
        <div class="dropdown-text">
-          <h4>Clients<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Featured Projects<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Services<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+          <h4><a href="/impact.html">Clients<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
+            
+           <h4> <a href="/impact.html#services">Services<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
+            <h4><a href="/featured.html">Featured Projects<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
         </div>
      
       </div>
     </div>
     <div class="nav-item">
-      <a href="#friends">Let's Be Friends</a>
+      <a href="#friends" class="link-with-arrow">Let's Be Friends</a>
       <div class="dropdown">
         <div class="dropdown-content">
           <div class="dropdown-text">
-            <h4>Tell Us More<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
-            <h4>Get Social<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></h4>
+            <h4><a href="/contact.html">Tell Us More<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
+            
+              <h4><a href="/index.html#social">Get Social<img class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
+            
           </div>
         </div>
       </div>
@@ -53,20 +58,38 @@
   </nav>
 </header>
 <style>
-  .impact-arrow {
-  opacity: 0;
-  transform: translateY(0);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  margin-left: 6px;
-  height: 15px; /* adjust as needed */
-  vertical-align: middle;
-  z-index: 99;
+a {
+  all: unset;
+
+}
+/* Base link style */
+.link-with-arrow {
+  position: relative;
+  display: inline-block;
+  cursor:default;
 }
 
-/* 🔹 Hover state: arrow fades in and moves down slightly */
-.impact-link:hover .impact-arrow {
+/* Add arrow on hover using ::after */
+.link-with-arrow::after {
+  content: '';
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%) translateX(-8px);
+  right: -28px; /* Push it outside the text */
+  width: 50px;
+  height: 16px; /* Adjust as needed */
+  background-image: url('images/arrow_down.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+/* Show arrow on hover */
+.link-with-arrow:hover::after {
   opacity: 1;
-  transform: translateY(4px);
+  transform: translateY(-50%) translateX(0);
 }
 
        /* 🔹 NAVBAR */
@@ -152,8 +175,8 @@
   width: max-content; /* keeps it just wide enough for the text */
   min-width: 100px;   /* prevents it from being too narrow */
   height: auto;
-  padding-left: 2rem;
-  padding-right: 1rem; /* or however much you want */
+  padding-left: 0rem;
+  padding-right: 0rem; /* or however much you want */
 }
 .dropdown-text {
   display: flex;
@@ -165,6 +188,7 @@
   margin: 0;                /* optional, for safety */
   padding-top: 2.5rem;
   padding-bottom: 0.80rem;
+ 
 }
 
 
@@ -183,15 +207,17 @@
   font-size: 1rem;
   font-weight: 500;
   text-align: left;
-
+  padding: 0;
   text-decoration: none;
   background: none;
   border: none;
   cursor: pointer;
   transition: color 0.3s;
+  overflow: visible; /* ✅ Prevents arrow from being clipped */
 }
 .dropdown-text h4 {
   padding-right: 1.5rem; /* ✅ add buffer space for the arrow */
+  padding-left: 2rem;
 }
 
 .dropdown-text a:hover,
@@ -214,16 +240,24 @@
   cursor: pointer;
 }
 /* 🔹 Animated underline setup */
-.navbar nav a,
-.dropdown-text h4 {
-  position: relative;
-  overflow: hidden;
+
+.dropdown-text h4 a {
+  display: inline-flex;        /* ✅ Ensures arrow and text stay tight */
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 0;                  /* ✅ Remove inherited padding */
+  margin: 0;
+  white-space: nowrap;
+  gap: 8px;                    /* Optional: controls space between text and arrow */
+  width: 100%;                 /* Ensures anchor fills the width if needed */
+  box-sizing: border-box;
 }
 .white-arrow {
   opacity: 0;
   transform: translateX(0);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  margin-left: 8px;
+  margin-left: -4px;
   vertical-align: middle;
 }
 
@@ -237,10 +271,10 @@
 
 
 
-<div data-scroll-container>
+
 
 <!-- 🔹 HERO SECTION -->
-<section class="hero-section" data-scroll-section>
+<section class="hero-section">
   <div class="bg-layer" id="bg1"></div>
   <div class="bg-layer" id="bg2"></div>
 
@@ -260,13 +294,13 @@
   <div class="dots" id="dotContainer"></div>
 
   <div class="hero-social-icons">
-      <a href="#" class="social-icon" aria-label="Instagram">
+      <a href="https://www.instagram.com/unicocommunications/" class="social-icon" aria-label="Instagram">
         <img src="images/icon-instagram.png" alt="Instagram" />
       </a>
-      <a href="#" class="social-icon" aria-label="Facebook">
+      <a href="https://www.facebook.com/unicocomm/" class="social-icon" aria-label="Facebook">
         <img src="images/icon-facebook.png" alt="Facebook" />
       </a>
-      <a href="#" class="social-icon" aria-label="LinkedIn">
+      <a href="https://www.linkedin.com/company/unicocommunications-inc" class="social-icon" aria-label="LinkedIn">
         <img src="images/icon-linkedin.png" alt="LinkedIn" />
       </a>
     </div>
@@ -275,7 +309,7 @@
 
   </style>
 
-  <main class="main-section" data-scroll-section>
+  <main class="main-section">
     <div class="carousel-wrapper2 carousel-1">
       <div class="carousel-header">
         <h2>CLIENTS</h2>
@@ -608,11 +642,59 @@
 
 
 
-<section class="instagram-section" data-scroll-section>
+<section id="social" class="instagram-section">
   <div><h2>GET SOCIAL. FOLLOW THE FUN!</h2></div>
-  <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/722d891e63585367a00805d6f9a914f8.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+  <div class="hero-social-icons-2">
+    <a href="https://www.instagram.com/unicocommunications/" class="social-icon-2" aria-label="Instagram">
+      <img src="images/icon-instagram.png" alt="Instagram" />
+    </a>
+    <a href="https://www.facebook.com/unicocomm/" class="social-icon-2" aria-label="Facebook">
+      <img src="images/icon-facebook.png" alt="Facebook" />
+    </a>
+    <a href="https://www.linkedin.com/company/unicocommunications-inc" class="social-icon-2" aria-label="LinkedIn">
+      <img src="images/icon-linkedin.png" alt="LinkedIn" />
+    </a>
+  </div>
+<!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://cdn.lightwidget.com/widgets/5be9bb4cafee5b35b07d593aad78ea03.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
 </section>
+<style>
+     .hero-social-icons-2 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  z-index: 3;
+  margin-left: 2rem;
+  margin-top: 0rem;
+  margin-bottom: 2rem;
+}
 
+.hero-social-icons-2 .social-icon-2 {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hero-social-icons-2 .social-icon-2 img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.hero-social-icons-2 .social-icon-2:hover {
+  background-color: #6E9D72;
+  transform: scale(1.05);
+}
+
+.hero-social-icons-2 .social-icon-2:hover img {
+  filter: brightness(0) invert(1);
+}
+</style>
 <style>
 .instagram-section {
   width: 100%;
@@ -623,6 +705,8 @@
   padding: 4rem;
   gap: 1rem;
   height: 90vh;
+  background-color: white;
+  padding-top: 0rem;
 }
 .instagram-feed-wrapper {
   width: 100%;
@@ -643,247 +727,228 @@
 </style>
 
 
-<footer class="footer" data-scroll-section>
+<footer class="footer">
   <div class="footer-container">
     <div class="footer-divider">
       <img src="images/UNICO_LOGO_MARK_100x100.png" alt="See more" />
     </div>
 
-<div class="footer-flex">
-  <!-- Left Side -->
-  <div class="footer-section first-section">
-    <p>LET'S<br>BE FRIENDS<img class="arrow1" src="images/arrowbig.png"></p>
+    <div class="footer-flex">
+      <!-- Left Side -->
+      <div class="footer-section first-section">
+        <p>LET'S<br>BE FRIENDS
+          <img class="arrow1" src="images/arrowbig.png" />
+        </p>
+      </div>
+
+      <!-- Right Side -->
+      <div class="footer-section second-section">
+        <!-- Top Row -->
+        <div class="row">
+          <!-- Column: Socials -->
+          <div class="col small-col">
+            <div class="bottom-col">
+              <h6>Socials</h6>
+              <button class="footer-dropbtn"><a href="https://www.instagram.com/unicocommunications/">Instagram</a></button>
+              <button class="footer-dropbtn"><a href="https://www.facebook.com/unicocomm/">Facebook</a></button>
+              <button class="footer-dropbtn"><a href="https://www.linkedin.com/company/unicocommunications-inc">LinkedIn</a></button>
+            </div>
+          </div>
+
+          <!-- Column: Get in Touch -->
+          <div class="col small-col">
+            <div class="bottom-col">
+              <h6>Unico HQ</h6>
+              <button class="footer-dropbtn">
+                2222 San Pedro Ave., Ste 2<br>San Antonio, TX 78212<br>(210) 670-9077
+              </button>
+            </div>
+          </div>
+
+           <div class="col small-col tell-us-more-col">
+            <div class="bottom-col">
+              <h6>TELL US MORE</h6>
+              <button class="footer-dropbtn">
+                <img class="mail-icon" src="images/Mail Icon.png">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Row -->
+        <div class="row">
+          <!-- Column: Sitemap -->
+          <div class="col small-col">
+            <div class="bottom-col">
+              <h6>Sitemap</h6>
+              <button class="footer-dropbtn"><a href="/about.html">About</a></button>
+              <button class="footer-dropbtn"><a href="/impact.html">Clients</a></button>
+              <button class="footer-dropbtn"><a href="/impact.html#services">Services</a></button>
+              <button class="footer-dropbtn"><a href="/featured.html">Featured Projects</a></button>
+            </div>
+          </div>
+
+          <!-- Column: Unico -->
+          <div class="col large-col">
+            <div class="bottom-col">
+              <h5 class="unico-copyright">© 2025 Unico Communications. All rights reserved.</h5>
+              <img class="centro" src="images/CentroStage Logo.png" alt="CentroStage Logo">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- Right Side -->
-  <div class="footer-section second-section">
-    <div class="top-row">
-      <div class="col">
-        <div class="bottom-col"><p>Unico Hq</p>
-        <button class="footer-dropbtn">
-                2222 San Pedro Ave., Ste 2<br>San Antonio, TX 78212<br>(210) 670-9077
-              </button></div>
-      </div>
-      <div class="col">
-        <div class="bottom-col"><p>Get Social</p>
-        <button class="footer-dropbtn">
-                Instagram
-              
-              </button>
-            <button class="footer-dropbtn">
-                Facebook
-               
-              </button>
-            <button class="footer-dropbtn">
-                LinkedIn
-              
-              </button></div>
-      </div>
-      <div class="col"><div class="bottom-col">
-        <p>Sitemap</p>
-        <button class="footer-dropbtn">
-                About
-               
-              </button>
-            <button class="footer-dropbtn">
-                Services
-              
-              </button>
-            <button class="footer-dropbtn">
-                Let's Be Friends
-              
-              </button></div></div>
-      
-    </div>
-    <div class="bottom-row">
-  <div class="bottom-left">
-    <p>© 2025 Unico Communications. All rights reserved.</p>
-    <img class="centro" src="images/CentroStage Logo.png" alt="CentroStage Logo">
-  </div>
-</div>
-  </div>
-</div>
+
   <style>
-    .arrow1{
+    .tell-us-more-col {
+  transform: translateX(2rem); /* ✅ Moves only this column to the right */
+}
+    .mail-icon {
+      width: 100px;
+    }
+    .unico-copyright {
+      font-size: clamp(0.5rem, 1vw, 1.5rem);
+      color: white;
+      font-weight: 100;
+      margin: 0;
+      padding: 0;
+      
+    }
+    .arrow1 {
       padding-left: 1.2rem;
       padding-bottom: 0.7rem;
       margin: 0;
+      width: clamp(6rem, 8vw, 8rem);
     }
-.footer-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch; /* ✅ allows full height for both sides */
-  width: 100%;
-  gap: 4rem;
-  margin-top: 0.5rem;
-  height: 400px; /* ✅ enforce full height on flex container */
-}
 
-.footer-section {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  height: 100%; /* ✅ full height */
-}
+    .footer-flex {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 4rem;
+      margin-top: 0rem;
+    }
 
-/* Left Side */
-.first-section {
-  flex: 1;
-  
-  padding: 1rem;
-}
-.first-section p {
-  font-size: 6rem;
-  color: white;
-  margin: 0; /* ✅ remove top/bottom spacing */
-  line-height: 1; /* ✅ optional: tighten spacing further */
-  font-weight: 800;
-}
-.first-section p:hover {
-  color: #CCE5CC;
-  cursor: pointer;
-}
-/* Right Side */
-.second-section {
-  flex: 1;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0rem;
-}
+    .footer-section {
+      display: flex;
+      flex-direction: column;
+    }
 
-/* Top and Bottom Rows: Equal Height */
-.top-row {
-  display: flex;
-  gap: 0rem;
-  margin-bottom: 1rem;
-  height: 50%; /* 🔹 take up half of 600px */
-  width: 100%;
-}
+    .first-section {
+      flex: 1;
+      padding: 1rem;
+    }
 
-.top-row .col {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem;
-  color: #fff;
-  font-weight: bold;
-  border-bottom: white 1px solid;
-}
+    .first-section p {
+      font-size: clamp(3rem, 5vw, 6rem);
+      color: white;
+      margin: 0;
+      line-height: 1;
+      font-weight: 800;
+    }
 
-/* Optional: style inner content */
-.bottom-col p {
-  margin: 0 0 0.5rem 0;
-  font-weight: 600;
-}
+    .first-section p:hover {
+      color: #CCE5CC;
+      cursor: pointer;
+    }
 
-.footer-dropbtn {
-  display: block;
-  background: none;
-  border: none;
-  color: white;
-  margin: 0.2rem 0;
-  text-align: left;
-  padding: 0;
-  font-size: 0.95rem;
-  cursor: pointer;
-}
-
-/* Make sure bottom-row matches height */
-.bottom-row {
-  height: 50%;
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  padding: 1rem;
-}
-
-.bottom-left {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.bottom-row p {
-  margin: 0 0 1rem 0;
-  font-size: 1.2rem;
-  color: white;
-}
-
-.centro {
-  height: 70px; /* adjust as needed */
-  object-fit: contain;
-}
-  </style>
-<!--
-    <div class="footer-grid">
-      <div class="top-left">
-        <h2>LET'S BE FRIENDS <img src="images/Arrow 3.png"></h2>
-     
-      </div>
-      <div class="top-right"><div class="bottom-col">
-        <p>Sitemap</p>
-        <button class="footer-dropbtn">
-                About
-               
-              </button>
-            <button class="footer-dropbtn">
-                Services
-              
-              </button>
-            <button class="footer-dropbtn">
-                Let's Be Friends
-              
-              </button></div>
-
-            <div class="bottom-col"><p>Socials</p>
-        <button class="footer-dropbtn">
-                Instagram
-              
-              </button>
-            <button class="footer-dropbtn">
-                Facebook
-               
-              </button>
-            <button class="footer-dropbtn">
-                LinkedIn
-              
-              </button></div>
-              
-              <div class="bottom-col"><p>Get in Touch</p>
-        <button class="footer-dropbtn">
-                2222 San Pedro Ave., Ste 2<br>San Antonio, TX 78212<br>(210) 670-9077
-              </button></div>
-
-              
-
-      </div>
-      <div class="bottom-row">
-        
-        
-      </div>
-      <div class="bottom-right">
-        
-       
+    .second-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: clamp(2rem, 3vw, 5rem);
+      margin-bottom: 0rem;
       
-    </div>
-  </div>
--->
+    }
 
-</div>
-<div class="footer-logo-carousel">
-  <div class="logo-track-text">
-    <span>unico.</span>
-    <span>unico.</span>
-    <span>unico.</span>
-    <span>unico.</span>
-    <span>unico.</span>
-    <span>unico.</span>
-    <span>unico.</span>
-  </div>
-</div>
+    /* Unified row layout */
+    .row {
+      display: flex;
+      gap: 2rem;
+      justify-content: flex-start;
+      align-items: flex-start;
+      
+    }
+    .row:first-child {
+  border-bottom: 1px white solid;
+}
+
+    .col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .small-col {
+      flex: 0.3;
+      
+    }
+
+    .large-col {
+      flex: 0.7;
+      
+    }
+
+    .bottom-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      margin-bottom: 4rem;
+      margin-top: 2rem;
+    }
+
+    .bottom-col p {
+      margin: 0;
+      font-weight: 600;
+      color:rgba(255, 255, 255, 0.7);
+      line-height: 1.4;
+      font-size: 1rem;
+      
+
+    }
+      .bottom-col h6 {
+      margin: 0;
+      font-weight: 600;
+       color:#85ADC1;
+      line-height: 1.4;
+      text-transform: uppercase;
+      font-size: 1rem;
+    }
+
+    .footer-dropbtn {
+      display: block;
+      background: none;
+      border: none;
+      color:rgb(255, 255, 255);
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      font-size: clamp(0.8rem, 1vw, 1.1rem);
+      line-height: 1.2;
+      cursor: pointer;
+      font-family: 'montserrat';
+    }
+
+    .centro {
+  height: 70px;
+  object-fit: contain;
+  margin-top: 0.5rem;
+  align-self: flex-start;
+}
+
+    .footer-logo-carousel {
+      margin-top: 0rem;
+      color: white;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .logo-track-text span {
+      margin-right: 1.2rem;
+    }
+  </style>
 </footer>
 
 <style>
@@ -937,163 +1002,6 @@
   margin-top: 3rem;
 }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 8rem auto;
-  gap: 6rem;
-  height: 100%;
-}
-
-.top-left {
-  grid-column: 1;
-  background-color: transparent;
-  padding: 1rem;
-align-self: flex-start; /* ✅ aligns to top of grid cell */
-background-color: #37493E;
-}
-.top-left h2{
-color: white;
-font-size: 7rem;
-}
-.footer-grid p  {
-  font-size: clamp(1rem, 1vw, 1.4rem);
-  color: white;
-}
-
-.top-right {
-  grid-column: 2;
-  background-color: transparent;
-  padding: 1rem;
-  max-width: 750px;
-  display: flex;
-align-self: flex-start; /* ✅ aligns to top of grid cell */
-  border-bottom: 1px white solid;
-}
-
-
-.bottom-row {
-  grid-column: 1 / span 1;
-  display: flex;
-  justify-content: space-between;
-  gap: 0.5rem;
-  margin-top: 0rem;
-}
-.bottom-right {
-  grid-column: 2; /* ✅ This places it in the right column */
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 0;
-}
-
-.bottom-col {
-  flex: 1;
-  background-color: transparent;
-  padding: 0rem;
-}
-.bottom-col p{
-  font-size: 1rem;
-  color: #85ADC1;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-.footer-smaller {
-  font-size: 1rem;
-  color: white;
-}
-.footer-hq-text {
-  font-size: 1rem;
-  color:#85ADC1;
-  margin-bottom: 0.4rem;
-}
-.footer-dropbtn {
-   all: unset; /* 🔹 Fully reset browser button styles */
-  background: transparent;
-  color: #ffffff;
-  border: none;
-  font-weight: 200;
-  font-size: 1rem;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  line-height: 1.5;
-}
-
-.footer-submit {
-  
-  height: 3.5rem;             /* Match input height */
-  padding: 0 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: #6E9D72;
-  color: #ffffff;
-  border: none;
-  font-weight: bold;
-  font-size: 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  white-space: nowrap;
-  margin-top: 0; /* remove margin that offsets it */
-}
-
-
-.footer-submit:hover {
-  background: #CCE5CC;
-  color: #ffffff;
-}
-
-
-.email-form2 {
-  font-family: 'Montserrat', sans-serif;
-  max-width: 800px;
-  margin: 0;         /* remove default margin */
-  padding: 0;        /* remove padding if needed */
-  text-align: left;
-  color: rgb(255, 255, 255);
-  margin-top: 0.5rem;
-}
-
-.email-form2 label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-
-
-.email-row input::placeholder {
-  color: #fcfdfd;
-}
-.email-row {
-  display: flex;
-  justify-content: flex-start; /* Align entire row to the right */
-  align-items: left;
-  gap: 1rem;
-  margin-top: 0.5rem;
-}
-
-/* Input styles */
-.email-row input {
-  height: 3.5rem;              /* Match button height */
-  width: 100%;                 /* Responsive width */
-  max-width: 950px;            /* You can adjust this as needed */
-  font-size: 1rem;
-  border: none;
-  outline: none;
-  padding: 0 1rem;
-  font-family: 'Montserrat', sans-serif;
-  color: #ffffff;
-  background-color: #7c96c1;
-  border-radius: 4px;
-}
-
-
 
 .footer-logo-carousel {
   width: 100%;
@@ -1133,57 +1041,23 @@ align-self: flex-start; /* ✅ aligns to top of grid cell */
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-22.5%);
+    transform: translateX(-82%);
   }
 }
 
 </style>
 
 
-
 <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
 <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 
-<script>
-  // ✅ LOCOMOTIVE + SCROLLTRIGGER SETUP
-  gsap.registerPlugin(ScrollTrigger);
-
-  const scrollContainer = document.querySelector("[data-scroll-container]");
-
-  // Only initialize once and attach to window so navbar.js can use it
-  window.locoScroll = new LocomotiveScroll({
-    el: scrollContainer,
-    smooth: true
-  });
-
-  ScrollTrigger.scrollerProxy(scrollContainer, {
-    scrollTop(value) {
-      return arguments.length
-        ? window.locoScroll.scrollTo(value, 0, 0)
-        : window.locoScroll.scroll.instance.scroll.y;
-    },
-    getBoundingClientRect() {
-      return {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight
-      };
-    },
-    pinType: scrollContainer.style.transform ? "transform" : "fixed"
-  });
-
-  window.locoScroll.on("scroll", ScrollTrigger.update);
-  ScrollTrigger.addEventListener("refresh", () => window.locoScroll.update());
-  ScrollTrigger.refresh();
-</script>
+<script src="heroscroll.js"></script>
 
 <!-- ✅ Custom Scripts (after Locomotive setup) -->
 <script src="navbar.js"></script>
 <script src="carousel.js"></script>
-<script src="heroscroll.js"></script>
+
 <script src="tracker.js"></script>
-</div>
+
 </body>
 </html>
