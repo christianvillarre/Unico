@@ -644,13 +644,13 @@ input:focus, textarea:focus {
 }
 </style>
 <script>
-  const images = document.querySelectorAll('.san-antonio .fade-image');
+  const images2 = document.querySelectorAll('.san-antonio .fade-image');
   let current = 0;
 
   setInterval(() => {
-    images[current].classList.remove('active');
-    current = (current + 1) % images.length;
-    images[current].classList.add('active');
+    images2[current].classList.remove('active');
+    current = (current + 1) % images2.length;
+    images2[current].classList.add('active');
   }, 8000); // 8000ms = 8 seconds
 </script>
 
