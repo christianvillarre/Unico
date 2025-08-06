@@ -386,7 +386,7 @@
   <div class="content-wrapper">
     <!-- Left Side: Text -->
     <div class="left-column">
-      <h2>OUR CLIENTS</h2>
+      <h2 class="clients-heading">OUR CLIENTS</h2>
 
 
     <!-- Right Side: Images -->
@@ -395,6 +395,7 @@
 </div>
   </div>
 </section>
+
 <style>
 .client-scroll-section {
   display: flex;
@@ -670,7 +671,7 @@ margin: 0;
 
 <section id="services" class="section-services">
   <div class="section-heading">
-    <h2>SERVICES</h2>
+    <h2 class="services-heading">SERVICES</h2>
   </div>
 </section>
 
@@ -1211,6 +1212,50 @@ a {
 <!-- ✅ GSAP + ScrollTrigger + Locomotive -->
 <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
 <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animate OUR CLIENTS heading
+  gsap.from(".clients-heading", {
+    scrollTrigger: {
+      trigger: ".clients-heading",
+      start: "top 85%",   // when it enters viewport
+      toggleActions: "play none none none"
+    },
+    opacity: 0,
+    y: 40,
+    duration: 2,
+    ease: "power2.out"
+  });
+
+  // Animate SERVICES heading
+  gsap.from(".services-heading", {
+    scrollTrigger: {
+      trigger: ".services-heading", // ✅ fix trigger here
+      start: "top 85%",
+      toggleActions: "play none none none"
+    },
+    opacity: 0,
+    y: 40,
+    duration: 2,
+    ease: "power2.out"
+  });
+
+  gsap.from(".testimonial-box", {
+    scrollTrigger: {
+      trigger: ".testimonial-box", // ✅ fix trigger here
+      start: "top 85%",
+      toggleActions: "play none none none"
+    },
+    opacity: 0,
+    y: 40,
+    duration: 2,
+    ease: "power2.out"
+  });
+</script>
+
 <script>
   const panels = document.querySelectorAll(".panel");
   let currentIndex2 = 0; // Start with first panel open

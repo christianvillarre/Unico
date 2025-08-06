@@ -395,7 +395,7 @@
   <div class="content-wrapper">
     <!-- Left Side: Text -->
     <div class="left-column">
-      <h2>OUR STORY</h2>
+      <h2 class="title-story">OUR STORY</h2>
       <p>
        Unico Communications was founded on a bold idea: that powerful storytelling, elevated production, and
 intentional strategy could transform the way communities engage, convene, and lead. What began over
@@ -463,7 +463,7 @@ revealBtn.addEventListener("click", () => {
       <div class="content-wrapper">
         <!-- Left Side: Text -->
         <div class="left-column">
-          <h2>CULTURE</h2>
+          <h2 class="title-culture">CULTURE</h2>
           <p>
            At Unico Communications, creativity isn’t just our craft — it’s our culture. We’re a tight-knit team of
 innovators, problem-solvers, and big-picture thinkers who believe great work starts with genuine
@@ -1066,6 +1066,49 @@ a {
 
 <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
 <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animate OUR CLIENTS heading
+  gsap.from(".title-story", {
+    scrollTrigger: {
+      trigger: ".title-story",
+      start: "top 85%",   // when it enters viewport
+      toggleActions: "play none none none"
+    },
+    opacity: 0,
+    y: 40,
+    duration: 2,
+    ease: "power2.out"
+  });
+
+  // Animate SERVICES heading
+  gsap.from(".title-culture", {
+    scrollTrigger: {
+      trigger: ".title-culture", // ✅ fix trigger here
+      start: "top 85%",
+      toggleActions: "play none none none"
+    },
+    opacity: 0,
+    y: 40,
+    duration: 2,
+    ease: "power2.out"
+  });
+
+  gsap.from(".team-title", {
+    scrollTrigger: {
+      trigger: ".team-title", // ✅ fix trigger here
+      start: "top 85%",
+      toggleActions: "play none none none"
+    },
+    opacity: 0,
+    y: 40,
+    duration: 2,
+    ease: "power2.out"
+  });
+</script>
+
 
 <script>
   const panels = document.querySelectorAll(".panel");

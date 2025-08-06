@@ -1099,7 +1099,26 @@ a {
 
 <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
 <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".card").forEach((card, i) => {
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: card,
+        start: "top 90%",
+        toggleActions: "play none none none"
+      },
+      opacity: 0,
+      y: 30, // subtle upward motion
+      duration: 0.6,
+      ease: "power2.out",
+      delay: i * 0.05
+    });
+  });
+</script>
 
 
 <script>
