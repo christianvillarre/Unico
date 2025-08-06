@@ -1003,10 +1003,10 @@ Video Production</P>
 <script>
   gsap.registerPlugin(ScrollTrigger);
 
-  // Split into words and chars (chars are optional now)
+  // Split all words and chars
   const split = new SplitType(".services-description", { types: "words, chars" });
 
-  // Animate each word smoothly on scroll
+  // 🔹 Animate all words normally
   gsap.fromTo(
     split.words,
     { opacity: 0, y: 20 },
@@ -1014,6 +1014,28 @@ Video Production</P>
       opacity: 1,
       y: 0,
       ease: "power1.out",
+      scrollTrigger: {
+        trigger: ".services-description",
+        start: "top 75%",
+        end: "bottom 50%",
+        scrub: 0.5,
+      },
+      stagger: {
+        each: 0.06,
+        from: "start"
+      }
+    }
+  );
+
+  // 🔸 Animate highlight-text words with horizontal + rotation motion
+  gsap.fromTo(
+    document.querySelectorAll(".highlight-text .word"),
+    { x: -40, rotate: -10, opacity: 0 },
+    {
+      x: 0,
+      rotate: 0,
+      opacity: 1,
+      ease: "power2.out",
       scrollTrigger: {
         trigger: ".services-description",
         start: "top 75%",
