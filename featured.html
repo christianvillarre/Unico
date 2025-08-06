@@ -191,36 +191,10 @@
     </div>
   </nav>
 </header>
-
 <style>
-    /* Base link style */
-.link-with-arrow {
-  position: relative;
-  display: inline-block;
-  cursor:default;
-}
+a {
+  all: unset;
 
-/* Add arrow on hover using ::after */
-.link-with-arrow::after {
-  content: '';
-  position: absolute;
-  top: 55%;
-  transform: translateY(-50%) translateX(-8px);
-  right: -28px; /* Push it outside the text */
-  width: 50px;
-  height: 16px; /* Adjust as needed */
-  background-image: url('images/arrow_down.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
-}
-
-/* Show arrow on hover */
-.link-with-arrow:hover::after {
-  opacity: 1;
-  transform: translateY(-50%) translateX(0);
 }
 /* Base link style */
 .link-with-arrow {
@@ -251,21 +225,21 @@
   opacity: 1;
   transform: translateY(-50%) translateX(0);
 }
+
        /* 🔹 NAVBAR */
 .navbar {
   width: 100%;
   height: 90px;
-  background:#53709f; /* adjust opacity as needed */
+  background: transparent;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
    transition: transform 0.4s ease, background 0.3s ease;
-   
 }
 .navbar:hover,
 .navbar.open {
@@ -279,13 +253,20 @@
   transform: translateY(0);
 }
 
+.navbar.at-top {
+  background: rgba(10, 80, 21, 0); /* fully transparent */
+}
 
+.navbar.at-top.hovered {
+  background: rgba(83, 112, 159, 1); /* visible on hover */
+}
 .navbar .logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
   text-transform: uppercase;
   padding-left: 2rem;
+  cursor: pointer;
   
 }
 .navbar.navbar-bg {
@@ -325,12 +306,12 @@
   pointer-events: none;
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 9;
+  z-index: 0;
   width: max-content; /* keeps it just wide enough for the text */
   min-width: 100px;   /* prevents it from being too narrow */
   height: auto;
-  padding-left: 2rem;
-  padding-right: 1rem; /* or however much you want */
+  padding-left: 0rem;
+  padding-right: 0rem; /* or however much you want */
 }
 .dropdown-text {
   display: flex;
@@ -342,6 +323,7 @@
   margin: 0;                /* optional, for safety */
   padding-top: 2.5rem;
   padding-bottom: 0.80rem;
+ 
 }
 
 
@@ -360,15 +342,17 @@
   font-size: 1rem;
   font-weight: 500;
   text-align: left;
-
+  padding: 0;
   text-decoration: none;
   background: none;
   border: none;
   cursor: pointer;
   transition: color 0.3s;
+  overflow: visible; /* ✅ Prevents arrow from being clipped */
 }
 .dropdown-text h4 {
   padding-right: 1.5rem; /* ✅ add buffer space for the arrow */
+  padding-left: 2rem;
 }
 
 .dropdown-text a:hover,
@@ -391,16 +375,24 @@
   cursor: pointer;
 }
 /* 🔹 Animated underline setup */
-.navbar nav a,
-.dropdown-text h4 {
-  position: relative;
-  overflow: hidden;
+
+.dropdown-text h4 a {
+  display: inline-flex;        /* ✅ Ensures arrow and text stay tight */
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 0;                  /* ✅ Remove inherited padding */
+  margin: 0;
+  white-space: nowrap;
+  gap: 8px;                    /* Optional: controls space between text and arrow */
+  width: 100%;                 /* Ensures anchor fills the width if needed */
+  box-sizing: border-box;
 }
 .white-arrow {
   opacity: 0;
   transform: translateX(0);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  margin-left: 8px;
+  margin-left: -4px;
   vertical-align: middle;
 }
 
@@ -1196,152 +1188,6 @@ a {
     }
   });
 </script>
-<!-- ✅ Navbar Dropdown Behavior -->
-<script>
-  const nav = document.querySelector('.navbar');
-  const navItems = document.querySelectorAll('.nav-item');
-  const logoImg = document.querySelector('.logo1');
-
-  let hideTimer;
-  let lastScrollY = 0;
-  let logoState = 'logo1';
-  let hasScrolledPastTop = false;
-
-  function isMouseInsideNavOrDropdown(e) {
-    const related = e.relatedTarget;
-    return related && (nav.contains(related) || document.querySelector('.dropdown:hover'));
-  }
-
-  function maybeRemoveHovered() {
-    const isDropdownActive = document.querySelector('.nav-item.active');
-    const isNavHovered = nav.matches(':hover');
-    if (window.locoScroll.scroll.instance.scroll.y <= 0 && !isDropdownActive && !isNavHovered) {
-      nav.classList.remove('hovered');
-    }
-  }
-
-  function animateDropdown(item) {
-    const dropdown = item.querySelector('.dropdown');
-    const text = dropdown.querySelector('.dropdown-text');
-    const images = dropdown.querySelectorAll('.image-box, .image-box2');
-    const targets = [text, ...images].filter(Boolean);
-
-    if (targets.length > 0) {
-      gsap.killTweensOf(targets);
-      gsap.set(targets, { opacity: 0, y: -10 });
-
-      gsap.to(targets, {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        ease: 'power2.out'
-      });
-    }
-  }
-
-  nav.addEventListener('mouseenter', () => {
-    nav.classList.add('hovered');
-    clearTimeout(hideTimer);
-  });
-
-  nav.addEventListener('mouseleave', (e) => {
-    if (isMouseInsideNavOrDropdown(e)) return;
-    hideTimer = setTimeout(() => {
-      navItems.forEach(i => i.classList.remove('active'));
-      maybeRemoveHovered();
-    }, 200);
-  });
-
-  navItems.forEach(item => {
-    const dropdown = item.querySelector('.dropdown');
-    const trigger = item.querySelector('a');
-
-    trigger.addEventListener('mouseenter', () => {
-      clearTimeout(hideTimer);
-      navItems.forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
-
-      nav.classList.add('hovered', 'navbar-bg');
-      nav.classList.remove('hidden');
-      nav.classList.add('scrolled-up');
-
-      animateDropdown(item);
-    });
-
-    item.addEventListener('mouseleave', (e) => {
-      if (isMouseInsideNavOrDropdown(e)) return;
-      hideTimer = setTimeout(() => {
-        item.classList.remove('active');
-        maybeRemoveHovered();
-      }, 200);
-    });
-
-    dropdown.addEventListener('mouseleave', (e) => {
-      if (isMouseInsideNavOrDropdown(e)) return;
-      hideTimer = setTimeout(() => {
-        item.classList.remove('active');
-        maybeRemoveHovered();
-      }, 100);
-    });
-  });
-
-  function handleScroll(currentScroll) {
-    const scrollingDown = currentScroll > lastScrollY;
-    const scrollingUp = currentScroll < lastScrollY;
-
-    navItems.forEach(i => i.classList.remove('active'));
-
-    if (currentScroll <= 0) {
-      nav.classList.remove('hidden', 'scrolled-up');
-      nav.classList.add('at-top', 'navbar-bg');
-
-      if (logoState !== 'logo1') {
-        logoImg.src = 'images/logo1.png';
-        logoState = 'logo1';
-      }
-
-      hasScrolledPastTop = false;
-      maybeRemoveHovered();
-      lastScrollY = currentScroll;
-      return;
-    }
-
-    if (!hasScrolledPastTop) {
-      hasScrolledPastTop = true;
-    }
-
-    if (scrollingDown) {
-      nav.classList.add('hidden');
-      nav.classList.remove('scrolled-up', 'at-top');
-    } else if (scrollingUp) {
-      nav.classList.remove('hidden');
-      nav.classList.add('scrolled-up', 'hovered', 'navbar-bg');
-      nav.classList.remove('at-top');
-
-      if (logoState !== 'logo2') {
-        logoImg.src = 'images/logo2.png';
-        logoState = 'logo2';
-      }
-
-      const hoveredItem = document.querySelector('.nav-item:hover');
-      if (hoveredItem) {
-        hoveredItem.classList.add('active');
-        animateDropdown(hoveredItem);
-      }
-    }
-
-    lastScrollY = currentScroll;
-  }
-
-  if (window.locoScroll) {
-    window.locoScroll.on('scroll', (args) => {
-      const scrollY = args.scroll.y;
-      handleScroll(scrollY);
-    });
-  } else {
-    window.addEventListener('scroll', () => handleScroll(window.scrollY));
-  }
-</script>
 <!-- ✅ Custom Scripts (after Locomotive setup) -->
  <script>
 document.querySelectorAll('.card, .featured-image-container').forEach((el) => {
@@ -1425,7 +1271,7 @@ document.querySelectorAll('.card, .featured-image-container').forEach((el) => {
   }
 });
 </script>
-
+<script src="navbar.js"></script>
 <script src="carousel.js"></script>
 <script src="heroscroll.js"></script>
 <script src="tracker.js"></script>

@@ -18,7 +18,7 @@ function maybeRemoveHovered() {
   const isDropdownActive = document.querySelector('.nav-item.active');
   const isNavHovered = nav.matches(':hover');
 
-  if (window.locoScroll.scroll.instance.scroll.y <= 0 && !isDropdownActive && !isNavHovered) {
+  if (window.scrollY <= 5 && !isDropdownActive && !isNavHovered) {
     nav.classList.remove('hovered', 'navbar-bg');
   }
 }
@@ -49,29 +49,6 @@ function animateDropdown(item) {
     });
   }
 }
-
-/*
-
-function animateDropdown(item) {
-  const dropdown = item.querySelector('.dropdown');
-  const text = dropdown.querySelector('.dropdown-text');
-  const images = dropdown.querySelectorAll('.image-box, .image-box2');
-
-  const targets = [text, ...images].filter(Boolean);
-
-  if (targets.length > 0) {
-    gsap.killTweensOf(targets);
-    gsap.set(targets, { opacity: 0, y: -10 }); // Start slightly above
-
-    gsap.to(targets, {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      ease: 'power2.out'
-    });
-  }
-}  
-*/
 
 // 🔹 Navbar mouse events
 nav.addEventListener('mouseenter', () => {
@@ -128,7 +105,9 @@ function handleScroll(currentScroll) {
 
   navItems.forEach(i => i.classList.remove('active'));
 
-  if (currentScroll <= 0) {
+  const isAtTop = currentScroll <= 5;
+
+  if (isAtTop) {
     // Top of page
     nav.classList.remove('hidden', 'scrolled-up', 'navbar-bg');
     nav.classList.add('at-top');
@@ -174,15 +153,8 @@ function handleScroll(currentScroll) {
   lastScrollY = currentScroll;
 }
 
-// 🔹 Use Locomotive's scroll event
-if (window.locoScroll) {
-  window.locoScroll.on('scroll', (args) => {
-    const scrollY = args.scroll.y;
-    handleScroll(scrollY);
-  });
-} else {
-  window.addEventListener('scroll', () => handleScroll(window.scrollY));
-}
+// 🔹 Use native scroll
+window.addEventListener('scroll', () => handleScroll(window.scrollY));
 
 // 🔹 Button arrow GSAP nudge on hover
 document.querySelectorAll('.dropbtn, .dropbtn-submit').forEach(btn => {
