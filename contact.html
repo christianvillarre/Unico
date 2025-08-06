@@ -394,7 +394,7 @@
   <div class="content-wrapper">
     <!-- Left Side: Text -->
     <div class="left-column">
-      <h2>TELL US MORE!</h2>
+      <h2 class="animate-heading">TELL US <br>MORE!</h2>
       <p>
         We love big ideas, bold visions, and making things happen. Drop us a few details about your project or event. We’re all ears and all in. Let’s create something unforgettable!<br>
          <p class="social-text">Let's Get Social!</p>
@@ -730,12 +730,44 @@ input:focus, textarea:focus {
     </div>
   </div>
 
+<style>
+.animate-heading {
+  display: inline-block;
+}
 
+.word-wrapper {
+  display: inline-block;
+  overflow: hidden; /* clip whole word */
+  margin-right: 0.25em;
+}
 
+.word-wrapper .char {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 0;
+}
+</style>
 
+<script src="https://unpkg.com/split-type"></script>
 <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
 <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script>
+  // Split the heading into characters
+  const heading = new SplitType('.animate-heading', { types: 'chars' });
 
+  // Animate the characters
+  gsap.from('.animate-heading .char', {
+    y: 30,
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.6,
+    stagger: 0.05,
+    scrollTrigger: {
+      trigger: ".animate-heading",
+      start: "top 80%", // triggers when it's in view
+    }
+  });
+</script>
 
 <script>
   const panels = document.querySelectorAll(".panel");
