@@ -676,18 +676,18 @@ to life — with passion, precision, and a touch of Unico magic
   align-items: center;
   position: relative;
   width: 25rem;
+  /* REMOVE fixed height */
 }
-
 .section2 .image-box {
   width: 25rem;
   height: 35rem;
+  aspect-ratio: 5 / 7; /* Keeps a nice portrait ratio instead of hard-coded height */
   background-color: #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  overflow: hidden; /* ✅ ensures scaled image doesn't overflow */
   position: relative;
 }
-
 .section2 .image-box img {
   position: absolute;
   width: 100%;
@@ -695,12 +695,14 @@ to life — with passion, precision, and a touch of Unico magic
   object-fit: cover;
   top: 0;
   left: 0;
-  transition: opacity 0.3s ease;
   opacity: 1;
+  transition: opacity 0.6s ease-in-out; /* ⬅️ Smoother fade */
+  z-index: 1;
 }
 
 .section2 .image-box img.hover-img {
   opacity: 0;
+  z-index: 2;
 }
 
 .section2 .image-box:hover img.hover-img {
