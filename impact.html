@@ -699,9 +699,25 @@ and the precision required to deliver results that resonate.</h3>
   font-size: 5rem;
   color: #4D4D4D;
 }
+
 .services-description {
   font-size: 5.4rem;
   margin: 0 4rem 4rem 4rem;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+  word-break: normal;
+  white-space: normal;
+  display: block;
+}
+
+.services-description .char {
+  display: inline-block;
+  white-space: normal !important;   /* ✅ allows wrapping */
+  word-break: break-word !important; /* ✅ allows safe breaking */
+}
+.services-description .word {
+  display: inline-block;
+  white-space: normal;
 }
 </style>
 
@@ -981,26 +997,26 @@ Video Production</P>
 <script>
   gsap.registerPlugin(ScrollTrigger);
 
-  // Split into characters
-  const split = new SplitType(".services-description", { types: "chars" });
+  // Split into words and chars (chars are optional now)
+  const split = new SplitType(".services-description", { types: "words, chars" });
 
-  // Animate characters with smooth scroll control
+  // Animate each word smoothly on scroll
   gsap.fromTo(
-    split.chars,
+    split.words,
     { opacity: 0, y: 20 },
     {
       opacity: 1,
       y: 0,
-      ease: "power1.out", // smoother easing
+      ease: "power1.out",
       scrollTrigger: {
         trigger: ".services-description",
         start: "top 75%",
         end: "bottom 50%",
-        scrub: 0.5, // smooth scrub timing
+        scrub: 0.5,
       },
       stagger: {
-        each: 0.04, // slower stagger
-        from: "start",
+        each: 0.06,
+        from: "start"
       }
     }
   );
