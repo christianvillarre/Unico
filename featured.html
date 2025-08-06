@@ -1367,7 +1367,7 @@ document.querySelectorAll('.card, .featured-image-container').forEach((el) => {
     el.addEventListener('mouseleave', () => {
       gsap.killTweensOf(popup); // ✅ Kill previous animations
       gsap.to(popup, {
-        opacity: 0,
+        opacity: 1,
         scale: 0.2,
         clipPath: 'circle(0% at 50% 50%)',
         duration: 0.6,
