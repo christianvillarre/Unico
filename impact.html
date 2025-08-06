@@ -673,12 +673,20 @@ margin: 0;
 <section id="services" class="section-services">
   <div class="section-heading">
     <h2 class="services-heading">SERVICES</h2>
+    <h3 class="services-description">What we do is rooted in what our clients need most: a trusted partner who understands your
+mission, your goals, and the audience you serve. We offer a comprehensive suite of services designed to
+meet the demands of high-impact events and strategic initiatives. Whether you are a nonprofit shaping
+policy or a private sector firm advancing social good, our team brings deep expertise, cultural fluency,
+and the precision required to deliver results that resonate.</h3>
   </div>
 </section>
 
 <style>
+  .services-heading {
+    margin-bottom: 4rem;
+  }
   .section-services {
-    height: 35vh;
+    height: auto;
     width: 100%;
     background-color: white;
     display: flex;
@@ -690,6 +698,10 @@ margin: 0;
   text-align: center;
   font-size: 5rem;
   color: #4D4D4D;
+}
+.services-description {
+  font-size: 5.4rem;
+  margin: 0 4rem 4rem 4rem;
 }
 </style>
 
@@ -965,8 +977,34 @@ Video Production</P>
 <!-- ✅ GSAP + ScrollTrigger + Locomotive -->
 <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
 <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
 
+  // Split into characters
+  const split = new SplitType(".services-description", { types: "chars" });
 
+  // Animate characters with smooth scroll control
+  gsap.fromTo(
+    split.chars,
+    { opacity: 0, y: 20 },
+    {
+      opacity: 1,
+      y: 0,
+      ease: "power1.out", // smoother easing
+      scrollTrigger: {
+        trigger: ".services-description",
+        start: "top 75%",
+        end: "bottom 50%",
+        scrub: 0.5, // smooth scrub timing
+      },
+      stagger: {
+        each: 0.04, // slower stagger
+        from: "start",
+      }
+    }
+  );
+</script>
 <script>
   gsap.registerPlugin(ScrollTrigger);
 
