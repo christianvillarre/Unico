@@ -630,11 +630,11 @@
 }
 .card:hover{
    transition: transform 0.4s ease;
-  transform: scale(0.97);
+  transform: scale(1.2);
 }
 .featured-image-container:hover {
  transition: transform 0.4s ease;
-  transform: scale(0.97);
+  transform: scale(1.2);
 }
 
 /* Shared popup style */
@@ -1104,6 +1104,7 @@ a {
 <script>
   gsap.registerPlugin(ScrollTrigger);
 
+
   gsap.utils.toArray(".card").forEach((card, i) => {
     gsap.from(card, {
       scrollTrigger: {
@@ -1118,6 +1119,18 @@ a {
       delay: i * 0.05
     });
   });
+    gsap.from(".featured-title", {
+    scrollTrigger: {
+      trigger: ".featured-title",
+      start: "top 85%",   // when it enters viewport
+      toggleActions: "play none none none"
+    },
+    opacity: 0,
+    y: 40,
+    duration: 2,
+    ease: "power2.out"
+  });
+
 </script>
 
 
