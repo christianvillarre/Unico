@@ -1,6 +1,6 @@
 
   const images = [
-    "images/Photo 1 Luis Fonsi.jpg",
+    "images/HP_PIC_1.jpg",
     "images/Photo 2 Missions.JPG",
     "images/Photo 3 Kansas City.jpg",
     "images/Photo 4 SA300.jpg",
