@@ -889,38 +889,39 @@ to life — with passion, precision, and a touch of Unico magic
   const nextBtn = document.querySelector(".carousel-btn.next");
   const prevBtn = document.querySelector(".carousel-btn.prev");
 
-  // Wait until all images are loaded before proceeding
-  imagesLoaded(grid, () => {
-    const cardWidth = 25 * 16 + 56;
-    const originalCards = [...grid.children];
-    let index = 3;
+  const cardWidth = 25 * 16 + 56;
+  let index = 3;
 
-    // 1. Clone last 3 (in correct order!) and prepend
-    const clonesBefore = originalCards.slice(-3).map(card => {
-      const clone = card.cloneNode(true);
-      clone.classList.add("clone");
-      clone.querySelectorAll("[id]").forEach(el => el.removeAttribute("id"));
-      return clone;
-    });
-    clonesBefore.reverse().forEach(clone => grid.prepend(clone));
+  // 1. Clone last 3 (in correct order) and prepend
+  const originalCards = [...grid.children];
+  const clonesBefore = originalCards.slice(-3).map(card => {
+    const clone = card.cloneNode(true);
+    clone.classList.add("clone");
+    clone.querySelectorAll("[id]").forEach(el => el.removeAttribute("id"));
+    return clone;
+  });
+  clonesBefore.reverse().forEach(clone => grid.prepend(clone));
 
-    // 2. Clone first 3 and append
-    const clonesAfter = originalCards.slice(0, 3).map(card => {
-      const clone = card.cloneNode(true);
-      clone.classList.add("clone");
-      clone.querySelectorAll("[id]").forEach(el => el.removeAttribute("id"));
-      return clone;
-    });
-    clonesAfter.forEach(clone => grid.append(clone));
+  // 2. Clone first 3 and append
+  const clonesAfter = originalCards.slice(0, 3).map(card => {
+    const clone = card.cloneNode(true);
+    clone.classList.add("clone");
+    clone.querySelectorAll("[id]").forEach(el => el.removeAttribute("id"));
+    return clone;
+  });
+  clonesAfter.forEach(clone => grid.append(clone));
 
-    const allCards = [...grid.children];
-    const total = allCards.length;
+  const allCards = [...grid.children];
+  const total = allCards.length;
 
-    // 3. Force layout before setting initial scroll
-    setTimeout(() => {
+  // 3. Wait until all images (including clones) are fully loaded
+  imagesLoaded(grid, { background: true }, () => {
+    // 4. Force layout before setting initial scroll position
+    requestAnimationFrame(() => {
       gsap.set(track, { x: -index * cardWidth });
-    }, 0);
+    });
 
+    // 5. Move function with wrap logic
     function moveTo(newIndex) {
       gsap.to(track, {
         x: -newIndex * cardWidth,
@@ -933,12 +934,14 @@ to life — with passion, precision, and a touch of Unico magic
           } else if (newIndex === total - 3) {
             index = 3;
             gsap.set(track, { x: -index * cardWidth });
+          } else {
+            index = newIndex;
           }
         }
       });
-      index = newIndex;
     }
 
+    // 6. Button events
     nextBtn.addEventListener("click", () => {
       moveTo(index + 1);
     });
@@ -947,7 +950,7 @@ to life — with passion, precision, and a touch of Unico magic
       moveTo(index - 1);
     });
 
-    // Optional: Fade in wrappers after all ready
+    // 7. Optional: Fade in wrappers
     gsap.fromTo(".image-wrapper", {
       opacity: 0,
       y: 20
