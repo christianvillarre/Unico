@@ -50,10 +50,19 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center; /* 🔁 Changed from flex-start */
+  align-items: flex-start; /* 🔁 CHANGED from center */
   height: 100%;
   gap: 3rem;
-  margin-top: 4rem; /* 🔁 reduced from 8rem */
+  margin-top: 8rem;
+}
+.content-wrapper2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; /* 🔁 CHANGED from center */
+  height: 100%;
+  gap: 3rem;
+  margin-top: 0rem;
 }
 
 .left-column {
@@ -102,7 +111,7 @@
 .right-column img {
   width: 100%;
   max-width: 50vw;
-  height: 80vh; /* 🔁 changed from height: 65vh */
+  height: 80vh;
   border-radius: 1rem;
   object-fit: cover;
 }
@@ -461,7 +470,7 @@ revealBtn.addEventListener("click", () => {
 <section id="culture" class="section-culture">
   <div class="section-container">
     <div class="second-container">
-      <div class="content-wrapper">
+      <div class="content-wrapper2">
         <!-- Left Side: Text -->
         <div class="left-column">
           <h2 class="title-culture">CULTURE</h2>
