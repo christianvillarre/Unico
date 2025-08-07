@@ -1146,27 +1146,68 @@ Video Production</P>
 
   function showPanel(index) {
     panels.forEach((panel, i) => {
-      gsap.to(panel, {
-        height: i === index ? 600 : 100,
-        duration: 0.5,
-        ease: "power2.inOut"
-      });
+      const img = panel.querySelector("img");
+
+      if (i === index) {
+        // Opening panel
+        gsap.to(panel, {
+          height: 600,
+          duration: 0.5,
+          ease: "power2.inOut"
+        });
+        if (img) {
+          gsap.to(img, {
+            opacity: 1,
+            duration: 0.5,
+            ease: "power2.inOut"
+          });
+        }
+      } else {
+        // Closing other panels
+        gsap.to(panel, {
+          height: 100,
+          duration: 0.5,
+          ease: "power2.inOut"
+        });
+        if (img) {
+          gsap.to(img, {
+            opacity: 0,
+            duration: 0.4,
+            ease: "power2.inOut"
+          });
+        }
+      }
     });
 
     currentIndex2 = index;
   }
 
-  // Open the first panel on load
-  showPanel(currentIndex2);
+  // Initial state: show first panel and its image
+  panels.forEach((panel, i) => {
+    const img = panel.querySelector("img");
+    gsap.set(panel, { height: i === currentIndex2 ? 600 : 100 });
+    gsap.set(img, { opacity: i === currentIndex2 ? 1 : 0 });
+  });
 
   panels.forEach((panel, index) => {
     panel.addEventListener("click", () => {
       if (currentIndex2 === index) {
+        // Close the open panel
         gsap.to(panel, {
           height: 100,
           duration: 0.4,
           ease: "power2.inOut"
         });
+
+        const img = panel.querySelector("img");
+        if (img) {
+          gsap.to(img, {
+            opacity: 0,
+            duration: 0.3,
+            ease: "power2.inOut"
+          });
+        }
+
         currentIndex2 = -1;
       } else {
         showPanel(index);
