@@ -510,14 +510,16 @@
       <img class="testimonial-image" src="images/head1.jpg" alt="Client Image">
       <div class="testimonial-content">
         <p class="testimonial-text">
-         “The United States Hispanic Chamber of Commerce is proud to work with Unico Communications to produce many premier events, including several of our USHCC National Conference events both in person and virtual, as well as many USHCC Legislative Summits. The Unico team always guarantee a seamless production and the highest level of professionalism.”
+         “The United States Hispanic Chamber of Commerce is proud to work with Unico Communications to produce many premier events, including several of our USHCC National Conference events both in person and virtual, as well as many USHCC Legislative Summits. The Unico team always guarantees a seamless production and the highest level of professionalism.”
         </p>
         <h4>Ramiro A. Cavazos | President & CEO</h4>
         <h4 class="test-company">USHCC</h4>
         <img class="testimonial-logo" src="images/1_LOGO_WT.png" alt="Client Logo">
       </div>
     </div>
-
+<style>
+  
+</style>
     <!-- Bottom Left -->
     
 
@@ -736,13 +738,13 @@ and the precision required to <span class="highlight-text2">deliver results that
         <div class="panel-text">
         <h3>Event Management & Logistics</h3>
         <P>Project Management<br>
-Event Operations<br>
-Food & Beverage <br>
-Housing<br>
-Event Design<br>
-Volunteer Coordination<br>
-Registration Management<br>
-Virtual Event Production</P>
+          Event Operations<br>
+          Food & Beverage <br>
+          Housing<br>
+          Event Design<br>
+          Volunteer Coordination<br>
+          Registration Management<br>
+          Virtual Event Production</P>
         </div>
         <div class="panel-img">
           <img src="images/Services_1.jpg" alt="Media Image" />
@@ -825,7 +827,7 @@ Microsite Development & Management<br>
 Video Production</P>
         </div>
         <div class="panel-img">
-          <img src="images/Services_6.jpg" alt="Media Image" />
+          <img src="images/Artboard 6.jpg" alt="Media Image" />
         </div>
 
       </div>
@@ -871,21 +873,21 @@ Video Production</P>
   padding-top: 1.2rem;
 }
 .panel-img {
-  flex: 1;
   display: flex;
-  align-items: flex-start;
   justify-content: flex-end;
-  
-  padding-top: 6rem;
-   max-width: 1000px;
-   max-height: 300px;
+  align-items: center;
+  padding-top: 0rem;
+  height: 100%;
+  width: 1000px;
+  margin-right: -4rem;
 }
+
 
 .panel-img img {
   width: 100%;
- height: 100%;
+  height: auto; /* ✅ maintain aspect ratio */
+  object-fit: contain; /* ✅ show full image, no crop */
   border-radius: 1rem;
-  object-fit: cover;
 }
 .panel-text {
   flex: 1;
