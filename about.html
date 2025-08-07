@@ -611,7 +611,8 @@ to life — with passion, precision, and a touch of Unico magic
 
    <style>
      .section2 {
-    height: 100vh;
+    min-height: 100vh; /* instead of height */
+  height: auto;
     width: 100%;
     background-color: white;
     padding-left: 4rem;
@@ -656,6 +657,7 @@ to life — with passion, precision, and a touch of Unico magic
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: visible; /* ✅ ensure this isn’t clipped */
 }
 .carousel-track {
   display: flex;
@@ -1136,7 +1138,7 @@ to life — with passion, precision, and a touch of Unico magic
   }
 </script>
 <!-- ✅ Custom Scripts (after Locomotive setup) -->
-<script src="carousel.js"></script>
+
 <script src="heroscroll.js"></script>
 <script src="tracker.js"></script>
 </div>
