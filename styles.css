@@ -460,6 +460,8 @@ html, body {
   flex-direction: column;
   justify-content: flex-start;
   padding: 0rem;
+    overflow: hidden;
+  position: relative;
 }
 .carousel-wrapper2 {
   position: relative;
@@ -540,7 +542,10 @@ html, body {
 
 
 .carousel-track {
-  display: flex;
+    display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  will-change: transform;
   gap: 1rem;
   padding: 1rem 2rem;
   will-change: transform;

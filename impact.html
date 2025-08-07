@@ -387,7 +387,7 @@
   <div class="content-wrapper">
     <!-- Left Side: Text -->
     <div class="left-column">
-      <h2 class="clients-heading">OUR CLIENTS</h2>
+      <h2 class="animate-heading">OUR CLIENTS</h2>
 
 
     <!-- Right Side: Images -->
@@ -672,7 +672,7 @@ margin: 0;
 
 <section id="services" class="section-services">
   <div class="section-heading">
-    <h2 class="services-heading">SERVICES</h2>
+    <h2 class="animate-heading2">SERVICES</h2>
     <h3 class="services-description">What we do is rooted in what our clients need most: a <span class="highlight-text">trusted partner</span> who understands <span class="highlight-text2">your
 mission</span>, <span class="highlight-text2">your goals</span>, and the <span class="highlight-text2">audience you serve</span>. We offer a comprehensive suite of services designed to
 meet the demands of <span class="highlight-text">high-impact events</span> and <span class="highlight-text">strategic initiatives</span>. Whether you are a nonprofit shaping
@@ -994,12 +994,70 @@ Video Production</P>
 
 
 
+<style>
+  .animate-heading {
+  display: inline-block;
+  line-height: 1.1;
+}
+  .animate-heading2 {
+  display: inline-block;
+  line-height: 1.1;
+}
 
+.word-wrapper {
+  display: inline-block;
+  overflow: hidden; /* 👈 ensures whole word is clipped */
+  margin-right: 0.25em;
+}
+
+.word-wrapper .char {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 0;
+}
+</style>
 
 <!-- ✅ GSAP + ScrollTrigger + Locomotive -->
 <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
 <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/split-type"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Split the heading into characters
+  const heading = new SplitType('.animate-heading', { types: 'chars' });
+  const heading2 = new SplitType('.animate-heading2', { types: 'chars' });
+
+  // Animate the characters
+  gsap.from('.animate-heading .char', {
+    y: 30,
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.6,
+    stagger: 0.05,
+    scrollTrigger: {
+      trigger: ".animate-heading",
+      start: "top 80%",        // ✅ starts when top of .animate-heading reaches 80% down the screen
+      toggleActions: "play none none none", // ✅ plays only once when it enters
+      once: true               // ✅ ensures it runs only once and doesn't reset on scroll back
+    }
+  });
+
+   gsap.from('.animate-heading2 .char', {
+    y: 30,
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.6,
+    stagger: 0.05,
+    scrollTrigger: {
+      trigger: ".animate-heading2",
+      start: "top 80%",        // ✅ starts when top of .animate-heading reaches 80% down the screen
+      toggleActions: "play none none none", // ✅ plays only once when it enters
+      once: true               // ✅ ensures it runs only once and doesn't reset on scroll back
+    }
+  });
+</script>
+
 <script>
   gsap.registerPlugin(ScrollTrigger);
 
@@ -1051,32 +1109,6 @@ Video Production</P>
 </script>
 <script>
   gsap.registerPlugin(ScrollTrigger);
-
-  // Animate OUR CLIENTS heading
-  gsap.from(".clients-heading", {
-    scrollTrigger: {
-      trigger: ".clients-heading",
-      start: "top 85%",   // when it enters viewport
-      toggleActions: "play none none none"
-    },
-    opacity: 0,
-    y: 40,
-    duration: 2,
-    ease: "power2.out"
-  });
-
-  // Animate SERVICES heading
-  gsap.from(".services-heading", {
-    scrollTrigger: {
-      trigger: ".services-heading", // ✅ fix trigger here
-      start: "top 85%",
-      toggleActions: "play none none none"
-    },
-    opacity: 0,
-    y: 40,
-    duration: 2,
-    ease: "power2.out"
-  });
 
   gsap.from(".testimonial-box", {
     scrollTrigger: {
