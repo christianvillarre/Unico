@@ -409,7 +409,7 @@ a {
 
 <section class="section-featured">
   <div class="featured-inner">
-    <h2 class="featured-title">FEATURED PROJECTS</h2>
+    <h1 class="featured-title">FEATURED PROJECTS</h1>
 <!--
 <div class="featured-image-container">
   <div class="hover-overlay"></div>
@@ -527,6 +527,31 @@ a {
   </div>
 </section>
 
+
+<section class="section-featured">
+  <div class="text-container">
+    <h2 class="crazy-text">Our Featured Projects showcase Unico Communications' expertise in producing high-impact events that blend creativity, culture, and flawless execution. From large-scale conferences and immersive brand activations to red carpet and movie screenings, each project reflects our commitment to delivering unforgettable experiences that engage and inspire.</h2>
+  </div>
+</section>
+
+<style>
+  .text-container { 
+    margin: 0 4rem; 
+    overflow: visible;              /* ⬅️ allow animated words to spill */
+  }
+  .text-container h2.crazy-text {
+    font-size: clamp(3rem, 4vw, 4.5rem);
+    line-height: 1.3;               /* ⬅️ give the words breathing room */
+    overflow: visible;              /* ⬅️ prevent clipping on the h2 itself */
+  }
+  .crazy-word {
+    display: inline-block;
+    padding: 0 .2em;               /* ⬅️ slight padding to avoid edge clipping */
+    will-change: transform, opacity;
+    transform-origin: 50% 60%;
+    color: white;
+  }
+</style>
 <style>
   .card-center-text {
   position: absolute;
@@ -1030,6 +1055,73 @@ document.querySelectorAll('.card, .featured-image-container').forEach((el) => {
 <script src="carousel.js"></script>
 <script src="heroscroll.js"></script>
 <script src="tracker.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
 
+  const h2 = document.querySelector(".crazy-text");
+  const words = h2.textContent.split(" ");
+
+  // Wrap each word in a span
+  h2.innerHTML = words
+    .map(word => `<span class="crazy-word">${word} </span>`)
+    .join("");
+
+  const wordSpans = document.querySelectorAll(".crazy-word");
+
+  // 🎨 Your custom 5-color palette
+  const palette = [
+    "#53709F", 
+    "#6E9D72", 
+    "#CCE5CC", 
+  ];
+
+  // Trigger animation when text container comes into view
+  ScrollTrigger.create({
+  trigger: ".text-container",
+  start: "top 80%",
+  once: true,
+  onEnter: () => {
+    wordSpans.forEach((word, i) => {
+      if (Math.random() > 0.7) { // ~30% crazy words
+        const startColor = palette[Math.floor(Math.random() * palette.length)];
+        const finalColor = palette[Math.floor(Math.random() * palette.length)];
+
+        gsap.fromTo(
+          word,
+          {
+            opacity: 0,
+            y: gsap.utils.random(-100, 100),
+            rotation: gsap.utils.random(-180, 180),
+            scale: gsap.utils.random(0.5, 2),
+            color: startColor, // start with a palette color
+            skewX: gsap.utils.random(-30, 30),
+          },
+          {
+            opacity: 1,
+            y: 0,
+            rotation: 0,
+            scale: 1,
+            skewX: 0,
+            color: finalColor, // stay bright, no fading to black
+            duration: 1.5,
+            delay: i * 0.05,
+            ease: "elastic.out(1, 0.4)"
+          }
+        );
+      } else {
+        // Non-crazy words: keep them fully black or your theme color
+        gsap.from(word, {
+          opacity: 0,
+          y: 20,
+          color: "#000", // explicitly keep them black
+          duration: 1,
+          delay: i * 0.03,
+          ease: "power2.out"
+        });
+      }
+    });
+  }
+});
+</script>
 </body>
 </html>

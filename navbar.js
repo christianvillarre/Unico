@@ -176,3 +176,77 @@ document.querySelectorAll('.dropbtn, .dropbtn-submit').forEach(btn => {
     });
   });
 });
+
+
+// ===== Proximity reveal/hide (add below your current code) =====
+const PROXIMITY_Y = 80;        // px from top to trigger reveal
+const HIDE_DELAY   = 180;      // ms before hiding after leaving zone
+let proximityActive = false;
+let proximityHideTimer;
+
+// Helper: reveal the navbar
+function revealNavByProximity() {
+  clearTimeout(proximityHideTimer);
+  if (proximityActive) return;
+
+  proximityActive = true;
+  nav.classList.remove('hidden', 'at-top');
+  nav.classList.add('scrolled-up', 'hovered', 'navbar-bg');
+
+  // swap to scrolled logo if needed
+  if (logoState !== 'logo2') {
+    logoImg.src = 'images/logo2.png';
+    logoState = 'logo2';
+  }
+}
+
+// Helper: hide the navbar if not interacting
+function hideNavByProximity() {
+  clearTimeout(proximityHideTimer);
+  proximityHideTimer = setTimeout(() => {
+    // don't hide if mouse is over nav or an active dropdown
+    const hoveredItem = document.querySelector('.nav-item:hover');
+    if (nav.matches(':hover') || hoveredItem || document.querySelector('.dropdown:hover')) return;
+
+    proximityActive = false;
+
+    // Only hide if we're not at very top
+    if (window.scrollY > 5) {
+      nav.classList.add('hidden');
+      nav.classList.remove('scrolled-up', 'hovered', 'navbar-bg');
+    } else {
+      // If at top, keep your "at-top" look
+      nav.classList.remove('hidden', 'navbar-bg', 'scrolled-up');
+      nav.classList.add('at-top');
+      maybeRemoveHovered();
+    }
+  }, HIDE_DELAY);
+}
+
+// Track mouse position near the top edge
+document.addEventListener('mousemove', (e) => {
+  // Ignore on small screens (optional)
+  if (window.innerWidth < 768) return;
+
+  if (e.clientY <= PROXIMITY_Y) {
+    revealNavByProximity();
+  } else if (!nav.matches(':hover') && !document.querySelector('.dropdown:hover')) {
+    hideNavByProximity();
+  }
+});
+
+// If you exit the navbar/dropdown area, reevaluate hiding
+nav.addEventListener('mouseleave', () => {
+  if (window.event && window.event.clientY <= PROXIMITY_Y) return; // still in zone
+  hideNavByProximity();
+});
+document.addEventListener('mouseleave', () => hideNavByProximity());
+
+// Also guard against fast wheel scroll hiding immediately after reveal
+window.addEventListener('scroll', () => {
+  if (proximityActive && window.scrollY <= 5) {
+    // stay visible at top style
+    nav.classList.remove('hidden');
+    nav.classList.add('scrolled-up', 'hovered');
+  }
+});
