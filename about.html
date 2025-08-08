@@ -494,9 +494,26 @@ to life — with passion, precision, and a touch of Unico magic
     </div>
   </div>
 </section>
-
+<style>
+.team-column {
+  width: 100%;
+  text-align: center;     /* ✅ center the heading text */
+  display: flex;          /* ✅ allows flex centering */
+  flex-direction: column;
+  align-items: center;    /* ✅ centers any child elements horizontally */
+  justify-content: center;/* optional — vertical centering if needed */
+  margin-top: 1.5rem;
+}
+.team-title {
+  font-size: 5rem;
+  margin: 0 0 0rem 0;     /* smaller bottom gap */
+  color:#6E9D72;
+}
+</style>
 <section id="team" class="section2">
- <h3 class="team-title">Team</h3>
+  <div class="left-column team-column">
+          <h2 class="team-title">TEAM</h2>
+          </div>
  <div class="carousel-wrapper">
    <button class="carousel-btn prev">←</button>
   <div class="carousel-track-container">
@@ -621,13 +638,14 @@ to life — with passion, precision, and a touch of Unico magic
 
    <style>
      .section2 {
-    min-height: 100vh; /* instead of height */
+   
   height: auto;
     width: 100%;
     background-color: white;
     padding-left: 4rem;
     padding-right: 4rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
   }
 
 
@@ -666,8 +684,9 @@ to life — with passion, precision, and a touch of Unico magic
   position: relative; /* ✅ So buttons can be positioned over content */
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   overflow: visible; /* ✅ ensure this isn’t clipped */
+  height: auto;
 }
 .carousel-track {
   display: flex;
@@ -679,7 +698,7 @@ to life — with passion, precision, and a touch of Unico magic
 .grid-container {
   display: flex;
   gap: 3.5rem;
-  padding-top: 2rem;
+  padding-top: 0rem;
 }
 
 .image-wrapper {
@@ -1156,6 +1175,31 @@ to life — with passion, precision, and a touch of Unico magic
 
 <script src="heroscroll.js"></script>
 <script src="tracker.js"></script>
+
+<script src="https://unpkg.com/split-type"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Split the heading into characters
+  const heading = new SplitType('.team-title', { types: 'chars' });
+
+
+  // Animate the characters
+  gsap.from('.team-title .char', {
+    y: 30,
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.6,
+    stagger: 0.05,
+    scrollTrigger: {
+      trigger: ".team-title",
+      start: "top 80%",        // ✅ starts when top of .animate-heading reaches 80% down the screen
+      toggleActions: "play none none none", // ✅ plays only once when it enters
+      once: true               // ✅ ensures it runs only once and doesn't reset on scroll back
+    }
+  });
+
+</script>
 </div>
 </div>
 </body>
