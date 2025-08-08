@@ -190,10 +190,24 @@ function revealNavByProximity() {
   if (proximityActive) return;
 
   proximityActive = true;
+
+  const isAtTop = window.scrollY <= 5;
+  if (isAtTop) {
+    // ✅ Keep top-of-page look and logo1
+    nav.classList.remove('hidden', 'scrolled-up', 'navbar-bg');
+    nav.classList.add('at-top');
+
+    if (logoState !== 'logo1') {
+      logoImg.src = 'images/logo1.png';
+      logoState = 'logo1';
+    }
+    return; // do not apply scrolled styles
+  }
+
+  // Normal proximity reveal when not at top
   nav.classList.remove('hidden', 'at-top');
   nav.classList.add('scrolled-up', 'hovered', 'navbar-bg');
 
-  // swap to scrolled logo if needed
   if (logoState !== 'logo2') {
     logoImg.src = 'images/logo2.png';
     logoState = 'logo2';
@@ -204,18 +218,20 @@ function revealNavByProximity() {
 function hideNavByProximity() {
   clearTimeout(proximityHideTimer);
   proximityHideTimer = setTimeout(() => {
-    // don't hide if mouse is over nav or an active dropdown
     const hoveredItem = document.querySelector('.nav-item:hover');
+    const isAtTop = window.scrollY <= 5;
+
+    // Don't hide if mouse is over nav or dropdown
     if (nav.matches(':hover') || hoveredItem || document.querySelector('.dropdown:hover')) return;
 
     proximityActive = false;
 
-    // Only hide if we're not at very top
-    if (window.scrollY > 5) {
+    if (!isAtTop) {
+      // Hide normally
       nav.classList.add('hidden');
       nav.classList.remove('scrolled-up', 'hovered', 'navbar-bg');
     } else {
-      // If at top, keep your "at-top" look
+      // Keep at-top style
       nav.classList.remove('hidden', 'navbar-bg', 'scrolled-up');
       nav.classList.add('at-top');
       maybeRemoveHovered();
@@ -225,11 +241,21 @@ function hideNavByProximity() {
 
 // Track mouse position near the top edge
 document.addEventListener('mousemove', (e) => {
-  // Ignore on small screens (optional)
-  if (window.innerWidth < 768) return;
+  if (window.innerWidth < 768) return; // ignore on small screens
 
   if (e.clientY <= PROXIMITY_Y) {
-    revealNavByProximity();
+    if (window.scrollY > 5) {
+      revealNavByProximity();
+    } else {
+      // Keep at-top style without changing logo
+      nav.classList.remove('hidden', 'scrolled-up', 'navbar-bg');
+      nav.classList.add('at-top');
+
+      if (logoState !== 'logo1') {
+        logoImg.src = 'images/logo1.png';
+        logoState = 'logo1';
+      }
+    }
   } else if (!nav.matches(':hover') && !document.querySelector('.dropdown:hover')) {
     hideNavByProximity();
   }
@@ -242,11 +268,21 @@ nav.addEventListener('mouseleave', () => {
 });
 document.addEventListener('mouseleave', () => hideNavByProximity());
 
-// Also guard against fast wheel scroll hiding immediately after reveal
+// Guard against fast wheel scroll hiding immediately after reveal
 window.addEventListener('scroll', () => {
-  if (proximityActive && window.scrollY <= 5) {
-    // stay visible at top style
+  const isAtTop = window.scrollY <= 5;
+
+  if (isAtTop) {
+    proximityActive = false; // reset state at top
+    nav.classList.remove('hidden', 'scrolled-up', 'navbar-bg');
+    nav.classList.add('at-top');
+
+    if (logoState !== 'logo1') {
+      logoImg.src = 'images/logo1.png';
+      logoState = 'logo1';
+    }
+  } else if (proximityActive) {
     nav.classList.remove('hidden');
-    nav.classList.add('scrolled-up', 'hovered');
+    nav.classList.add('scrolled-up', 'hovered', 'navbar-bg');
   }
 });

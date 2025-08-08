@@ -137,6 +137,7 @@ a {
   object-fit: contain;
   margin-top: 0.5rem;
   align-self: flex-start;
+  cursor: pointer;
 }
 
     .footer-logo-carousel {

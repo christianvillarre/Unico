@@ -580,7 +580,7 @@ We are proud to have helped shape an event that authentically honored our past w
           <div class="col large-col">
             <div class="bottom-col">
               <h5 class="unico-copyright">© 2025 Unico Communications. All rights reserved.</h5>
-              <img class="centro" src="images/CentroStage Logo.png" alt="CentroStage Logo">
+              <a href="https://www.centrostage.com/"><img class="centro" src="images/CentroStage Logo.png" alt="CentroStage Logo"></a>
             </div>
           </div>
         </div>
@@ -966,26 +966,144 @@ document.querySelectorAll('.card, .featured-image-container').forEach((el) => {
   } else {
     window.addEventListener('scroll', () => handleScroll(window.scrollY));
   }
+
+    // ===== Proximity reveal/hide (add below your current code) =====
+const PROXIMITY_Y = 80;        // px from top to trigger reveal
+const HIDE_DELAY   = 180;      // ms before hiding after leaving zone
+let proximityActive = false;
+let proximityHideTimer;
+
+// Helper: reveal the navbar
+function revealNavByProximity() {
+  clearTimeout(proximityHideTimer);
+  if (proximityActive) return;
+
+  proximityActive = true;
+
+  const isAtTop = window.scrollY <= 5;
+  if (isAtTop) {
+    // ✅ Keep top-of-page look and logo1
+    nav.classList.remove('hidden', 'scrolled-up', 'navbar-bg');
+    nav.classList.add('at-top');
+
+    if (logoState !== 'logo1') {
+      logoImg.src = 'images/logo1.png';
+      logoState = 'logo1';
+    }
+    return; // do not apply scrolled styles
+  }
+
+  // Normal proximity reveal when not at top
+  nav.classList.remove('hidden', 'at-top');
+  nav.classList.add('scrolled-up', 'hovered', 'navbar-bg');
+
+  if (logoState !== 'logo2') {
+    logoImg.src = 'images/logo2.png';
+    logoState = 'logo2';
+  }
+}
+
+// Helper: hide the navbar if not interacting
+function hideNavByProximity() {
+  clearTimeout(proximityHideTimer);
+  proximityHideTimer = setTimeout(() => {
+    const hoveredItem = document.querySelector('.nav-item:hover');
+    const isAtTop = window.scrollY <= 5;
+
+    // Don't hide if mouse is over nav or dropdown
+    if (nav.matches(':hover') || hoveredItem || document.querySelector('.dropdown:hover')) return;
+
+    proximityActive = false;
+
+    if (!isAtTop) {
+      // Hide normally
+      nav.classList.add('hidden');
+      nav.classList.remove('scrolled-up', 'hovered', 'navbar-bg');
+    } else {
+      // Keep at-top style
+      nav.classList.remove('hidden', 'navbar-bg', 'scrolled-up');
+      nav.classList.add('at-top');
+      maybeRemoveHovered();
+    }
+  }, HIDE_DELAY);
+}
+
+// Track mouse position near the top edge
+document.addEventListener('mousemove', (e) => {
+  if (window.innerWidth < 768) return; // ignore on small screens
+
+  if (e.clientY <= PROXIMITY_Y) {
+    if (window.scrollY > 5) {
+      revealNavByProximity();
+    } else {
+      // Keep at-top style without changing logo
+      nav.classList.remove('hidden', 'scrolled-up', 'navbar-bg');
+      nav.classList.add('at-top');
+
+      if (logoState !== 'logo1') {
+        logoImg.src = 'images/logo1.png';
+        logoState = 'logo1';
+      }
+    }
+  } else if (!nav.matches(':hover') && !document.querySelector('.dropdown:hover')) {
+    hideNavByProximity();
+  }
+});
+
+// If you exit the navbar/dropdown area, reevaluate hiding
+nav.addEventListener('mouseleave', () => {
+  if (window.event && window.event.clientY <= PROXIMITY_Y) return; // still in zone
+  hideNavByProximity();
+});
+document.addEventListener('mouseleave', () => hideNavByProximity());
+
+// Guard against fast wheel scroll hiding immediately after reveal
+window.addEventListener('scroll', () => {
+  const isAtTop = window.scrollY <= 5;
+
+  if (isAtTop) {
+    proximityActive = false; // reset state at top
+    nav.classList.remove('hidden', 'scrolled-up', 'navbar-bg');
+    nav.classList.add('at-top');
+
+    if (logoState !== 'logo1') {
+      logoImg.src = 'images/logo1.png';
+      logoState = 'logo1';
+    }
+  } else if (proximityActive) {
+    nav.classList.remove('hidden');
+    nav.classList.add('scrolled-up', 'hovered', 'navbar-bg');
+  }
+});
 </script>
-</div>
-</div>
+
 <div class="page-nav-arrows">
   <div class="arrow-wrapper left-wrapper">
     <a href="#" class="nav-arrow left-arrow">
       <img src="images/arrow-btn-white2.png" alt="Previous">
     </a>
-    <img src="images/5 UNIDOSUS Panel.jpg" class="arrow-preview left-preview" alt="Preview Left">
+
+    <!-- LEFT PREVIEW -->
+    <div class="arrow-preview-wrap left-preview">
+      <img src="images/5 UNIDOSUS Panel.jpg" alt="Preview Left">
+      <span class="arrow-label">PREV</span>
+    </div>
   </div>
   
   <div class="arrow-wrapper right-wrapper">
-    <img src="images/Photo 1 Luis Fonsi.jpg" class="arrow-preview right-preview" alt="Preview Right">
+    <!-- RIGHT PREVIEW -->
+    <div class="arrow-preview-wrap right-preview">
+      <img src="images/Photo 1 Luis Fonsi.jpg" alt="Preview Right">
+      <span class="arrow-label">NEXT</span>
+    </div>
+
     <a href="casestudy2.html" class="nav-arrow right-arrow">
       <img src="images/arrow-btn-white.png" alt="Next">
     </a>
   </div>
 </div>
 <style>
- .page-nav-arrows {
+.page-nav-arrows {
   position: fixed;
   top: 50%;
   left: 0;
@@ -1002,7 +1120,7 @@ document.querySelectorAll('.card, .featured-image-container').forEach((el) => {
   position: relative;
   display: flex;
   align-items: center;
-  pointer-events: auto; /* Enable interactions */
+  pointer-events: auto; /* enable interactions */
 }
 
 /* Arrows */
@@ -1012,50 +1130,59 @@ document.querySelectorAll('.card, .featured-image-container').forEach((el) => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0,0,0,0.75);
   border-radius: 50%;
   transition: background 0.3s ease, transform 0.3s ease;
   text-decoration: none;
   z-index: 2;
 }
+.nav-arrow:hover { background: #CCE5CC; transform: scale(1.1); }
+.nav-arrow img { width: 20px; height: 20px; object-fit: contain; }
 
-.nav-arrow:hover {
-  background: #CCE5CC;
-  transform: scale(1.1);
-}
-
-.nav-arrow img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-}
-
-/* Preview images (initially hidden) */
-.arrow-preview {
+/* === PREVIEW WITH OVERLAY TEXT === */
+.arrow-preview-wrap {
   position: absolute;
+  height: 150px;
+  width: auto;
   opacity: 0;
   transform: scale(0.95);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  height: 100px;
-  width: auto;
-  pointer-events: none;
+  pointer-events: none;   /* don't block hover */
   z-index: 1;
   border-radius: 8px;
+  overflow: hidden;       /* round corners apply to image + overlay */
+  display: inline-block;
 }
 
-/* Left preview position */
-.left-wrapper .arrow-preview {
-  left: 70px;
+/* Position left/right preview blocks */
+.left-wrapper .arrow-preview-wrap { left: 120px; }
+.right-wrapper .arrow-preview-wrap { right: 120px; }
+
+/* Image inside preview */
+.arrow-preview-wrap img {
+  display: block;
+  height: 100%;
+  width: auto;
 }
 
-/* Right preview position */
-.right-wrapper .arrow-preview {
-  right: 70px;
+/* Overlay label */
+.arrow-label {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  pointer-events: none;
 }
 
-/* Show previews on hover */
-.left-wrapper:hover .left-preview,
-.right-wrapper:hover .right-preview {
+/* Right side label hugs the right edge */
+.right-wrapper .arrow-label { left: auto; right: 1rem; }
+
+/* Show previews on hover of the wrapper */
+.left-wrapper:hover .arrow-preview-wrap,
+.right-wrapper:hover .arrow-preview-wrap {
   opacity: 1;
   transform: scale(1);
 }
