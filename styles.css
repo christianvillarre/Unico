@@ -759,12 +759,44 @@ html, body {
   font-size: 4rem;
   color:#6E9D72;
 }
+@media (max-width: 768px) {
+  /* Let the root behave normally so the navbar JS works */
+  html { overflow-x: visible; overscroll-behavior-x: auto; }
+
+  /* Hide sideways scroll on the page content only */
+  body { overflow-x: clip; /* fallback to hidden if needed */ touch-action: pan-y; }
+
+  /* Clamp the usual overflow culprits */
+  .hero-section,
+  .carousel-wrapper,
+  .carousel-wrapper2,
+  .carousel-wrapper3,
+  .tracker-wrapper,
+  .instagram-section,
+  .footer {
+    overflow-x: clip;     /* fallback to hidden if your browser lacks clip */
+    max-width: 100vw;
+  }
+
+  /* This pseudo-element often causes slight overflow on mobile; disable it */
+  .link-with-arrow::after { display: none; }
+}
+
+/* Optional fallback if clip isn't supported */
+@supports not (overflow: clip) {
+  @media (max-width: 768px) {
+    body,
+    .hero-section,
+    .carousel-wrapper,
+    .carousel-wrapper2,
+    .carousel-wrapper3,
+    .tracker-wrapper,
+    .instagram-section,
+    .footer { overflow-x: hidden; }
+  }
+}
 
 @media (max-width: 768px) {
-    html, body {
-    overflow-x: hidden;
-     overscroll-behavior-x: none;
-  }
   .navbar {
     padding: 0;
     margin: 0;
