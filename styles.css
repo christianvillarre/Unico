@@ -770,6 +770,7 @@ html, body {
   .nav-controls {
     scale: 0.6;
     padding-left: 0;
+    height: auto;
   }
   .logo {
     margin-left: -2rem;
