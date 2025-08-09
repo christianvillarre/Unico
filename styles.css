@@ -786,7 +786,7 @@ html, body {
 }
 
  :root {
-  --carousel-height: 40vh; /* change this to grow/shrink everything */
+  --carousel-height: 32vh; /* change this to grow/shrink everything */
 }
 .carousel-header {
   display: flex;
@@ -884,7 +884,7 @@ html, body {
   display: flex;
   gap: 1rem;
   z-index: 3;
-  margin-left: 4rem;
+  margin-left: 0rem;
   margin-top: 0rem;
   margin-bottom: 2rem;
 
