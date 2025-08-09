@@ -759,6 +759,7 @@ html, body {
   font-size: 4rem;
   color:#6E9D72;
 }
+
 @media (max-width: 768px) {
     html, body {
     overflow-x: hidden;

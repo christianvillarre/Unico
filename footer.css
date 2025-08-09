@@ -235,7 +235,14 @@ a {
   vertical-align: top;            /* ✅ Prevent baseline alignment */
 }
 
-
+.arrow-down {
+  position: absolute;
+  top: -9999px; /* Moves it far off-screen */
+  display: flex;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
 @keyframes scrollText {
   0% {
     transform: translateX(0);
@@ -245,4 +252,140 @@ a {
   }
 }
 
+@media (max-width: 768px) {
+  /* Stack main footer columns */
+  .footer-flex {
+    flex-direction: column;       
+    gap: 1.5rem;
+  }
 
+  /* ✅ First row: LET’S BE FRIENDS + arrow-down side by side */
+  .first-section {
+    order: 0;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 1.25rem; /* space between arrow and text */
+    margin-bottom: -1rem; /* 🔹 reduce space under first row */
+  }
+
+  .first-section p {
+    font-size: 3rem;
+    color: white;
+    margin: 0;
+    line-height: 1;
+    font-weight: 800;
+    margin-bottom: 0 !important;
+  }
+
+  /* Hide the large arrow inside the text on mobile */
+  .arrow1 {
+    display: none !important;
+  }
+
+  /* Show arrow-down next to text */
+  .arrow-down {
+    display: block !important; 
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static !important; 
+    width: 45px;       
+    height: auto;
+    margin: 0;
+    padding: 0;
+
+  }
+
+  /* ✅ Right section: grid layout for mobile */
+  .second-section {
+    order: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "socials hq tell"
+      "divider divider divider"
+      "sitemap empty centro"
+      "copyright copyright copyright";
+    grid-template-rows: auto 1px auto auto;
+    gap: 1rem;
+    position: relative;
+  }
+
+  .second-section .row,
+  .second-section .large-col {
+    display: contents;
+  }
+
+  /* Row 1: Socials row */
+  .second-section .row:first-of-type .col:nth-child(1) { grid-area: socials;}
+  .second-section .row:first-of-type .col:nth-child(2) { grid-area: hq; margin-left: -2.5rem;}
+  .second-section .row:first-of-type .tell-us-more-col { grid-area: tell; }
+  .second-section .row:first-of-type { border-bottom: none; }
+  .tell-us-more-col { transform: none; }
+
+  /* Row 3: Sitemap + empty + Centro */
+  .second-section .row:nth-of-type(2) .col:nth-child(1) { grid-area: sitemap; }
+  .second-section .row:nth-of-type(2)::before {
+    content: "";
+    grid-area: empty;
+  }
+  .centro { 
+    grid-area: centro; 
+    justify-self: start; 
+    align-self: start; 
+    height: 56px;
+  }
+
+  /* Divider line */
+  .second-section::after {
+    content: "";
+    grid-area: divider;
+    display: block;
+    height: 1px;
+    background: rgba(255,255,255,0.9);
+  }
+
+  .unico-copyright { display: none !important; }
+
+  .bottom-col {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    gap: 0.25rem;
+  }
+
+  .bottom-col h6 { font-size: 0.9rem; }
+  .bottom-col p, .footer-dropbtn { font-size: 0.95rem; }
+  .mail-icon { width: 72px; }
+
+
+
+    .footer-dropbtn {
+      display: block;
+      background: none;
+      border: none;
+      color:rgb(255, 255, 255);
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      font-size: 0.8rem;
+      line-height: 1.2;
+      cursor: pointer;
+      font-family: 'montserrat';
+    }
+    .footer-bottom-mobile p {
+      font-size: 0.8rem;
+      color: white;
+      font-weight: 100;
+      font-style: normal;
+      margin: 0;
+      padding: 0;
+      margin-top: 1rem;
+    }
+}
+
+@media (min-width: 769px) {
+  /* Desktop layout unchanged */
+  .footer-flex { flex-direction: row; }
+  .second-section { display: flex; flex-direction: column; }
+  .second-section .row { display: flex; }
+}
