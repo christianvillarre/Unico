@@ -318,7 +318,7 @@ a {
 
   /* Row 1: Socials row */
   .second-section .row:first-of-type .col:nth-child(1) { grid-area: socials;}
-  .second-section .row:first-of-type .col:nth-child(2) { grid-area: hq; margin-left: -2.5rem;}
+  .second-section .row:first-of-type .col:nth-child(2) { grid-area: hq; margin-left: -2.8rem;}
   .second-section .row:first-of-type .tell-us-more-col { grid-area: tell; }
   .second-section .row:first-of-type { border-bottom: none; }
   .tell-us-more-col { transform: none; }
