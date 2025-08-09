@@ -51,14 +51,7 @@ html, body {
 .navbar.at-top.hovered {
   background: rgba(83, 112, 159, 1); /* visible on hover */
 }
-.navbar .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  text-transform: uppercase;
-  padding-left: 2rem;
-  
-}
+
 .navbar.navbar-bg {
   background: rgba(83, 112, 159, 1); /* Your faded background */
 }
@@ -520,7 +513,7 @@ html, body {
 }
 
 .carousel-header h2 {
-  font-size: 1.5rem;
+  font-size: clamp(1.3rem, 1.5vw, 1.5rem);
 }
 
 .carousel-header button  {
@@ -700,7 +693,77 @@ html, body {
 .hero-social-icons .social-icon:hover img {
   filter: brightness(0) invert(1); /* makes dark icons white on hover */
 }
+     .hero-social-icons-2 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  z-index: 3;
+  margin-left: 2rem;
+  margin-top: 0rem;
+  margin-bottom: 2rem;
+}
+
+.hero-social-icons-2 .social-icon-2 {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hero-social-icons-2 .social-icon-2 img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.hero-social-icons-2 .social-icon-2:hover {
+  background-color: #6E9D72;
+  transform: scale(1.05);
+}
+
+.hero-social-icons-2 .social-icon-2:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.instagram-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 4rem;
+  gap: 1rem;
+  height: auto;
+  background-color: white;
+  padding-top: 0rem;
+}
+.instagram-feed-wrapper {
+  width: 100%;
+  height: auto;            /* Let it grow naturally */
+  overflow: hidden;
+}
+
+.instagram-feed-wrapper iframe {
+  display: block;
+  width: 100%;
+  height: 1000px;           /* ✅ Set your desired height */
+  border: none;
+}
+.instagram-section h2 {
+  font-size: 4rem;
+  color:#6E9D72;
+}
 @media (max-width: 768px) {
+  
+  .navbar {
+    padding: 0;
+    margin: 0;
+  }
   .nav-item {
     display: none !important;
   }
@@ -708,17 +771,175 @@ html, body {
     scale: 0.6;
     padding-left: 0;
   }
-  .navbar .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  text-transform: uppercase;
-  padding-left: 0rem;
-}
+  .logo {
+    margin-left: -2rem;
+  }
 .page-container {
   left: 2rem;
+  padding-right: 0.5rem;
 }
 .nav-controls {
   left: 0.5rem;
+}
+
+ :root {
+  --carousel-height: 40vh; /* change this to grow/shrink everything */
+}
+.carousel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem 0.2rem; /* reduce bottom padding */
+  margin-bottom: -1rem;       /* just in case */
+  margin-top: -1rem;
+  color: #53709F;
+}
+
+
+
+.carousel-header button  {
+  background: transparent;
+  color: #53709F;
+  border: none;
+  padding: 0rem 0rem 0.5rem 0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.carousel-header button p {
+ 
+  font-weight: 800;
+  font-size: clamp(1rem, 1vw, 1.3rem);
+  margin: 0; /* just in case */
+  font-family: "Montserrat";
+}
+
+.tracker-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0rem;
+    font-size: 2.5rem;
+    color:#6E9D72;
+    font-weight: 800;
+}
+.tracker-wrapper {
+  width: 100%;
+  height: 42rem;
+  background-color:transparent;
+  padding: 0rem 0; /* Controls space above/below the whole section */
+  margin: 0;
+  border: none;
+   margin-top: 3rem;
+}
+
+.tracker-section {
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border: none;
+   margin-bottom: 1rem;
+}
+.tracker-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+   align-items: flex-start;
+   margin-top: 0rem;
+   background-color: rgba(255, 255, 255, 0);
+   padding: 2rem;
+   border-radius: 1rem;
+}
+
+.tracker-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.header {
+  font-size: 1rem;
+  font-weight: 200;
+  color: #000;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+}
+
+.value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #53709F;
+  font-family: 'Montserrat', sans-serif;
+  min-width: 6.4ch;
+  text-align: center;
+}
+
+  .hero-social-icons-2 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  z-index: 3;
+  margin-left: 4rem;
+  margin-top: 0rem;
+  margin-bottom: 2rem;
+
+}
+
+.hero-social-icons-2 .social-icon-2 {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hero-social-icons-2 .social-icon-2 img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.hero-social-icons-2 .social-icon-2:hover {
+  background-color: #6E9D72;
+  transform: scale(1.05);
+}
+
+.hero-social-icons-2 .social-icon-2:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.instagram-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 2rem;
+  gap: 1rem;
+  height: auto;
+  background-color: white;
+  padding-top: 0rem;
+}
+.instagram-feed-wrapper {
+  width: 100%;
+  height: auto;            /* Let it grow naturally */
+  overflow: hidden;
+}
+
+.instagram-feed-wrapper iframe {
+  display: block;
+  width: 100%;
+  height: 1000px;           /* ✅ Set your desired height */
+  border: none;
+}
+.instagram-section h2 {
+  font-size: 2rem;
+  color:#6E9D72;
 }
 }
