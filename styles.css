@@ -445,6 +445,7 @@ html, body {
  background-color: transparent;
   display: flex;
   flex-direction: column;
+  z-index:0;
 }
 
 .carousel-wrapper {
@@ -761,6 +762,7 @@ html, body {
 @media (max-width: 768px) {
     html, body {
     overflow-x: hidden;
+     overscroll-behavior-x: none;
   }
   .navbar {
     padding: 0;
