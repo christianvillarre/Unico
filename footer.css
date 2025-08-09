@@ -300,6 +300,8 @@ a {
       "centro centro"
       "copyright copyright";
     gap: 1rem;
+    row-gap: 1rem;         /* keep vertical spacing */
+    column-gap: 0rem;    /* ✅ bring 2 columns closer */
     position: relative;
   }
 
@@ -310,7 +312,7 @@ a {
 
   /* Row 1: Socials + HQ */
   .second-section .row:first-of-type .col:nth-child(1) { grid-area: socials; }
-  .second-section .row:first-of-type .col:nth-child(2) { grid-area: hq; margin-left: 0; }
+  .second-section .row:first-of-type .col:nth-child(2) { grid-area: hq;}
 
   /* New Row 2: Tell Us More full width */
   .tell-us-more-col { 
