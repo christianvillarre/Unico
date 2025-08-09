@@ -778,8 +778,8 @@ html, body {
     margin-left: 1.5rem;
   }
     .nav-controls button {
-    width: 40px;   /* Adjust for mobile */
-    height: 40px;  /* Keep aspect ratio */
+    width: 50px;   /* Adjust for mobile */
+    height: 50px;  /* Keep aspect ratio */
     border-width: 3px;
     font-size: 1.2rem;
   }
