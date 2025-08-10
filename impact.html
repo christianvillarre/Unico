@@ -122,7 +122,9 @@
   .content-wrapper {
     flex-direction: column;
     align-items: flex-start;
+    margin-top: 3rem;
   }
+
 
   .right-column {
     align-items: center;
@@ -131,6 +133,27 @@
   .right-column img {
     max-width: 100%;
   }
+  
+  .section-clients {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 2rem;
+  background-color: #ffffff;
+
+  }
+  .left-column h2 {
+  font-size: 3.5rem;
+
+  line-height: 0.9;
+}
+.second-container {
+
+  margin-top: 0vh;
+}
 }
 </style>
 </head>
@@ -180,6 +203,40 @@
             
           </div>
         </div>
+      </div>
+    </div>
+  </nav>
+
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- Full-screen mobile menu -->
+<div class="mobile-menu" aria-hidden="true">
+  <nav class="mobile-nav">
+    <div class="mobile-item">
+      <button class="mobile-parent" type="button" aria-expanded="false">About</button>
+      <div class="mobile-sub">
+        <a href="/about.html">Our Story</a>
+        <a href="/about.html#culture">Culture</a>
+        <a href="/about.html#team">Team</a>
+      </div>
+    </div>
+
+    <div class="mobile-item">
+      <button class="mobile-parent" type="button" aria-expanded="false">Impact</button>
+      <div class="mobile-sub">
+        <a href="/impact.html">Clients</a>
+        <a href="/impact.html#services">Services</a>
+        <a href="/featured.html">Featured Projects</a>
+      </div>
+    </div>
+
+    <div class="mobile-item">
+      <button class="mobile-parent" type="button" aria-expanded="false">Let’s Be Friends</button>
+      <div class="mobile-sub">
+        <a href="/contact.html">Tell Us More</a>
+        <a href="/index.html#social">Get Social</a>
       </div>
     </div>
   </nav>
@@ -381,6 +438,200 @@
 }
 </style>
 
+<style>
+  /* ---------- HAMBURGER & OVERLAY (mobile only) ---------- */
+@media (max-width: 768px) {
+  /* hide only the desktop nav */
+  .navbar > nav { display: none; }
+  .logo {
+    z-index: 9999;
+  }
+  /* burger inside the fixed header */
+  .nav-hamburger {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column; /* ✅ stack the bars vertically */
+  justify-content: center;
+  align-items: center;
+  gap: 6px; /* space between lines */
+  background: transparent;
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.nav-hamburger span {
+  display: block;           /* ✅ ensure each is its own line */
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Animation when menu is open */
+.nav-hamburger.is-open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav-hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-hamburger.is-open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+  /* FULLSCREEN panel */
+  .mobile-menu{
+    position: fixed;
+    inset: 0;                 /* full viewport */
+    z-index: 9990;
+    background:#53709f;
+    display:none;
+    padding: 120px 2rem 2rem;  /* 90px = navbar height */
+    min-height: 100svh;       /* robust mobile viewport height */
+    overflow-y:auto;
+    overscroll-behavior: contain;
+  }
+  .mobile-menu.is-open{ display:block; }
+  body.menu-open{ overflow:hidden; }
+
+  /* accordion styles (keep yours) */
+  .mobile-nav{ display:flex; flex-direction:column; gap:1rem; }
+  .mobile-item{ border-bottom:1px solid rgba(255,255,255,.25); padding-bottom:.5rem; }
+
+  .mobile-parent .caret{ width:22px; transition:transform .2s ease; }
+  .mobile-parent[aria-expanded="true"] .caret{ transform:rotate(180deg); }
+  .mobile-sub{ display:none; padding:0 0 .75rem 0; margin-left:.25rem; }
+  .mobile-parent[aria-expanded="true"] + .mobile-sub{ display:grid; }
+
+  /* override your global a { all: unset; } */
+  .mobile-menu .mobile-sub a {
+    all: revert; /* or: all: unset; */
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 1.4rem !important;   /* make it bigger */
+    line-height: 1.35;
+    color: #fff !important;
+    text-decoration: none !important;
+    padding: .7rem 0;
+    display: block;
+    cursor: pointer;
+  }
+
+  /*ARROW THAT GOES UP DOWN AT THE END OF PARENT BTN*/
+  .mobile-parent {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font: 800 2.25rem 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: space-between; /* pushes text left, arrow right */
+  align-items: center;
+  padding: .75rem 0;
+  gap: .75rem;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Arrow icon on the right */
+.mobile-parent::after {
+  content: '';
+  display: inline-block;
+  width: 22px;  /* arrow size */
+  height: 22px;
+  background-image: url('images/arrow_down.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate when open */
+.mobile-parent[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+}
+
+/* Keep desktop navbar as-is */
+@media (min-width: 769px) {
+  .nav-hamburger, .mobile-menu { display: none !important; }
+}
+@media (max-width: 768px) {
+  body.menu-open .navbar { transform: none !important; }
+}
+</style>
+
+<script>
+(function () {
+  const burger = document.querySelector('.nav-hamburger');
+  const panel  = document.querySelector('.mobile-menu');
+  const closeBtn = document.querySelector('.mobile-close');
+  const parents = document.querySelectorAll('.mobile-parent');
+
+  if (!burger || !panel) return;
+
+  const openMenu = () => {
+    burger.classList.add('is-open');
+    panel.classList.add('is-open');
+    document.body.classList.add('menu-open');
+    burger.setAttribute('aria-expanded','true');
+    panel.setAttribute('aria-hidden','false');
+  };
+
+  const closeMenu = () => {
+    burger.classList.remove('is-open');
+    panel.classList.remove('is-open');
+    document.body.classList.remove('menu-open');
+    burger.setAttribute('aria-expanded','false');
+    panel.setAttribute('aria-hidden','true');
+  };
+
+  // Hamburger toggle
+  burger.addEventListener('click', () => {
+    panel.classList.contains('is-open') ? closeMenu() : openMenu();
+  });
+
+  // Close button
+  closeBtn && closeBtn.addEventListener('click', closeMenu);
+
+  // Close when tapping outside the menu content
+  panel.addEventListener('click', (e) => {
+    if (!e.target.closest('.mobile-nav')) closeMenu();
+  });
+
+  // ESC to close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && panel.classList.contains('is-open')) closeMenu();
+  });
+
+  // Accordion toggles
+  parents.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      // close others
+      parents.forEach(b => b.setAttribute('aria-expanded','false'));
+      // toggle current
+      btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    });
+  });
+
+  // Close the menu when a link is chosen
+  panel.querySelectorAll('.mobile-sub a').forEach(a => {
+    a.addEventListener('click', closeMenu);
+  });
+})();
+</script>
+
+
+
+
+
 
 <section class="section-clients" >
   <div class="section-container">
@@ -427,13 +678,34 @@
 
     @media (max-width: 768px) {
       .client-row {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
+  display: flex;
+  justify-content: center; /* ✅ center the logos within the row */
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.3;
+  transform: scale(0.95);
+  flex-wrap: wrap; /* ✅ ensures responsiveness */
+  max-width: 100%; /* ✅ prevents overflow */
+}
       .client-row img {
         width: 40%;
       }
+      .client-scroll-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ center rows inside the section */
+  gap: 5vh;
+  padding: 0vh 1rem 1vh;
+  margin-top: -3rem;
+  
+}
+.client-row img {
+  width: clamp(6rem, 25vw, 40rem);
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
     }
 </style>
 <section class="client-scroll-section">
@@ -653,6 +925,10 @@ margin: 0;
     column-gap: 0; /* Optional: remove gap when stacked */
     transform: none; /* Optional: reset the horizontal shift */
   }
+  .testimonials-section {
+  padding: 2rem 2rem;
+  background-color: #ffffff;
+}
 
   .testimonial-box {
     flex-direction: column;
@@ -664,7 +940,8 @@ margin: 0;
   .testimonial-image {
     position: static;
     transform: none;
-    margin: 2rem auto 0rem auto;
+    margin: 0.5rem auto -1.5rem auto;
+    scale: 0.9;
   }
 
   .testimonial-content {
@@ -678,7 +955,7 @@ margin: 0;
     text-align: center;
   }
 .testimonial-text{
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
   .testimonial-logo {
     position: static;
@@ -744,6 +1021,27 @@ and the precision required to <span class="highlight-text2">deliver results that
 .services-description .word {
   display: inline-block;
   white-space: normal;
+}
+@media (max-width: 768px) {
+  .section-heading {
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  color: #4D4D4D;
+}
+ .services-heading {
+    margin-bottom: 4rem;
+  }
+  .services-description {
+  font-size: 1.4rem;
+  margin: 0 2rem 2rem 2rem;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+  word-break: normal;
+  white-space: normal;
+  display: block;
+}
+
 }
 </style>
 
@@ -930,9 +1228,59 @@ Video Production</P>
   margin: 0;
 
 }
-#carolyn .hover-img {
-  transform: scale(1.1);
-  margin-top: 2rem;
+@media (max-width: 768px) {
+  .accordion-wrapper { margin-bottom: 0; }
+
+  .panel {
+    height: auto;                 /* no fixed height */
+    align-items: stretch;
+    padding: 1rem 0;
+  }
+
+  .panel-content {
+    flex-direction: column;       /* stack */
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0 1.25rem;           /* tighter side padding */
+  }
+
+  .panel-text {
+    order: 1;                     /* text first */
+  }
+
+  .panel-img {
+    order: 2;                     /* image second */
+    width: 100%;
+    max-width: 100%;
+    margin: 0;                    /* remove negative margin */
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.5rem;
+  }
+
+  .panel-img img {
+    width: 100%;
+    height: auto;                 /* keep aspect ratio */
+    max-height: 60vh;             /* prevent giant images */
+    object-fit: contain;
+    border-radius: 0.75rem;
+  }
+
+  .panel-text h3 {
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    margin: 0 0 2rem 0;
+  }
+
+  .panel-text p {
+    font-size: clamp(1rem, 4.2vw, 1.2rem);
+    line-height: 1.5;
+  }
+}
+
+/* 🧸 Optional: ultra-small screens */
+@media (max-width: 400px) {
+  .panel-content { padding: 0 1rem; }
+  .panel-text p { font-size: 0.95rem; }
 }
   </style>
 
@@ -1146,78 +1494,95 @@ Video Production</P>
 
 <script>
   const panels = document.querySelectorAll(".panel");
-  let currentIndex2 = 0; // Start with first panel open
+  let currentIndex2 = 0;
+  const mq = window.matchMedia("(max-width: 768px)");
 
-  function showPanel(index) {
-    panels.forEach((panel, i) => {
-      const img = panel.querySelector("img");
+  // Measure what the element's height would be at height:auto (without flashing)
+  function measureAutoHeight(el) {
+    const prev = el.style.height;
+    el.style.height = "auto";
+    const h = el.clientHeight;   // exact auto height
+    el.style.height = prev;
+    return h;
+  }
 
-      if (i === index) {
-        // Opening panel
-        gsap.to(panel, {
-          height: 600,
-          duration: 0.5,
-          ease: "power2.inOut"
-        });
-        if (img) {
-          gsap.to(img, {
-            opacity: 1,
-            duration: 0.5,
-            ease: "power2.inOut"
-          });
-        }
-      } else {
-        // Closing other panels
-        gsap.to(panel, {
-          height: 100,
-          duration: 0.5,
-          ease: "power2.inOut"
-        });
-        if (img) {
-          gsap.to(img, {
-            opacity: 0,
-            duration: 0.4,
-            ease: "power2.inOut"
-          });
+  function getClosedHeight() {
+    return mq.matches ? 60 : 100;
+  }
+  function getDesktopOpenHeight() {
+    return 600;
+  }
+
+  function openPanel(panel) {
+    const openHeight = mq.matches ? measureAutoHeight(panel) : getDesktopOpenHeight();
+
+    gsap.to(panel, {
+      height: openHeight,
+      duration: 0.5,
+      ease: "power2.inOut",
+      onComplete: () => {
+        // Keep it flexible after the tween, but only if mobile
+        if (mq.matches) {
+          // clear to auto only AFTER we matched the same pixel height to avoid any snap
+          panel.style.height = "auto";
         }
       }
     });
 
-    currentIndex2 = index;
+    const img = panel.querySelector("img");
+    if (img) gsap.to(img, { opacity: 1, duration: 0.5, ease: "power2.inOut" });
   }
 
-  // Initial state: show first panel and its image
-  panels.forEach((panel, i) => {
+  function closePanel(panel) {
+    gsap.to(panel, {
+      height: getClosedHeight(),
+      duration: 0.5,
+      ease: "power2.inOut"
+    });
+
     const img = panel.querySelector("img");
-    gsap.set(panel, { height: i === currentIndex2 ? 600 : 100 });
+    if (img) gsap.to(img, { opacity: 0, duration: 0.4, ease: "power2.inOut" });
+  }
+
+  // Init
+  panels.forEach((panel, i) => {
+    const h = i === currentIndex2
+      ? (mq.matches ? measureAutoHeight(panel) : getDesktopOpenHeight())
+      : getClosedHeight();
+
+    gsap.set(panel, { height: h });
+    if (i === currentIndex2 && mq.matches) panel.style.height = "auto";
+
+    const img = panel.querySelector("img");
     gsap.set(img, { opacity: i === currentIndex2 ? 1 : 0 });
   });
 
+  // Clicks
   panels.forEach((panel, index) => {
     panel.addEventListener("click", () => {
       if (currentIndex2 === index) {
-        // Close the open panel
-        gsap.to(panel, {
-          height: 100,
-          duration: 0.4,
-          ease: "power2.inOut"
-        });
-
-        const img = panel.querySelector("img");
-        if (img) {
-          gsap.to(img, {
-            opacity: 0,
-            duration: 0.3,
-            ease: "power2.inOut"
-          });
-        }
-
+        closePanel(panel);
         currentIndex2 = -1;
       } else {
-        showPanel(index);
+        panels.forEach((p, i) => (i === index ? openPanel(p) : closePanel(p)));
+        currentIndex2 = index;
       }
     });
   });
+
+  // Breakpoint/resize: re-apply target heights without jumps
+  function reapplyHeights() {
+    panels.forEach((panel, i) => {
+      const isOpen = i === currentIndex2;
+      const h = isOpen
+        ? (mq.matches ? measureAutoHeight(panel) : getDesktopOpenHeight())
+        : getClosedHeight();
+      gsap.set(panel, { height: h });
+      if (isOpen && mq.matches) panel.style.height = "auto";
+    });
+  }
+  mq.addEventListener?.("change", reapplyHeights);
+  window.addEventListener("resize", reapplyHeights);
 </script>
 
 <script>
