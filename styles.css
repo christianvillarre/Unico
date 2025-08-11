@@ -1162,3 +1162,22 @@ body {
     min-height: calc(100dvh - var(--nav-h)) !important;
   }
 }
+
+
+@media (max-width: 768px) {
+  .hero-section .page-container {
+    bottom: 6rem;             /* was 8rem */
+    left: 1.5rem;              /* optional: pull in a bit */
+    right: 1.5rem;             /* optional if you want wrapping space */
+  }
+  
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+}
