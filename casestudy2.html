@@ -18,7 +18,6 @@
   overscroll-behavior: none;
 }
 
-
   .section-clients {
   height: auto;
   width: 100%;
@@ -27,7 +26,7 @@
   justify-content: flex-start;
   align-items: flex-start;
 
-  padding: 0 4rem;
+  padding: 0 0rem;
   background-color: #ffffff;
 
   }
@@ -37,18 +36,16 @@
       padding: 0 2rem;
     }
   }
-
-  .section-container {
+ .section-container {
     height: auto;
       display: flex;
-  justify-content: center;
+  justify-content:  center;
   width: 100%;
-  margin-top: 8rem;
+  margin-top: 3rem;
   }
-
 .content-wrapper {
   width: 100%;
-  max-width: 1000px; /* optional, keeps content narrower */
+  max-width: 100%; /* optional, keeps content narrower */
   margin: 0 auto;
 }
 .main-column {
@@ -57,20 +54,20 @@
   text-align: left; /* 🔹 Ensure text is aligned left */
   width: 100%;
 }
-.main-column h2 {
-  font-size: clamp(2.5rem, 4vw, 4rem);
+.case-left h2 {
+  font-size: clamp(2.1rem, 3.4vw, 5.5rem);
   margin: 0 0 1rem 0; /* ✅ remove top margin */
   line-height: 1;
   color: #6E9D72;
 }
-.main-column h5 {
+.case-left h5 {
   font-size: clamp(1.3rem, 2.2vw, 2rem);
   margin: 0 0 1rem 0; /* ✅ remove top margin */
   line-height: 0.9;
   font-weight: 100;
   color: #6E9D72;
 }
-.main-column h6 {
+.case-left h6 {
   font-size: clamp(0.8rem, 2vw, 1.5rem);
   margin: 0 0 1rem 0; /* ✅ remove top margin */
   line-height: 0.9;
@@ -369,19 +366,66 @@
 .SALP {
   scale:1;
 }
+
+.case-two-col {
+  display: flex;
+  align-items: stretch; /* make both columns equal height */
+  gap: 0rem;
+  margin: 0 4rem;
+  height: 100vh;
+}
+
+.case-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertically center text */
+}
+
+.case-right {
+  flex: 1;
+}
+
+.case-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills the right column */
+  border-radius: 1rem; /* optional styling */
+}
+
+/* Stack on mobile */
+@media (max-width: 768px) {
+  .case-two-col {
+    flex-direction: column;
+  }
+
+  .case-right img {
+    height: auto;
+  }
+}
 </style>
 
 
-<section class="section-clients" data-scroll-section>
+<section class="section-clients">
   <div class="section-container">
     <div class="second-container">
   <div class="content-wrapper">
     <!-- Left Side: Text -->
+     <div class="case-two-col">
+  <!-- Left Column: text only -->
+  <div class="case-left">
+    <h6>CASE STUDY</h6>
+    <h2>Say a Little Prayer: Exclusive Screening Event</h2>
+    <h5>San Antonio, Texas</h5>
+  </div>
+
+  <!-- Right Column: full image -->
+  <div class="case-right">
+    <img  src="images/SALP_RSVPIFY COVER 2.jpg" alt="Say a Little Prayer Event">
+  </div>
+</div>
     <div class="main-column">
-      <h6>CASE STUDY</h6>
-      <h2>Say a Little Prayer: Exclusive Screening Event</h2>
-      <h5>San Antonio, Texas</h5>
-      <div class="img-main"><img class="SALP" src="images/SALP_RSVPIFY COVER 2.jpg"></div>
+     
   </div>
   <div class="text-section">
       <h4>Centro Stage, a division of Unico Communications, curated and produced an exclusive
