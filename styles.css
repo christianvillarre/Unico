@@ -804,18 +804,7 @@ html, body {
   .nav-item {
     display: none !important;
   }
-  .nav-controls {
-    padding-left: 0;
-    height: auto;
-    scale: unset; /* Remove shrinking */
-    margin-left: 1.5rem;
-  }
-    .nav-controls button {
-    width: 35px;   /* Adjust for mobile */
-    height: 35px;  /* Keep aspect ratio */
-    border-width: 3px;
-    font-size: 1.2rem;
-  }
+
   .logo {
     margin-left: -2rem;
   }
@@ -830,42 +819,56 @@ html, body {
   left: 0.5rem;
 }
 
-    .hero-social-icons {
-  position: absolute;
-  bottom: 4rem;
-  right: 2rem;
-  display: flex;
-  gap: 1rem;
-  z-index: 3;
-}
 
-.hero-social-icons .social-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s ease, transform 0.3s ease;
-  
-}
+  :root{
+    --ctrl: 42px;                                 /* circle size */
+    --ctrl-gap: 12px;                             /* space between circles */
+    --ctrl-edge: max(40px, env(safe-area-inset-bottom) + 10px); /* safe bottom */
+    --ctrl-side: 32px;                            /* side padding */
+  }
 
-.hero-social-icons .social-icon img {
-  width: 60%;
-  height: 60%;
-  object-fit: contain;
-}
+  /* same bottom & gap for both clusters */
+  .nav-controls,
+  .hero-social-icons{
+    bottom: var(--ctrl-edge) !important;
+    gap: var(--ctrl-gap) !important;
+    z-index: 3;
+  }
 
-.hero-social-icons .social-icon:hover {
-  background-color: #6E9D72;
-  transform: scale(1.05);
-}
+  .nav-controls{ left: var(--ctrl-side) !important; right:auto !important; }
+  .hero-social-icons{ right: var(--ctrl-side) !important; left:auto !important; position:absolute; }
 
-.hero-social-icons .social-icon:hover img {
-  filter: brightness(0) invert(1); /* makes dark icons white on hover */
-}
+  /* lock each to perfect circles and center their glyphs */
+  .nav-controls button,
+  .hero-social-icons .social-icon{
+    aspect-ratio: 1 / 1;
+    width: var(--ctrl);
+    height: auto;                 /* aspect-ratio controls height */
+    flex: 0 0 auto;
+    border-radius: 9999px;
+    display: grid;
+    place-items: center;          /* centers icon inside */
+    padding: 0;
+    line-height: 1;
+  }
+
+  /* keep their visual styles but ensure consistency */
+  .nav-controls button{
+    border-width: 3px;
+    transform: none;              /* avoid odd scaling on touch */
+  }
+
+  .hero-social-icons .social-icon{
+    background: #fff;
+    border: 0;
+  }
+  .hero-social-icons .social-icon img{
+    width: 100%;
+    height: 60%;
+    object-fit: contain;
+  }
+
+
 
  :root {
   --carousel-height: 28vh; /* change this to grow/shrink everything */
@@ -1046,7 +1049,7 @@ body {
 
 /* Make sure navbar/dropdown always sit above new stacking contexts */
 .navbar { z-index: 1000 !important; }
-.dropdown { z-index: 999 !important; width: 100dvw !important; } /* replace 100vw */
+.dropdown--mega { width: 100dvw; }
 
 /* Clip likely offenders (do NOT include navbar) */
 .hero-section,
@@ -1094,14 +1097,8 @@ body {
   --carousel-height: 55vh; /* change this to grow/shrink everything */
 }
 
-    h1 {
-      font-size: clamp(1rem, 4vw, 5rem);
-      text-transform: uppercase;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      line-height: 1;
-      padding-right: 2rem;
-    }
+  
+
     
 .tracker-wrapper {
   width: 100%;
