@@ -1453,6 +1453,56 @@ window.addEventListener('scroll', () => {
   opacity: 1;
   transform: scale(1);
 }
+
+@media (max-width: 768px) {
+  /* === PREVIEW WITH OVERLAY TEXT === */
+.arrow-preview-wrap {
+  position: absolute;
+  height: 80px;
+  width: auto;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;   /* don't block hover */
+  z-index: 1;
+  border-radius: 8px;
+  overflow: hidden;       /* round corners apply to image + overlay */
+  display: inline-block;
+}
+
+/* Position left/right preview blocks */
+.left-wrapper .arrow-preview-wrap { left: 70px; }
+.right-wrapper .arrow-preview-wrap { right: 70px; }
+
+/* Image inside preview */
+.arrow-preview-wrap img {
+  display: block;
+  height: 100%;
+  width: auto;
+}
+
+/* Overlay label */
+.arrow-label {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  pointer-events: none;
+}
+
+/* Right side label hugs the right edge */
+.right-wrapper .arrow-label { left: auto; right: 1rem; }
+
+/* Show previews on hover of the wrapper */
+.left-wrapper:hover .arrow-preview-wrap,
+.right-wrapper:hover .arrow-preview-wrap {
+  opacity: 1;
+  transform: scale(1);
+}
+}
 </style>
 </body>
 </html>
