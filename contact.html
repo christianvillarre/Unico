@@ -138,6 +138,69 @@
     max-width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  /* Let the first section expand with its content */
+  .section-container,
+  .second-container {
+    height: auto !important;
+    margin-top: 0 !important;
+  }
+
+  .section-ourstory {
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;                 /* keep it above next section just in case */
+    margin-bottom: 3rem;
+  }
+
+  .content-wrapper {
+    margin-top: 2rem !important;  /* was 8rem; reduce to avoid overflow */
+    gap: 1.5rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+    flex: unset;
+  }
+
+  .right-column img {
+    height: auto !important;     /* don't force 75vh on mobile */
+    max-width: 100% !important;
+  }
+
+  /* Form should fill width */
+  .right-column form {
+    width: 100%;
+  }
+
+  /* Location section: ensure it's underneath and not overlapping */
+  .section-culture {
+    position: relative;
+    z-index: 1;
+    margin-top: 0 !important;
+  }
+
+  /* Make the map behave (iframes can float over things) */
+  .map-container,
+  .map-container iframe {
+    display: block;
+  }
+
+  /* Social icons spacing so they don't push layout too tall */
+
+}
+@media (max-width: 768px) {
+  /* Give Tell Us More section breathing room on mobile */
+  .section-ourstory .second-container {
+    margin-top: 10rem !important; /* adjust as needed */
+    
+  }
+}
+
 </style>
 </head>
 <body>
@@ -868,6 +931,14 @@ input:focus, textarea:focus {
   position: relative;
   margin: 0;  /* remove bottom margin if you want it tight */
   padding: 0;
+}
+@media (max-width: 768px) {
+  /* Give Tell Us More section breathing room on mobile */
+  .section-culture {
+    padding: 0 2rem;
+    margin-bottom: 4rem;
+    
+  }
 }
 </style>
 <script>
