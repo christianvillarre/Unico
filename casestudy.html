@@ -53,10 +53,16 @@
 }
 
 .main-column {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 4rem;   /* ⟵ was margin */
+  margin: 0 auto;    /* keep centered if narrower than 100% somewhere */
   color: #4D4D4D;
   font-family: 'Montserrat', sans-serif;
-  text-align: left; /* 🔹 Ensure text is aligned left */
-  width: 100%;
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .main-column { padding: 0 0rem; }
 }
 .case-left h2 {
   font-size: clamp(2.5rem, 5vw, 5.9rem);
@@ -380,8 +386,16 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertically center text */
+  justify-content: flex-start; /* vertically center text */
   margin-left: 4rem;
+  margin-top: 4rem;
+  
+}
+
+.case-left h4 {
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin-top: 4rem;
 }
 
 .case-right {
@@ -405,6 +419,59 @@
     height: auto;
   }
 }
+
+/* ===== Mobile layout: put H4 under the image ===== */
+@media (max-width: 768px) {
+  .case-two-col {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "meta1"
+      "meta2"
+      "meta3"
+      "image"
+      "body";
+    gap: 0.25rem; /* tighter spacing between all grid items */
+    height: auto;
+    margin: 0;
+  }
+
+  .case-left {
+    display: contents;
+    margin: 0;
+  }
+
+  .case-left h6 {
+    grid-area: meta1;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0; /* remove bottom margin */
+    margin-top: 3.5rem;
+  }
+
+  .case-left h2 {
+    grid-area: meta2;
+    margin-top: 0.25rem; /* tiny space from h6 */
+  }
+
+  .case-left h5 {
+    grid-area: meta3;
+    margin-top: 0.25rem;
+  }
+
+  .case-left h4 { grid-area: body; }
+
+  .case-right { grid-area: image; }
+
+  .case-right img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    object-fit: cover;
+  }
+}
 </style>
 
 <section class="section-clients">
@@ -417,7 +484,7 @@
     <h6>CASE STUDY</h6>
       <h2>U.S.-Spain Council Forum XXIV</h2>
       <h5>San Antonio, Texas</h5>
-      
+      <h4>The XXIV United States–Spain Council Forum brought together national and international leaders for two days of dialogue, diplomacy, and cultural exchange.  Our team was honored to support the production and logistics behind this extraordinary gathering.<br><br>Held in San Antonio, Texas a city whose history and heritage are deeply intertwined with Spain’s, the Forum served as a vibrant platform to strengthen bilateral ties and explore shared values through conversations on issues critical to the future prosperity and shared growth of both nations. It was a celebration of partnership, dialogue, and cultural connection.</h4>
   </div>
 
   <!-- Right Column: full image -->
@@ -426,17 +493,9 @@
   </div>
 </div>
 
-<section class="section-clients">
-  <div class="section-container">
-    <div class="second-container">
-  <div class="content-wrapper">
-    <!-- Left Side: Text -->
-    <div class="main-column">
-      
-  </div>
+<div class="main-column">
   <div class="text-section">
-      <h4>The XXIV United States–Spain Council Forum brought together national and international leaders for two days of dialogue, diplomacy, and cultural exchange.  Our team was honored to support the production and logistics behind this extraordinary gathering.</h4>
-      <h4>Held in San Antonio, Texas a city whose history and heritage are deeply intertwined with Spain’s, the Forum served as a vibrant platform to strengthen bilateral ties and explore shared values through conversations on issues critical to the future prosperity and shared growth of both nations. It was a celebration of partnership, dialogue, and cultural connection.</h4>
+      
       <h2>The Challenge</h2>
       <h4>
 To deliver a seamless, high-level experience for dignitaries, diplomats, and business leaders from both sides of the Atlantic, every detail mattered. We had to consider the nuance of diplomatic protocol while meeting the standards of a world-class event.  
@@ -501,7 +560,7 @@ The XXIV Forum was thoughtfully executed to create an experience that was both s
 We are proud to have helped shape an event that authentically honored our past while strengthening our cultural bridge and bilateral relations between the United States and Spain.
 </h4>
       </div>
-
+</div>
 <style>
   .image-grid {
   display: grid;
@@ -527,7 +586,6 @@ We are proud to have helped shape an event that authentically honored our past w
 </Style>
 
 </div>
-  </div>
 </section>
  <style>
   .img-main {
@@ -558,7 +616,7 @@ We are proud to have helped shape an event that authentically honored our past w
     margin-bottom: 1.5rem;
   }
    .text-section h4 {
-    font-size: 1.6rem;
+    font-size: clamp(1.2rem, 3vw, 2rem);
     line-height: 1.3;
     margin-bottom: 1rem;
     font-weight: 100;
