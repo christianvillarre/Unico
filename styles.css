@@ -1170,6 +1170,9 @@ body {
     left: 1.5rem;              /* optional: pull in a bit */
     right: 1.5rem;             /* optional if you want wrapping space */
   }
+  h1 {
+    font-size: 1.8rem;
+  }
   
     .dot {
       width: 8px;
