@@ -1167,7 +1167,7 @@ body {
 @media (max-width: 768px) {
   .hero-section .page-container {
     bottom: 6rem;             /* was 8rem */
-    left: 1.5rem;              /* optional: pull in a bit */
+    left: 2rem;              /* optional: pull in a bit */
     right: 1.5rem;             /* optional if you want wrapping space */
   }
   h1 {
