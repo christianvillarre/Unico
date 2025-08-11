@@ -1057,9 +1057,7 @@ to life — with passion, precision, and a touch of Unico magic.
 }
 
 @media (max-width: 768px) {
-  .section2 {
-    padding-left: 1rem;
-  }
+
   .carousel-btn {
   position: absolute;
   top: 50%; /* ✅ Adjust to center vertically over image boxes */
@@ -1084,9 +1082,56 @@ to life — with passion, precision, and a touch of Unico magic.
 .carousel-btn.next {
   right: -50px;
 }
- .team-title {
-      transform: translateX(10%);
-    }
+
+}
+
+@media (max-width: 768px) {
+  .section2 {
+    padding-left: 0;
+    padding-right: 0; /* avoid clipping the card */
+  }
+
+  .carousel-track-container {
+    overflow: hidden;   /* hide neighbors */
+    width: 100%;
+  }
+
+  .carousel-wrapper {
+    overflow: visible;  /* buttons can overlap */
+  }
+
+  .grid-container {
+    display: flex;
+    gap: 0;             /* no peeking space */
+    padding-top: 0;
+  }
+
+  /* Each card takes the full viewport width */
+  .image-wrapper {
+    flex: 0 0 100vw;
+    max-width: 100vw;
+  }
+
+  .section2 .image-box {
+    width: 100vw;
+    height: auto;
+    aspect-ratio: 5 / 7;  /* keep your portrait ratio */
+    border-radius: 0;     /* optional: bleed edge-to-edge */
+    margin-left: -4rem;
+  }
+
+  /* keep image covering the box */
+  .section2 .image-box img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Tuck buttons just inside the edges */
+  .carousel-btn.prev { left: 8px; }
+  .carousel-btn.next { right: 8px; }
 }
 
   </style>
@@ -1158,10 +1203,13 @@ to life — with passion, precision, and a touch of Unico magic.
           <!-- Column: Unico -->
           <div class="col large-col">
             <div class="bottom-col">
-              <h5 class="unico-copyright">© 2025 Unico Communications. All rights reserved.</h5>
+              
               <a href="https://www.centrostage.com/"><img class="centro" src="images/CentroStage Logo.png" alt="CentroStage Logo"></a>
             </div>
           </div>
+        </div>
+        <div class="footer-bottom-mobile">
+          <p>© 2025 Unico Communications. All rights reserved.</p>
         </div>
       </div>
     </div>
@@ -1225,7 +1273,9 @@ to life — with passion, precision, and a touch of Unico magic.
   const nextBtn = document.querySelector(".carousel-btn.next");
   const prevBtn = document.querySelector(".carousel-btn.prev");
 
-  const cardWidth = 25 * 16 + 56;
+  // --- dynamic width; fallback for desktop ---
+  const DESKTOP_CARD_WIDTH = 25 * 16 + 56; // your original
+  let cardWidth = DESKTOP_CARD_WIDTH;
   let index = 3;
 
   // 1. Clone last 3 (in correct order) and prepend
@@ -1250,52 +1300,61 @@ to life — with passion, precision, and a touch of Unico magic.
   const allCards = [...grid.children];
   const total = allCards.length;
 
-  // 3. Wait until all images (including clones) are fully loaded
-  imagesLoaded(grid, { background: true }, () => {
-    // 4. Force layout before setting initial scroll position
-    requestAnimationFrame(() => {
-      gsap.set(track, { x: -index * cardWidth });
-    });
+  function measureCardWidth() {
+    const first = grid.children[0];
+    if (!first) return DESKTOP_CARD_WIDTH;
+    const w = first.getBoundingClientRect().width;
+    const styles = getComputedStyle(grid);
+    const gap =
+      parseFloat(styles.columnGap || styles.gap || "0") || 0;
+    return w + gap; // include flex gap so slides align perfectly
+  }
 
-    // 5. Move function with wrap logic
-    function moveTo(newIndex) {
-      gsap.to(track, {
-        x: -newIndex * cardWidth,
-        duration: 0.5,
-        ease: "power2.out",
-        onComplete: () => {
-          if (newIndex === 0) {
-            index = total - 6;
-            gsap.set(track, { x: -index * cardWidth });
-          } else if (newIndex === total - 3) {
-            index = 3;
-            gsap.set(track, { x: -index * cardWidth });
-          } else {
-            index = newIndex;
-          }
+  function jumpTo(i) {
+    gsap.set(track, { x: -i * cardWidth });
+  }
+
+  function moveTo(newIndex) {
+    gsap.to(track, {
+      x: -newIndex * cardWidth,
+      duration: 0.5,
+      ease: "power2.out",
+      onComplete: () => {
+        if (newIndex === 0) {
+          index = total - 6;
+          jumpTo(index);
+        } else if (newIndex === total - 3) {
+          index = 3;
+          jumpTo(index);
+        } else {
+          index = newIndex;
         }
-      });
-    }
+      }
+    });
+  }
 
-    // 6. Button events
-    nextBtn.addEventListener("click", () => {
-      moveTo(index + 1);
+  function recalcAndRealign() {
+    cardWidth = measureCardWidth();
+    jumpTo(index);
+  }
+
+  // 3. Wait until all images are fully loaded
+  imagesLoaded(grid, { background: true }, () => {
+    // First layout pass
+    requestAnimationFrame(recalcAndRealign);
+
+    // Buttons
+    nextBtn.addEventListener("click", () => moveTo(index + 1));
+    prevBtn.addEventListener("click", () => moveTo(index - 1));
+
+    // Resize / orientation change
+    window.addEventListener("resize", () => {
+      requestAnimationFrame(recalcAndRealign);
     });
 
-    prevBtn.addEventListener("click", () => {
-      moveTo(index - 1);
-    });
-
-    // 7. Optional: Fade in wrappers
-    gsap.fromTo(".image-wrapper", {
-      opacity: 0,
-      y: 20
-    }, {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      stagger: 0.04,
-      ease: "power2.out"
+    // Fade in
+    gsap.fromTo(".image-wrapper", { opacity: 0, y: 20 }, {
+      opacity: 1, y: 0, duration: 1, stagger: 0.04, ease: "power2.out"
     });
   });
 </script>

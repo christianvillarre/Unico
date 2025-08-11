@@ -243,6 +243,15 @@ a {
   margin: 0;
   padding: 0;
 }
+ .footer-bottom-mobile p {
+      font-size: 1rem;
+      color: white;
+      font-weight: 100;
+      font-style: normal;
+      margin: 0;
+      padding: 0;
+      margin-top: 1rem;
+    }
 @keyframes scrollText {
   0% {
     transform: translateX(0);
@@ -298,18 +307,18 @@ a {
 
   /* ✅ Right section: grid layout for mobile */
   .second-section {
-    order: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-      "socials hq tell"
-      "divider divider divider"
-      "sitemap empty centro"
-      "copyright copyright copyright";
-    grid-template-rows: auto 1px auto auto;
-    gap: 1rem;
-    position: relative;
-  }
+  order: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "socials hq tell"
+    "divider divider divider"
+    "sitemap empty centro"
+    "footer  footer  footer";   /* ← new dedicated row */
+  grid-template-rows: auto 1px auto auto; /* rows can stay as-is */
+  gap: 1rem;
+  position: relative;
+}
 
   .second-section .row,
   .second-section .large-col {
@@ -372,8 +381,8 @@ a {
       cursor: pointer;
       font-family: 'montserrat';
     }
-    .footer-bottom-mobile p {
-      font-size: 0.8rem;
+     .footer-bottom-mobile p {
+      font-size: .8rem;
       color: white;
       font-weight: 100;
       font-style: normal;
@@ -381,7 +390,33 @@ a {
       padding: 0;
       margin-top: 1rem;
     }
-    
+    .footer-bottom-mobile {
+  grid-area: footer;          /* sits on its own row */
+  justify-self: start;        /* or center / stretch, your call */
+  align-self: start;
+  width: 100%;                /* ensure it can use the full span */
+  padding-top: 0.5rem;        /* tweak spacing as needed */
+}
+
+/* Keep copyright hidden on mobile if you're using the mobile footer */
+.unico-copyright { 
+  display: none !important; 
+}
+
+/* Optional: tighten first-row middle column if you need a bit more room overall */
+.second-section .row:first-of-type .col:nth-child(2) { 
+  grid-area: hq; 
+  margin-left: -2.2rem; /* adjust or remove if not needed */
+}
+
+/* Existing mobile text sizing */
+.footer-bottom-mobile p {
+  font-size: .8rem;
+  color: white;
+  font-weight: 100;
+  margin: 0;
+  margin-top: 1rem;
+}
 .footer-container {
 
   margin-top: 5rem;
