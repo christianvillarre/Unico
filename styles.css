@@ -1053,6 +1053,9 @@ body {
   }
 
   .carousel-item { max-width: 90dvw; }     /* belt-and-suspenders */
+   :root {
+  --carousel-height: 35vh; /* change this to grow/shrink everything */
+}
 }
 
 /* Fallback for older browsers without overflow: clip */
