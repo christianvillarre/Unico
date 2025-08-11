@@ -882,7 +882,7 @@ html, body {
 }
 .tracker-wrapper {
   width: 100%;
-  height: 42rem;
+  height: 44rem;
   background-color:transparent;
   padding: 0rem 0; /* Controls space above/below the whole section */
   margin: 0;
@@ -1083,4 +1083,43 @@ body {
 /* Fallback for older browsers without overflow: clip */
 @supports not (overflow: clip) {
   body { overflow-x: hidden !important; }
+}
+
+
+/* === Full-height first section on mobile (navbar-safe) === */
+:root { --nav-h: 90px; } /* your fixed header height */
+
+/* target your first section(s) */
+.hero-section,
+.section-ourstory {
+  /* fallback for older browsers */
+  min-height: calc(100vh - var(--nav-h));
+}
+
+/* modern dynamic viewport (prevents iOS/Chrome UI-bar gaps) */
+@supports (height: 100dvh) {
+  .hero-section,
+  .section-ourstory {
+    min-height: calc(100dvh - var(--nav-h)) !important;
+  }
+}
+
+/* optional: keep content vertically centered on small screens */
+@media (max-width: 768px) {
+  .hero-section,
+  .section-ourstory {
+    display: flex;
+    align-items: center;
+    /* ensure the section isn’t “shortened” by earlier rules */
+    height: auto !important;
+    padding-top: var(--nav-h); /* so content isn't hidden under the fixed navbar */
+  }
+}
+
+/* phone-in-landscape (short heights): still fill screen minus navbar */
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero-section,
+  .section-ourstory {
+    min-height: calc(100dvh - var(--nav-h)) !important;
+  }
 }
