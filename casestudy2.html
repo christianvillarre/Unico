@@ -366,6 +366,9 @@
 .SALP {
   scale:1;
 }
+.ital {
+ font-style: italic;
+}
 </style>
 
 
@@ -378,17 +381,17 @@
       <h6>CASE STUDY</h6>
       <h2>Say a Little Prayer: Exclusive Screening Event</h2>
       <h5>San Antonio, Texas</h5>
-      <div class="img-main"><img class="SALP" src="images/SALP_RSVPIFY COVER 2.jpg"></div>
+      <div class="img-main"><img class="SALP" src="images/SALP_RSVPIFY COVER 3.jpg"></div>
   </div>
   <div class="text-section">
       <h4>Centro Stage, a division of Unico Communications, curated and produced an exclusive
-screening to celebrate <span class="italicize">Say A Little Prayer</span>, a movie set and filmed in San Antonio, Texas.
+screening to celebrate <span class="ital">Say A Little Prayer</span>, a movie set and filmed in San Antonio, Texas.
 The invitation-only event took place at the historic Charline McCombs Empire Theatre in
 downtown San Antonio for an audience of over 850.</h4>
       
       <h2>The Challenge</h2>
       <h4>
-The event needed to introduce Say A Little Prayer to a select audience of media, industry
+The event needed to introduce <span class="ital">Say A Little Prayer</span> to a select audience of media, industry
 leaders, influencers, and community members ahead of its wider release, positioning it as
 
 a compelling cultural narrative deserving of community support. It also had to honor an all-
@@ -404,7 +407,7 @@ cultural purpose with playful and immersive design.</h4>
 thoughtfully crafted cinema-themed sponsorship kit, featuring creatively tiered levels such
 as Marquee Sponsor and Silver Screen Sponsor. Select ticket packages offered premium
 perks including reserved group seating and table-side drink service, complete with custom
-drink tickets that added a memorable, personal touch.<br>
+drink tickets that added a memorable, personal touch.<br><br>
 To ensure flawless execution from start to finish, our agency managed every aspect of
 ticket coordination, operating a streamlined advance ticket pick-up and on-site will call
 process, reinforcing our commitment to an efficient guest experience.</h4>
@@ -419,9 +422,9 @@ process, reinforcing our commitment to an efficient guest experience.</h4>
       <h4>Unico transformed a major downtown artery into a cinematic showpiece, producing a red
 carpet that was logistically ambitious as it was a first-of-its-kind done in the city. In close
 collaboration with the City of San Antonio and the theater, we secured permits, developed
-detailed renderings, and managed all street closures, traffic flow, and safety protocols.
+detailed renderings, and managed all street closures, traffic flow, and safety protocols.<br><br>
 The cast and crew were welcomed with a custom step-and-repeat backdrop featuring the
-film’s branding alongside partner logos, framed by hedges and flaming heart motifs
+film’s branding alongside partner logos, framed by hedges, and flaming heart motifs
 imported from Mexico and inspired by the film’s branding. The transformed street became
 an immersive experience that brought the magic of the movie to life.</h4>
       
@@ -1141,21 +1144,31 @@ window.addEventListener('scroll', () => {
 </div>
 <div class="page-nav-arrows">
   <div class="arrow-wrapper left-wrapper">
-    <a href="casestudy.html" class="nav-arrow left-arrow">
+    <a href="#" class="nav-arrow left-arrow">
       <img src="images/arrow-btn-white2.png" alt="Previous">
     </a>
-    <img src="images/case1_img1.JPG" class="arrow-preview left-preview" alt="Preview Left">
+
+    <!-- LEFT PREVIEW -->
+    <div class="arrow-preview-wrap left-preview">
+      <img src="images/1c USHCC.jpg" alt="Preview Left">
+      <span class="arrow-label">PREV</span>
+    </div>
   </div>
   
   <div class="arrow-wrapper right-wrapper">
-    <img src="images/5 UNIDOSUS Panel.jpg" class="arrow-preview right-preview" alt="Preview Right">
-    <a href="#" class="nav-arrow right-arrow">
+    <!-- RIGHT PREVIEW -->
+    <div class="arrow-preview-wrap right-preview">
+      <img src="images/2b USSF Group Pic.JPG" alt="Preview Right">
+      <span class="arrow-label">NEXT</span>
+    </div>
+
+    <a href="casestudy.html" class="nav-arrow right-arrow">
       <img src="images/arrow-btn-white.png" alt="Next">
     </a>
   </div>
 </div>
 <style>
- .page-nav-arrows {
+.page-nav-arrows {
   position: fixed;
   top: 50%;
   left: 0;
@@ -1172,7 +1185,7 @@ window.addEventListener('scroll', () => {
   position: relative;
   display: flex;
   align-items: center;
-  pointer-events: auto; /* Enable interactions */
+  pointer-events: auto; /* enable interactions */
 }
 
 /* Arrows */
@@ -1182,50 +1195,59 @@ window.addEventListener('scroll', () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0,0,0,0.75);
   border-radius: 50%;
   transition: background 0.3s ease, transform 0.3s ease;
   text-decoration: none;
   z-index: 2;
 }
+.nav-arrow:hover { background: #CCE5CC; transform: scale(1.1); }
+.nav-arrow img { width: 20px; height: 20px; object-fit: contain; }
 
-.nav-arrow:hover {
-  background: #CCE5CC;
-  transform: scale(1.1);
-}
-
-.nav-arrow img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-}
-
-/* Preview images (initially hidden) */
-.arrow-preview {
+/* === PREVIEW WITH OVERLAY TEXT === */
+.arrow-preview-wrap {
   position: absolute;
+  height: 150px;
+  width: auto;
   opacity: 0;
   transform: scale(0.95);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  height: 100px;
-  width: auto;
-  pointer-events: none;
+  pointer-events: none;   /* don't block hover */
   z-index: 1;
   border-radius: 8px;
+  overflow: hidden;       /* round corners apply to image + overlay */
+  display: inline-block;
 }
 
-/* Left preview position */
-.left-wrapper .arrow-preview {
-  left: 70px;
+/* Position left/right preview blocks */
+.left-wrapper .arrow-preview-wrap { left: 120px; }
+.right-wrapper .arrow-preview-wrap { right: 120px; }
+
+/* Image inside preview */
+.arrow-preview-wrap img {
+  display: block;
+  height: 100%;
+  width: auto;
 }
 
-/* Right preview position */
-.right-wrapper .arrow-preview {
-  right: 70px;
+/* Overlay label */
+.arrow-label {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  pointer-events: none;
 }
 
-/* Show previews on hover */
-.left-wrapper:hover .left-preview,
-.right-wrapper:hover .right-preview {
+/* Right side label hugs the right edge */
+.right-wrapper .arrow-label { left: auto; right: 1rem; }
+
+/* Show previews on hover of the wrapper */
+.left-wrapper:hover .arrow-preview-wrap,
+.right-wrapper:hover .arrow-preview-wrap {
   opacity: 1;
   transform: scale(1);
 }

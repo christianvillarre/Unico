@@ -744,17 +744,31 @@
 </style>
     <!-- Right Side: Images -->
     <div class="right-column">
-          <form action="#" method="post" autocomplete="off">
-    <div class="name-fields">
-      <input type="text" name="first_name" placeholder="First Name" required>
-      <input type="text" name="last_name" placeholder="Last Name" required>
-    </div>
+          <!-- Netlify Contact Form -->
+<form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" autocomplete="off">
+  <!-- required: must match form name -->
+  <input type="hidden" name="form-name" value="contact" />
 
-    <input type="email" name="email" placeholder="Email" required>
-    <textarea name="message" placeholder="Your message..." rows="5" required></textarea>
+  <!-- honeypot (spam trap) -->
+  <p style="display:none;">
+    <label>Don’t fill this out: <input name="bot-field" /></label>
+  </p>
 
-    <button class="about-btn">Submit<img src="images/Arrow 3.png" alt="See more" /></button>
-  </form>
+  <div class="name-fields">
+    <input type="text" name="first_name" placeholder="First Name" required />
+    <input type="text" name="last_name"  placeholder="Last Name" required />
+  </div>
+
+  <input type="email"   name="email"   placeholder="Email" required />
+  <textarea name="message" placeholder="Your message..." rows="5" required></textarea>
+
+  <!-- Optional: enable reCAPTCHA v2 widget -->
+  <!-- <div data-netlify-recaptcha="true"></div> -->
+
+  <button type="submit" class="about-btn">
+    Submit <img src="images/Arrow 3.png" alt="See more" />
+  </button>
+</form>
      <style>
 .about-btn img {
   width: 2rem;
@@ -833,9 +847,10 @@ input:focus, textarea:focus {
           <h2>LOCATION</h2>
         </div>
         <div class="san-antonio">
-          <img src="images/san-antonio.png" class="fade-image active">
-          <img src="images/Location 2.jpg" class="fade-image">
-          <img src="images/Location 3.jpg" class="fade-image">
+          <img src="images/Location 01.png" class="fade-image active">
+          <img src="images/Location 02.png" class="fade-image">
+          <img src="images/Location 03.png" class="fade-image">
+          <img src="images/Location 04.png" class="fade-image">
         </div>
         <div class="map-container">
             <iframe
