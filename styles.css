@@ -1065,6 +1065,19 @@ body {
       line-height: 1;
       padding-right: 2rem;
     }
+    
+.tracker-wrapper {
+  width: 100%;
+  height: 32rem;
+  background-color:transparent;
+  padding: 0rem 0; /* Controls space above/below the whole section */
+  margin: 0;
+  border: none;
+   margin-top: -1rem;
+}
+.tracker-title {
+  margin-top: 3rem;
+}
 }
 
 /* Fallback for older browsers without overflow: clip */
