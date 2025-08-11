@@ -811,8 +811,8 @@ html, body {
     margin-left: 1.5rem;
   }
     .nav-controls button {
-    width: 40px;   /* Adjust for mobile */
-    height: 40px;  /* Keep aspect ratio */
+    width: 35px;   /* Adjust for mobile */
+    height: 35px;  /* Keep aspect ratio */
     border-width: 3px;
     font-size: 1.2rem;
   }
@@ -828,6 +828,43 @@ html, body {
 }
 .nav-controls {
   left: 0.5rem;
+}
+
+    .hero-social-icons {
+  position: absolute;
+  bottom: 4rem;
+  right: 4rem;
+  display: flex;
+  gap: 1rem;
+  z-index: 3;
+}
+
+.hero-social-icons .social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+  
+}
+
+.hero-social-icons .social-icon img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.hero-social-icons .social-icon:hover {
+  background-color: #6E9D72;
+  transform: scale(1.05);
+}
+
+.hero-social-icons .social-icon:hover img {
+  filter: brightness(0) invert(1); /* makes dark icons white on hover */
 }
 
  :root {
@@ -1084,6 +1121,11 @@ body {
 @supports not (overflow: clip) {
   body { overflow-x: hidden !important; }
 }
+
+
+
+
+
 
 
 /* === Full-height first section on mobile (navbar-safe) === */
