@@ -990,3 +990,72 @@ html, body {
   margin-left: -1rem;
 }
 }
+
+/* ============================
+   NO HORIZONTAL SCROLL OVERRIDES
+   (append at end of your CSS)
+   ============================ */
+
+/* 1) Global kill switch */
+:where(html, body) {
+  width: 100%;
+  max-width: 100dvw;                 /* avoid mobile UI chrome overflow */
+  overflow-x: hidden !important;     /* hard clamp */
+}
+
+/* 2) Any full-width/edge sections must clip children */
+:where(.hero-section,
+       .carousel-wrapper,
+       .carousel-wrapper2,
+       .carousel-wrapper3,
+       .tracker-wrapper,
+       .instagram-section,
+       .footer) {
+  max-width: 100dvw !important;      /* override any 100vw */
+  overflow-x: hidden !important;
+}
+
+/* 3) Fixed full-width UI should use dynamic viewport width */
+.dropdown { width: 100dvw !important; }  /* override earlier 100vw */
+
+/* 4) Carousel safety nets */
+.carousel-track {
+  white-space: nowrap;
+  will-change: transform;
+  backface-visibility: hidden;       /* reduce subpixel bleed */
+  transform: translate3d(0,0,0);     /* same */
+}
+
+:where(.carousel-wrapper,
+       .carousel-wrapper2,
+       .carousel-wrapper3) {
+  position: relative;
+  overflow: hidden !important;        /* visual clip for clones */
+  contain: content;                    /* isolate layout/paint */
+}
+
+/* 5) Phone landscape clamp (where issues show up) */
+@media (orientation: landscape) and (max-height: 500px) {
+  :where(html, body) { overflow-x: hidden !important; }
+
+  /* tighten inline padding/gaps so nowrap tracks never push the viewport */
+  .navbar { padding-inline: 1rem !important; }
+  .carousel-header { padding-inline: 1rem !important; }
+  .carousel-track { padding-inline: 0.75rem !important; gap: 0.5rem !important; }
+
+  /* enforce viewport-width caps on wrappers */
+  .carousel-wrapper,
+  .carousel-wrapper2,
+  .carousel-wrapper3 {
+    max-width: 100dvw !important;
+    overflow-x: hidden !important;
+  }
+
+  /* safety if a single slide is unusually wide */
+  .carousel-item { max-width: 90dvw; }
+}
+
+/* 6) Fallback for browsers without overflow: clip */
+@supports not (overflow: clip) {
+  html, body { overflow-x: hidden !important; }
+}
