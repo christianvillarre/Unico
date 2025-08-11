@@ -991,3 +991,71 @@ html, body {
 }
 }
 
+/* ============================
+   NO H-SCROLL (navbar-safe)
+   ============================ */
+
+/* Keep html free so your navbar/hover logic behaves normally */
+html {
+  overflow-x: visible;                /* let root behave as before */
+  max-width: 100dvw;                  /* avoid UI-chrome width weirdness */
+}
+
+/* Hide horizontal scroll on the scrolling surface only */
+body {
+  overflow-x: hidden !important;      /* hard clamp, but body-only */
+  max-width: 100dvw;
+}
+
+/* Make sure navbar/dropdown always sit above new stacking contexts */
+.navbar { z-index: 1000 !important; }
+.dropdown { z-index: 999 !important; width: 100dvw !important; } /* replace 100vw */
+
+/* Clip likely offenders (do NOT include navbar) */
+.hero-section,
+.carousel-wrapper,
+.carousel-wrapper2,
+.carousel-wrapper3,
+.tracker-wrapper,
+.instagram-section,
+.footer {
+  max-width: 100dvw !important;
+  overflow-x: hidden !important;
+}
+
+/* Carousel safety (no stacking-context tricks that could affect navbar) */
+.carousel-track {
+  white-space: nowrap;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0,0,0);
+}
+.carousel-wrapper,
+.carousel-wrapper2,
+.carousel-wrapper3 {
+  position: relative;
+  overflow: hidden !important;   /* visual clip so clones never show */
+  /* removed contain: content to avoid extra stacking contexts */
+}
+
+/* Landscape phones: tighten only carousel spacing; leave navbar alone */
+@media (orientation: landscape) and (max-height: 500px) {
+  body { overflow-x: hidden !important; }   /* reiterate clamp */
+
+  .carousel-header { padding-inline: 1rem !important; }
+  .carousel-track  { padding-inline: 0.75rem !important; gap: 0.5rem !important; }
+
+  .carousel-wrapper,
+  .carousel-wrapper2,
+  .carousel-wrapper3 {
+    max-width: 100dvw !important;
+    overflow-x: hidden !important;
+  }
+
+  .carousel-item { max-width: 90dvw; }     /* belt-and-suspenders */
+}
+
+/* Fallback for older browsers without overflow: clip */
+@supports not (overflow: clip) {
+  body { overflow-x: hidden !important; }
+}
