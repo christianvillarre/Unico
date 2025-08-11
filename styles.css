@@ -833,7 +833,7 @@ html, body {
     .hero-social-icons {
   position: absolute;
   bottom: 4rem;
-  right: 4rem;
+  right: 2rem;
   display: flex;
   gap: 1rem;
   z-index: 3;
