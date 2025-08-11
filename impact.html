@@ -1043,6 +1043,19 @@ and the precision required to <span class="highlight-text2">deliver results that
 }
 
 }
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .services-description {
+  font-size: 2rem;
+  margin: 0 2rem 2rem 2rem;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+  word-break: normal;
+  white-space: normal;
+  display: block;
+}
+
+}
 </style>
 
 
@@ -1207,7 +1220,7 @@ Video Production</P>
 }
 .panel-text {
   flex: 1;
-
+  
   text-align: left;
 }
 
@@ -1281,6 +1294,45 @@ Video Production</P>
 @media (max-width: 400px) {
   .panel-content { padding: 0 1rem; }
   .panel-text p { font-size: 0.95rem; }
+}
+
+
+@media (orientation: landscape) and (max-height: 500px) {
+   .panel {
+    height: auto;                 /* no fixed height */
+    align-items: stretch;
+    padding: 1rem 0;
+  }
+
+  .panel-content {
+    flex-direction: column;       /* stack */
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0 1.25rem;           /* tighter side padding */
+  }
+
+  .panel-text {
+    order: 1;                     /* text first */
+  }
+
+  .panel-img {
+    order: 2;                     /* image second */
+    width: 100%;
+    max-width: 100%;
+    margin: 0;                    /* remove negative margin */
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.5rem;
+  }
+
+  .panel-img img {
+    width: 100%;
+    height: auto;                 /* keep aspect ratio */
+    max-height: 60vh;             /* prevent giant images */
+    object-fit: contain;
+    border-radius: 0.75rem;
+  }
+
 }
   </style>
 
