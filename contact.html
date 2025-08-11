@@ -201,6 +201,52 @@
   }
 }
 
+
+/* =========================
+   CONTACT PAGE – LANDSCAPE FIX
+   ========================= */
+@media (orientation: landscape) and (max-height: 500px) {
+  /* Let sections size to content */
+  .section-ourstory,
+  .section-culture {
+    min-height: auto !important;
+  }
+
+  /* Kill fixed viewport heights that cause overlap */
+  .section-container,
+  .second-container {
+    height: auto !important;
+    min-height: 0 !important;
+    margin-top: 0 !important;          /* remove the 10vh offset */
+  }
+
+  /* Give the first section a little breathing room below the fixed navbar */
+  .section-ourstory { padding-top: 90px; } /* your navbar is 90px tall */
+
+  /* Reduce internal spacing so content fits the short viewport */
+  .content-wrapper {
+    margin-top: 2rem !important;       /* was 8rem */
+    gap: 1rem !important;
+    align-items: stretch !important;
+  }
+
+  /* Media sizing: don't force huge heights on a short screen */
+  .right-column img {
+    height: auto !important;
+    max-height: 55dvh !important;
+    max-width: 100% !important;
+  }
+
+  /* Location section media caps */
+  .san-antonio,
+  .map-container {
+    height: 55dvh !important;
+  }
+  .map-container iframe {
+    height: 55dvh !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -954,6 +1000,17 @@ input:focus, textarea:focus {
     margin-bottom: 4rem;
     
   }
+  .san-antonio {
+  width: 100%;
+  height: 25vh;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 4rem;
+  position: relative;
+}
+.location-text h2 {
+  font-size: 3rem;
+}
 }
 </style>
 <script>
