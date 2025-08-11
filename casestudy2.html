@@ -18,6 +18,7 @@
   overscroll-behavior: none;
 }
 
+
   .section-clients {
   height: auto;
   width: 100%;
@@ -26,49 +27,48 @@
   justify-content: flex-start;
   align-items: flex-start;
 
-  padding: 0 0rem;
+  padding: 0 4rem;
   background-color: #ffffff;
 
   }
 
-  @media (max-width: 768px) {
-    .section-clients {
-      padding: 0 2rem;
-    }
-  }
- .section-container {
+  .section-container {
     height: auto;
       display: flex;
-  justify-content:  center;
+  justify-content: flex-start;
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 8rem;
   }
+
 .content-wrapper {
-  width: 100%;
-  max-width: 100%; /* optional, keeps content narrower */
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 0rem;
 }
+
 .main-column {
   color: #4D4D4D;
   font-family: 'Montserrat', sans-serif;
   text-align: left; /* 🔹 Ensure text is aligned left */
   width: 100%;
 }
-.case-left h2 {
-  font-size: clamp(2.1rem, 3.4vw, 5.5rem);
+.main-column h2 {
+  font-size: clamp(4rem, 5vw, 5.5rem);
   margin: 0 0 1rem 0; /* ✅ remove top margin */
   line-height: 1;
   color: #6E9D72;
 }
-.case-left h5 {
-  font-size: clamp(1.3rem, 2.2vw, 2rem);
-  margin: 0 0 1rem 0; /* ✅ remove top margin */
+.main-column h5 {
+  font-size: clamp(1rem, 2.2vw, 3rem);
+  margin: 0 0 3rem 0; /* ✅ remove top margin */
   line-height: 0.9;
   font-weight: 100;
   color: #6E9D72;
 }
-.case-left h6 {
-  font-size: clamp(0.8rem, 2vw, 1.5rem);
+.main-column h6 {
+  font-size: clamp(0.5rem, 2vw, 1.5rem);
   margin: 0 0 1rem 0; /* ✅ remove top margin */
   line-height: 0.9;
 }
@@ -366,67 +366,20 @@
 .SALP {
   scale:1;
 }
-
-.case-two-col {
-  display: flex;
-  align-items: stretch; /* make both columns equal height */
-  gap: 0rem;
-  margin: 0 4rem;
-  height: 100vh;
-}
-
-.case-left {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* vertically center text */
-}
-
-.case-right {
-  flex: 1;
-}
-
-.case-right img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* fills the right column */
-  border-radius: 1rem; /* optional styling */
-}
-
-/* Stack on mobile */
-@media (max-width: 768px) {
-  .case-two-col {
-    flex-direction: column;
-  }
-
-  .case-right img {
-    height: auto;
-  }
-}
 </style>
 
 
-<section class="section-clients">
+<section class="section-clients" data-scroll-section>
   <div class="section-container">
     <div class="second-container">
   <div class="content-wrapper">
     <!-- Left Side: Text -->
-     <div class="case-two-col">
-  <!-- Left Column: text only -->
-  <div class="case-left">
-    <h6>CASE STUDY</h6>
-    <h2>Say a Little Prayer: Exclusive Screening Event</h2>
-    <h5>San Antonio, Texas</h5>
-  </div>
-
-  <!-- Right Column: full image -->
-  <div class="case-right">
-    <img src="images/SALP_RSVPIFY COVER 2.jpg" alt="Say a Little Prayer Event">
-  </div>
-</div>
     <div class="main-column">
-     
- 
+      <h6>CASE STUDY</h6>
+      <h2>Say a Little Prayer: Exclusive Screening Event</h2>
+      <h5>San Antonio, Texas</h5>
+      <div class="img-main"><img class="SALP" src="images/SALP_RSVPIFY COVER 2.jpg"></div>
+  </div>
   <div class="text-section">
       <h4>Centro Stage, a division of Unico Communications, curated and produced an exclusive
 screening to celebrate <span class="italicize">Say A Little Prayer</span>, a movie set and filmed in San Antonio, Texas.
@@ -550,7 +503,6 @@ Latino stories, but elevate how they’re received and remembered.</h4>
 </div>
 
 <div class="text-section"></div>
- </div>
 <style>
   
 .image-grid {
@@ -580,7 +532,7 @@ Latino stories, but elevate how they’re received and remembered.</h4>
  <style>
   .img-main {
     width: 100%;
-    max-height: 60vh;
+    max-height: 100vh;
     background-color: transparent;
     border-radius: 1rem;
      overflow: hidden;
@@ -592,10 +544,11 @@ Latino stories, but elevate how they’re received and remembered.</h4>
      transform: translateY(0%);
   }
   .text-section{
+    width: 100%;
     margin-bottom: 2rem;
   }
   .text-section h2 {
-    font-size: clamp(3rem, 4vw, 4.5rem);
+    font-size: 4.5rem;
     line-height: 1.1;
     margin-bottom: 1.5rem;
   }
@@ -684,13 +637,10 @@ Latino stories, but elevate how they’re received and remembered.</h4>
           <!-- Column: Unico -->
           <div class="col large-col">
             <div class="bottom-col">
-              
+              <h5 class="unico-copyright">© 2025 Unico Communications. All rights reserved.</h5>
               <a href="https://www.centrostage.com/"><img class="centro" src="images/CentroStage Logo.png" alt="CentroStage Logo"></a>
             </div>
           </div>
-        </div>
-        <div class="footer-bottom-mobile">
-          <p>© 2025 Unico Communications. All rights reserved.</p>
         </div>
       </div>
     </div>
