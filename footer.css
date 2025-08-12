@@ -406,7 +406,7 @@ a {
 /* Optional: tighten first-row middle column if you need a bit more room overall */
 .second-section .row:first-of-type .col:nth-child(2) { 
   grid-area: hq; 
-  margin-left: -2.2rem; /* adjust or remove if not needed */
+  margin-left: -3rem; /* adjust or remove if not needed */
 }
 
 /* Existing mobile text sizing */
