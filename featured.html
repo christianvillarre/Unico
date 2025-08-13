@@ -870,13 +870,14 @@ a {
   opacity: 0;
   clip-path: circle(0% at 50% 50%);
   pointer-events: none;
-  z-index: 2;
+  z-index: 1;
   transition: none;
 }
 
 .card-popup img {
   max-height: 80vh;
   display: block;
+   z-index: 1;
 }
 
 /* Overlay */
@@ -925,6 +926,7 @@ a {
   font-size: clamp(1.5rem, 3vw, 1.2rem);
   font-weight: bold;
   margin: 0 0 0.5rem 0rem;
+  z-index: 9999;
 }
 
 .featured-tags {
