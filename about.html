@@ -1310,41 +1310,44 @@ Put touch-action on the element receiving pointer listeners */
   const nextBtn = document.querySelector(".carousel-btn.next");
   const prevBtn = document.querySelector(".carousel-btn.prev");
 
-  // Drag target = track so it wins even over images
+  // drag target = track so it wins even over images/rollovers
   const DRAG_TARGET = track;
 
   // --- dynamic width; fallback for desktop ---
-  const DESKTOP_CARD_WIDTH = 25 * 16 + 56; // 25rem + gap
+  const DESKTOP_CARD_WIDTH = 25 * 16 + 56; // 25rem + flex gap
   let cardWidth = DESKTOP_CARD_WIDTH;
-  let index = 3; // start after prepended 3 clones
+  let index = 3; // start after 3 prepended clones
 
-  // Optional CSS var --peek support (set :root { --peek: 48px; } to enable)
+  // Count real slides BEFORE cloning
+  const originals = [...grid.children];
+  const REAL = originals.length;
+
+  // Optional: CSS var --peek for left preview (0 if not set)
   function getPeek() {
     const v = getComputedStyle(document.documentElement).getPropertyValue('--peek').trim();
     const n = parseFloat(v);
     return Number.isFinite(n) ? n : 0;
   }
 
-  // 1) Clone last 3 and prepend
-  const originalCards = [...grid.children];
-  const clonesBefore = originalCards.slice(-3).map(card => {
-    const clone = card.cloneNode(true);
-    clone.classList.add("clone");
-    clone.querySelectorAll("[id]").forEach(el => el.removeAttribute("id"));
-    return clone;
+  // 1) Prepend last 3 (in correct order)
+  const clonesBefore = originals.slice(-3).map(node => {
+    const c = node.cloneNode(true);
+    c.classList.add("clone");
+    c.querySelectorAll("[id]").forEach(el => el.removeAttribute("id"));
+    return c;
   });
-  clonesBefore.reverse().forEach(clone => grid.prepend(clone));
+  clonesBefore.reverse().forEach(c => grid.prepend(c));
 
-  // 2) Clone first 3 and append
-  const clonesAfter = originalCards.slice(0, 3).map(card => {
-    const clone = card.cloneNode(true);
-    clone.classList.add("clone");
-    clone.querySelectorAll("[id]").forEach(el => el.removeAttribute("id"));
-    return clone;
+  // 2) Append first 3
+  const clonesAfter = originals.slice(0,3).map(node => {
+    const c = node.cloneNode(true);
+    c.classList.add("clone");
+    c.querySelectorAll("[id]").forEach(el => el.removeAttribute("id"));
+    return c;
   });
-  clonesAfter.forEach(clone => grid.append(clone));
+  clonesAfter.forEach(c => grid.append(c));
 
-  const total = grid.children.length;
+  const total = grid.children.length; // REAL + 6
 
   function measureCardWidth() {
     const first = grid.children[0];
@@ -1352,7 +1355,7 @@ Put touch-action on the element receiving pointer listeners */
     const w = first.getBoundingClientRect().width;
     const styles = getComputedStyle(grid);
     const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
-    return w + gap; // include flex gap so slides align perfectly
+    return w + gap; // include flex gap
   }
 
   function xForIndex(i) {
@@ -1362,8 +1365,15 @@ Put touch-action on the element receiving pointer listeners */
 
   function indexFromX(x) {
     const PEEK = getPeek();
-    // Inverse of xForIndex:  -(i*cardWidth - PEEK) = x  =>  i = (PEEK - x)/cardWidth
     return (PEEK - x) / cardWidth;
+  }
+
+  function normalizeIndex(i) {
+    // If we've slid into the front clones (indices 0,1,2), jump forward by REAL
+    if (i <= 2)       return i + REAL;
+    // If we've slid into the tail clones (indices REAL+3, REAL+4, REAL+5), jump back by REAL
+    if (i >= REAL+3)  return i - REAL;
+    return i;
   }
 
   function jumpTo(i) {
@@ -1376,15 +1386,8 @@ Put touch-action on the element receiving pointer listeners */
       duration: 0.5,
       ease: "power2.out",
       onComplete: () => {
-        if (newIndex === 0) {
-          index = total - 6; // wrap to end
-          jumpTo(index);
-        } else if (newIndex === total - 3) {
-          index = 3; // wrap to start
-          jumpTo(index);
-        } else {
-          index = newIndex;
-        }
+        index = normalizeIndex(newIndex); // ✅ handle ALL clone ranges
+        if (index !== newIndex) jumpTo(index); // snap silently if we wrapped
       }
     });
   }
@@ -1411,7 +1414,6 @@ Put touch-action on the element receiving pointer listeners */
     startClientX = e.clientX;
     startX = getX();
 
-    // Prevent native image drag; track is our drag target
     if (e.cancelable) e.preventDefault();
     DRAG_TARGET.classList.add("dragging");
     DRAG_TARGET.setPointerCapture?.(e.pointerId);
@@ -1438,8 +1440,7 @@ Put touch-action on the element receiving pointer listeners */
     let newIndex = Math.round(rawIndex);
 
     if (Math.abs(dx) > SWIPE) {
-      // ✅ FIX: left swipe (dx<0) should go to NEXT => ceil
-      //         right swipe (dx>0) should go to PREV => floor
+      // left swipe (dx<0) => NEXT => ceil; right swipe => PREV => floor
       newIndex = dx < 0 ? Math.ceil(rawIndex) : Math.floor(rawIndex);
     }
 
@@ -1452,25 +1453,23 @@ Put touch-action on the element receiving pointer listeners */
     nextBtn.addEventListener("click", () => moveTo(index + 1));
     prevBtn.addEventListener("click", () => moveTo(index - 1));
 
-    // Drag listeners on track
     DRAG_TARGET.addEventListener("pointerdown", onPointerDown, { passive: false, capture: true });
     DRAG_TARGET.addEventListener("pointermove", onPointerMove,  { passive: true });
     DRAG_TARGET.addEventListener("pointerup",   onPointerEnd,   { passive: true });
     DRAG_TARGET.addEventListener("pointercancel", onPointerEnd, { passive: true });
 
-    // Kill clicks right after drags
     DRAG_TARGET.addEventListener("click", (e) => {
       if (dragMoved > 5) e.preventDefault();
     }, true);
 
     window.addEventListener("resize", () => requestAnimationFrame(recalcAndRealign));
 
+    // Initial reveal
     gsap.fromTo(".image-wrapper", { opacity: 0, y: 20 }, {
       opacity: 1, y: 0, duration: 1, stagger: 0.04, ease: "power2.out"
     });
   });
 </script>
-
 <!--
 
 <script>
