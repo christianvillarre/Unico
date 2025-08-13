@@ -1310,15 +1310,15 @@ Put touch-action on the element receiving pointer listeners */
   const nextBtn = document.querySelector(".carousel-btn.next");
   const prevBtn = document.querySelector(".carousel-btn.prev");
 
-  // Use the track as the drag target (so it wins even over imgs/overlays)
+  // Drag target = track so it wins even over images
   const DRAG_TARGET = track;
 
   // --- dynamic width; fallback for desktop ---
   const DESKTOP_CARD_WIDTH = 25 * 16 + 56; // 25rem + gap
   let cardWidth = DESKTOP_CARD_WIDTH;
-  let index = 3; // starting index after we prepend 3 clones
+  let index = 3; // start after prepended 3 clones
 
-  // Optional CSS var support for left preview (set :root { --peek: 48px; } to enable)
+  // Optional CSS var --peek support (set :root { --peek: 48px; } to enable)
   function getPeek() {
     const v = getComputedStyle(document.documentElement).getPropertyValue('--peek').trim();
     const n = parseFloat(v);
@@ -1352,7 +1352,7 @@ Put touch-action on the element receiving pointer listeners */
     const w = first.getBoundingClientRect().width;
     const styles = getComputedStyle(grid);
     const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
-    return w + gap;
+    return w + gap; // include flex gap so slides align perfectly
   }
 
   function xForIndex(i) {
@@ -1362,6 +1362,7 @@ Put touch-action on the element receiving pointer listeners */
 
   function indexFromX(x) {
     const PEEK = getPeek();
+    // Inverse of xForIndex:  -(i*cardWidth - PEEK) = x  =>  i = (PEEK - x)/cardWidth
     return (PEEK - x) / cardWidth;
   }
 
@@ -1402,9 +1403,7 @@ Put touch-action on the element receiving pointer listeners */
   const getX = () => Number(gsap.getProperty(track, "x")) || 0;
 
   function onPointerDown(e) {
-    // Only left mouse button if mouse
     if (e.pointerType === "mouse" && e.button !== 0) return;
-
     isDragging = true;
     dragMoved = 0;
 
@@ -1412,11 +1411,9 @@ Put touch-action on the element receiving pointer listeners */
     startClientX = e.clientX;
     startX = getX();
 
-    // Prevent native image drag (esp. Safari) and mark drag target
+    // Prevent native image drag; track is our drag target
     if (e.cancelable) e.preventDefault();
     DRAG_TARGET.classList.add("dragging");
-
-    // Capture pointer so we keep getting move/up even off the element
     DRAG_TARGET.setPointerCapture?.(e.pointerId);
   }
 
@@ -1434,14 +1431,16 @@ Put touch-action on the element receiving pointer listeners */
     DRAG_TARGET.releasePointerCapture?.(e.pointerId);
 
     const dx = e.clientX - startClientX;
-    const SWIPE = 30;
+    const SWIPE = 30; // px threshold
 
     const x = getX();
     const rawIndex = indexFromX(x);
     let newIndex = Math.round(rawIndex);
 
     if (Math.abs(dx) > SWIPE) {
-      newIndex = dx < 0 ? Math.floor(rawIndex) : Math.ceil(rawIndex);
+      // ✅ FIX: left swipe (dx<0) should go to NEXT => ceil
+      //         right swipe (dx>0) should go to PREV => floor
+      newIndex = dx < 0 ? Math.ceil(rawIndex) : Math.floor(rawIndex);
     }
 
     moveTo(newIndex);
@@ -1453,20 +1452,19 @@ Put touch-action on the element receiving pointer listeners */
     nextBtn.addEventListener("click", () => moveTo(index + 1));
     prevBtn.addEventListener("click", () => moveTo(index - 1));
 
-    // Attach drag listeners on the track, in capture phase for reliability
+    // Drag listeners on track
     DRAG_TARGET.addEventListener("pointerdown", onPointerDown, { passive: false, capture: true });
     DRAG_TARGET.addEventListener("pointermove", onPointerMove,  { passive: true });
     DRAG_TARGET.addEventListener("pointerup",   onPointerEnd,   { passive: true });
     DRAG_TARGET.addEventListener("pointercancel", onPointerEnd, { passive: true });
 
-    // Prevent clicks right after a drag
+    // Kill clicks right after drags
     DRAG_TARGET.addEventListener("click", (e) => {
       if (dragMoved > 5) e.preventDefault();
     }, true);
 
     window.addEventListener("resize", () => requestAnimationFrame(recalcAndRealign));
 
-    // Nice fade-in
     gsap.fromTo(".image-wrapper", { opacity: 0, y: 20 }, {
       opacity: 1, y: 0, duration: 1, stagger: 0.04, ease: "power2.out"
     });
