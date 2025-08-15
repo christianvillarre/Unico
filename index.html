@@ -2,12 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Unico Communications</title>
-  <link rel="icon" type="image/png" href="images/favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unico Communications | Creating Impactful Experiences, Not Simply Events</title>
+  <meta name="description" content="Unico Communications plans and produces high-impact events across Texas and nationwide—conference production, galas, media relations, lodging, F&B, and more." />
+  <link rel="canonical" href="https://www.unicocommunications.com/" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="images/favicon.png"/>
+
+  <!-- Preconnect / Preload fonts for speed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="footer.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.unicocommunications.com/">
+  <meta property="og:title" content="Unico Communications | Event Production & Experiential Marketing">
+  <meta property="og:description" content="Trusted by national brands to produce conferences, galas, and large-scale experiences across Texas and the U.S.">
+  <meta property="og:image" content="https://www.unicocommunications.com/images/og-cover.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Unico Communications | Event Production & Experiential Marketing">
+  <meta name="twitter:description" content="Conference production, media relations, F&B, lodging coordination, and more.">
+  <meta name="twitter:image" content="https://www.unicocommunications.com/images/og-cover.jpg">
+
+  <!-- Robots -->
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <!-- Optional: language/geo targeting -->
+  <meta http-equiv="content-language" content="en-us">
 </head>
 <body>
 <!-- 🔹 NAVBAR -->
@@ -18,7 +46,7 @@
   <nav>
     <div class="nav-item">
       <a href="/about.html">About</a>
-      <div class="dropdown">
+      <div class="dropdown" role="menu" aria-label="About menu">
         <div class="dropdown-content">
           <div class="dropdown-text">
             <h4><a href="/about.html">Our Story<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
@@ -34,7 +62,7 @@
     </div>
     <div class="nav-item">
      <a class="link-with-arrow">Impact</a>
-      <div class="dropdown">
+      <div class="dropdown"  role="menu" aria-label="Impact menu">
        <div class="dropdown-text">
           <h4><a href="/impact.html">Clients<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
             
@@ -46,7 +74,7 @@
     </div>
     <div class="nav-item">
       <a href="#friends" class="link-with-arrow">Let's Be Friends</a>
-      <div class="dropdown">
+      <div class="dropdown"  role="menu" aria-label="Friends menu">
         <div class="dropdown-content">
           <div class="dropdown-text">
             <h4><a href="/contact.html">Tell Us More<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
@@ -95,10 +123,12 @@
 </div>
 </header>
 <style>
-a {
-  all: unset;
+/* Keep native link semantics; style via classes */
+a { color: inherit; text-decoration: none; }
+a:focus { outline: 2px solid #fff; outline-offset: 2px; }
 
-}
+/* Only remove default styles where you really need to */
+.link-reset { all: unset; cursor: pointer; }
 /* Base link style */
 .link-with-arrow {
   position: relative;
