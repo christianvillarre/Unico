@@ -1136,7 +1136,7 @@ body {
     display: flex;
     align-items: center;
     /* ensure the section isn’t “shortened” by earlier rules */
-    min-height: calc(100dvh - var(--nav-h));
+    min-height: calc(100dvh - var(--nav-h)) !important;
     padding-top: var(--nav-h); /* so content isn't hidden under the fixed navbar */
   }
 }
