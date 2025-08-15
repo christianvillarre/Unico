@@ -515,6 +515,7 @@ html, body {
 
 .carousel-header h2 {
   font-size: clamp(1.3rem, 1.5vw, 1.5rem);
+  font-weight: 800;
 }
 
 .carousel-header button  {
@@ -758,6 +759,7 @@ html, body {
 .instagram-section h2 {
   font-size: 4rem;
   color:#6E9D72;
+  font-weight: 800;
 }
 @media (max-width: 768px) {
   /* Let the root behave normally so the navbar JS works */
@@ -876,7 +878,6 @@ html, body {
 .hero-section {
   position: relative;
   width: 100%;
-  
   overflow: hidden;
   color: white;
   padding-top: 100px; /* space for navbar */
@@ -886,7 +887,7 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem 0.2rem; /* reduce bottom padding */
+  padding: 0 1rem 0.2rem; /* reduce bottom padding */
   margin-bottom: -1rem;       /* just in case */
   margin-top: -1rem;
   color: #53709F;
@@ -1136,7 +1137,7 @@ body {
     display: flex;
     align-items: center;
     /* ensure the section isn’t “shortened” by earlier rules */
-    min-height: calc(100dvh - var(--nav-h)) !important;
+    height: auto !important;
     padding-top: var(--nav-h); /* so content isn't hidden under the fixed navbar */
   }
 }
@@ -1170,5 +1171,3 @@ body {
     }
 
 }
-
-
