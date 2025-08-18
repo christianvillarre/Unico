@@ -769,7 +769,6 @@ html, body {
   body { overflow-x: clip; /* fallback to hidden if needed */ touch-action: pan-y; }
 
   /* Clamp the usual overflow culprits */
-  .hero-section,
   .carousel-wrapper,
   .carousel-wrapper2,
   .carousel-wrapper3,
@@ -788,7 +787,6 @@ html, body {
 @supports not (overflow: clip) {
   @media (max-width: 768px) {
     body,
-    .hero-section,
     .carousel-wrapper,
     .carousel-wrapper2,
     .carousel-wrapper3,
@@ -875,14 +873,7 @@ html, body {
  :root {
   --carousel-height: 28vh; /* change this to grow/shrink everything */
 }
-.hero-section {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  color: white;
-  padding-top: 100px; /* space for navbar */
-  background-color: #000;
-}
+
 .carousel-header {
   display: flex;
   justify-content: space-between;
@@ -1030,6 +1021,9 @@ html, body {
   color:#6E9D72;
   margin-left: -1rem;
 }
+.instagram-section {
+  margin-bottom: 4rem;
+}
 }
 
 /* ============================
@@ -1053,7 +1047,6 @@ body {
 .dropdown--mega { width: 100dvw; }
 
 /* Clip likely offenders (do NOT include navbar) */
-.hero-section,
 .carousel-wrapper,
 .carousel-wrapper2,
 .carousel-wrapper3,
@@ -1116,7 +1109,6 @@ body {
 :root { --nav-h: 90px; } /* your fixed header height */
 
 /* target your first section(s) */
-.hero-section,
 .section-ourstory {
   /* fallback for older browsers */
   min-height: calc(100vh - var(--nav-h));
@@ -1124,7 +1116,6 @@ body {
 
 /* modern dynamic viewport (prevents iOS/Chrome UI-bar gaps) */
 @supports (height: 100dvh) {
-  .hero-section,
   .section-ourstory {
     min-height: calc(100dvh - var(--nav-h)) !important;
   }
@@ -1132,7 +1123,6 @@ body {
 
 /* optional: keep content vertically centered on small screens */
 @media (max-width: 768px) {
-  .hero-section,
   .section-ourstory {
     display: flex;
     align-items: center;
@@ -1144,7 +1134,7 @@ body {
 
 /* phone-in-landscape (short heights): still fill screen minus navbar */
 @media (orientation: landscape) and (max-height: 500px) {
-  .hero-section,
+
   .section-ourstory {
     min-height: calc(100dvh - var(--nav-h)) !important;
   }
@@ -1170,4 +1160,20 @@ body {
       cursor: pointer;
     }
 
+}
+
+/* Modern browsers: use dynamic viewport height */
+@supports (height: 100dvh) {
+  .hero-section {
+    min-height: 100dvh;     /* this respects the visible viewport when URL bar shows/hides */
+  }
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 100px;  /* keep content clear of your fixed navbar */
+    align-items: center;
+    text-align: center;
+  }
 }

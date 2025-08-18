@@ -1250,28 +1250,7 @@ input:focus, textarea:focus {
   }, 3000);
 </script>
 
-<script>
-  const track = document.querySelector(".carousel-track");
-  const nextBtn = document.querySelector(".carousel-btn.next");
-  const prevBtn = document.querySelector(".carousel-btn.prev");
-  const cardWidth = 25 * 16 + 56; // 25rem + gap (converted to px)
-  let currentPosition = 0;
 
-  nextBtn.addEventListener("click", () => {
-    const maxScroll = track.scrollWidth - track.parentElement.offsetWidth;
-    if (Math.abs(currentPosition) < maxScroll) {
-      currentPosition -= cardWidth;
-      gsap.to(track, { x: currentPosition, duration: 0.5, ease: "power2.out" });
-    }
-  });
-
-  prevBtn.addEventListener("click", () => {
-    if (currentPosition < 0) {
-      currentPosition += cardWidth;
-      gsap.to(track, { x: currentPosition, duration: 0.5, ease: "power2.out" });
-    }
-  });
-</script>
 
 <!-- ✅ Custom Scripts (after Locomotive setup) -->
 <script>
