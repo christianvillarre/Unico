@@ -1177,3 +1177,38 @@ body {
     text-align: center;
   }
 }
+
+
+/* Safe-area helpers (with fallback for older iOS) */
+:root {
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Make the hero content clear the bottom bar */
+.hero-section {
+  /* You already have min-height: 100vh + @supports 100dvh; keep those */
+  padding-bottom: max(16px, var(--safe-bottom));
+}
+
+/* Anything you pin near the bottom should respect the safe-area, too */
+.nav-controls,
+.hero-social-icons {
+  /* If you already set bottom elsewhere, this overrides it safely */
+  bottom: calc(var(--safe-bottom) + 1rem) !important;
+}
+
+/* Optional: when the URL bar is fully expanded (short viewports),
+   keep the hero still “full” of visible space */
+@media (orientation: portrait) and (max-width: 768px) {
+  @supports (height: 100svh) {
+    .hero-section {
+      min-height: 100svh; /* smallest visible height */
+    }
+  }
+  /* Or prefer 100dvh if you like how it behaves on your device */
+  @supports (height: 100dvh) {
+    .hero-section {
+      min-height: 100dvh;
+    }
+  }
+}
