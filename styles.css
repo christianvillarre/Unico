@@ -317,19 +317,15 @@ html, body {
 }
 
     /* 🔹 HERO SECTION */
-.hero-section {
+ .hero-section {
   position: relative;
   width: 100%;
-  min-height: 100vh;                 /* fallback for old browsers */
-  background-color: #000;
-  color: white;
+  height: 100vh;
   overflow: hidden;
-
-  /* your layout */
-  padding-top: 100px;                /* fixed navbar clearance */
-  padding-bottom: max(16px, var(--safe-bottom)); /* lift content above iOS bottom bar */
+  color: white;
+  padding-top: 100px; /* space for navbar */
+  background-color: #000;
 }
-
 
     .bg-layer {
       position: absolute;
@@ -874,6 +870,9 @@ html, body {
 
 
 
+ :root {
+  --carousel-height: 28vh; /* change this to grow/shrink everything */
+}
 
 .carousel-header {
   display: flex;
@@ -1144,7 +1143,7 @@ body {
 
 @media (max-width: 768px) {
   .hero-section .page-container {
-    
+    bottom: 6rem;             /* was 8rem */
     left: 2rem;              /* optional: pull in a bit */
     right: 1.5rem;             /* optional if you want wrapping space */
   }
@@ -1163,29 +1162,18 @@ body {
 
 }
 
-
-/* Safe-area var (once in file) */
-:root { --safe-bottom: env(safe-area-inset-bottom, 0px); }
-
-/* Modern viewport units (keep only these, once) */
-@supports (height: 100svh) {
-  .hero-section { min-height: 100svh; }
-}
+/* Modern browsers: use dynamic viewport height */
 @supports (height: 100dvh) {
-  .hero-section { min-height: 100dvh; }
-}
-@supports (height: -webkit-fill-available) {
-  html, body { height: -webkit-fill-available; }
-  .hero-section { min-height: -webkit-fill-available; }
+  .hero-section {
+    min-height: 100dvh;     /* this respects the visible viewport when URL bar shows/hides */
+  }
 }
 
-/* Bottom-anchored elements respect safe-area */
-.nav-controls,
-.hero-social-icons {
-  bottom: calc(var(--safe-bottom) + 1rem) !important;
-}
-
-/* Bottom-pinned text container (use this, remove older 6rem rule) */
-.hero-section .page-container {
-  bottom: calc(8rem + var(--safe-bottom));
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 100px;  /* keep content clear of your fixed navbar */
+    align-items: center;
+    text-align: center;
+  }
 }
