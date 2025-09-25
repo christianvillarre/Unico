@@ -401,6 +401,7 @@ a {
 /* Keep copyright hidden on mobile if you're using the mobile footer */
 .unico-copyright { 
   display: none !important; 
+  
 }
 
 /* Optional: tighten first-row middle column if you need a bit more room overall */
@@ -420,6 +421,7 @@ a {
 .footer-container {
 
   margin-top: 5rem;
+  margin-bottom: 5rem;
 }
   
 }
