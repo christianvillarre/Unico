@@ -432,3 +432,43 @@ a {
   .second-section { display: flex; flex-direction: column; }
   .second-section .row { display: flex; }
 }
+
+.footer-bottom-mobile {
+  margin-top: 1rem;
+}
+
+.footer-bottom-mobile p {
+  font-size: 1rem;
+  color: white;
+  font-weight: 100;
+  margin: 0;
+}
+
+.footer-separator {
+  margin: 0 0.35rem;
+  opacity: 0.7;
+}
+
+.mcv-credit a {
+  color: #CCE5CC;
+  text-decoration: none;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.mcv-credit a:hover {
+  color: #ffffff;
+}
+
+/* Optional: if you want them stacked on very small screens */
+@media (max-width: 480px) {
+  .footer-bottom-mobile p {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .footer-separator {
+    display: none;
+  }
+}
