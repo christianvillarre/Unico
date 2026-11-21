@@ -1,55 +1,73 @@
-const carouselAnimations = {};
-
-function autoScrollCarousel(selector, baseSpeed = 20, reverse = false) {
-  const track = document.querySelector(selector);
-  const items = Array.from(track.children);
-
-  // Clone once for looping
-  if (!track.dataset.cloned) {
-    items.forEach(item => {
-      const clone = item.cloneNode(true);
-      track.appendChild(clone);
-    });
-    track.dataset.cloned = "true"; // flag to avoid double cloning
+function startCarousel(track, duration, reverse) {
+  const originals = Array.from(track.children);
+  if (!originals.length) return;
+  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  if (!window.gsap || motion.matches) {
+    track.style.overflowX = 'auto';
+    return;
   }
 
-  // Wait until next paint to get correct width
-  requestAnimationFrame(() => {
-    const totalWidth = track.scrollWidth / 2; // half, because it's double after clone
+  for (const item of originals) {
+    const copy = item.cloneNode(true);
+    copy.setAttribute('aria-hidden', 'true');
+    if (copy.matches('a')) copy.tabIndex = -1;
+    track.append(copy);
+  }
 
-    if (totalWidth === 0) {
-      console.warn(`Total width is 0 for ${selector}`);
-      return;
-    }
-
-    // Set initial x for reverse
-    if (reverse) {
-      gsap.set(track, { x: -totalWidth });
-    }
-
-    const tween = gsap.to(track, {
-      x: `${reverse ? "+=" : "-="}${totalWidth}`,
-      duration: baseSpeed,
-      ease: "none",
-      repeat: -1,
-      modifiers: {
-        x: gsap.utils.unitize(x => parseFloat(x) % totalWidth)
-      }
+  const firstCopy = track.children[originals.length];
+  let tween;
+  let distance;
+  function measure() {
+    const width = firstCopy.offsetLeft - originals[0].offsetLeft;
+    if (width <= 0 || width === distance) return;
+    distance = width;
+    const progress = tween?.progress() || 0;
+    tween?.kill();
+    tween = gsap.fromTo(track, { x: reverse ? -width : 0 }, {
+      x: reverse ? 0 : -width, duration, ease: 'none', repeat: -1
     });
+    tween.progress(progress);
+  }
 
-    carouselAnimations[selector] = tween;
-
-    // Hover speed control
-    const visibleItems = track.querySelectorAll('.carousel-item');
-    visibleItems.forEach(item => {
-      item.addEventListener('mouseenter', () => tween.timeScale(0.5));
-      item.addEventListener('mouseleave', () => tween.timeScale(1));
-    });
+  measure();
+  new ResizeObserver(measure).observe(track);
+  window.addEventListener('resize', measure);
+  track.addEventListener('mouseenter', () => tween?.timeScale(0.5));
+  track.addEventListener('mouseleave', () => tween?.timeScale(1));
+  track.addEventListener('focusin', () => tween?.pause());
+  track.addEventListener('focusout', event => {
+    if (!track.contains(event.relatedTarget)) tween?.resume();
   });
 }
 
-window.addEventListener('load', () => {
-  autoScrollCarousel('.track-1', 80);        // forward ✅ now fixed
-  autoScrollCarousel('.track-2', 50, true);  // reverse ✅ smooth right-to-left
-  autoScrollCarousel('.track-3', 40);        // forward ✅
-});
+function startCarousels() {
+  for (const [i, duration] of [80, 50, 40].entries()) {
+    const track = document.querySelector('.track-' + (i + 1));
+    if (track) startCarousel(track, duration, i === 1);
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    for (const {target: video, isIntersecting} of entries) {
+      if (!isIntersecting) {
+        video.pause();
+        continue;
+      }
+      const source = video.querySelector('source[data-src]');
+      if (source) {
+        source.src = source.dataset.src;
+        source.removeAttribute('data-src');
+        video.load();
+      }
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        video.play().catch(() => {});
+      }
+    }
+  }, {rootMargin: '150px'});
+  document.querySelectorAll('video source[data-src]').forEach(source => observer.observe(source.parentElement));
+}
+
+if (document.readyState === 'loading' && !document.querySelector('.carousel-track')) {
+  document.addEventListener('DOMContentLoaded', startCarousels, {once: true});
+} else {
+  startCarousels();
+}

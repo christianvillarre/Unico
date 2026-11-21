@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Let’s Be Friends | Unico Communications – Connect With Us</title>
   <meta name="description" content="Let’s be friends! Connect with Unico Communications for updates, event highlights, collaborations, and ways to stay involved." />
-  <link rel="canonical" href="https://www.unicocommunications.com/" />
+  <link rel="canonical" href="https://unicocommunications.com/contact.html" />
 
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
@@ -283,12 +283,23 @@
   })();
 </script>
 <!-- End Matomo Code -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.18/dist/lenis.css">
+  <script defer src="https://unpkg.com/lenis@1.3.18/dist/lenis.min.js"></script>
+  <script defer src="smooth-scroll.js"></script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "zh0t6uc7ev");
+  </script>
 </head>
 <body>
 <!-- 🔹 NAVBAR -->
 <header class="navbar">
   <div class="logo">
-    <a href="/index.html"><img class="logo1" src="images/logo1.png" alt="Logo" /></a>
+    <a href="/"><img class="logo1" src="images/logo1.png" alt="Unico Communications home" /></a>
   </div>
   <nav>
     <div class="nav-item">
@@ -308,7 +319,7 @@
       </div>
     </div>
     <div class="nav-item">
-     <a class="link-with-arrow">Impact</a>
+     <a class="link-with-arrow" href="/impact.html">Impact</a>
       <div class="dropdown">
        <div class="dropdown-text">
           <h4><a href="/impact.html">Clients<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
@@ -320,13 +331,13 @@
       </div>
     </div>
     <div class="nav-item">
-      <a href="#friends" class="link-with-arrow">Let's Be Friends</a>
+      <a href="/contact.html" class="link-with-arrow">Let's Be Friends</a>
       <div class="dropdown">
         <div class="dropdown-content">
           <div class="dropdown-text">
             <h4><a href="/contact.html">Tell Us More<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
             
-              <h4><a href="/index.html#social">Get Social<img class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
+              <h4><a href="/#social">Get Social<img class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
             
           </div>
         </div>
@@ -338,7 +349,7 @@
 </button>
 
 <!-- Full-screen mobile menu -->
-<div class="mobile-menu" aria-hidden="true">
+<div class="mobile-menu" data-lenis-prevent aria-hidden="true">
   <nav class="mobile-nav">
     <div class="mobile-item">
       <button class="mobile-parent" type="button" aria-expanded="false">About</button>
@@ -362,7 +373,7 @@
       <button class="mobile-parent" type="button" aria-expanded="false">Let’s Be Friends</button>
       <div class="mobile-sub">
         <a href="/contact.html">Tell Us More</a>
-        <a href="/index.html#social">Get Social</a>
+        <a href="/#social">Get Social</a>
       </div>
     </div>
   </nav>
@@ -943,10 +954,22 @@ input:focus, textarea:focus {
           <h2>LOCATION</h2>
         </div>
         <div class="san-antonio">
-          <img src="images/Location 01.png" class="fade-image active">
-          <img src="images/Location 02.png" class="fade-image">
-          <img src="images/Location 03.png" class="fade-image">
-          <img src="images/Location 04.png" class="fade-image">
+          <figure class="fade-image active" aria-hidden="false">
+            <img src="images/Location 01.png" alt="The city skyline at sunset">
+            <figcaption>San Antonio</figcaption>
+          </figure>
+          <figure class="fade-image" aria-hidden="true">
+            <img src="images/Location 02.png" alt="The office exterior and covered entrance">
+            <figcaption>Unico HQ</figcaption>
+          </figure>
+          <figure class="fade-image" aria-hidden="true">
+            <img src="images/Location 03.png" alt="A workspace with a conference table and colorful wall art">
+            <figcaption>Unico HQ</figcaption>
+          </figure>
+          <figure class="fade-image" aria-hidden="true">
+            <img src="images/Location 04.png" alt="Office seating beside a white wall">
+            <figcaption>Unico HQ</figcaption>
+          </figure>
         </div>
         <div class="map-container">
             <iframe
@@ -1008,14 +1031,27 @@ input:focus, textarea:focus {
 
 .san-antonio .fade-image {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  inset: 0;
+  margin: 0;
   opacity: 0;
   transition: opacity 1s ease-in-out;
   z-index: 1;
+}
+.san-antonio .fade-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.san-antonio figcaption {
+  position: absolute;
+  left: clamp(.75rem, 2vw, 2rem);
+  bottom: clamp(.75rem, 2vw, 2rem);
+  padding: .5em .9em;
+  border-radius: .35rem;
+  background: #263c58;
+  color: white;
+  font: 700 clamp(1rem, 1.5vw, 1.4rem)/1.2 Montserrat, sans-serif;
 }
 
 .san-antonio .fade-image.active {
@@ -1069,8 +1105,10 @@ input:focus, textarea:focus {
 
   setInterval(() => {
     images2[current].classList.remove('active');
+    images2[current].setAttribute('aria-hidden', 'true');
     current = (current + 1) % images2.length;
     images2[current].classList.add('active');
+    images2[current].setAttribute('aria-hidden', 'false');
   }, 8000); // 8000ms = 8 seconds
 </script>
 
@@ -1099,9 +1137,9 @@ input:focus, textarea:focus {
           <div class="col small-col">
             <div class="bottom-col">
               <h6>Socials</h6>
-              <button class="footer-dropbtn"><a href="https://www.instagram.com/unicocommunications/">Instagram</a></button>
-              <button class="footer-dropbtn"><a href="https://www.facebook.com/unicocomm/">Facebook</a></button>
-              <button class="footer-dropbtn"><a href="https://www.linkedin.com/company/unicocommunications-inc">LinkedIn</a></button>
+              <a class="footer-dropbtn" href="https://www.instagram.com/unicocommunications/">Instagram</a>
+              <a class="footer-dropbtn" href="https://www.facebook.com/unicocomm/">Facebook</a>
+              <a class="footer-dropbtn" href="https://www.linkedin.com/company/unicocommunications-inc">LinkedIn</a>
             </div>
           </div>
 
@@ -1109,18 +1147,16 @@ input:focus, textarea:focus {
           <div class="col small-col">
             <div class="bottom-col">
               <h6>Unico HQ</h6>
-              <button class="footer-dropbtn">
+              <address class="footer-dropbtn">
                 2222 San Pedro Ave., Ste 2<br>San Antonio, TX 78212<br>(210) 670-9077
-              </button>
+              </address>
             </div>
           </div>
 
            <div class="col small-col tell-us-more-col">
             <div class="bottom-col">
               <h6>TELL US MORE</h6>
-              <button class="footer-dropbtn">
-                <a href="/contact.html"><img class="mail-icon" src="images/Mail Icon.png"></a>
-              </button>
+              <a class="footer-dropbtn" href="/contact.html"><img class="mail-icon" src="images/Mail Icon.png" alt="Contact Unico Communications"></a>
             </div>
           </div>
         </div>
@@ -1131,10 +1167,10 @@ input:focus, textarea:focus {
           <div class="col small-col">
             <div class="bottom-col">
               <h6>Sitemap</h6>
-              <button class="footer-dropbtn"><a href="/about.html">About</a></button>
-              <button class="footer-dropbtn"><a href="/impact.html">Clients</a></button>
-              <button class="footer-dropbtn"><a href="/impact.html#services">Services</a></button>
-              <button class="footer-dropbtn"><a href="/featured.html">Featured Projects</a></button>
+              <a class="footer-dropbtn" href="/about.html">About</a>
+              <a class="footer-dropbtn" href="/impact.html">Clients</a>
+              <a class="footer-dropbtn" href="/impact.html#services">Services</a>
+              <a class="footer-dropbtn" href="/featured.html">Featured Projects</a>
             </div>
           </div>
 
@@ -1307,7 +1343,7 @@ input:focus, textarea:focus {
   function maybeRemoveHovered() {
     const isDropdownActive = document.querySelector('.nav-item.active');
     const isNavHovered = nav.matches(':hover');
-    if (window.locoScroll.scroll.instance.scroll.y <= 0 && !isDropdownActive && !isNavHovered) {
+    if (window.scrollY <= 0 && !isDropdownActive && !isNavHovered) {
       nav.classList.remove('hovered');
     }
   }
@@ -1425,14 +1461,7 @@ input:focus, textarea:focus {
     lastScrollY = currentScroll;
   }
 
-  if (window.locoScroll) {
-    window.locoScroll.on('scroll', (args) => {
-      const scrollY = args.scroll.y;
-      handleScroll(scrollY);
-    });
-  } else {
-    window.addEventListener('scroll', () => handleScroll(window.scrollY));
-  }
+  window.addEventListener('scroll', () => handleScroll(window.scrollY));
 
     // ===== Proximity reveal/hide (add below your current code) =====
 const PROXIMITY_Y = 80;        // px from top to trigger reveal

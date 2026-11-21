@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Featured | Unico Communications – Signature Events & Projects</title>
   <meta name="description" content="Explore featured events and signature projects from Unico Communications, showcasing high-impact production, logistics, media support, and client success." />
-  <link rel="canonical" href="https://www.unicocommunications.com/" />
+  <link rel="canonical" href="https://unicocommunications.com/featured.html" />
 
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
@@ -168,12 +168,23 @@
   })();
 </script>
 <!-- End Matomo Code -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.18/dist/lenis.css">
+  <script defer src="https://unpkg.com/lenis@1.3.18/dist/lenis.min.js"></script>
+  <script defer src="smooth-scroll.js"></script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "zh0t6uc7ev");
+  </script>
 </head>
 <body>
 <!-- 🔹 NAVBAR -->
 <header class="navbar">
   <div class="logo">
-    <a href="/index.html"><img class="logo1" src="images/logo1.png" alt="Logo" /></a>
+    <a href="/"><img class="logo1" src="images/logo1.png" alt="Unico Communications home" /></a>
   </div>
   <nav>
     <div class="nav-item">
@@ -193,7 +204,7 @@
       </div>
     </div>
     <div class="nav-item">
-     <a class="link-with-arrow">Impact</a>
+     <a class="link-with-arrow" href="/impact.html">Impact</a>
       <div class="dropdown">
        <div class="dropdown-text">
           <h4><a href="/impact.html">Clients<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
@@ -205,13 +216,13 @@
       </div>
     </div>
     <div class="nav-item">
-      <a href="#friends" class="link-with-arrow">Let's Be Friends</a>
+      <a href="/contact.html" class="link-with-arrow">Let's Be Friends</a>
       <div class="dropdown">
         <div class="dropdown-content">
           <div class="dropdown-text">
             <h4><a href="/contact.html">Tell Us More<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
             
-              <h4><a href="/index.html#social">Get Social<img class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
+              <h4><a href="/#social">Get Social<img class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
             
           </div>
         </div>
@@ -224,7 +235,7 @@
 </button>
 
 <!-- Full-screen mobile menu -->
-<div class="mobile-menu" aria-hidden="true">
+<div class="mobile-menu" data-lenis-prevent aria-hidden="true">
   <nav class="mobile-nav">
     <div class="mobile-item">
       <button class="mobile-parent" type="button" aria-expanded="false">About</button>
@@ -248,7 +259,7 @@
       <button class="mobile-parent" type="button" aria-expanded="false">Let’s Be Friends</button>
       <div class="mobile-sub">
         <a href="/contact.html">Tell Us More</a>
-        <a href="/index.html#social">Get Social</a>
+        <a href="/#social">Get Social</a>
       </div>
     </div>
   </nav>
@@ -658,17 +669,20 @@ a {
 
 <section class="section-featured">
   <div class="featured-inner">
-    <h1 class="featured-title">FEATURED PROJECTS</h1>
+    <header class="featured-heading">
+      <h1 class="featured-title">FEATURED PROJECTS</h1>
+      <p class="featured-intro">Our Featured Projects showcase Unico Communications' expertise in producing high-impact events that blend creativity, culture, and flawless execution. From large-scale conferences and immersive brand activations to red carpet and movie screenings, each project reflects our commitment to delivering unforgettable experiences that engage and inspire.</p>
+    </header>
 
-    <div class="featured-card-row">
-<a href="casestudy2.html" class="card-link">
+    <div class="featured-card-row" role="region" aria-label="Featured project cards">
+<a href="casestudy2.html" class="card-link" aria-label="Say a Little Prayer case study">
             <div class="card">
         <div class="hover-overlay"></div>
-        <div class="card-center-text">See More</div>
-<img  src="images/FP_PIC_1.jpg" alt="Featured Project" />
+        <div class="card-center-text" aria-hidden="true">See More</div>
+<img  src="images/FP_PIC_1.jpg" alt="" />
   
   <div class="featured-overlay">
-    <h3 class="featured-title-text">Say A Little Prayer</h3>
+    <h2 class="featured-title-text">Say A Little Prayer</h2>
 
     <div class="featured-p">Produced a red-carpet screening event that honored Latino talent and elevated community pride.
     </div>
@@ -676,18 +690,18 @@ a {
   
   <div class="card-popup">
   
-    <img src="images/UNICO_LOGO_MARK_bg.png" alt="Featured Project" />
+    <img src="images/UNICO_LOGO_MARK_bg.png" alt="" />
   </div>
 </div></a>
 
-<a href="casestudy.html" class="card-link">
+<a href="casestudy.html" class="card-link" aria-label="U.S. Spain Council case study">
       <div class="card">
         <div class="hover-overlay"></div>
-        <div class="card-center-text">See More</div>
-  <img src="images/US Spain Council.JPG" alt="Featured Project" />
+        <div class="card-center-text" aria-hidden="true">See More</div>
+  <img src="images/US Spain Council.JPG" alt="" />
   
   <div class="featured-overlay">
-    <h3 class="featured-title-text">U.S. Spain Council</h3>
+    <h2 class="featured-title-text">U.S. Spain Council</h2>
   
     <div class="featured-p">Led logistics on a high-level international forum that blended cultural storytelling with seamless production for global leaders and dignitaries.
     </div>
@@ -695,17 +709,16 @@ a {
   
   <div class="card-popup">
   
-    <img src="images/UNICO_LOGO_MARK_bg.png" alt="Featured Project" />
+    <img src="images/UNICO_LOGO_MARK_bg.png" alt="" />
   </div>
 </div></a>
 
 <div class="card">
   <div class="hover-overlay"></div>
-  <div class="card-center-text">See More</div>
-  <img src="images/FP_PIC_3.jpg" alt="Featured Project" />
+  <img src="images/FP_PIC_3.jpg" alt="" />
   
   <div class="featured-overlay">
-    <h3 class="featured-title-text">SA300</h3>
+    <h2 class="featured-title-text">SA300</h2>
    
     <div class="featured-p">Delivered the city’s largest-ever New Year’s Eve celebration and signature gala during San Antonio’s historic 300th anniversary year.
 
@@ -715,17 +728,16 @@ a {
   
   <div class="card-popup">
     
-    <img src="images/UNICO_LOGO_MARK_bg.png" alt="Featured Project" />
+    <img src="images/UNICO_LOGO_MARK_bg.png" alt="" />
   </div>
 </div>
 
 <div class="card">
   <div class="hover-overlay"></div>
-  <div class="card-center-text">See More</div>
-  <img src="images/FP_PIC_4.jpg" alt="Featured Project" />
+  <img src="images/FP_PIC_4.jpg" alt="" />
   
   <div class="featured-overlay">
-    <h3 class="featured-title-text">UnidosUS</h3>
+    <h2 class="featured-title-text">UnidosUS</h2>
   
     <div class="featured-p">Supported this flagship annual conference as production partners for over two decades with expert stage management and execution of its high-profile general and plenary sessions at one of the nation’s premier advocacy events.
     </div>
@@ -733,17 +745,16 @@ a {
   
   <div class="card-popup">
     
-    <img src="images/UNICO_LOGO_MARK_bg.png" alt="Featured Project" />
+    <img src="images/UNICO_LOGO_MARK_bg.png" alt="" />
   </div>
 </div>
 
 <div class="card">
   <div class="hover-overlay"></div>
-  <div class="card-center-text">See More</div>
-  <img src="images/FP_PIC_5.jpg" alt="Featured Project" />
+  <img src="images/FP_PIC_5.jpg" alt="" />
   
   <div class="featured-overlay">
-    <h3 class="featured-title-text">USHCC</h3>
+    <h2 class="featured-title-text">USHCC</h2>
   
     <div class="featured-p">Managed one of the country’s most influential Hispanic business events with full-scale production, strategic coordination, and creative support from concept to showtime.
     </div>
@@ -751,7 +762,7 @@ a {
   
   <div class="card-popup">
     
-    <img src="images/UNICO_LOGO_MARK_bg.png" alt="Featured Project" />
+    <img src="images/UNICO_LOGO_MARK_bg.png" alt="" />
   </div>
 </div>
     </div>
@@ -759,335 +770,135 @@ a {
 </section>
 
 
-<section class="section-featured">
-  <div class="text-container">
-    <h2 class="crazy-text">Our Featured Projects showcase Unico Communications' expertise in producing high-impact events that blend creativity, culture, and flawless execution. From large-scale conferences and immersive brand activations to red carpet and movie screenings, each project reflects our commitment to delivering unforgettable experiences that engage and inspire.</h2>
-  </div>
-</section>
-
 <style>
-  .text-container { 
-    margin: 0 4rem; 
-    overflow: visible;              /* ⬅️ allow animated words to spill */
-  }
-  .text-container h2.crazy-text {
-    font-size: clamp(3rem, 4vw, 4.5rem);
-    line-height: 1.3;               /* ⬅️ give the words breathing room */
-    overflow: visible;              /* ⬅️ prevent clipping on the h2 itself */
-  }
-  .crazy-word {
-    display: inline-block;
-    padding: 0 .2em;               /* ⬅️ slight padding to avoid edge clipping */
-    will-change: transform, opacity;
-    transform-origin: 50% 60%;
-    color: white;
-  }
-</style>
-<style>
-  .card-center-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.section-featured {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #71c7d4;
   color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 600;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 9999;
-  transition: opacity 0.4s ease;
+  display: grid;
+  align-content: center;
+  padding: max(6.25rem, 7vh) max(1rem, 3.5vw) max(2rem, 4vh);
 }
-  .hover-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 1; /* Must sit behind text but above image */
-  transition: opacity 0.4s ease;
-}
- .section-featured {
-  height: auto;
-  background: #71C7D4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
 .featured-inner {
-  width: 100%;
-  margin: 3rem 4rem 0rem 4rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  width: min(100%, 180svh);
+  min-width: 0;
+  margin-inline: auto;
+  container-type: inline-size;
 }
-
-.featured-title {
-  font-size: clamp(4rem, 7vw, 8rem);
-  font-weight: 800;
+.featured-heading {
   text-align: center;
-  margin-bottom: 0rem;
+  margin-bottom: max(1rem, 2.5vh);
 }
-
-/* Image container like card */
-.featured-image-container {
-  position: relative;
-  overflow: hidden;
-  border-radius: 1rem;
-  cursor: pointer;
-  max-height: 80vh; /* ✅ reduce just this one */
-  flex: 1;
-  transition: transform 0.4s ease;
-  transform: scale(1);
+.featured-title {
+  margin: 0;
+  font-size: max(2.75rem, 7.7cqw);
+  line-height: 1;
+  font-weight: 800;
+  text-wrap: balance;
 }
-
-.card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 1rem;
-  cursor: pointer;
-  height: 60vh;
-  flex: 1;
-  transition: transform 0.4s ease;
-  transform: scale(1);
+.featured-intro {
+  max-width: 82ch;
+  margin: max(.6rem, .8cqw) auto 0;
+  font-size: max(.9375rem, 1.32cqw);
+  line-height: 1.45;
+  color: #fff;
 }
-.featured-image-container img {
-  width: 100%;
-  height: auto; /* 🔁 don't stretch the image */
-  max-height: 100%;
-  object-fit: cover;
-  border-radius: 1rem;
-  transition: transform 0.4s ease;
-  display: block;
-}
-
-.card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 1rem;
-  transition: transform 0.4s ease;
-  display: block;
-}
-.card:hover img,
-.featured-image-container:hover img {
-  transform: scale(1.05);
-}
-.card:hover{
-   transition: transform 0.4s ease;
-   transform: scale(1.1) !important;
-}
-.featured-image-container:hover {
- transition: transform 0.4s ease;
-  transform: scale(1.2);
-}
-
-/* Shared popup style */
-.card-popup {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.2);
-  opacity: 0;
-  clip-path: circle(0% at 50% 50%);
-  pointer-events: none;
-  z-index: 1;
-  transition: none;
-}
-
-.card-popup img {
-  max-height: 80vh;
-  display: block;
-   z-index: 1;
-}
-
-/* Overlay */
-.featured-overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 1rem;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 80%);
-  color: white;
-  z-index: 2;
-  border-radius: 1rem;
-  
-  /* 🔹 Start hidden */
-  transform: none;
-  opacity: 1;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  pointer-events: none;
-}
-.featured-p {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.4s ease, max-height 0.4s ease;
-  font-size: 0.9rem;
-}
-
-.card:hover .featured-overlay,
-.featured-image-container:hover .featured-overlay {
-  transform: translateY(-1rem); /* pushes it up */
-}
-
-.card:hover .featured-p,
-.featured-image-container:hover .featured-p {
-  opacity: 1;
-  max-height: 150px; /* or something tall enough for content */
-}
-
-.card:hover .featured-overlay,
-.featured-image-container:hover .featured-overlay {
-  transform: translateY(0%);
-  opacity: 1;
-  pointer-events: auto;
-}
-.featured-title-text {
-  font-size: clamp(1.5rem, 3vw, 1.2rem);
-  font-weight: bold;
-  margin: 0 0 0.5rem 0rem;
-  z-index: 9999;
-}
-
-.featured-tags {
-  display: flex;
-  gap: 0.5rem;
-  margin: 0 0 1rem 0.5rem;
-}
-
-.tag {
-  font-size: clamp(0.65rem, 1.2vw, 0.9rem);
-  background-color: white;
-  color: #333;
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-.featured-image-container .featured-title-text {
-  font-size: clamp(1.5rem, 4vw, 4rem);
-  font-weight: bold;
-  margin: 0 0 0.5rem 1rem;
-}
-
-.featured-image-container .featured-tags {
-  display: flex;
-  gap: 0.5rem;
-  margin: 0 0 1.5rem 1rem;
-}
-
-.featured-image-container .tag {
-  font-size: clamp(0.65rem, 4vw, 1.2rem);
-  background-color: white;
-  color: #333;
-  padding: 0.3rem 1rem;
-  border-radius: 999px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-.featured-image-container .featured-p {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.4s ease, max-height 0.4s ease;
-  font-size: 1.4rem;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-}
-
-/* Row */
 .featured-card-row {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 cards in one row */
-  gap: 2rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: max(.75rem, 1.6cqw);
+}
+.card {
+  position: relative;
+  isolation: isolate;
   width: 100%;
-  margin-bottom: 6rem;
+  aspect-ratio: 3 / 5;
+  container-type: inline-size;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #284753;
+  transition: transform .35s ease;
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .featured-card-row {
-    flex-direction: column;
-  }
-  .card {
-    height: 150px;
-  }
-  .card-popup {
-    display: none;
-  }
-  .featured-title {
-  font-size: clamp(3.9rem, 2vw, 5rem);
-  font-weight: 800;
-  text-align: center;
-  margin-bottom: 0rem;
+.card-link { display: block; min-width: 0; border-radius: 1rem; color: white; }
+.card-link:focus-visible, .featured-card-row:focus-visible { outline: 3px solid #173941; outline-offset: 3px; }
+.card > img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.hover-overlay { position: absolute; inset: 0; z-index: 1; background: #000; opacity: 0; pointer-events: none; }
+.card-popup, .card-center-text {
+  position: absolute; left: 50%; top: 32%; transform: translate(-50%, -50%);
+  opacity: 0; z-index: 1;
 }
-.featured-inner {
-  width: 100%;
-  margin: 3rem 2rem 0rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.card-popup {
+  width: 42%;
+  clip-path: circle(0% at center);
+  pointer-events: none;
 }
-
+.card-popup img { width: 100%; display: block; }
+.card-center-text { z-index: 2; white-space: nowrap; font-weight: bold; pointer-events: none; }
+.featured-overlay {
+  position: absolute; inset: auto 0 0; z-index: 2;
+  padding: 2.5rem clamp(.75rem, 1.2vw, 1.25rem) 1rem;
+  background: linear-gradient(transparent, rgb(0 0 0 / 78%) 64%);
+  pointer-events: none;
 }
-
-@media (max-width: 1024px) { /* or 768px */
-  .featured-card-row {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .card {
-    width: 100%;
-    height: 70vh;
-    max-height: 70vh;
-  }
-   .text-container h2.crazy-text {
-    font-size: clamp(1.5rem, 3vw, 4.5rem);
-    line-height: 1.3;               /* ⬅️ give the words breathing room */
-    overflow: visible;              /* ⬅️ prevent clipping on the h2 itself */
-    margin: none;
-    padding: 0;
-  }
-    .text-container { 
-    margin: 0 2rem; 
-    overflow: visible;              /* ⬅️ allow animated words to spill */
-  }
+.featured-title-text { margin: 0; font-size: max(1.05rem, 9cqw); line-height: 1.1; }
+.featured-p { margin: .4rem 0 0; font-size: max(.875rem, 5.4cqw); line-height: 1.35; }
+@media (hover: hover) and (pointer: fine) {
+  .card-popup { transition: clip-path .4s ease-out, opacity .25s ease; }
+  .hover-overlay, .card-center-text { transition: opacity .25s ease; }
+  .card:hover .hover-overlay { opacity: .6; }
+  .card:hover .card-popup { opacity: 1; clip-path: circle(72% at center); pointer-events: auto; }
+  .card:has(.card-popup:hover) .card-center-text { opacity: 1; }
+  .featured-p { max-height: 0; opacity: 0; margin: 0; overflow: hidden; transition: max-height .35s, opacity .35s; }
+  .card:hover, .card-link:focus-visible .card { transform: scale(1.035); z-index: 3; }
+  .card:hover > img, .card-link:focus-visible .card > img { transform: scale(1.05); }
+  .card:hover .featured-p, .card-link:focus-visible .featured-p { max-height: 145cqw; opacity: 1; margin-top: .4rem; }
+  .card:hover .featured-overlay, .card-link:focus-visible .featured-overlay { background: linear-gradient(transparent, rgb(0 0 0 / 85%) 30%); }
 }
-
-
-@media (orientation: landscape) and (max-height: 500px) {
-
-  .featured-title {
-  font-size: clamp(2rem, 6vw, 8rem);
-  font-weight: 800;
-  text-align: center;
-  margin-bottom: 0rem;
-  padding-top: 2rem;
+@media (max-width: 80rem) {
+  .featured-intro { font-size: clamp(.8125rem, 1.25cqw, 1rem); }
+  .featured-p { font-size: clamp(.6875rem, 5.6cqw, .8125rem); line-height: 1.28; }
+  .featured-title-text { font-size: max(.875rem, 8.8cqw); }
+  .featured-overlay { padding: 1.5rem 5cqw 5cqw; }
 }
-  .card {
-    /* pick one of these height strategies */
-    height: 55dvh !important;   /* good responsive choice */
-    /* height: 700px !important; */  /* if you really want a fixed px height */
-    width: 40vw;
-    max-height: none !important; /* remove the 70vh cap from the 1024px rule */
-    min-height: 440px;           /* optional safety */
+@media (max-width: 68rem) {
+  .featured-inner { width: 100%; }
+  .featured-card-row { gap: 1.3cqw; }
+  .card { aspect-ratio: 3 / 5; border-radius: .7rem; }
+}
+@media (max-height: 40rem) and (min-width: 40rem) and (max-width: 68rem) {
+  .featured-heading { display: grid; grid-template-columns: 1fr 1.6fr; align-items: center; gap: 1rem; text-align: left; }
+  .featured-title { font-size: max(2.25rem, 5.5cqw); }
+  .featured-intro { margin: 0; }
+  .navbar { height: 3.75rem; }
+  .navbar .logo1 { max-height: 3rem; width: auto; }
+  .section-featured { padding-block: 4.25rem .75rem; }
+}
+.project-picker, .project-detail { display: none; }
+@media (max-width: 52rem) {
+  .featured-heading { text-align: left; }
+  .featured-intro { margin-top: .6rem; line-height: 1.4; }
+  .featured-card-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .has-project-picker .featured-card-row { display: none; }
+  .project-picker { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.5cqw; }
+  .project-picker button {
+    background: #284753; border: 0; border-radius: .5rem; padding: 0; overflow: hidden;
+    aspect-ratio: 3 / 5; cursor: pointer;
   }
-    .featured-card-row {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-  }
-
+  .project-picker img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .project-picker button[aria-pressed="true"] { outline: 2px solid white; outline-offset: 2px; }
+  .project-picker button:focus-visible { outline: 3px solid #173941; outline-offset: 2px; }
+  .project-detail { display: block; margin-top: 1rem; color: white; }
+  .project-detail h2 { margin: 0; font-size: 1.1rem; }
+  .project-detail p { margin: .35rem 0; font-size: .8125rem; line-height: 1.4; }
+  .project-detail a { font-size: .8125rem; font-weight: bold; text-decoration: underline; }
+}
+@media (hover: none) {
+  .card-popup, .card-center-text { display: none; }
+  .featured-overlay { background: linear-gradient(transparent, rgb(0 0 0 / 85%) 28%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card, .card > img, .featured-p, .card-popup, .hover-overlay, .card-center-text { transition: none; }
 }
 </style>
 
@@ -1115,9 +926,9 @@ a {
           <div class="col small-col">
             <div class="bottom-col">
               <h6>Socials</h6>
-              <button class="footer-dropbtn"><a href="https://www.instagram.com/unicocommunications/">Instagram</a></button>
-              <button class="footer-dropbtn"><a href="https://www.facebook.com/unicocomm/">Facebook</a></button>
-              <button class="footer-dropbtn"><a href="https://www.linkedin.com/company/unicocommunications-inc">LinkedIn</a></button>
+              <a class="footer-dropbtn" href="https://www.instagram.com/unicocommunications/">Instagram</a>
+              <a class="footer-dropbtn" href="https://www.facebook.com/unicocomm/">Facebook</a>
+              <a class="footer-dropbtn" href="https://www.linkedin.com/company/unicocommunications-inc">LinkedIn</a>
             </div>
           </div>
 
@@ -1125,18 +936,16 @@ a {
           <div class="col small-col">
             <div class="bottom-col">
               <h6>Unico HQ</h6>
-              <button class="footer-dropbtn">
+              <address class="footer-dropbtn">
                 2222 San Pedro Ave., Ste 2<br>San Antonio, TX 78212<br>(210) 670-9077
-              </button>
+              </address>
             </div>
           </div>
 
            <div class="col small-col tell-us-more-col">
             <div class="bottom-col">
               <h6>TELL US MORE</h6>
-              <button class="footer-dropbtn">
-                <a href="/contact.html"><img class="mail-icon" src="images/Mail Icon.png"></a>
-              </button>
+              <a class="footer-dropbtn" href="/contact.html"><img class="mail-icon" src="images/Mail Icon.png" alt="Contact Unico Communications"></a>
             </div>
           </div>
         </div>
@@ -1147,10 +956,10 @@ a {
           <div class="col small-col">
             <div class="bottom-col">
               <h6>Sitemap</h6>
-              <button class="footer-dropbtn"><a href="/about.html">About</a></button>
-              <button class="footer-dropbtn"><a href="/impact.html">Clients</a></button>
-              <button class="footer-dropbtn"><a href="/impact.html#services">Services</a></button>
-              <button class="footer-dropbtn"><a href="/featured.html">Featured Projects</a></button>
+              <a class="footer-dropbtn" href="/about.html">About</a>
+              <a class="footer-dropbtn" href="/impact.html">Clients</a>
+              <a class="footer-dropbtn" href="/impact.html#services">Services</a>
+              <a class="footer-dropbtn" href="/featured.html">Featured Projects</a>
             </div>
           </div>
 
@@ -1183,280 +992,51 @@ a {
 <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
 
-<script>
-  gsap.registerPlugin(ScrollTrigger);
-
-
-  gsap.utils.toArray(".card").forEach((card, i) => {
-    gsap.from(card, {
-      scrollTrigger: {
-        trigger: card,
-        start: "top 90%",
-        toggleActions: "play none none none"
-      },
-      opacity: 0,
-      y: 30, // subtle upward motion
-      duration: 0.6,
-      ease: "power2.out",
-      delay: i * 0.05
-    });
-  });
-    gsap.from(".featured-title", {
-    scrollTrigger: {
-      trigger: ".featured-title",
-      start: "top 85%",   // when it enters viewport
-      toggleActions: "play none none none"
-    },
-    opacity: 0,
-    y: 40,
-    duration: 2,
-    ease: "power2.out"
-  });
-
-</script>
-
 
 <script>
-  const images = document.querySelectorAll(".scroller-image");
-  const total = images.length;
-  let currentIndex = 0; // ✅ Start with first image
+(() => {
+  const row = document.querySelector('.featured-card-row');
+  const cards = [...row.querySelectorAll('.card')];
+  const picker = document.createElement('div');
+  picker.className = 'project-picker';
+  picker.setAttribute('role', 'group');
+  picker.setAttribute('aria-label', 'Choose a featured project');
+  const detail = document.createElement('div');
+  detail.className = 'project-detail';
+  detail.setAttribute('aria-live', 'polite');
 
-  function renderStack(index) {
-    images.forEach((img, i) => {
-      const offset = (i - total + 1) * 150;
-      const distance = Math.abs(i - index);
-      const z = total - distance;
-
-      img.classList.toggle("selected", i === index);
-
-      gsap.set(img, {
-        x: offset,
-        scale: i === index ? 1 : 0.98,
-        opacity: 1,
-        zIndex: z
-      });
-    });
-  }
-
-  images.forEach((img, i) => {
-    img.addEventListener("click", () => {
-      currentIndex = i;
-      renderStack(currentIndex);
-    });
-  });
-
-  renderStack(currentIndex); // ✅ Initial render
-
-  // ✅ Auto-advance every 5 seconds
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % total;
-    renderStack(currentIndex);
-  }, 3000);
-</script>
-
-
-
-<script>
-  const track = document.querySelector(".carousel-track");
-  const nextBtn = document.querySelector(".carousel-btn.next");
-  const prevBtn = document.querySelector(".carousel-btn.prev");
-  const cardWidth = 25 * 16 + 56; // 25rem + gap (converted to px)
-  let currentPosition = 0;
-
-  nextBtn.addEventListener("click", () => {
-    const maxScroll = track.scrollWidth - track.parentElement.offsetWidth;
-    if (Math.abs(currentPosition) < maxScroll) {
-      currentPosition -= cardWidth;
-      gsap.to(track, { x: currentPosition, duration: 0.5, ease: "power2.out" });
+  function select(card) {
+    const title = card.querySelector('.featured-title-text').cloneNode(true);
+    const description = document.createElement('p');
+    description.textContent = card.querySelector('.featured-p').textContent.trim();
+    detail.replaceChildren(title, description);
+    const projectLink = card.closest('a');
+    if (projectLink) {
+      const link = document.createElement('a');
+      link.href = projectLink.href;
+      link.textContent = 'View case study';
+      link.setAttribute('aria-label', projectLink.getAttribute('aria-label'));
+      detail.append(link);
     }
+    cards.forEach((item, index) => picker.children[index].setAttribute('aria-pressed', String(item === card)));
+  }
+
+  cards.forEach(card => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.setAttribute('aria-label', card.querySelector('.featured-title-text').textContent);
+    button.append(card.querySelector(':scope > img').cloneNode());
+    button.addEventListener('click', () => select(card));
+    picker.append(button);
   });
-
-  prevBtn.addEventListener("click", () => {
-    if (currentPosition < 0) {
-      currentPosition += cardWidth;
-      gsap.to(track, { x: currentPosition, duration: 0.5, ease: "power2.out" });
-    }
-  });
-</script>
-<!-- ✅ Custom Scripts (after Locomotive setup) -->
- <script>
-document.querySelectorAll('.card, .featured-image-container').forEach((el) => {
-  const popup = el.querySelector('.card-popup');
-  const popupImg = popup?.querySelector('img'); // ✅ Target popup image only
-  const hoverOverlay = el.querySelector('.hover-overlay');
-  const centerText = el.querySelector('.card-center-text');
-
-  // 🔹 Handle popup animation
-  if (popup) {
-    el.addEventListener('mouseenter', () => {
-      gsap.killTweensOf(popup); // ✅ Prevent stacking
-      gsap.to(popup, {
-        opacity: 1,
-        scale: 1,
-        clipPath: 'circle(75% at 50% 50%)',
-        duration: 0.7,
-        ease: 'power3.out',
-        pointerEvents: 'auto'
-      });
-    });
-
-    el.addEventListener('mouseleave', () => {
-      gsap.killTweensOf(popup); // ✅ Kill previous animations
-      gsap.to(popup, {
-        opacity: 1,
-        scale: 0.2,
-        clipPath: 'circle(0% at 50% 50%)',
-        duration: 0.6,
-        ease: 'power3.in',
-        pointerEvents: 'none'
-      });
-
-      // Hide centerText immediately when leaving the card
-      if (centerText) {
-        gsap.to(centerText, {
-          opacity: 0,
-          duration: 0.2,
-          ease: 'power2.in'
-        });
-      }
-    });
-  }
-
-  // 🔹 Handle hover overlay
-  if (hoverOverlay) {
-    el.addEventListener('mouseenter', () => {
-      gsap.to(hoverOverlay, {
-        opacity: 0.6,
-        duration: 0.2,
-        ease: 'power2.out'
-      });
-    });
-
-    el.addEventListener('mouseleave', () => {
-      gsap.to(hoverOverlay, {
-        opacity: 0,
-        duration: 0.4,
-        ease: 'power2.in'
-      });
-    });
-  }
-
-  // 🔹 Show centerText ONLY when popup image is hovered
-  if (centerText && popupImg) {
-    popupImg.addEventListener('mouseenter', () => {
-      gsap.to(centerText, {
-        opacity: 1,
-        duration: 0.4,
-        ease: 'power2.out'
-      });
-    });
-
-    popupImg.addEventListener('mouseleave', () => {
-      gsap.to(centerText, {
-        opacity: 0,
-        duration: 0.4,
-        ease: 'power2.in'
-      });
-    });
-  }
-});
+  row.after(picker, detail);
+  select(cards[0]);
+  row.parentElement.classList.add('has-project-picker');
+})();
 </script>
 <script src="navbar.js"></script>
 <script src="carousel.js"></script>
 <script src="heroscroll.js"></script>
 <script src="tracker.js"></script>
-<script>
-  gsap.registerPlugin(ScrollTrigger);
-
-  const h2 = document.querySelector(".crazy-text");
-  const words = h2.textContent.split(" ");
-
-  // Wrap each word in a span
-  h2.innerHTML = words
-    .map(word => `<span class="crazy-word">${word} </span>`)
-    .join("");
-
-  const wordSpans = document.querySelectorAll(".crazy-word");
-
-  // 🎨 Your custom 5-color palette
-  const palette = [
-    "#53709F", 
-    "#6E9D72", 
-    "#CCE5CC", 
-  ];
-
-  // Trigger animation when text container comes into view
-  ScrollTrigger.create({
-  trigger: ".text-container",
-  start: "top 80%",
-  once: true,
-  onEnter: () => {
-    wordSpans.forEach((word, i) => {
-      if (Math.random() > 0.7) { // ~30% crazy words
-        const startColor = palette[Math.floor(Math.random() * palette.length)];
-        const finalColor = palette[Math.floor(Math.random() * palette.length)];
-
-        gsap.fromTo(
-          word,
-          {
-            opacity: 0,
-            y: gsap.utils.random(-100, 100),
-            rotation: gsap.utils.random(-180, 180),
-            scale: gsap.utils.random(0.5, 2),
-            color: startColor, // start with a palette color
-            skewX: gsap.utils.random(-30, 30),
-          },
-          {
-            opacity: 1,
-            y: 0,
-            rotation: 0,
-            scale: 1,
-            skewX: 0,
-            color: finalColor, // stay bright, no fading to black
-            duration: 1.5,
-            delay: i * 0.05,
-            ease: "elastic.out(1, 0.4)"
-          }
-        );
-      } else {
-        // Non-crazy words: keep them fully black or your theme color
-        gsap.from(word, {
-          opacity: 0,
-          y: 20,
-          color: "#000", // explicitly keep them black
-          duration: 1,
-          delay: i * 0.03,
-          ease: "power2.out"
-        });
-      }
-    });
-  }
-});
-</script>
-
-<script src="https://unpkg.com/split-type"></script>
-<script>
-  gsap.registerPlugin(ScrollTrigger);
-
-  // Split the heading into characters
-  const heading = new SplitType('.featured-title', { types: 'chars' });
-
-
-  // Animate the characters
-  gsap.from('.featured-title .char', {
-    y: 30,
-    opacity: 0,
-    ease: "power2.out",
-    duration: 0.6,
-    stagger: 0.05,
-    scrollTrigger: {
-      trigger: ".featured-title",
-      start: "top 80%",        // ✅ starts when top of .animate-heading reaches 80% down the screen
-      toggleActions: "play none none none", // ✅ plays only once when it enters
-      once: true               // ✅ ensures it runs only once and doesn't reset on scroll back
-    }
-  });
-
-</script>
 </body>
 </html>

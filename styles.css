@@ -1176,3 +1176,18 @@ body {
     text-align: center;
   }
 }
+img.bg-layer { object-fit: cover; pointer-events: none; }
+button.dot { border: 0; padding: 0; }
+a.dropbtn, a.footer-dropbtn { text-decoration: none; }
+a.dropbtn:hover, a.footer-dropbtn:hover { text-decoration: underline; }
+address.footer-dropbtn { font-style: normal; cursor: auto; }
+@media (prefers-reduced-motion: reduce) {
+  .bg-layer { transition: none; }
+  }
+
+@media (min-width: 769px) {
+  .navbar:focus-within { transform: translateY(0); }
+  .navbar .nav-item:focus-within .dropdown {
+    visibility: visible; opacity: 1; transform: translateY(0); pointer-events: auto;
+  }
+}

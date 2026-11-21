@@ -12,9 +12,9 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Unico Communications | Creating Impactful Experiences, Not Simply Events</title>
+  <title>Unico Communications | Nationwide Event Production and Planning</title>
   <meta name="description" content="Unico Communications produces high-impact events across Texas and nationwide, including conferences, galas, logistics, media relations, lodging, and F&B management." />
-  <link rel="canonical" href="https://www.unicocommunications.com/" />
+  <link rel="canonical" href="https://unicocommunications.com/" />
   
 
   <!-- Favicons -->
@@ -31,7 +31,7 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.unicocommunications.com/">
+  <meta property="og:url" content="https://unicocommunications.com/">
   <meta property="og:title" content="Unico Communications | Event Production & Experiential Marketing">
   <meta property="og:description" content="Trusted by national brands to produce conferences, galas, and large-scale experiences across Texas and the U.S.">
   <meta property="og:image" content="https://www.unicocommunications.com/images/og-cover.jpg">
@@ -61,12 +61,23 @@
   })();
 </script>
 <!-- End Matomo Code -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.18/dist/lenis.css">
+  <script defer src="https://unpkg.com/lenis@1.3.18/dist/lenis.min.js"></script>
+  <script defer src="smooth-scroll.js"></script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "zh0t6uc7ev");
+  </script>
 </head>
 <body>
 <!-- 🔹 NAVBAR -->
 <header class="navbar">
   <div class="logo">
-    <a href="/index.html"><img class="logo1" src="images/logo1.png" alt="Logo" /></a>
+    <a href="/"><img class="logo1" src="images/logo1.png" alt="Unico Communications home" /></a>
   </div>
   <nav>
     <div class="nav-item">
@@ -74,37 +85,37 @@
       <div class="dropdown" role="menu" aria-label="About menu">
         <div class="dropdown-content">
           <div class="dropdown-text">
-            <h4><a href="/about.html">Our Story<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
+            <h4><a href="/about.html">Our Story<img alt="" class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
             
-              <h4><a href="/about.html#culture">Culture <img class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
+              <h4><a href="/about.html#culture">Culture <img alt="" class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
             
             
-              <h4><a href="/about.html#team">Team<img class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
+              <h4><a href="/about.html#team">Team<img alt="" class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
             
           </div>
         </div>
       </div>
     </div>
     <div class="nav-item">
-     <a class="link-with-arrow">Impact</a>
+     <a class="link-with-arrow" href="/impact.html">Impact</a>
       <div class="dropdown"  role="menu" aria-label="Impact menu">
        <div class="dropdown-text">
-          <h4><a href="/impact.html">Clients<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
+          <h4><a href="/impact.html">Clients<img alt="" class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
             
-           <h4> <a href="/impact.html#services">Services<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
-            <h4><a href="/featured.html">Featured Projects<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
+           <h4> <a href="/impact.html#services">Services<img alt="" class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
+            <h4><a href="/featured.html">Featured Projects<img alt="" class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
         </div>
      
       </div>
     </div>
     <div class="nav-item">
-      <a href="#friends" class="link-with-arrow">Let's Be Friends</a>
+      <a href="/contact.html" class="link-with-arrow">Let's Be Friends</a>
       <div class="dropdown"  role="menu" aria-label="Friends menu">
         <div class="dropdown-content">
           <div class="dropdown-text">
-            <h4><a href="/contact.html">Tell Us More<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
+            <h4><a href="/contact.html">Tell Us More<img alt="" class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
             
-              <h4><a href="/index.html#social">Get Social<img class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
+              <h4><a href="/#social">Get Social<img alt="" class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
             
           </div>
         </div>
@@ -112,12 +123,12 @@
     </div>
   </nav>
   <!-- Hamburger (mobile only) -->
-<button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+<button type="button" aria-controls="mobile-menu" class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
   <span></span><span></span><span></span>
 </button>
 
 <!-- Full-screen mobile menu -->
-<div class="mobile-menu" aria-hidden="true">
+<div id="mobile-menu" class="mobile-menu" data-lenis-prevent aria-hidden="true">
   <nav class="mobile-nav">
     <div class="mobile-item">
       <button class="mobile-parent" type="button" aria-expanded="false">About</button>
@@ -141,13 +152,20 @@
       <button class="mobile-parent" type="button" aria-expanded="false">Let’s Be Friends</button>
       <div class="mobile-sub">
         <a href="/contact.html">Tell Us More</a>
-        <a href="/index.html#social">Get Social</a>
+        <a href="/#social">Get Social</a>
       </div>
     </div>
   </nav>
 </div>
 </header>
 <style>
+   html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+   .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
 /* Keep native link semantics; style via classes */
 a { color: inherit; text-decoration: none; }
 a:focus { outline: 2px solid #fff; outline-offset: 2px; }
@@ -492,12 +510,12 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
 }
 </style>
 
-
-
+ <div id="scroll-container">
+<main>
 
 <!-- 🔹 HERO SECTION -->
 <section class="hero-section">
-  <div class="bg-layer" id="bg1"></div>
+  <img class="bg-layer visible" id="bg1" src="images/hero-1-large.webp" srcset="images/hero-1-small.webp 800w, images/hero-1-large.webp 1920w" sizes="100vw" width="1920" height="1225" fetchpriority="high" alt="">
   <div class="bg-layer" id="bg2"></div>
 
   <div class="page-container">
@@ -505,11 +523,11 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
   </div>
 
   <div class="nav-controls">
-    <button id="prevBtn" class="prevBtn">
-      <img src="images/left-arrow-tiny.png" loading="lazy" alt="Left arrow image" />
+    <button type="button" aria-label="Previous event photo" id="prevBtn" class="prevBtn">
+      <img alt="" src="images/left-arrow-tiny.png" loading="lazy" />
     </button>
-    <button id="nextBtn" class="nextBtn">
-      <img src="images/right-arrow-tiny.png" loading="lazy" alt="Right arrow image" />
+    <button type="button" aria-label="Next event photo" id="nextBtn" class="nextBtn">
+      <img alt="" src="images/right-arrow-tiny.png" loading="lazy" />
     </button>
   </div>
 
@@ -517,36 +535,34 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
 
   <div class="hero-social-icons">
       <a href="https://www.instagram.com/unicocommunications/" class="social-icon" aria-label="Instagram">
-        <img src="images/icon-instagram.png" alt="Instagram" />
+        <img alt="" src="images/icon-instagram.png" />
       </a>
       <a href="https://www.facebook.com/unicocomm/" class="social-icon" aria-label="Facebook">
-        <img src="images/icon-facebook.png" alt="Facebook" />
+        <img alt="" src="images/icon-facebook.png" />
       </a>
       <a href="https://www.linkedin.com/company/unicocommunications-inc" class="social-icon" aria-label="LinkedIn">
-        <img src="images/icon-linkedin.png" alt="LinkedIn" />
+        <img alt="" src="images/icon-linkedin.png" />
       </a>
     </div>
 </section>
 <style>
 
   </style>
-
-  <main class="main-section">
+ <div>
+  <div class="main-section">
     <div class="carousel-wrapper2 carousel-1">
       <div class="carousel-header">
         <h2>TRUSTED BY</h2>
-        <button class="dropbtn"><p><a href="impact.html">See More</a></p>
-        <img src="images/arrow-btn.png" alt="See more" />
-        </button>
+        <a class="dropbtn" href="impact.html">Meet our clients<img loading="lazy" alt="" src="images/arrow-btn.png"></a>
       </div>
       <div class="carousel-track track-1">
        <div class="carousel-item short-box">
-          <img src="images/cleint30.png" loading="lazy" alt="Case Study" />
+          <img alt="United States Hispanic Chamber of Commerce" src="images/cleint30.png" loading="lazy" />
         </div>
         
         <div class="carousel-item long-box">
-          <video autoplay muted loop playsinline>
-            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/1b%20USHCC%20Orlando%20Ballroom%20and%20Skyline%20(1).mp4" type="video/mp4" />
+          <video muted loop playsinline preload="none">
+            <source data-src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/1b%20USHCC%20Orlando%20Ballroom%20and%20Skyline%20(1).mp4" type="video/mp4" />
             </video>
         </div>
 
@@ -584,8 +600,8 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
         </div>
         
         <div class="carousel-item long-box">
-          <video autoplay muted loop playsinline>
-            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/5b%20Unidos%20Las%20Vegas.mp4" type="video/mp4" alt="UnidosUS live event on stage in Las Vegas featuring political analyist Ana Navarro"/>
+          <video muted loop playsinline preload="none">
+            <source data-src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/5b%20Unidos%20Las%20Vegas.mp4" type="video/mp4" alt="UnidosUS live event on stage in Las Vegas featuring political analyist Ana Navarro"/>
             </video>
         </div>
         <div class="carousel-item short-box">
@@ -601,55 +617,55 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
         </div>
 
         <div class="carousel-item short-box">
-            <img src="images/client20.png" loading="lazy" alt="Case Study"/>
+            <img alt="San Antonio Area Foundation" src="images/client20.png" loading="lazy"/>
         </div>
         <div class="carousel-item long-box">
-          <img src="images/7b In the Ring.jpg" loading="lazy" alt="Case Study" />
+          <img alt="Performers in a boxing ring surrounded by confetti" src="images/7b In the Ring.jpg" loading="lazy" />
         </div>
 
         <div class="carousel-item long-box">
-          <img src="images/7c Mariachi.jpg" loading="lazy" alt="Case Study" />
-        </div>
-
-        <div class="carousel-item short-box">
-            <img src="images/client13.png" loading="lazy" alt="Case Study" />
-        </div>
-
-        <div class="carousel-item long-box">
-            <img class='ashley-judd' src="images/CAROUSEL 500X260_5.jpg" loading="lazy" alt="Case Study" />
+          <img alt="Mariachi musicians performing in a boxing ring" src="images/7c Mariachi.jpg" loading="lazy" />
         </div>
 
         <div class="carousel-item short-box">
-            <img src="images/client22.png" loading="lazy" alt="Case Study" />
+            <img alt="Family Violence Prevention Services" src="images/client13.png" loading="lazy" />
+        </div>
+
+        <div class="carousel-item long-box">
+            <img alt="Ashley Judd speaking at a lectern" class='ashley-judd' src="images/CAROUSEL 500X260_5.jpg" loading="lazy" />
+        </div>
+
+        <div class="carousel-item short-box">
+            <img alt="San Antonio Hispanic Chamber of Commerce" src="images/client22.png" loading="lazy" />
         </div>
         <div class="carousel-item long-box">
-          <video autoplay muted loop playsinline>
-            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/9b%20SAHCC%20Gala%20Clip.mp4" type="video/mp4" />
+          <video muted loop playsinline preload="none">
+            <source data-src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/9b%20SAHCC%20Gala%20Clip.mp4" type="video/mp4" />
             </video>
         </div>
 
         <div class="carousel-item long-box">
-            <img src="images/CAROUSEL 500X260_12.jpg" loading="lazy" alt="Case Study" />
+            <img alt="Gala guests watching a presentation on a ballroom screen" src="images/CAROUSEL 500X260_12.jpg" loading="lazy" />
         </div>
 
         <div class="carousel-item short-box">
-            <img src="images/client14.png" loading="lazy" alt="Case Study" />
+            <img alt="Hispanic Association on Corporate Responsibility" src="images/client14.png" loading="lazy" />
         </div>
 
         <div class="carousel-item long-box">
-            <img src="images/CAROUSEL 500X260_3.jpg" loading="lazy" alt="Case Study" />
+            <img alt="Speakers on the Latina Empow(H)er Summit panel" src="images/CAROUSEL 500X260_3.jpg" loading="lazy" />
         </div>
 
         <div class="carousel-item long-box">
-            <img src="images/CAROUSEL 500X260_2.jpg" loading="lazy" alt="Case Study" />
+            <img alt="Gift bags for summit attendees" src="images/CAROUSEL 500X260_2.jpg" loading="lazy" />
         </div>
 
         <div class="carousel-item short-box">
-            <img src="images/client17.png" loading="lazy" alt="Case Study" />
+            <img alt="Project QUEST" src="images/client17.png" loading="lazy" />
         </div>
 
         <div class="carousel-item long-box">
-            <img src="images/11b Project QUEST Tabiling.jpg" loading="lazy" alt="Case Study" />
+            <img alt="Project QUEST outreach table" src="images/11b Project QUEST Tabiling.jpg" loading="lazy" />
         </div>
       </div>
     </div>
@@ -657,60 +673,58 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
     <div class="carousel-wrapper carousel-2">
       <div class="carousel-header">
         <h2>FEATURED PROJECTS</h2>
-        <button class="dropbtn"><p><a href="featured.html">See More</a></p>
-        <img src="images/arrow-btn.png" alt="See more" />
-        </button>
+        <a class="dropbtn" href="featured.html">Explore featured projects<img loading="lazy" alt="" src="images/arrow-btn.png"></a>
       </div>
       <div class="carousel-track track-2">
         <a class="cs-hover" href="/casestudy2.html"><div class="carousel-item long-box">
           <div class="image-overlay-wrapper">
             <!-- BACKGROUND -->
-            <img src="images/carouselcs1.jpg" class="bg-image" loading="lazy" alt="Case Study" />
+            <img alt="" src="images/carouselcs1.jpg" class="bg-image" loading="lazy" />
 
             <!-- COLOR OVERLAY (fades on hover) -->
             <div class="overlay"></div>
 
             <!-- TRANSPARENT PNG on top -->
-            <img src="images/carouselcase1.png" class="overlay-image" loading="lazy" alt="Overlay" />
+            <img alt="Say a Little Prayer screening case study" src="images/carouselcase1.png" class="overlay-image" loading="lazy" />
           </div>
         </div></a>
 
         <a class="cs-hover" href="/casestudy.html"><div class="carousel-item long-box">
           <div class="image-overlay-wrapper">
             <!-- BACKGROUND -->
-            <img src="images/carouselcs2.jpg" class="bg-image" loading="lazy" alt="Case Study" />
+            <img alt="" src="images/carouselcs2.jpg" class="bg-image" loading="lazy" />
 
             <!-- COLOR OVERLAY (fades on hover) -->
             <div class="overlay"></div>
 
             <!-- TRANSPARENT PNG on top -->
-            <img src="images/XXIV 2025 logo_500X260.png" class="overlay-image" loading="lazy" alt="Overlay" />
+            <img alt="U.S.-Spain Council Forum XXIV case study" src="images/XXIV 2025 logo_500X260.png" class="overlay-image" loading="lazy" />
           </div>
         </div></a>
 
        <div class="carousel-item long-box">
           <div class="image-overlay-wrapper">
             <!-- BACKGROUND -->
-            <img src="images/carouselcs3.jpg" class="bg-image" loading="lazy" alt="Case Study" />
+            <img alt="" src="images/carouselcs3.jpg" class="bg-image" loading="lazy" />
 
             <!-- COLOR OVERLAY (fades on hover) -->
             <div class="overlay"></div>
 
             <!-- TRANSPARENT PNG on top -->
-            <img src="images/carouselcase3.png" class="overlay-image" loading="lazy" alt="Overlay" />
+            <img alt="Kansas City" src="images/carouselcase3.png" class="overlay-image" loading="lazy" />
           </div>
         </div>
 
       <div class="carousel-item long-box">
           <div class="image-overlay-wrapper">
             <!-- BACKGROUND -->
-            <img src="images/carouselcs4.jpg" class="bg-image" loading="lazy" alt="Case Study" />
+            <img alt="" src="images/carouselcs4.jpg" class="bg-image" loading="lazy" />
 
             <!-- COLOR OVERLAY (fades on hover) -->
             <div class="overlay"></div>
 
             <!-- TRANSPARENT PNG on top -->
-            <img src="images/carouselcase4.png" class="overlay-image" loading="lazy" alt="Overlay" />
+            <img alt="Celebrate 300 San Antonio" src="images/carouselcase4.png" class="overlay-image" loading="lazy" />
           </div>
         </div>
 
@@ -718,13 +732,13 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
         <div class="carousel-item long-box">
           <div class="image-overlay-wrapper">
             <!-- BACKGROUND -->
-            <img src="images/CAROUSEL 500X260_8.jpg" class="bg-image" loading="lazy" alt="Case Study" />
+            <img alt="" src="images/CAROUSEL 500X260_8.jpg" class="bg-image" loading="lazy" />
 
             <!-- COLOR OVERLAY (fades on hover) -->
             <div class="overlay"></div>
 
             <!-- TRANSPARENT PNG on top -->
-            <img src="images/carouselcase5.png" class="overlay-image" loading="lazy" alt="Overlay" />
+            <img alt="UnidosUS" src="images/carouselcase5.png" class="overlay-image" loading="lazy" />
           </div>
         </div>
         <style>
@@ -792,34 +806,32 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
     <div class="carousel-wrapper3 carousel-3">
       <div class="carousel-header">
         <h2>SERVICES</h2>
-        <button class="dropbtn"><p><a href="impact.html#services">See More</a></p>
-        <img src="images/arrow-btn.png" alt="See more" />
-        </button>
+        <a class="dropbtn" href="impact.html#services">Explore our services<img loading="lazy" alt="" src="images/arrow-btn.png"></a>
       </div>
       <div class="carousel-track track-3">
         <div class="carousel-item long-box">
-            <video autoplay muted loop playsinline>
-            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/Event%20Production.mp4" type="video/mp4" />
+            <video muted loop playsinline preload="none">
+            <source data-src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/Event%20Production.mp4" type="video/mp4" />
             </video>
         </div>
         <div class="carousel-item long-box">
-            <video autoplay muted loop playsinline>
-            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/Food%20and%20Beverage.mp4" type="video/mp4" />
+            <video muted loop playsinline preload="none">
+            <source data-src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/Food%20and%20Beverage.mp4" type="video/mp4" />
             </video>
         </div>
         <div class="carousel-item long-box">
-            <video autoplay muted loop playsinline>
-            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/Lodging.mp4" type="video/mp4" />
+            <video muted loop playsinline preload="none">
+            <source data-src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/Lodging.mp4" type="video/mp4" />
             </video>
         </div>
         <div class="carousel-item long-box">
-            <video autoplay muted loop playsinline>
-            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/Media%20Relations.mp4" type="video/mp4" />
+            <video muted loop playsinline preload="none">
+            <source data-src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/Media%20Relations.mp4" type="video/mp4" />
             </video>
         </div>
         <div class="carousel-item long-box">
-            <video autoplay muted loop playsinline>
-            <source src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/Program%20Development.mp4" type="video/mp4" />
+            <video muted loop playsinline preload="none">
+            <source data-src="https://vmqlladebjzniwevemsg.supabase.co/storage/v1/object/public/videos/Unico%20Videos/Program%20Development.mp4" type="video/mp4" />
             </video>
         </div>
         
@@ -883,7 +895,7 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
     </div>
   </div>
 </section>
-  </main>
+</div>
   
 
 
@@ -893,32 +905,32 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
   <div><h2>GET SOCIAL. FOLLOW THE FUN!</h2></div>
   <div class="hero-social-icons-2">
     <a href="https://www.instagram.com/unicocommunications/" class="social-icon-2" aria-label="Instagram">
-      <img src="images/icon-instagram.png" alt="Instagram" />
+      <img loading="lazy" alt="" src="images/icon-instagram.png" />
     </a>
     <a href="https://www.facebook.com/unicocomm/" class="social-icon-2" aria-label="Facebook">
-      <img src="images/icon-facebook.png" alt="Facebook" />
+      <img loading="lazy" alt="" src="images/icon-facebook.png" />
     </a>
     <a href="https://www.linkedin.com/company/unicocommunications-inc" class="social-icon-2" aria-label="LinkedIn">
-      <img src="images/icon-linkedin.png" alt="LinkedIn" />
+      <img loading="lazy" alt="" src="images/icon-linkedin.png" />
     </a>
   </div>
-<!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://cdn.lightwidget.com/widgets/5be9bb4cafee5b35b07d593aad78ea03.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+<!-- LightWidget WIDGET --><script defer src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe title="Unico Communications on Instagram" loading="lazy" src="https://cdn.lightwidget.com/widgets/5be9bb4cafee5b35b07d593aad78ea03.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
 </section>
 
-
+</main></div>
 
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-divider">
-      <img src="images/UNICO_LOGO_MARK_100x100.png" alt="See more" />
+      <img loading="lazy" alt="Unico Communications" src="images/UNICO_LOGO_MARK_100x100.png" />
     </div>
 
     <div class="footer-flex">
       <!-- Left Side -->
       <div class="footer-section first-section">
-        <img class="arrow-down" src="images/Arrow 3-down.png" />
+        <img loading="lazy" alt="" class="arrow-down" src="images/Arrow 3-down.png" />
         <p>LET'S<br>BE FRIENDS
-          <img class="arrow1" src="images/arrowbig.png" />
+          <img loading="lazy" alt="" class="arrow1" src="images/arrowbig.png" />
         </p>
       </div>
 
@@ -930,9 +942,9 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
           <div class="col small-col">
             <div class="bottom-col">
               <h6>Socials</h6>
-              <button class="footer-dropbtn"><a href="https://www.instagram.com/unicocommunications/">Instagram</a></button>
-              <button class="footer-dropbtn"><a href="https://www.facebook.com/unicocomm/">Facebook</a></button>
-              <button class="footer-dropbtn"><a href="https://www.linkedin.com/company/unicocommunications-inc">LinkedIn</a></button>
+              <a class="footer-dropbtn" href="https://www.instagram.com/unicocommunications/">Instagram</a>
+              <a class="footer-dropbtn" href="https://www.facebook.com/unicocomm/">Facebook</a>
+              <a class="footer-dropbtn" href="https://www.linkedin.com/company/unicocommunications-inc">LinkedIn</a>
             </div>
           </div>
 
@@ -940,18 +952,16 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
           <div class="col small-col">
             <div class="bottom-col">
               <h6>Unico HQ</h6>
-              <button class="footer-dropbtn">
+              <address class="footer-dropbtn">
                 2222 San Pedro Ave., Ste 2<br>San Antonio, TX 78212<br>(210) 670-9077
-              </button>
+              </address>
             </div>
           </div>
 
            <div class="col small-col tell-us-more-col">
             <div class="bottom-col">
               <h6>TELL US MORE</h6>
-              <button class="footer-dropbtn">
-                <a href="/contact.html"><img class="mail-icon" src="images/Mail Icon.png"></a>
-              </button>
+              <a class="footer-dropbtn" href="/contact.html"><img loading="lazy" class="mail-icon" src="images/Mail Icon.png" alt="Contact Unico Communications"></a>
             </div>
           </div>
         </div>
@@ -962,10 +972,10 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
           <div class="col small-col">
             <div class="bottom-col">
               <h6>Sitemap</h6>
-              <button class="footer-dropbtn"><a href="/about.html">About</a></button>
-              <button class="footer-dropbtn"><a href="/impact.html">Clients</a></button>
-              <button class="footer-dropbtn"><a href="/impact.html#services">Services</a></button>
-              <button class="footer-dropbtn"><a href="/featured.html">Featured Projects</a></button>
+              <a class="footer-dropbtn" href="/about.html">About</a>
+              <a class="footer-dropbtn" href="/impact.html">Clients</a>
+              <a class="footer-dropbtn" href="/impact.html#services">Services</a>
+              <a class="footer-dropbtn" href="/featured.html">Featured Projects</a>
             </div>
           </div>
 
@@ -973,7 +983,7 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
           <div class="col large-col">
             <div class="bottom-col">
             
-              <a href="https://www.centrostage.com/"><img class="centro" src="images/CentroStage Logo.png" alt="CentroStage Logo"></a>
+              <a href="https://www.centrostage.com/"><img loading="lazy" class="centro" src="images/CentroStage Logo.png" alt="CentroStage Logo"></a>
             </div>
           </div>
         </div>
@@ -1015,6 +1025,7 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
     panel.classList.add('is-open');
     document.body.classList.add('menu-open');
     burger.setAttribute('aria-expanded','true');
+    burger.setAttribute('aria-label','Close menu');
     panel.setAttribute('aria-hidden','false');
   };
 
@@ -1023,6 +1034,7 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
     panel.classList.remove('is-open');
     document.body.classList.remove('menu-open');
     burger.setAttribute('aria-expanded','false');
+    burger.setAttribute('aria-label','Open menu');
     panel.setAttribute('aria-hidden','true');
   };
 
@@ -1065,5 +1077,356 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
 
 <script src="tracker.js"></script>
 
+<script>
+(function () {
+  const viewport = document.getElementById("projectScroller");
+  if (!viewport || typeof gsap === "undefined") return;
+
+  const navbar = document.querySelector(".navbar");
+  const track = viewport.querySelector(".image-scroller-track");
+  const cards = Array.from(track.querySelectorAll(".scroller-card"));
+  const prevBtn = document.querySelector(".scroller-prev");
+  const nextBtn = document.querySelector(".scroller-next");
+  const progressBar = document.querySelector(".scroller-progress-bar");
+  const lenis = window.lenis || null;
+
+  if (!track || !cards.length) return;
+
+  let currentX = 0;
+  let maxX = 0;
+  let cardStep = 0;
+  let dragStartX = 0;
+  let startTrackX = 0;
+  let isDragging = false;
+
+  let navHiddenByScroller = false;
+  let navLockUntil = 0;
+  let lastScrollY = window.scrollY || 0;
+
+  function now() {
+    return performance.now();
+  }
+
+  function hideNavbar(lockMs = 700) {
+    if (!navbar) return;
+    navbar.classList.add("navbar--hidden");
+    navHiddenByScroller = true;
+    navLockUntil = now() + lockMs;
+  }
+
+  function showNavbar() {
+    if (!navbar) return;
+    navbar.classList.remove("navbar--hidden");
+    navHiddenByScroller = false;
+  }
+
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
+  }
+
+  function getCardStep() {
+    if (cards.length < 2) return cards[0].offsetWidth;
+    return cards[1].offsetLeft - cards[0].offsetLeft;
+  }
+
+  function getMaxX() {
+    return Math.max(0, track.scrollWidth - viewport.clientWidth);
+  }
+
+  function getPages() {
+    if (!cardStep) return 1;
+    return Math.max(1, Math.round(maxX / cardStep) + 1);
+  }
+
+  function getNearestPage() {
+    if (!cardStep) return 0;
+    return clamp(Math.round(Math.abs(currentX) / cardStep), 0, getPages() - 1);
+  }
+
+  function updateArrowState() {
+    if (!prevBtn || !nextBtn) return;
+
+    const edgeTolerance = 12;
+    const atStart = Math.abs(currentX) <= edgeTolerance;
+    const atEnd = maxX === 0 || Math.abs(currentX) >= (maxX - edgeTolerance);
+
+    if (atStart) {
+      prevBtn.classList.add("is-disabled");
+      prevBtn.classList.remove("is-active");
+      prevBtn.setAttribute("aria-disabled", "true");
+    } else {
+      prevBtn.classList.remove("is-disabled");
+      prevBtn.classList.add("is-active");
+      prevBtn.setAttribute("aria-disabled", "false");
+    }
+
+    if (atEnd) {
+      nextBtn.classList.add("is-disabled");
+      nextBtn.classList.remove("is-active");
+      nextBtn.setAttribute("aria-disabled", "true");
+    } else {
+      nextBtn.classList.remove("is-disabled");
+      nextBtn.classList.add("is-active");
+      nextBtn.setAttribute("aria-disabled", "false");
+    }
+  }
+
+  function updateProgress() {
+    if (progressBar) {
+      const progress = maxX > 0 ? Math.abs(currentX) / maxX : 0;
+      const width = clamp(progress * 100, 5, 100);
+      progressBar.style.width = width + "%";
+    }
+
+    updateArrowState();
+  }
+
+  function animateToPage(index, duration = 0.75) {
+  const lastPage = getPages() - 1;
+  const page = clamp(index, 0, lastPage);
+
+  let targetX = -(page * cardStep);
+
+  if (page === lastPage) {
+    targetX = -maxX;
+  } else {
+    targetX = Math.max(targetX, -maxX);
+  }
+
+  gsap.killTweensOf(track);
+
+  gsap.to(track, {
+    x: targetX,
+    duration,
+    ease: "back.out(1.15)",
+    onUpdate: () => {
+      currentX = Number(gsap.getProperty(track, "x"));
+      updateProgress();
+    },
+    onComplete: () => {
+      currentX = targetX;         // force exact final value
+      gsap.set(track, { x: currentX });
+      updateProgress();
+    }
+  });
+}
+
+  function refresh() {
+    cardStep = getCardStep();
+    maxX = getMaxX();
+    currentX = -clamp(Math.abs(currentX), 0, maxX);
+    gsap.set(track, { x: currentX });
+    updateProgress();
+  }
+
+  function beginScrollerInteraction(lockMs = 900) {
+    hideNavbar(lockMs);
+  }
+
+  prevBtn?.addEventListener("click", () => {
+    if (prevBtn.classList.contains("is-disabled")) return;
+    beginScrollerInteraction(900);
+    animateToPage(getNearestPage() - 1);
+  });
+
+  nextBtn?.addEventListener("click", () => {
+    if (nextBtn.classList.contains("is-disabled")) return;
+    beginScrollerInteraction(900);
+    animateToPage(getNearestPage() + 1);
+  });
+
+  viewport.addEventListener("dragstart", (e) => e.preventDefault());
+
+  cards.forEach((card) => {
+    const img = card.querySelector("img");
+    if (img) img.addEventListener("dragstart", (e) => e.preventDefault());
+  });
+
+  viewport.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    dragStartX = e.clientX;
+    startTrackX = currentX;
+
+    beginScrollerInteraction(1200);
+
+    viewport.classList.add("is-dragging");
+    gsap.killTweensOf(track);
+  });
+
+  window.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+
+    const delta = e.clientX - dragStartX;
+    let nextX = startTrackX + delta * 1.15;
+
+    if (nextX > 0) nextX = nextX * 0.22;
+
+    if (nextX < -maxX) {
+      const over = nextX + maxX;
+      nextX = -maxX + over * 0.22;
+    }
+
+    currentX = nextX;
+    gsap.set(track, { x: currentX });
+    updateProgress();
+
+    e.preventDefault();
+  });
+
+  window.addEventListener("mouseup", () => {
+    if (!isDragging) return;
+
+    isDragging = false;
+    viewport.classList.remove("is-dragging");
+
+    navLockUntil = now() + 700;
+
+    if (currentX > 0) {
+      gsap.to(track, {
+        x: 0,
+        duration: 0.55,
+        ease: "power3.out",
+        onUpdate: () => {
+          currentX = Number(gsap.getProperty(track, "x"));
+          updateProgress();
+        },
+        onComplete: () => {
+          currentX = Number(gsap.getProperty(track, "x"));
+          updateProgress();
+        }
+      });
+      return;
+    }
+
+    if (currentX < -maxX) {
+      gsap.to(track, {
+        x: -maxX,
+        duration: 0.55,
+        ease: "power3.out",
+        onUpdate: () => {
+          currentX = Number(gsap.getProperty(track, "x"));
+          updateProgress();
+        },
+        onComplete: () => {
+          currentX = Number(gsap.getProperty(track, "x"));
+          updateProgress();
+        }
+      });
+      return;
+    }
+
+    animateToPage(getNearestPage(), 0.72);
+  });
+
+  viewport.addEventListener("touchstart", (e) => {
+    isDragging = true;
+    dragStartX = e.touches[0].clientX;
+    startTrackX = currentX;
+
+    beginScrollerInteraction(1200);
+
+    viewport.classList.add("is-dragging");
+    gsap.killTweensOf(track);
+  }, { passive: true });
+
+  viewport.addEventListener("touchmove", (e) => {
+    if (!isDragging) return;
+
+    const delta = e.touches[0].clientX - dragStartX;
+    let nextX = startTrackX + delta;
+
+    if (nextX > 0) nextX = nextX * 0.22;
+
+    if (nextX < -maxX) {
+      const over = nextX + maxX;
+      nextX = -maxX + over * 0.22;
+    }
+
+    currentX = nextX;
+    gsap.set(track, { x: currentX });
+    updateProgress();
+  }, { passive: true });
+
+  viewport.addEventListener("touchend", () => {
+    if (!isDragging) return;
+
+    isDragging = false;
+    viewport.classList.remove("is-dragging");
+
+    navLockUntil = now() + 700;
+
+    if (currentX > 0) {
+      gsap.to(track, {
+        x: 0,
+        duration: 0.55,
+        ease: "power3.out",
+        onUpdate: () => {
+          currentX = Number(gsap.getProperty(track, "x"));
+          updateProgress();
+        },
+        onComplete: () => {
+          currentX = Number(gsap.getProperty(track, "x"));
+          updateProgress();
+        }
+      });
+      return;
+    }
+
+    if (currentX < -maxX) {
+      gsap.to(track, {
+        x: -maxX,
+        duration: 0.55,
+        ease: "power3.out",
+        onUpdate: () => {
+          currentX = Number(gsap.getProperty(track, "x"));
+          updateProgress();
+        },
+        onComplete: () => {
+          currentX = Number(gsap.getProperty(track, "x"));
+          updateProgress();
+        }
+      });
+      return;
+    }
+
+    animateToPage(getNearestPage(), 0.72);
+  }, { passive: true });
+
+  function maybeRestoreNavbar(scrollY) {
+    if (!navHiddenByScroller) {
+      lastScrollY = scrollY;
+      return;
+    }
+
+    if (now() < navLockUntil) {
+      lastScrollY = scrollY;
+      return;
+    }
+
+    const delta = scrollY - lastScrollY;
+
+    if (Math.abs(delta) > 2) {
+      showNavbar();
+    }
+
+    lastScrollY = scrollY;
+  }
+
+  if (lenis && typeof lenis.on === "function") {
+    lenis.on("scroll", ({ animatedScroll }) => {
+      maybeRestoreNavbar(animatedScroll);
+    });
+  } else {
+    window.addEventListener("scroll", () => {
+      maybeRestoreNavbar(window.scrollY || window.pageYOffset || 0);
+    }, { passive: true });
+  }
+
+  window.addEventListener("resize", refresh);
+  window.addEventListener("load", refresh);
+
+  refresh();
+})();
+</script>
 </body>
 </html>

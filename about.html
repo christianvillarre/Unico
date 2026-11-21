@@ -13,14 +13,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>About Us | Unico Communications – Event Production & Strategic Storytelling</title>
-  <meta name="description" content="Unico Communications is a San Antontio-based event production and communications firm helping mission-driven organizations create powerful, memorable experiences." />
-  <link rel="canonical" href="https://www.unicocommunications.com/" />
+  <meta name="description" content="Unico Communications is a San Antonio-based event production and communications firm helping mission-driven organizations create powerful, memorable experiences." />
+  <link rel="canonical" href="https://unicocommunications.com/about.html" />
 
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="footer.css" />
-  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
   <style>
   html, body {
   margin: 0;
@@ -213,12 +212,23 @@
   })();
 </script>
 <!-- End Matomo Code -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.18/dist/lenis.css">
+  <script defer src="https://unpkg.com/lenis@1.3.18/dist/lenis.min.js"></script>
+  <script defer src="smooth-scroll.js"></script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "zh0t6uc7ev");
+  </script>
 </head>
 <body>
 <!-- 🔹 NAVBAR -->
 <header class="navbar">
   <div class="logo">
-    <a href="/index.html"><img class="logo1" src="images/logo1.png" alt="Logo" /></a>
+    <a href="/"><img class="logo1" src="images/logo1.png" alt="Unico Communications home" /></a>
   </div>
   <nav>
     <div class="nav-item">
@@ -238,7 +248,7 @@
       </div>
     </div>
     <div class="nav-item">
-     <a class="link-with-arrow">Impact</a>
+     <a class="link-with-arrow" href="/impact.html">Impact</a>
       <div class="dropdown">
        <div class="dropdown-text">
           <h4><a href="/impact.html">Clients<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
@@ -250,13 +260,13 @@
       </div>
     </div>
     <div class="nav-item">
-      <a href="#friends" class="link-with-arrow">Let's Be Friends</a>
+      <a href="/contact.html" class="link-with-arrow">Let's Be Friends</a>
       <div class="dropdown">
         <div class="dropdown-content">
           <div class="dropdown-text">
             <h4><a href="/contact.html">Tell Us More<img class="white-arrow" src="images/arrow-btn-white.png" alt="arrow" /></a></h4>
             
-              <h4><a href="/index.html#social">Get Social<img class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
+              <h4><a href="/#social">Get Social<img class="white-arrow" src="images/arrow-btn-white.png" /></a></h4>
             
           </div>
         </div>
@@ -268,7 +278,7 @@
 </button>
 
 <!-- Full-screen mobile menu -->
-<div class="mobile-menu" aria-hidden="true">
+<div class="mobile-menu" data-lenis-prevent aria-hidden="true">
   <nav class="mobile-nav">
     <div class="mobile-item">
       <button class="mobile-parent" type="button" aria-expanded="false">About</button>
@@ -292,7 +302,7 @@
       <button class="mobile-parent" type="button" aria-expanded="false">Let’s Be Friends</button>
       <div class="mobile-sub">
         <a href="/contact.html">Tell Us More</a>
-        <a href="/index.html#social">Get Social</a>
+        <a href="/#social">Get Social</a>
       </div>
     </div>
   </nav>
@@ -801,15 +811,15 @@ to life — with passion, precision, and a touch of Unico magic.
           <h2 class="team-title">TEAM</h2>
           </div>
  <div class="carousel-wrapper">
-   <button class="carousel-btn prev">←</button>
+   <button type="button" aria-label="Previous team member" class="carousel-btn prev">←</button>
   <div class="carousel-track-container">
   <div class="carousel-track">
   <div class="grid-container">
 
     <div class="image-wrapper">
       <div class="image-box">
-        <img class="default-img" src="images/team/LBombin.jpg" alt="Image 1" loading="eager"/>
-        <img class="hover-img" src="images/team/Lisa 2.jpg" alt="Carolyn Palacios Hover" loading="eager"/>
+        <img class="default-img" src="images/team/LBombin.webp" srcset="images/team/LBombin-480.webp 480w, images/team/LBombin.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" />
+        <img class="hover-img" src="images/team/Lisa 2.webp" srcset="images/team/Lisa 2-480.webp 480w, images/team/Lisa 2.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" fetchpriority="low" />
       </div>
       <div class="image-title">Lisa Bombín</div>
       <div class="image-title-text">President & CEO</div>
@@ -817,8 +827,8 @@ to life — with passion, precision, and a touch of Unico magic.
 
     <div class="image-wrapper">
       <div class="image-box">
-        <img class="default-img" src="images/team/MVela.jpg" alt="Image 1" loading="eager"/>
-        <img class="hover-img" id="carolyn" src="images/team/MVela - Lightbulb.jpg" alt="Carolyn Palacios Hover" loading="eager"/>
+        <img class="default-img" src="images/team/MVela.webp" srcset="images/team/MVela-480.webp 480w, images/team/MVela.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" />
+        <img class="hover-img" id="carolyn" src="images/team/MVela - Lightbulb.webp" srcset="images/team/MVela - Lightbulb-480.webp 480w, images/team/MVela - Lightbulb.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" fetchpriority="low" />
       </div>
       <div class="image-title">Michael Vela</div>
       <div class="image-title-text">Senior Director, Creative & Communications</div>
@@ -826,8 +836,8 @@ to life — with passion, precision, and a touch of Unico magic.
     
     <div class="image-wrapper" id="carolyn">
       <div class="image-box">
-        <img class="default-img" src="images/team/CPalacios.jpg" alt="Carolyn Palacios" loading="eager"/>
-        <img class="hover-img" id="carolyn" src="images/team/CPalacios - Lightbulb.jpg" alt="Carolyn Palacios Hover"loading="eager" />
+        <img class="default-img" src="images/team/CPalacios.webp" srcset="images/team/CPalacios-480.webp 480w, images/team/CPalacios.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" />
+        <img class="hover-img" id="carolyn" src="images/team/CPalacios - Lightbulb.webp" srcset="images/team/CPalacios - Lightbulb-480.webp 480w, images/team/CPalacios - Lightbulb.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" fetchpriority="low" />
       </div>
       <div class="image-title">Carolyn Palacios-Mancha</div>
       <div class="image-title-text">Director of Account Management</div>
@@ -835,8 +845,8 @@ to life — with passion, precision, and a touch of Unico magic.
 
     <div class="image-wrapper">
       <div class="image-box">
-        <img class="default-img" src="images/team/MVillarreal.jpg" alt="Image 1" loading="eager"/>
-        <img class="hover-img" src="images/team/Margil 02.jpg" alt="Carolyn Palacios Hover" loading="eager"/>
+        <img class="default-img" src="images/team/MVillarreal.webp" srcset="images/team/MVillarreal-480.webp 480w, images/team/MVillarreal.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" />
+        <img class="hover-img" src="images/team/Margil 02.webp" srcset="images/team/Margil 02-480.webp 480w, images/team/Margil 02.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" fetchpriority="low" />
       </div>
       <div class="image-title">Margil Villarreal</div>
       <div class="image-title-text">Senior Graphic Designer</div>
@@ -845,8 +855,8 @@ to life — with passion, precision, and a touch of Unico magic.
 
     <div class="image-wrapper">
       <div class="image-box">
-        <img class="default-img" src="images/team/JNavarro.jpg" alt="Image 1" loading="eager"/>
-        <img class="hover-img" src="images/team/JNavarro - Lightbulb.jpg" alt="Carolyn Palacios Hover" loading="eager"/>
+        <img class="default-img" src="images/team/JNavarro.webp" srcset="images/team/JNavarro-480.webp 480w, images/team/JNavarro.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" />
+        <img class="hover-img" src="images/team/JNavarro - Lightbulb.webp" srcset="images/team/JNavarro - Lightbulb-480.webp 480w, images/team/JNavarro - Lightbulb.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" fetchpriority="low" />
       </div>
       <div class="image-title">Julia Navarro</div>
       <div class="image-title-text">Administrative Manager</div>
@@ -854,8 +864,8 @@ to life — with passion, precision, and a touch of Unico magic.
 
     <div class="image-wrapper">
       <div class="image-box">
-        <img class="default-img" src="images/team/CPulido.jpg" alt="Image 1" loading="eager"/>
-        <img class="hover-img" src="images/team/CPulido - Lightbulb.jpg" alt="Carolyn Palacios Hover" loading="eager" />
+        <img class="default-img" src="images/team/CPulido.webp" srcset="images/team/CPulido-480.webp 480w, images/team/CPulido.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" />
+        <img class="hover-img" src="images/team/CPulido - Lightbulb.webp" srcset="images/team/CPulido - Lightbulb-480.webp 480w, images/team/CPulido - Lightbulb.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" fetchpriority="low" />
       </div>
       <div class="image-title">Christopher Pulido</div>
       <div class="image-title-text">Senior Meeting Planner & Registration Manager</div>
@@ -863,8 +873,8 @@ to life — with passion, precision, and a touch of Unico magic.
 
     <div class="image-wrapper">
       <div class="image-box">
-        <img class="default-img" src="images/team/EMalave.jpg" alt="Image 1" loading="eager"/>
-        <img class="hover-img" src="images/team/EMalave - Lightbulb.jpg" alt="Carolyn Palacios Hover" loading="eager"/>
+        <img class="default-img" src="images/team/EMalave.webp" srcset="images/team/EMalave-480.webp 480w, images/team/EMalave.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" />
+        <img class="hover-img" src="images/team/EMalave - Lightbulb.webp" srcset="images/team/EMalave - Lightbulb-480.webp 480w, images/team/EMalave - Lightbulb.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" fetchpriority="low" />
       </div>
       <div class="image-title">Emily Malave</div>
       <div class="image-title-text">Senior Meeting Planner & Expo Manager</div>
@@ -872,8 +882,8 @@ to life — with passion, precision, and a touch of Unico magic.
 
     <div class="image-wrapper">
       <div class="image-box">
-        <img class="default-img" src="images/team/JTenace.jpg" alt="Image 1" loading="eager"/>
-        <img class="hover-img" src="images/team/JTenace - Lightbulb.jpg" alt="Carolyn Palacios Hover" loading="eager"/>
+        <img class="default-img" src="images/team/JTenace.webp" srcset="images/team/JTenace-480.webp 480w, images/team/JTenace.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" />
+        <img class="hover-img" src="images/team/JTenace - Lightbulb.webp" srcset="images/team/JTenace - Lightbulb-480.webp 480w, images/team/JTenace - Lightbulb.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" fetchpriority="low" />
       </div>
       <div class="image-title">Jordan Tenace</div>
       <div class="image-title-text">Senior Technical Producer & Show Caller</div>
@@ -881,8 +891,8 @@ to life — with passion, precision, and a touch of Unico magic.
 
     <div class="image-wrapper">
       <div class="image-box">
-        <img class="default-img" src="images/team/Darlene 01.jpg" alt="Image 1" loading="eager"/>
-        <img class="hover-img" src="images/team/Darlene 02.jpg" alt="Carolyn Palacios Hover" loading="eager"/>
+        <img class="default-img" src="images/team/Darlene 01.webp" srcset="images/team/Darlene 01-480.webp 480w, images/team/Darlene 01.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" />
+        <img class="hover-img" src="images/team/Darlene 02.webp" srcset="images/team/Darlene 02-480.webp 480w, images/team/Darlene 02.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" fetchpriority="low" />
       </div>
       <div class="image-title">Darlene Jacobson</div>
       <div class="image-title-text">Operations Lead</div>
@@ -890,8 +900,8 @@ to life — with passion, precision, and a touch of Unico magic.
 
      <div class="image-wrapper">
       <div class="image-box">
-        <img class="default-img" src="images/team/VDeJesus.jpg" alt="Image 1" loading="eager"/>
-        <img class="hover-img" src="images/team/VDeJesus - Lightbulb.jpg" alt="Carolyn Palacios Hover" loading="eager"/>
+        <img class="default-img" src="images/team/VDeJesus.webp" srcset="images/team/VDeJesus-480.webp 480w, images/team/VDeJesus.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" />
+        <img class="hover-img" src="images/team/VDeJesus - Lightbulb.webp" srcset="images/team/VDeJesus - Lightbulb-480.webp 480w, images/team/VDeJesus - Lightbulb.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" fetchpriority="low" />
       </div>
       <div class="image-title">Victor De Jesus</div>
       <div class="image-title-text">Production Specialist</div>
@@ -899,8 +909,8 @@ to life — with passion, precision, and a touch of Unico magic.
 
     <div class="image-wrapper">
       <div class="image-box">
-        <img class="default-img" src="images/team/MBarreiro.jpg" alt="Image 1" loading="eager"/>
-        <img class="hover-img" src="images/team/MBarreiro - Lightbulb.jpg" alt="Carolyn Palacios Hover" loading="eager"/>
+        <img class="default-img" src="images/team/MBarreiro.webp" srcset="images/team/MBarreiro-480.webp 480w, images/team/MBarreiro.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" />
+        <img class="hover-img" src="images/team/MBarreiro - Lightbulb.webp" srcset="images/team/MBarreiro - Lightbulb-480.webp 480w, images/team/MBarreiro - Lightbulb.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" fetchpriority="low" />
       </div>
       <div class="image-title">Monique Barreiro</div>
       <div class="image-title-text">Production Specialist</div>
@@ -910,8 +920,8 @@ to life — with passion, precision, and a touch of Unico magic.
 
     <div class="image-wrapper">
       <div class="image-box">
-        <img class="default-img" src="images/team/VBarreiro.jpg" alt="Image 1" loading="eager"/>
-        <img class="hover-img" src="images/team/VBarreiro - Lightbulb.jpg" alt="Carolyn Palacios Hover" loading="eager"/>
+        <img class="default-img" src="images/team/VBarreiro.webp" srcset="images/team/VBarreiro-480.webp 480w, images/team/VBarreiro.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" />
+        <img class="hover-img" src="images/team/VBarreiro - Lightbulb.webp" srcset="images/team/VBarreiro - Lightbulb-480.webp 480w, images/team/VBarreiro - Lightbulb.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" fetchpriority="low" />
       </div>
       <div class="image-title">Victor Barreiro</div>
       <div class="image-title-text">Production Specialist and Audio Talent</div>
@@ -920,8 +930,8 @@ to life — with passion, precision, and a touch of Unico magic.
     
     <div class="image-wrapper">
       <div class="image-box">
-        <img class="default-img" src="images/team/Marcella 01.jpg" alt="Image 1" loading="eager"/>
-        <img class="hover-img" src="images/team/Marcella 02.jpg" alt="Carolyn Palacios Hover" loading="eager"/>
+        <img class="default-img" src="images/team/Marcella 01.webp" srcset="images/team/Marcella 01-480.webp 480w, images/team/Marcella 01.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" />
+        <img class="hover-img" src="images/team/Marcella 02.webp" srcset="images/team/Marcella 02-480.webp 480w, images/team/Marcella 02.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" fetchpriority="low" />
       </div>
       <div class="image-title">Marcela Bombín</div>
       <div class="image-title-text">Administrative Manager</div>
@@ -929,8 +939,8 @@ to life — with passion, precision, and a touch of Unico magic.
 
     <div class="image-wrapper">
       <div class="image-box">
-        <img class="default-img" src="images/team/NdelosSantos.jpg" alt="Image 1" loading="eager"/>
-        <img class="hover-img" src="images/team/NdelosSantos - Lightbulb.jpg" alt="Carolyn Palacios Hover" loading="eager"/>
+        <img class="default-img" src="images/team/NdelosSantos.webp" srcset="images/team/NdelosSantos-480.webp 480w, images/team/NdelosSantos.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" />
+        <img class="hover-img" src="images/team/NdelosSantos - Lightbulb.webp" srcset="images/team/NdelosSantos - Lightbulb-480.webp 480w, images/team/NdelosSantos - Lightbulb.webp 960w" sizes="(max-width: 768px) 100vw, 25rem" alt="" decoding="async" loading="eager" fetchpriority="low" />
       </div>
       <div class="image-title">Nancy De Los Santos</div>
       <div class="image-title-text">Scriptwriter, Copywriter</div>
@@ -939,7 +949,7 @@ to life — with passion, precision, and a touch of Unico magic.
   </div>
    </div>
 </div>
- <button class="carousel-btn next">→</button>
+ <button type="button" aria-label="Next team member" class="carousel-btn next">→</button>
 </div>
   </section>
 
@@ -1048,9 +1058,7 @@ to life — with passion, precision, and a touch of Unico magic.
   opacity: 1;
 }
 
-.section2 .image-box:hover img.default-img {
-  opacity: 0;
-}
+/* The base portrait stays visible until the hover photo paints over it. */
     .image-title {
       margin-top: 1.2rem;
       font-size: 1.5rem;
@@ -1186,7 +1194,8 @@ to life — with passion, precision, and a touch of Unico magic.
 Add these CSS tweaks so drag works while your hover swap still triggers:
 Put touch-action on the element receiving pointer listeners */
 .carousel-track {
-  touch-action: pan-y;
+  touch-action: pan-y pinch-zoom;
+  user-select: none;
   cursor: grab;
 }
 .carousel-track.dragging {
@@ -1225,9 +1234,9 @@ Put touch-action on the element receiving pointer listeners */
           <div class="col small-col">
             <div class="bottom-col">
               <h6>Socials</h6>
-              <button class="footer-dropbtn"><a href="https://www.instagram.com/unicocommunications/">Instagram</a></button>
-              <button class="footer-dropbtn"><a href="https://www.facebook.com/unicocomm/">Facebook</a></button>
-              <button class="footer-dropbtn"><a href="https://www.linkedin.com/company/unicocommunications-inc">LinkedIn</a></button>
+              <a class="footer-dropbtn" href="https://www.instagram.com/unicocommunications/">Instagram</a>
+              <a class="footer-dropbtn" href="https://www.facebook.com/unicocomm/">Facebook</a>
+              <a class="footer-dropbtn" href="https://www.linkedin.com/company/unicocommunications-inc">LinkedIn</a>
             </div>
           </div>
 
@@ -1235,18 +1244,16 @@ Put touch-action on the element receiving pointer listeners */
           <div class="col small-col">
             <div class="bottom-col">
               <h6>Unico HQ</h6>
-              <button class="footer-dropbtn">
+              <address class="footer-dropbtn">
                 2222 San Pedro Ave., Ste 2<br>San Antonio, TX 78212<br>(210) 670-9077
-              </button>
+              </address>
             </div>
           </div>
 
            <div class="col small-col tell-us-more-col">
             <div class="bottom-col">
               <h6>TELL US MORE</h6>
-              <button class="footer-dropbtn">
-                <a href="/contact.html"><img class="mail-icon" src="images/Mail Icon.png"></a>
-              </button>
+              <a class="footer-dropbtn" href="/contact.html"><img class="mail-icon" src="images/Mail Icon.png" alt="Contact Unico Communications"></a>
             </div>
           </div>
         </div>
@@ -1257,10 +1264,10 @@ Put touch-action on the element receiving pointer listeners */
           <div class="col small-col">
             <div class="bottom-col">
               <h6>Sitemap</h6>
-              <button class="footer-dropbtn"><a href="/about.html">About</a></button>
-              <button class="footer-dropbtn"><a href="/impact.html">Clients</a></button>
-              <button class="footer-dropbtn"><a href="/impact.html#services">Services</a></button>
-              <button class="footer-dropbtn"><a href="/featured.html">Featured Projects</a></button>
+              <a class="footer-dropbtn" href="/about.html">About</a>
+              <a class="footer-dropbtn" href="/impact.html">Clients</a>
+              <a class="footer-dropbtn" href="/impact.html#services">Services</a>
+              <a class="footer-dropbtn" href="/featured.html">Featured Projects</a>
             </div>
           </div>
 
@@ -1338,200 +1345,120 @@ Put touch-action on the element receiving pointer listeners */
 
 
 <script>
-  const track   = document.querySelector(".carousel-track");
-  const grid    = track.querySelector(".grid-container");
-  const nextBtn = document.querySelector(".carousel-btn.next");
-  const prevBtn = document.querySelector(".carousel-btn.prev");
-
-  // drag target = track so it wins even over images/rollovers
-  const DRAG_TARGET = track;
-
-  // --- dynamic width; fallback for desktop ---
-  const DESKTOP_CARD_WIDTH = 25 * 16 + 56; // 25rem + flex gap
-  let cardWidth = DESKTOP_CARD_WIDTH;
-  let index = 3; // start after 3 prepended clones
-
-  // Count real slides BEFORE cloning
-  const originals = [...grid.children];
-  const REAL = originals.length;
-
-  // Optional: CSS var --peek for left preview (0 if not set)
-  function getPeek() {
-    const v = getComputedStyle(document.documentElement).getPropertyValue('--peek').trim();
-    const n = parseFloat(v);
-    return Number.isFinite(n) ? n : 0;
+(() => {
+  const team = document.getElementById('team');
+  const track = team.querySelector('.carousel-track');
+  const grid = track.querySelector('.grid-container');
+  const originals = Array.from(grid.children);
+  const count = originals.length;
+  const lead = Math.min(3, count);
+  function clone(card) {
+    const copy = card.cloneNode(true);
+    copy.removeAttribute('id');
+    copy.querySelectorAll('[id]').forEach(el => el.removeAttribute('id'));
+    copy.setAttribute('aria-hidden', 'true');
+    return copy;
   }
+  grid.prepend(...originals.slice(-lead).map(clone));
+  grid.append(...originals.map(clone));
 
-  // 1) Prepend last 3 (in correct order)
-  const clonesBefore = originals.slice(-3).map(node => {
-    const c = node.cloneNode(true);
-    c.classList.add("clone");
-    c.querySelectorAll("[id]").forEach(el => el.removeAttribute("id"));
-    return c;
+  let step, peek;
+  let position = 0; // Continuous position in card widths, including full turns.
+  let destination = 0;
+  let motion = null;
+  let pointer = null;
+  let frame = 0;
+  let startX, startPosition, lastX, lastTime, velocity;
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+
+  function paint() {
+    frame = 0;
+    const slide = ((position % count) + count) % count;
+    track.style.transform = 'translate3d(' + (peek - (lead + slide) * step) + 'px, 0, 0)';
+  }
+  function measure() {
+    step = originals[1].offsetLeft - originals[0].offsetLeft;
+    peek = parseFloat(getComputedStyle(team).getPropertyValue('--peek')) || 0;
+    paint();
+  }
+  function stop() {
+    motion?.kill();
+    motion = null;
+    cancelAnimationFrame(frame);
+    frame = 0;
+  }
+  function settle(target) {
+    stop();
+    destination = target;
+    if (reduceMotion.matches || !window.gsap) {
+      position = target;
+      paint();
+      return;
+    }
+    const state = { value: position };
+    motion = gsap.to(state, {
+      value: target, duration: .42, ease: 'power3.out',
+      onUpdate() { position = state.value; paint(); }
+    });
+  }
+  measure();
+  window.addEventListener('resize', measure);
+  team.querySelector('.next').addEventListener('click', () => settle(destination + 1));
+  team.querySelector('.prev').addEventListener('click', () => settle(destination - 1));
+
+  track.addEventListener('pointerdown', event => {
+    if (pointer !== null || !event.isPrimary || event.button !== 0) return;
+    stop();
+    pointer = event.pointerId;
+    startX = lastX = event.clientX;
+    startPosition = position;
+    lastTime = event.timeStamp;
+    velocity = 0;
+    track.classList.add('dragging');
+    track.setPointerCapture(pointer);
   });
-  clonesBefore.reverse().forEach(c => grid.prepend(c));
 
-  // 2) Append first 3
-  const clonesAfter = originals.slice(0,3).map(node => {
-    const c = node.cloneNode(true);
-    c.classList.add("clone");
-    c.querySelectorAll("[id]").forEach(el => el.removeAttribute("id"));
-    return c;
+  track.addEventListener('pointermove', event => {
+    if (event.pointerId !== pointer) return;
+    const elapsed = event.timeStamp - lastTime;
+    if (elapsed > 0) {
+      const sample = (lastX - event.clientX) / elapsed;
+      velocity = elapsed > 80 ? sample : .55 * velocity + .45 * sample;
+    }
+    lastX = event.clientX;
+    lastTime = event.timeStamp;
+    position = startPosition + (startX - lastX) / step;
+    if (!frame) frame = requestAnimationFrame(paint);
   });
-  clonesAfter.forEach(c => grid.append(c));
 
-  const total = grid.children.length; // REAL + 6
-
-  function measureCardWidth() {
-    const first = grid.children[0];
-    if (!first) return DESKTOP_CARD_WIDTH;
-    const w = first.getBoundingClientRect().width;
-    const styles = getComputedStyle(grid);
-    const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
-    return w + gap; // include flex gap
-  }
-
-  function xForIndex(i) {
-    const PEEK = getPeek();
-    return -(i * cardWidth - PEEK);
-  }
-
-  function indexFromX(x) {
-    const PEEK = getPeek();
-    return (PEEK - x) / cardWidth;
-  }
-
-  function normalizeIndex(i) {
-    // If we've slid into the front clones (indices 0,1,2), jump forward by REAL
-    if (i <= 2)       return i + REAL;
-    // If we've slid into the tail clones (indices REAL+3, REAL+4, REAL+5), jump back by REAL
-    if (i >= REAL+3)  return i - REAL;
-    return i;
-  }
-
-  function jumpTo(i) {
-    gsap.set(track, { x: xForIndex(i) });
-  }
-
-  function moveTo(newIndex) {
-    gsap.to(track, {
-      x: xForIndex(newIndex),
-      duration: 0.5,
-      ease: "power2.out",
-      onComplete: () => {
-        index = normalizeIndex(newIndex); // ✅ handle ALL clone ranges
-        if (index !== newIndex) jumpTo(index); // snap silently if we wrapped
+  function finish(event) {
+    if (event.pointerId !== pointer) return;
+    pointer = null;
+    track.classList.remove('dragging');
+    if (track.hasPointerCapture(event.pointerId)) track.releasePointerCapture(event.pointerId);
+    let glide = 0;
+    if (event.type === 'pointerup') {
+      position = startPosition + (startX - event.clientX) / step;
+      if (!reduceMotion.matches && event.timeStamp - lastTime < 80) {
+        glide = Math.max(-1, Math.min(1, velocity * 140 / step));
       }
-    });
-  }
-
-  function recalcAndRealign() {
-    cardWidth = measureCardWidth();
-    jumpTo(index);
-  }
-
-  // --- Drag / Swipe ---
-  let isDragging = false;
-  let startClientX = 0;
-  let startX = 0;
-  let dragMoved = 0;
-
-  const getX = () => Number(gsap.getProperty(track, "x")) || 0;
-
-  function onPointerDown(e) {
-    if (e.pointerType === "mouse" && e.button !== 0) return;
-    isDragging = true;
-    dragMoved = 0;
-
-    gsap.killTweensOf(track);
-    startClientX = e.clientX;
-    startX = getX();
-
-    if (e.cancelable) e.preventDefault();
-    DRAG_TARGET.classList.add("dragging");
-    DRAG_TARGET.setPointerCapture?.(e.pointerId);
-  }
-
-  function onPointerMove(e) {
-    if (!isDragging) return;
-    const dx = e.clientX - startClientX;
-    dragMoved = Math.max(dragMoved, Math.abs(dx));
-    gsap.set(track, { x: startX + dx });
-  }
-
-  function onPointerEnd(e) {
-    if (!isDragging) return;
-    isDragging = false;
-    DRAG_TARGET.classList.remove("dragging");
-    DRAG_TARGET.releasePointerCapture?.(e.pointerId);
-
-    const dx = e.clientX - startClientX;
-    const SWIPE = 30; // px threshold
-
-    const x = getX();
-    const rawIndex = indexFromX(x);
-    let newIndex = Math.round(rawIndex);
-
-    if (Math.abs(dx) > SWIPE) {
-      // left swipe (dx<0) => NEXT => ceil; right swipe => PREV => floor
-      newIndex = dx < 0 ? Math.ceil(rawIndex) : Math.floor(rawIndex);
     }
-
-    moveTo(newIndex);
+    let target = Math.round(position + glide);
+    // Keep a deliberate short swipe useful even below half a card width.
+    const travel = position - startPosition;
+    if (event.type === 'pointerup' && Math.abs(travel * step) > 30 && target === Math.round(startPosition)) {
+      target = travel > 0 ? Math.ceil(position) : Math.floor(position);
+    }
+    settle(target);
   }
-
-  imagesLoaded(grid, { background: true }, () => {
-    requestAnimationFrame(recalcAndRealign);
-
-    nextBtn.addEventListener("click", () => moveTo(index + 1));
-    prevBtn.addEventListener("click", () => moveTo(index - 1));
-
-    DRAG_TARGET.addEventListener("pointerdown", onPointerDown, { passive: false, capture: true });
-    DRAG_TARGET.addEventListener("pointermove", onPointerMove,  { passive: true });
-    DRAG_TARGET.addEventListener("pointerup",   onPointerEnd,   { passive: true });
-    DRAG_TARGET.addEventListener("pointercancel", onPointerEnd, { passive: true });
-
-    DRAG_TARGET.addEventListener("click", (e) => {
-      if (dragMoved > 5) e.preventDefault();
-    }, true);
-
-    window.addEventListener("resize", () => requestAnimationFrame(recalcAndRealign));
-
-    // Initial reveal
-    gsap.fromTo(".image-wrapper", { opacity: 0, y: 20 }, {
-      opacity: 1, y: 0, duration: 1, stagger: 0.04, ease: "power2.out"
-    });
-  });
+  track.addEventListener('pointerup', finish);
+  track.addEventListener('pointercancel', finish);
+  track.addEventListener('lostpointercapture', finish);
+  if (window.gsap && !reduceMotion.matches) {
+    gsap.fromTo(originals, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, stagger: .04, ease: 'power2.out' });
+  }
+})();
 </script>
-<!--
-
-<script>
-  //TEAM CAROUSEL
-  const track = document.querySelector(".carousel-track");
-  const nextBtn = document.querySelector(".carousel-btn.next");
-  const prevBtn = document.querySelector(".carousel-btn.prev");
-  const cardWidth = 25 * 16 + 56; // 25rem + gap (converted to px)
-  let currentPosition = 0;
-
-  nextBtn.addEventListener("click", () => {
-    const maxScroll = track.scrollWidth - track.parentElement.offsetWidth;
-    if (Math.abs(currentPosition) < maxScroll) {
-      currentPosition -= cardWidth;
-      gsap.to(track, { x: currentPosition, duration: 0.5, ease: "power2.out" });
-    }
-  });
-
-  prevBtn.addEventListener("click", () => {
-    if (currentPosition < 0) {
-      currentPosition += cardWidth;
-      gsap.to(track, { x: currentPosition, duration: 0.5, ease: "power2.out" });
-    }
-  });
-</script>
-
-
--->
-
 <!-- ✅ Navbar Dropdown Behavior -->
 <script>
   const nav = document.querySelector('.navbar');
@@ -1551,7 +1478,7 @@ Put touch-action on the element receiving pointer listeners */
   function maybeRemoveHovered() {
     const isDropdownActive = document.querySelector('.nav-item.active');
     const isNavHovered = nav.matches(':hover');
-    if (window.locoScroll.scroll.instance.scroll.y <= 0 && !isDropdownActive && !isNavHovered) {
+    if (window.scrollY <= 0 && !isDropdownActive && !isNavHovered) {
       nav.classList.remove('hovered');
     }
   }
@@ -1669,14 +1596,7 @@ Put touch-action on the element receiving pointer listeners */
     lastScrollY = currentScroll;
   }
 
-  if (window.locoScroll) {
-    window.locoScroll.on('scroll', (args) => {
-      const scrollY = args.scroll.y;
-      handleScroll(scrollY);
-    });
-  } else {
-    window.addEventListener('scroll', () => handleScroll(window.scrollY));
-  }
+  window.addEventListener('scroll', () => handleScroll(window.scrollY));
 
   // ===== Proximity reveal/hide (add below your current code) =====
 const PROXIMITY_Y = 80;        // px from top to trigger reveal

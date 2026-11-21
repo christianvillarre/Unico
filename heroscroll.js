@@ -1,165 +1,87 @@
+(() => {
+  const first = document.getElementById('bg1');
+  const spare = document.getElementById('bg2');
+  const controls = document.getElementById('dotContainer');
+  if (!first || !spare || !controls) return;
 
-  const images = [
-    "images/HP_PIC_1.jpg",
-    "images/Photo 2 Missions.JPG",
-    "images/Photo 3 Kansas City.jpg",
-    "images/Photo 4 SA300.jpg",
-    "images/Photo 5 Leg Summit.png",
-    "images/Photo 6 Kamala.jpeg",
-    "images/Photo 7 HACR.jpg"
-  ];
+  const labels = ['Opening event', 'Missions', 'Kansas City', 'San Antonio',
+    'Legislative summit', 'National leaders', 'Community event'];
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let active = first;
+  let requested = 0;
+  let generation = 0;
+  let timer;
 
-  const content = [
-    {
-      title: "Creating Impactful Experiences",
-      text: "Unico is a full-service events firm working nationwide with non-profits and corporate partners."
-    },
-    {
-      title: "Mission Driven Moments",
-      text: "From strategy to execution, we build unforgettable experiences aligned with your mission."
-    },
-    {
-      title: "Voices of \nKansas City",
-      text: "Events that empower local communities and amplify purpose across the Midwest."
-    },
-    {
-      title: "Celebrating \nSan Antonio",
-      text: "Bringing people together through thoughtful programming and cultural celebration."
-    },
-    {
-      title: "Legacy In Motion",
-      text: "Leadership, equity, and vision come to life in every detail of our summits."
-    },
-    {
-      title: "With Leaders Nationwide",
-      text: "Unico works alongside national changemakers to shape events that matter."
-    },
-    {
-      title: "Power of Community",
-      text: "From intimate gatherings to large-scale productions, our team delivers with purpose."
-    }
-  ];
+  function configure(image, index) {
+    const base = 'images/hero-' + (index + 1);
+    image.alt = '';
+    image.className = 'bg-layer';
+    image.sizes = '100vw';
+    image.srcset = base + '-small.webp 800w, ' + base + '-large.webp 1920w';
+    image.src = base + '-large.webp';
+  }
 
-  let currentIndex = 0;
-  let activeBg = 1;
+  // Older layouts use an empty div for the first photo.
+  if (!(active instanceof HTMLImageElement)) {
+    active = new Image();
+    configure(active, 0);
+    active.classList.add('visible');
+    first.replaceWith(active);
+  }
+  spare.remove();
 
-  const bg1 = document.getElementById("bg1");
-  const bg2 = document.getElementById("bg2");
-  const dotsContainer = document.getElementById("dotContainer");
-
-  images.forEach((_, i) => {
-    const dot = document.createElement("div");
-    dot.classList.add("dot");
-    dot.addEventListener("click", () => {
-      currentIndex = i;
-      updateBackground(true);
-    });
-    dotsContainer.appendChild(dot);
+  const dots = labels.map((label, index) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'dot';
+    button.setAttribute('aria-label', 'Show photo: ' + label);
+    button.addEventListener('click', () => show(index));
+    controls.append(button);
+    return button;
   });
 
-  const dots = document.querySelectorAll(".dot");
-  
-  function updateBackground(manual = false) {
-  const nextBg = activeBg === 1 ? bg2 : bg1;
-  const currentBg = activeBg === 1 ? bg1 : bg2;
-
-  // Change background image
-  nextBg.style.backgroundImage = `url('${images[currentIndex]}')`;
-  nextBg.classList.add("visible");
-  currentBg.classList.remove("visible");
-
-  // Do NOT change text or animate it again
-  activeBg = activeBg === 1 ? 2 : 1;
-
-  dots.forEach(dot => dot.classList.remove("active"));
-  dots[currentIndex].classList.add("active");
-
-  if (manual) resetAutoScroll();
-}
-document.querySelector("h1").innerHTML = "Creating Impactful Experiences, Not Simply Events";
-
-
-// Animate text only once
-gsap.set("h1", { y: 20, opacity: 0 });
-
-gsap.to("h1", {
-  y: 0,
-  opacity: 1,
-  duration: 1,
-  delay: 0.3,
-  ease: "power2.out"
-});
-
-
-/*
-  function updateBackground(manual = false) {
-    const nextBg = activeBg === 1 ? bg2 : bg1;
-    const currentBg = activeBg === 1 ? bg1 : bg2;
-
-    // Change background image
-    nextBg.style.backgroundImage = `url('${images[currentIndex]}')`;
-    nextBg.classList.add("visible");
-    currentBg.classList.remove("visible");
-
-    const h1 = document.querySelector("h1");
-    const p = document.querySelector(".page-container p");
-
-    // Kill any ongoing animations
-    gsap.killTweensOf([h1, p]);
-
-    // Set initial (offscreen) state
-    gsap.set(h1, { y: 20, opacity: 0 });
-    gsap.set(p, { y: 0, opacity: 0 });
-
-    // Set content
-    h1.innerHTML = content[currentIndex].title.replace(/\n/g, "<br>");
-    p.textContent = content[currentIndex].text;
-
-    // Animate in
-    gsap.to(h1, {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      delay: 0.3,
-      ease: "power2.out"
+  function mark(index) {
+    dots.forEach((button, i) => {
+      button.classList.toggle('active', i === index);
+      button.setAttribute('aria-pressed', String(i === index));
     });
-
-    gsap.to(p, {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      delay: 0.6,
-      ease: "power2.out"
-    });
-
-    // Update background tracker
-    activeBg = activeBg === 1 ? 2 : 1;
-
-    // Update dot indicator
-    dots.forEach(dot => dot.classList.remove("active"));
-    dots[currentIndex].classList.add("active");
-
-    // Reset autoplay
-    if (manual) resetAutoScroll();
-  }
-*/
-  function goNext() {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateBackground(true);
   }
 
-  function goPrev() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateBackground(true);
+  function schedule() {
+    clearTimeout(timer);
+    if (!document.hidden && !reducedMotion.matches) {
+      timer = setTimeout(() => show(requested + 1), 8000);
+    }
   }
 
-  document.getElementById("nextBtn").addEventListener("click", goNext);
-  document.getElementById("prevBtn").addEventListener("click", goPrev);
-
-  let autoScrollInterval = setInterval(goNext, 8000);
-  function resetAutoScroll() {
-    clearInterval(autoScrollInterval);
-    autoScrollInterval = setInterval(goNext, 8000);
+  async function show(index) {
+    clearTimeout(timer);
+    requested = (index + labels.length) % labels.length;
+    const version = ++generation;
+    const image = new Image();
+    configure(image, requested);
+    try {
+      await image.decode();
+      if (version !== generation) return;
+      const previous = active;
+      previous.after(image);
+      // Commit the starting opacity before the crossfade.
+      image.getBoundingClientRect();
+      image.classList.add('visible');
+      previous.classList.remove('visible');
+      active = image;
+      mark(requested);
+      setTimeout(() => previous.remove(), 1050);
+    } catch {
+      // Keep displaying the last decoded photo when a request fails.
+    }
+    if (version === generation) schedule();
   }
 
-  updateBackground();
+  document.getElementById('nextBtn')?.addEventListener('click', () => show(requested + 1));
+  document.getElementById('prevBtn')?.addEventListener('click', () => show(requested - 1));
+  document.addEventListener('visibilitychange', schedule);
+  reducedMotion.addEventListener('change', schedule);
+  mark(0);
+  schedule();
+})();
