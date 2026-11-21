@@ -166,6 +166,11 @@
    .lenis.lenis-smooth {
     scroll-behavior: auto !important;
   }
+@media (max-width: 768px) {
+  .carousel-2 .carousel-header { flex-wrap: wrap; gap: .25rem 1rem; }
+  .carousel-2 .carousel-header h2 { white-space: nowrap; margin-block: 0; }
+  .carousel-2 .carousel-header .dropbtn { margin-top: 0; }
+}
 /* Keep native link semantics; style via classes */
 a { color: inherit; text-decoration: none; }
 a:focus { outline: 2px solid #fff; outline-offset: 2px; }
