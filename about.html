@@ -1182,10 +1182,25 @@ to life — with passion, precision, and a touch of Unico magic.
   padding-left: var(--peek); /* space to show a bit of the previous card */
 }
 
-/* Optional: disable peek on small screens */
+/* Center one mobile portrait with a small preview on either side. */
 @media (max-width: 768px) {
-  :root { --peek: 0px; }
-  .carousel-track-container { padding-left: 0; }
+  #team { --peek: 24px; }
+  #team .carousel-track-container {
+    padding: 0;
+    box-sizing: border-box;
+  }
+  #team .carousel-track { padding: 0; margin: 0; }
+  #team .grid-container { gap: 8px; }
+  #team .image-wrapper {
+    flex: 0 0 calc(100vw - 48px);
+    width: calc(100vw - 48px);
+    max-width: none;
+  }
+  #team .image-box {
+    width: 100%;
+    margin-left: 0;
+    border-radius: 8px;
+  }
 }
 
 

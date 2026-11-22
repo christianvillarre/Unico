@@ -671,7 +671,7 @@ a {
   <div class="featured-inner">
     <header class="featured-heading">
       <h1 class="featured-title">FEATURED PROJECTS</h1>
-      <p class="featured-intro">Our Featured Projects showcase Unico Communications' expertise in producing high-impact events that blend creativity, culture, and flawless execution. From large-scale conferences and immersive brand activations to red carpet and movie screenings, each project reflects our commitment to delivering unforgettable experiences that engage and inspire.</p>
+      <p class="featured-intro">Our Featured Projects showcase Unico Communications' expertise in producing high-impact events that blend creativity, culture, and flawless execution. From large-scale conferences and immersive brand activations to red carpet and movie screenings, each project reflects our commitment to delivering unforgettable experiences that engage and&nbsp;inspire.</p>
     </header>
 
     <div class="featured-card-row" role="region" aria-label="Featured project cards">
@@ -874,28 +874,56 @@ a {
   .navbar .logo1 { max-height: 3rem; width: auto; }
   .section-featured { padding-block: 4.25rem .75rem; }
 }
-.project-picker, .project-detail { display: none; }
-@media (max-width: 52rem) {
-  .featured-heading { text-align: left; }
-  .featured-intro { margin-top: .6rem; line-height: 1.4; }
-  .featured-card-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .has-project-picker .featured-card-row { display: none; }
-  .project-picker { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.5cqw; }
-  .project-picker button {
-    background: #284753; border: 0; border-radius: .5rem; padding: 0; overflow: hidden;
-    aspect-ratio: 3 / 5; cursor: pointer;
-  }
-  .project-picker img { display: block; width: 100%; height: 100%; object-fit: cover; }
-  .project-picker button[aria-pressed="true"] { outline: 2px solid white; outline-offset: 2px; }
-  .project-picker button:focus-visible { outline: 3px solid #173941; outline-offset: 2px; }
-  .project-detail { display: block; margin-top: 1rem; color: white; }
-  .project-detail h2 { margin: 0; font-size: 1.1rem; }
-  .project-detail p { margin: .35rem 0; font-size: .8125rem; line-height: 1.4; }
-  .project-detail a { font-size: .8125rem; font-weight: bold; text-decoration: underline; }
-}
 @media (hover: none) {
   .card-popup, .card-center-text { display: none; }
   .featured-overlay { background: linear-gradient(transparent, rgb(0 0 0 / 85%) 28%); }
+}
+@media (max-width: 52rem) {
+  .featured-heading { text-align: left; }
+  .featured-intro { margin-top: .6rem; line-height: 1.4; }
+  .featured-card-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+  .featured-card-row .card {
+    aspect-ratio: auto;
+    background: #284753;
+    overflow: hidden;
+    border-radius: .75rem;
+    transform: none;
+  }
+  .featured-card-row .card > img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center;
+    border-radius: .75rem;
+    transform: none;
+  }
+  .featured-card-row .hover-overlay,
+  .featured-card-row .card-popup,
+  .featured-card-row .card-center-text { display: none; }
+  .featured-card-row .featured-overlay {
+    position: absolute;
+    inset: auto 0 0;
+    padding: 3rem 1.25rem 1.25rem;
+    color: #fff;
+    background: linear-gradient(transparent, rgb(0 0 0 / 65%) 45%, rgb(0 0 0 / 78%));
+  }
+  .featured-card-row .featured-title-text {
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.2;
+  }
+  .featured-card-row .featured-p {
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
+    margin: .5rem 0 0;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .card, .card > img, .featured-p, .card-popup, .hover-overlay, .card-center-text { transition: none; }
@@ -993,47 +1021,7 @@ a {
 
 
 
-<script>
-(() => {
-  const row = document.querySelector('.featured-card-row');
-  const cards = [...row.querySelectorAll('.card')];
-  const picker = document.createElement('div');
-  picker.className = 'project-picker';
-  picker.setAttribute('role', 'group');
-  picker.setAttribute('aria-label', 'Choose a featured project');
-  const detail = document.createElement('div');
-  detail.className = 'project-detail';
-  detail.setAttribute('aria-live', 'polite');
 
-  function select(card) {
-    const title = card.querySelector('.featured-title-text').cloneNode(true);
-    const description = document.createElement('p');
-    description.textContent = card.querySelector('.featured-p').textContent.trim();
-    detail.replaceChildren(title, description);
-    const projectLink = card.closest('a');
-    if (projectLink) {
-      const link = document.createElement('a');
-      link.href = projectLink.href;
-      link.textContent = 'View case study';
-      link.setAttribute('aria-label', projectLink.getAttribute('aria-label'));
-      detail.append(link);
-    }
-    cards.forEach((item, index) => picker.children[index].setAttribute('aria-pressed', String(item === card)));
-  }
-
-  cards.forEach(card => {
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.setAttribute('aria-label', card.querySelector('.featured-title-text').textContent);
-    button.append(card.querySelector(':scope > img').cloneNode());
-    button.addEventListener('click', () => select(card));
-    picker.append(button);
-  });
-  row.after(picker, detail);
-  select(cards[0]);
-  row.parentElement.classList.add('has-project-picker');
-})();
-</script>
 <script src="navbar.js"></script>
 <script src="carousel.js"></script>
 <script src="heroscroll.js"></script>

@@ -1,17 +1,18 @@
 (() => {
   if (!window.Lenis) return;
 
-  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  // Smooth wheel scrolling belongs to desktop; tablets and phones stay native.
+  const desktop = matchMedia('(min-width: 1025px) and (hover: hover) and (pointer: fine)');
   function updateScrolling() {
-    if (motion.matches) {
+    if (!desktop.matches) {
       window.lenis?.destroy();
       window.lenis = null;
     } else if (!window.lenis) {
       window.lenis = new Lenis({ autoRaf: true, anchors: true, smoothWheel: true });
-      if (window.ScrollTrigger) window.lenis.on('scroll', ScrollTrigger.update);
+      window.lenis.on('scroll', () => window.ScrollTrigger?.update());
     }
   }
 
   updateScrolling();
-  motion.addEventListener('change', updateScrolling);
+  desktop.addEventListener('change', updateScrolling);
 })();

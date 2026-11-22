@@ -167,9 +167,53 @@
     scroll-behavior: auto !important;
   }
 @media (max-width: 768px) {
-  .carousel-2 .carousel-header { flex-wrap: wrap; gap: .25rem 1rem; }
-  .carousel-2 .carousel-header h2 { white-space: nowrap; margin-block: 0; }
-  .carousel-2 .carousel-header .dropbtn { margin-top: 0; }
+  /* Let mobile headers size naturally so headings cannot be clipped. */
+  .main-section .carousel-wrapper,
+  .main-section .carousel-wrapper2,
+  .main-section .carousel-wrapper3 {
+    height: auto;
+    padding-block: 1rem;
+  }
+  /* Avoid stacking wrapper and track padding between mobile carousels. */
+  .main-section .carousel-1 { padding-bottom: 0; }
+  .main-section .carousel-2,
+  .main-section .carousel-3 { padding-block: .25rem 0; }
+  .main-section .carousel-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: .75rem;
+    margin-block: 0;
+    padding-block: 0;
+    flex-shrink: 0;
+  }
+  .main-section .carousel-header h2 {
+    margin: 0;
+    line-height: 1.2;
+    font-size: clamp(1rem, 4.5vw, 1.3rem);
+    white-space: nowrap;
+  }
+  .main-section .carousel-header .dropbtn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 0 0 2.75rem;
+    min-height: 2.75rem;
+    margin: 0;
+    font-size: 0;
+    line-height: 1;
+  }
+  .main-section .carousel-header .dropbtn img {
+    display: block;
+    flex: 0 0 auto;
+    width: 2rem;
+    height: auto;
+  }
+  .main-section .carousel-track {
+    flex-shrink: 0;
+    padding-block: .5rem;
+  }
 }
 /* Keep native link semantics; style via classes */
 a { color: inherit; text-decoration: none; }
@@ -558,7 +602,7 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
     <div class="carousel-wrapper2 carousel-1">
       <div class="carousel-header">
         <h2>TRUSTED BY</h2>
-        <a class="dropbtn" href="impact.html">Meet our clients<img loading="lazy" alt="" src="images/arrow-btn.png"></a>
+        <a class="dropbtn" href="impact.html" aria-label="Meet our clients">Meet our clients<img loading="lazy" alt="" src="images/arrow-btn.svg"></a>
       </div>
       <div class="carousel-track track-1">
        <div class="carousel-item short-box">
@@ -678,7 +722,7 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
     <div class="carousel-wrapper carousel-2">
       <div class="carousel-header">
         <h2>FEATURED PROJECTS</h2>
-        <a class="dropbtn" href="featured.html">Explore featured projects<img loading="lazy" alt="" src="images/arrow-btn.png"></a>
+        <a class="dropbtn" href="featured.html" aria-label="Explore featured projects">Explore featured projects<img loading="lazy" alt="" src="images/arrow-btn.svg"></a>
       </div>
       <div class="carousel-track track-2">
         <a class="cs-hover" href="/casestudy2.html"><div class="carousel-item long-box">
@@ -811,7 +855,7 @@ a:focus { outline: 2px solid #fff; outline-offset: 2px; }
     <div class="carousel-wrapper3 carousel-3">
       <div class="carousel-header">
         <h2>SERVICES</h2>
-        <a class="dropbtn" href="impact.html#services">Explore our services<img loading="lazy" alt="" src="images/arrow-btn.png"></a>
+        <a class="dropbtn" href="impact.html#services" aria-label="Explore our services">Explore our services<img loading="lazy" alt="" src="images/arrow-btn.svg"></a>
       </div>
       <div class="carousel-track track-3">
         <div class="carousel-item long-box">
