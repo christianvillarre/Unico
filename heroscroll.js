@@ -6,7 +6,6 @@
 
   const labels = ['Opening event', 'Missions', 'Kansas City', 'San Antonio',
     'Legislative summit', 'National leaders', 'Community event'];
-  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   let active = first;
   let requested = 0;
   let generation = 0;
@@ -49,7 +48,7 @@
 
   function schedule() {
     clearTimeout(timer);
-    if (!document.hidden && !reducedMotion.matches) {
+    if (!document.hidden) {
       timer = setTimeout(() => show(requested + 1), 8000);
     }
   }
@@ -81,7 +80,6 @@
   document.getElementById('nextBtn')?.addEventListener('click', () => show(requested + 1));
   document.getElementById('prevBtn')?.addEventListener('click', () => show(requested - 1));
   document.addEventListener('visibilitychange', schedule);
-  reducedMotion.addEventListener('change', schedule);
   mark(0);
   schedule();
 })();

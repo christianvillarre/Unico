@@ -1,8 +1,7 @@
 function startCarousel(track, duration, reverse) {
   const originals = Array.from(track.children);
   if (!originals.length) return;
-  const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  if (!window.gsap || motion.matches) {
+  if (!window.gsap) {
     track.style.overflowX = 'auto';
     return;
   }

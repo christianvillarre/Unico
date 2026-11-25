@@ -587,6 +587,7 @@ html, body {
 
 
 .tracker-wrapper {
+  position: relative;
   width: 100%;
   height: 42rem;
   background-color:transparent;
@@ -912,6 +913,7 @@ html, body {
     font-weight: 800;
 }
 .tracker-wrapper {
+  position: relative;
   width: 100%;
   height: 45rem;
   background-color:transparent;
@@ -1190,4 +1192,12 @@ address.footer-dropbtn { font-style: normal; cursor: auto; }
   .navbar .nav-item:focus-within .dropdown {
     visibility: visible; opacity: 1; transform: translateY(0); pointer-events: auto;
   }
+}
+
+/* Keep the Instagram lightbox close button clear of the fixed navbar. */
+body.lightwidget__lightbox-website .navbar {
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-100%);
+  transition: none;
 }

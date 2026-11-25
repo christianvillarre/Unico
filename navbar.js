@@ -17,6 +17,32 @@ const SCROLL_THRESHOLD = 2; // prevents tiny Lenis deltas from flipping nav stat
 // Helpers
 // =========================
 
+// LightWidget toggles this body class for every lightbox open/close path.
+function isInstagramLightboxOpen() {
+  return document.body.classList.contains('lightwidget__lightbox-website');
+}
+
+function syncInstagramLightboxState() {
+  if (isInstagramLightboxOpen()) {
+    clearTimeout(hideTimer);
+    clearTimeout(proximityHideTimer);
+    proximityActive = false;
+    navItems.forEach(item => item.classList.remove('active'));
+    nav.inert = true;
+    applyHiddenState();
+  } else {
+    nav.inert = false;
+    lastScrollY = window.scrollY;
+    if (window.scrollY <= 5) applyTopState();
+  }
+}
+
+new MutationObserver(syncInstagramLightboxState).observe(document.body, {
+  attributes: true,
+  attributeFilter: ['class']
+});
+syncInstagramLightboxState();
+
 // Check if mouse is moving inside nav or dropdown
 function isMouseInsideNavOrDropdown(e) {
   const related = e.relatedTarget;
@@ -46,6 +72,7 @@ function resetNavState() {
 
 // Apply top-of-page style
 function applyTopState() {
+  if (isInstagramLightboxOpen()) return applyHiddenState();
   resetNavState();
   nav.classList.add('at-top');
   setLogo('logo1');
@@ -53,6 +80,7 @@ function applyTopState() {
 
 // Apply visible scrolled style
 function applyShownState({ hovered = false } = {}) {
+  if (isInstagramLightboxOpen()) return applyHiddenState();
   resetNavState();
   nav.classList.add('scrolled-up', 'navbar-bg');
 
@@ -128,6 +156,7 @@ function isNavInteracting() {
 // =========================
 
 nav.addEventListener('mouseenter', () => {
+  if (isInstagramLightboxOpen()) return;
   clearTimeout(hideTimer);
   nav.classList.add('hovered');
 });
@@ -158,6 +187,7 @@ navItems.forEach(item => {
   if (!trigger) return;
 
   trigger.addEventListener('mouseenter', () => {
+    if (isInstagramLightboxOpen()) return;
     clearTimeout(hideTimer);
 
     navItems.forEach(i => i.classList.remove('active'));
@@ -210,6 +240,10 @@ navItems.forEach(item => {
 // =========================
 
 function handleScroll(currentScroll) {
+  if (isInstagramLightboxOpen()) {
+    lastScrollY = currentScroll;
+    return;
+  }
   const delta = currentScroll - lastScrollY;
   const isAtTop = currentScroll <= 5;
 
@@ -312,6 +346,7 @@ document.querySelectorAll('.dropbtn, .dropbtn-submit').forEach(btn => {
 // =========================
 
 function revealNavByProximity() {
+  if (isInstagramLightboxOpen()) return;
   clearTimeout(proximityHideTimer);
 
   if (proximityActive) return;
