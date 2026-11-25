@@ -57,9 +57,9 @@ function startCarousels() {
         source.removeAttribute('data-src');
         video.load();
       }
-      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        video.play().catch(() => {});
-      }
+      video.muted = true;
+      video.playsInline = true;
+      video.play().catch(() => {});
     }
   }, {rootMargin: '150px'});
   document.querySelectorAll('video source[data-src]').forEach(source => observer.observe(source.parentElement));
